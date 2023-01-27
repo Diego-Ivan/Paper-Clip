@@ -10,6 +10,18 @@
         <property name="orientation">vertical</property>
         <child>
           <object class="GtkHeaderBar" id="header_bar">
+            <child type="start">
+              <object class="GtkButton">
+                <property name="action-name">win.open</property>
+                <child>
+                  <object class="AdwButtonContent">
+                    <property name="icon-name">document-open-symbolic</property>
+                    <property name="label" translatable="yes">_Open</property>
+                  </object>
+                </child>
+              </object>
+            </child>
+
             <child type="end">
               <object class="GtkMenuButton">
                 <property name="icon-name">open-menu-symbolic</property>
@@ -18,17 +30,60 @@
             </child>
           </object>
         </child>
+
         <child>
-          <object class="GtkLabel" id="label">
-            <property name="label">Hello, World!</property>
-            <property name="vexpand">true</property>
-            <style>
-              <class name="title-1"/>
-            </style>
+          <object class="GtkStack" id="view_stack">
+            <property name="transition-type">crossfade</property>
+            <child>
+              <object class="GtkStackPage">
+                <property name="name">empty</property>
+                <property name="child">
+                  <object class="AdwStatusPage">
+                    <property name="title" translatable="yes">Open a File</property>
+                    <property name="icon-name">emblem-documents-symbolic</property>
+
+                    <child>
+                      <object class="GtkButton" id="open_button">
+                        <property name="label">Open</property>
+                        <property name="halign">center</property>
+                        <property name="action-name">win.open</property>
+                        <style>
+                          <class name="pill"/>
+                          <class name="suggested-action"/>
+                        </style>
+                      </object>
+                    </child>
+
+                  </object>
+                </property>
+              </object>
+            </child>
+
+            <child>
+              <object class="GtkStackPage">
+                <property name="name">editor</property>
+                <property name="child">
+                  <object class="HiddenScribeDocumentView" id="doc_view"></object>
+                </property>
+              </object>
+            </child>
+
           </object>
         </child>
       </object>
     </child>
+
+    <child>
+      <object class="GtkShortcutController">
+        <child>
+          <object class="GtkShortcut">
+            <property name="trigger">&lt;Control&gt;o</property>
+            <property name="action">action(win.open)</property>
+          </object>
+        </child>
+      </object>
+    </child>
+
   </template>
   <menu id="primary_menu">
     <section>

@@ -19,8 +19,8 @@
  */
 
 public interface HiddenScribe.PropertyRow : Adw.PreferencesRow {
-    public abstract unowned Object object { get; construct; }
-    public abstract string property_name { get; construct; }
+    public abstract unowned Object object { get; set; }
+    public abstract string property_name { get; set; }
 
     protected abstract void set_to_property ();
 }

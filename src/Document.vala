@@ -27,7 +27,7 @@ public class HiddenScribe.Document : Object {
     public string subject { get; set; }
     public string title { get; set; }
     public string producer { get; set; }
-    public string uri { get; private set; }
+    public string uri { get; construct; }
 
     public ListModel keywords {
         get {
@@ -35,24 +35,19 @@ public class HiddenScribe.Document : Object {
         }
     }
 
-    public Document (string uri, string? password = null) {
-        this.uri = uri;
-        try {
-            document = new Poppler.Document.from_file (uri, password);
-            bind ();
-        }
-        catch (Error e) {
-            critical (e.message);
-        }
+    public Document (string uri, string? password = null) throws Error {
+        Object (uri: uri);
+        document = new Poppler.Document.from_file (uri, password);
+        bind ();
     }
 
     private void bind () {
-        ObjectClass klass = get_class ();
+        unowned ObjectClass klass = get_class ();
         foreach (unowned ParamSpec property in klass.list_properties ()) {
             if (!(WRITABLE in property.flags)) {
                 continue;
             }
-            bind_property (property.name, document, property.name);
+            bind_property (property.name, document, property.name, SYNC_CREATE | BIDIRECTIONAL);
         }
     }
 
@@ -63,6 +58,17 @@ public class HiddenScribe.Document : Object {
         }
         catch (Error e) {
             critical ("Error Saving: %s", e.message);
+        }
+    }
+
+    public void save_to (string path)
+        requires (FileUtils.test (path, EXISTS))
+    {
+        try {
+            document.save (path);
+        }
+        catch (Error e) {
+            critical (e.message);
         }
     }
 

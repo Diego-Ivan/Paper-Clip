@@ -19,18 +19,11 @@
  */
 
 public class HiddenScribe.EntryRow : Adw.EntryRow, PropertyRow {
-    public unowned Object object { get; construct; }
-    public string property_name { get; construct; }
-
-    public EntryRow (Object object, string property_name) {
-        Object (
-            object: object,
-            property_name: property_name
-        );
-    }
+    public Object object { get; set; }
+    public string property_name { get; set; }
 
     construct {
-        apply.connect (set_to_property);
+        changed.connect (set_to_property);
     }
 
     private void set_to_property () {

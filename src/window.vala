@@ -22,13 +22,49 @@ namespace HiddenScribe {
     [GtkTemplate (ui = "/io/github/diegoivan/hidden_scribe/window.ui")]
     public class Window : Adw.ApplicationWindow {
         [GtkChild]
-        private unowned Gtk.Label label;
+        private unowned DocumentView doc_view;
+        [GtkChild]
+        private unowned Gtk.Stack view_stack;
 
         public Window (Gtk.Application app) {
             Object (application: app);
         }
 
         construct {
+            ActionEntry[] entries = {
+                { "open", open_file },
+            };
+
+            var action_group = new SimpleActionGroup ();
+            action_group.add_action_entries (entries, this);
+            insert_action_group ("win", action_group);
+        }
+
+        private void open_file () {
+            var filter = new Gtk.FileFilter ();
+            filter.add_suffix ("pdf");
+
+            var filechooser = new Gtk.FileChooserNative ("Select a PDF file", this,
+                                                         OPEN, null, null);
+            filechooser.add_filter (filter);
+
+            filechooser.response.connect (on_file_opened);
+            filechooser.show ();
+        }
+
+        private void on_file_opened (Gtk.NativeDialog source, int response) {
+            var file_dialog = (Gtk.FileChooser) source;
+            if (response == Gtk.ResponseType.OK) {
+                var file = file_dialog.get_file ();
+                try {
+                    var document = new Document (file.get_path (), null);
+                    doc_view.document = document;
+                    view_stack.visible_child_name = "editor";
+                }
+                catch (Error e) {
+                    critical (e.message);
+                }
+            }
         }
     }
 }
