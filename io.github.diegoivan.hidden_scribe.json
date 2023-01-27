@@ -1,0 +1,69 @@
+{
+    "app-id" : "io.github.diegoivan.hidden_scribe",
+    "runtime" : "org.gnome.Platform",
+    "runtime-version" : "43",
+    "sdk" : "org.gnome.Sdk",
+    "sdk-extensions" : [
+        "org.freedesktop.Sdk.Extension.vala"
+    ],
+    "command" : "hidden-scribe",
+    "finish-args" : [
+        "--share=network",
+        "--share=ipc",
+        "--socket=fallback-x11",
+        "--device=dri",
+        "--socket=wayland"
+    ],
+    "build-options" : {
+        "append-path" : "/usr/lib/sdk/vala/bin",
+        "prepend-ld-library-path" : "/usr/lib/sdk/vala/lib"
+    },
+    "cleanup" : [
+        "/include",
+        "/lib/pkgconfig",
+        "/man",
+        "/share/doc",
+        "/share/gtk-doc",
+        "/share/man",
+        "/share/pkgconfig",
+        "/share/vala",
+        "*.la",
+        "*.a"
+    ],
+    "modules" : [
+    {
+      "name" : "poppler",
+      "buildsystem" : "cmake",
+      "config-opts" : [
+        "-DENABLE_LIBOPENJPEG:STRING=none",
+        "-DBUILD_GTK_TESTS=OFF",
+        "-DBUILD_QT5_TESTS=OFF",
+        "-DBUILD_QT6_TESTS=OFF",
+        "-DBUILD_CPP_TESTS=OFF",
+        "-DBUILD_MANUAL_TESTS=OFF",
+        "-DENABLE_UTILS=OFF",
+        "-DENABLE_CPP=OFF",
+        "-DENABLE_QT5=OFF",
+        "-DENABLE_QT6=OFF",
+        "-DENABLE_BOOST=OFF"
+      ],
+      "sources" : [
+        {
+          "url" : "https://anongit.freedesktop.org/git/poppler/poppler.git",
+          "type" : "git"
+        }
+      ]
+    },
+        {
+            "name" : "hidden-scribe",
+            "builddir" : true,
+            "buildsystem" : "meson",
+            "sources" : [
+                {
+                    "type" : "git",
+                    "url" : "file:///var/home/diegoivan/Proyectos"
+                }
+            ]
+        }
+    ]
+}

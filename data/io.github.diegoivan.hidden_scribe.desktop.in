@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=hidden-scribe
+Exec=hidden-scribe
+Icon=io.github.diegoivan.hidden_scribe
+Terminal=false
+Type=Application
+Categories=GTK;
+StartupNotify=true

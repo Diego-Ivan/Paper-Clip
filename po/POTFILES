@@ -1,0 +1,6 @@
+data/io.github.diegoivan.hidden_scribe.desktop.in
+data/io.github.diegoivan.hidden_scribe.appdata.xml.in
+data/io.github.diegoivan.hidden_scribe.gschema.xml
+src/main.vala
+src/window.vala
+src/window.ui
