@@ -53,5 +53,17 @@
         </child>
       </object>
     </child>
+
+    <!-- Shortcuts -->
+    <child>
+      <object class="GtkShortcutController">
+        <child>
+          <object class="GtkShortcut">
+            <property name="trigger">&lt;Control&gt;s</property>
+            <property name="action">action(editor.save)</property>
+          </object>
+        </child>
+      </object>
+    </child>
   </template>
 </interface>

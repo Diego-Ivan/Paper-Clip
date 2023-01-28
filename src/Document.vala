@@ -76,15 +76,10 @@ public class HiddenScribe.Document : Object {
         }
     }
 
-    private string _uri;
     public string uri {
-        get {
-            return _uri;
-        }
         set {
-            _uri = value;
             try {
-                document = new Poppler.Document.from_file (uri, null);
+                document = new Poppler.Document.from_file (value, null);
             }
             catch (Error e) {
                 critical (e.message);
@@ -102,17 +97,7 @@ public class HiddenScribe.Document : Object {
         Object (uri: uri);
     }
 
-    public void save (string? path = null) {
-        document.keywords = serialize_keywords ();
-        try {
-            document.save (uri);
-        }
-        catch (Error e) {
-            critical ("Error Saving: %s", e.message);
-        }
-    }
-
-    public void save_to (string path)
+    public void save (string path)
         requires (FileUtils.test (path, EXISTS))
     {
         document.keywords = serialize_keywords ();
@@ -120,7 +105,7 @@ public class HiddenScribe.Document : Object {
             document.save (path);
         }
         catch (Error e) {
-            critical (e.message);
+            critical ("Error Saving: %s", e.message);
         }
     }
 

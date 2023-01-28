@@ -54,8 +54,10 @@ namespace HiddenScribe {
 
         private void on_file_opened (Gtk.NativeDialog source, int response) {
             var file_dialog = (Gtk.FileChooser) source;
+
             if (response == Gtk.ResponseType.ACCEPT) {
                 var file = file_dialog.get_file ();
+
                 doc_view.document = new Document (file.get_uri ());
                 view_stack.visible_child_name = "editor";
             }

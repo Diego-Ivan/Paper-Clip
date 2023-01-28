@@ -31,22 +31,45 @@ public class HiddenScribe.DocumentView : Adw.Bin {
     [GtkChild]
     private unowned EntryRow producer_row;
 
+    private Binding doc_to_win;
     private Document _document;
     public Document document {
         get {
             return _document;
         }
         set {
+            unbind_doc ();
             _document = value;
+
             title_row.object = document;
             author_row.object = document;
             creator_row.object = document;
             subject_row.object = document;
             producer_row.object = document;
+
+            unowned var window = (Gtk.Window) get_root ();
+            doc_to_win = document.bind_property ("title", window, "title", SYNC_CREATE);
         }
     }
 
-    static construct {
-        typeof(EntryRow).ensure ();
+    construct {
+        ActionEntry[] entries = {
+            { "save", save_doc },
+        };
+
+        var action_group = new SimpleActionGroup ();
+        action_group.add_action_entries (entries, this);
+        insert_action_group ("editor", action_group);
+    }
+
+    private void save_doc () {
+        message ("Saving doc...");
+    }
+
+    private void unbind_doc () {
+        if (doc_to_win == null) {
+            return;
+        }
+        doc_to_win.unbind ();
     }
 }
