@@ -47,6 +47,13 @@
                     <property name="property-name">producer</property>
                   </object>
                 </child>
+
+                <child>
+                  <object class="HiddenScribeDateRow" id="creation_row">
+                    <property name="title" translatable="yes">Creation Date</property>
+                    <property name="property-name">creation-date</property>
+                  </object>
+                </child>
               </object>
             </child>
 

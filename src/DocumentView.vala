@@ -31,6 +31,8 @@ public class HiddenScribe.DocumentView : Adw.Bin {
     [GtkChild]
     private unowned EntryRow producer_row;
     [GtkChild]
+    private unowned DateRow creation_row;
+    [GtkChild]
     private unowned Gtk.ListBox keyword_box;
 
     private Binding doc_to_win;
@@ -48,6 +50,7 @@ public class HiddenScribe.DocumentView : Adw.Bin {
             creator_row.object = document;
             subject_row.object = document;
             producer_row.object = document;
+            creation_row.object = document;
             keyword_box.bind_model (document.keywords, create_keyword_row);
 
             unowned var window = (Gtk.Window) get_root ();

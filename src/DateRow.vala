@@ -1,4 +1,4 @@
-/* EntryRow.vala
+/* DateRow.vala
  *
  * Copyright 2023 Diego Iván <diegoivan.mae@gmail.com>
  *
@@ -18,7 +18,8 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-public class HiddenScribe.EntryRow : Adw.EntryRow, PropertyRow {
+[GtkTemplate (ui = "/io/github/diegoivan/hidden_scribe/gtk/date-row.ui")]
+public class HiddenScribe.DateRow : Adw.ActionRow, PropertyRow {
     private unowned Object _object;
     public unowned Object object {
         get {
@@ -26,8 +27,25 @@ public class HiddenScribe.EntryRow : Adw.EntryRow, PropertyRow {
         }
         set {
             _object = value;
-            object.bind_property (property_name, this, "text", BIDIRECTIONAL | SYNC_CREATE);
+            object.bind_property (property_name, this, "date", SYNC_CREATE | BIDIRECTIONAL);
         }
     }
+
     public string property_name { get; set; }
+
+    private DateTime _date;
+    public DateTime date {
+        get {
+            return _date;
+        }
+        set {
+            _date = value;
+            subtitle = date != null ?  date.format ("%x") : "No date set";
+        }
+    }
+
+    [GtkCallback]
+    private void on_day_selected (Gtk.Calendar calendar) {
+        date = calendar.get_date ();
+    }
 }

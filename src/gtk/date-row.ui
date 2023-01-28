@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0"/>
+  <requires lib="Adw" version="1.0"/>
+  <template class="HiddenScribeDateRow" parent="AdwActionRow">
+    <child type="suffix">
+      <object class="GtkButton">
+        <property name="icon-name">entry-clear-symbolic</property>
+        <property name="valign">center</property>
+        <style>
+          <class name="flat"/>
+        </style>
+      </object>
+    </child>
+
+    <child type="suffix">
+      <object class="GtkMenuButton">
+        <property name="valign">center</property>
+        <style>
+          <class name="flat"/>
+        </style>
+
+        <property name="popover">
+          <object class="GtkPopover">
+            <child>
+              <object class="GtkCalendar">
+                <signal name="day-selected" handler="on_day_selected"></signal>
+              </object>
+            </child>
+          </object>
+        </property>
+      </object>
+    </child>
+  </template>
+</interface>

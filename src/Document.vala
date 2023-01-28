@@ -87,14 +87,23 @@ public class HiddenScribe.Document : Object {
         }
     }
 
+    public DateTime creation_date {
+        owned get {
+            return document.creation_datetime;
+        }
+        set {
+            document.creation_datetime = value;
+        }
+    }
+
     public ListModel keywords {
         get {
             return keyword_list;
         }
     }
 
-    public Document (string uri) {
-        load_document (uri);
+    public async Document (string uri) {
+        yield load_document (uri);
     }
 
     public void save (string path)
@@ -147,8 +156,8 @@ public class HiddenScribe.Document : Object {
         return format;
     }
 
-    private void load_document (string uri) {
-        File doc_file = create_copy (uri);
+    private async void load_document (string uri) {
+        File doc_file = yield create_copy (uri);
         try {
             document = new Poppler.Document.from_gfile (doc_file, null);
         }
@@ -157,7 +166,7 @@ public class HiddenScribe.Document : Object {
         }
     }
 
-    private File create_copy (string uri) {
+    private async File create_copy (string uri) {
         var original = File.new_for_uri (uri);
         string destination_path = Path.build_path (Path.DIR_SEPARATOR_S,
                                                    Environment.get_user_cache_dir (),
@@ -173,7 +182,7 @@ public class HiddenScribe.Document : Object {
         FileCopyFlags flags = NOFOLLOW_SYMLINKS | OVERWRITE | ALL_METADATA;
 
         try {
-            bool success = original.copy (copy_file, flags);
+            bool success = yield original.copy_async (copy_file, flags);
             if (!success) {
                 critical ("Copy Unsuccessful");
             }
