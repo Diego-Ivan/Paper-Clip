@@ -6,6 +6,9 @@ hidden_scribe_sources = [
   'PropertyRow.vala',
   'EntryRow.vala',
   'DocumentView.vala',
+
+  # Services
+  'Services/DocManager.vala',
 ]
 
 hidden_scribe_deps = [

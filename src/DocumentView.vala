@@ -49,6 +49,9 @@ public class HiddenScribe.DocumentView : Adw.Bin {
 
             unowned var window = (Gtk.Window) get_root ();
             doc_to_win = document.bind_property ("title", window, "title", SYNC_CREATE);
+
+            var manager = new Services.DocManager ();
+            manager.document = document;
         }
     }
 
