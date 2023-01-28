@@ -40,7 +40,6 @@ public sealed class HiddenScribe.Services.DocManager : Object {
             instance = this;
         }
     }
-
     public void save (string uri) {
         document.save (uri);
         changed = false;
@@ -56,4 +55,10 @@ public sealed class HiddenScribe.Services.DocManager : Object {
     private void on_doc_changed () {
         changed = true;
     }
+}
+
+public enum HiddenScribe.State {
+    NONE,
+    OPENING_FILE,
+    CLOSING
 }

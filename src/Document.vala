@@ -94,18 +94,17 @@ public class HiddenScribe.Document : Object {
     }
 
     public Document (string uri) {
-        Object (uri: uri);
+        load_document (uri);
     }
 
     public void save (string path)
-        requires (FileUtils.test (path, EXISTS))
     {
         document.keywords = serialize_keywords ();
         try {
             document.save (path);
         }
         catch (Error e) {
-            critical ("Error Saving: %s", e.message);
+            critical ("%s : %s", e.domain.to_string (), e.message);
         }
     }
 
@@ -144,5 +143,44 @@ public class HiddenScribe.Document : Object {
             format += ",";
         }
         return format;
+    }
+
+    private void load_document (string uri) {
+        File doc_file = create_copy (uri);
+        try {
+            document = new Poppler.Document.from_gfile (doc_file, null);
+        }
+        catch (Error e) {
+            critical ("%s : %s", e.domain.to_string (), e.message);
+        }
+    }
+
+    private File create_copy (string uri) {
+        var original = File.new_for_uri (uri);
+        string destination_path = Path.build_path (Path.DIR_SEPARATOR_S,
+                                                   Environment.get_user_cache_dir (),
+                                                   "Copies");
+
+        int res = DirUtils.create_with_parents (destination_path, 0777);
+        return_if_fail (res > -1);
+
+        DateTime current_date = new DateTime.now_local ();
+        string destination_file = Path.build_filename (destination_path,
+                                                       "%s.pdf".printf (current_date.to_string ()));
+
+        var copy_file = File.new_for_path (destination_file);
+        FileCopyFlags flags = NOFOLLOW_SYMLINKS | OVERWRITE | ALL_METADATA;
+
+        try {
+            bool success = original.copy (copy_file, flags);
+            if (!success) {
+                critical ("Copy Unsuccessful");
+            }
+        }
+        catch (Error e) {
+            critical (e.message);
+        }
+
+        return copy_file;
     }
 }

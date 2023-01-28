@@ -91,6 +91,7 @@ namespace HiddenScribe {
             filechooser.add_filter (filter);
 
             filechooser.response.connect (on_file_saved);
+            filechooser.show ();
         }
 
         private void on_file_saved (Gtk.NativeDialog source, int response) {
@@ -110,6 +111,9 @@ namespace HiddenScribe {
             var message_dialog = new Adw.MessageDialog (this,
                                                         "%s has changed".printf (manager.document.title),
                                                         "Save, Cancel or Discard?");
+            message_dialog.close_response = "cancel";
+            message_dialog.default_response = "cancel";
+
             message_dialog.add_response ("cancel", "Cancel");
             message_dialog.add_response ("save", "Save");
             message_dialog.add_response ("discard", "Discard");
@@ -144,11 +148,5 @@ namespace HiddenScribe {
                     break;
             }
         }
-    }
-
-    public enum State {
-        NONE,
-        OPENING_FILE,
-        CLOSING
     }
 }
