@@ -19,14 +19,15 @@
  */
 
 public class HiddenScribe.EntryRow : Adw.EntryRow, PropertyRow {
-    public Object object { get; set; }
+    private Object _object;
+    public Object object {
+        get {
+            return _object;
+        }
+        set {
+            _object = value;
+            object.bind_property (property_name, this, "text", BIDIRECTIONAL | SYNC_CREATE);
+        }
+    }
     public string property_name { get; set; }
-
-    construct {
-        changed.connect (set_to_property);
-    }
-
-    private void set_to_property () {
-        object.set_property (property_name, text);
-    }
 }

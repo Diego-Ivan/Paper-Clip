@@ -5,12 +5,50 @@
   <template class="HiddenScribeDocumentView" parent="AdwBin">
     <child>
       <object class="AdwClamp">
-        <property name="orientation">vertical</property>
-        <property name="spacing">6</property>
-
         <child>
-          <object class="AdwPreferencesGroup" id="property_group">
-            <property name="title" translatable="yes">Editable Properties</property>
+          <object class="GtkBox">
+            <property name="orientation">vertical</property>
+            <property name="spacing">6</property>
+
+            <child>
+              <object class="AdwPreferencesGroup" id="properties_group">
+                <property name="title" translatable="yes">Editable Properties</property>
+                <child>
+                  <object class="HiddenScribeEntryRow" id="title_row">
+                    <property name="title" translatable="yes">Title</property>
+                    <property name="property-name">title</property>
+                  </object>
+                </child>
+
+                <child>
+                  <object class="HiddenScribeEntryRow" id="author_row">
+                    <property name="title" translatable="yes">Author</property>
+                    <property name="property-name">author</property>
+                  </object>
+                </child>
+
+                <child>
+                  <object class="HiddenScribeEntryRow" id="creator_row">
+                    <property name="title" translatable="yes">Creator</property>
+                    <property name="property-name">creator</property>
+                  </object>
+                </child>
+
+                <child>
+                  <object class="HiddenScribeEntryRow" id="subject_row">
+                    <property name="title" translatable="yes">Subject</property>
+                    <property name="property-name">subject</property>
+                  </object>
+                </child>
+
+                <child>
+                  <object class="HiddenScribeEntryRow" id="producer_row">
+                    <property name="title" translatable="yes">Producer</property>
+                    <property name="property-name">producer</property>
+                  </object>
+                </child>
+              </object>
+            </child>
           </object>
         </child>
       </object>

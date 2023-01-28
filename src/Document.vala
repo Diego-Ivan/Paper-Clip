@@ -19,15 +19,78 @@
  */
 
 public class HiddenScribe.Document : Object {
-    private Poppler.Document document;
     private Gtk.StringList keyword_list = new Gtk.StringList (null);
+    private Poppler.Document _document;
+    private Poppler.Document document {
+        get {
+            return _document;
+        }
+        set {
+            _document = value;
+            deserialize_keywords ();
+        }
+    }
 
-    public string author { get; set; }
-    public string creator { get; set; }
-    public string subject { get; set; }
-    public string title { get; set; }
-    public string producer { get; set; }
-    public string uri { get; construct; }
+    public string author {
+        owned get {
+            return document.author ?? "";
+        }
+        set {
+            document.author = value;
+        }
+    }
+
+    public string creator {
+        owned get {
+            return document.author ?? "";
+        }
+        set {
+            document.creator = value;
+        }
+    }
+
+    public string subject {
+        owned get {
+            return document.subject ?? "";
+        }
+        set {
+            document.subject = value;
+        }
+    }
+
+    public string title {
+        owned get {
+            return document.title ?? "";
+        }
+        set {
+            document.title = value;
+        }
+    }
+
+    public string producer {
+        owned get {
+            return document.producer ?? "";
+        }
+        set {
+            document.producer = value;
+        }
+    }
+
+    private string _uri;
+    public string uri {
+        get {
+            return _uri;
+        }
+        set {
+            _uri = value;
+            try {
+                document = new Poppler.Document.from_file (uri, null);
+            }
+            catch (Error e) {
+                critical (e.message);
+            }
+        }
+    }
 
     public ListModel keywords {
         get {
@@ -35,23 +98,11 @@ public class HiddenScribe.Document : Object {
         }
     }
 
-    public Document (string uri, string? password = null) throws Error {
+    public Document (string uri) {
         Object (uri: uri);
-        document = new Poppler.Document.from_file (uri, password);
-        bind ();
     }
 
-    private void bind () {
-        unowned ObjectClass klass = get_class ();
-        foreach (unowned ParamSpec property in klass.list_properties ()) {
-            if (!(WRITABLE in property.flags)) {
-                continue;
-            }
-            bind_property (property.name, document, property.name, SYNC_CREATE | BIDIRECTIONAL);
-        }
-    }
-
-    public void save () {
+    public void save (string? path = null) {
         document.keywords = serialize_keywords ();
         try {
             document.save (uri);
@@ -64,6 +115,7 @@ public class HiddenScribe.Document : Object {
     public void save_to (string path)
         requires (FileUtils.test (path, EXISTS))
     {
+        document.keywords = serialize_keywords ();
         try {
             document.save (path);
         }
@@ -84,6 +136,17 @@ public class HiddenScribe.Document : Object {
             }
         }
         return false;
+    }
+
+    private void deserialize_keywords () {
+        if (document.keywords == null) {
+            return;
+        }
+
+        string[] keyword_array = document.keywords.split (",");
+        foreach (string keyword in keyword_array) {
+            keyword_list.append (keyword);
+        }
     }
 
     private string serialize_keywords () {

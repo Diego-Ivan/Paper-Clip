@@ -42,7 +42,7 @@ namespace HiddenScribe {
 
         private void open_file () {
             var filter = new Gtk.FileFilter ();
-            filter.add_suffix ("pdf");
+            filter.add_mime_type ("application/pdf");
 
             var filechooser = new Gtk.FileChooserNative ("Select a PDF file", this,
                                                          OPEN, null, null);
@@ -54,16 +54,10 @@ namespace HiddenScribe {
 
         private void on_file_opened (Gtk.NativeDialog source, int response) {
             var file_dialog = (Gtk.FileChooser) source;
-            if (response == Gtk.ResponseType.OK) {
+            if (response == Gtk.ResponseType.ACCEPT) {
                 var file = file_dialog.get_file ();
-                try {
-                    var document = new Document (file.get_path (), null);
-                    doc_view.document = document;
-                    view_stack.visible_child_name = "editor";
-                }
-                catch (Error e) {
-                    critical (e.message);
-                }
+                doc_view.document = new Document (file.get_uri ());
+                view_stack.visible_child_name = "editor";
             }
         }
     }

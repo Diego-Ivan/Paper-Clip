@@ -16,7 +16,7 @@
                 <child>
                   <object class="AdwButtonContent">
                     <property name="icon-name">document-open-symbolic</property>
-                    <property name="label" translatable="yes">_Open</property>
+                    <property name="label" translatable="yes">Open</property>
                   </object>
                 </child>
               </object>

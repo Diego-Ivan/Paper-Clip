@@ -21,7 +21,15 @@
 [GtkTemplate (ui = "/io/github/diegoivan/hidden_scribe/gtk/document-view.ui")]
 public class HiddenScribe.DocumentView : Adw.Bin {
     [GtkChild]
-    private unowned Adw.PreferencesGroup property_group;
+    private unowned EntryRow title_row;
+    [GtkChild]
+    private unowned EntryRow author_row;
+    [GtkChild]
+    private unowned EntryRow creator_row;
+    [GtkChild]
+    private unowned EntryRow subject_row;
+    [GtkChild]
+    private unowned EntryRow producer_row;
 
     private Document _document;
     public Document document {
@@ -30,41 +38,15 @@ public class HiddenScribe.DocumentView : Adw.Bin {
         }
         set {
             _document = value;
-            update_children ();
+            title_row.object = document;
+            author_row.object = document;
+            creator_row.object = document;
+            subject_row.object = document;
+            producer_row.object = document;
         }
     }
 
-    public DocumentView (Document document) {
-        Object (document: document);
-    }
-
-    construct {
-        var klass = (ObjectClass) typeof(Document).class_ref ();
-        foreach (unowned ParamSpec property in klass.list_properties ()) {
-            if (!(WRITABLE in property.flags)) {
-                continue;
-            }
-
-            if (property.value_type.is_a (Type.STRING)) {
-                var row = new EntryRow ();
-                row.property_name = property.name;
-                property_group.add (row);
-            }
-        }
-    }
-
-    private void update_children () {
-        Gtk.Widget? child = property_group.get_first_child ();
-        while (child != null) {
-            if (!(child is PropertyRow)) {
-                child = child.get_next_sibling ();
-                continue;
-            }
-
-            unowned var row = (PropertyRow) child;
-            row.object = document;
-
-            child = child.get_next_sibling ();
-        }
+    static construct {
+        typeof(EntryRow).ensure ();
     }
 }
