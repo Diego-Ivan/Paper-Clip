@@ -20,6 +20,9 @@
 
 [GtkTemplate (ui = "/io/github/diegoivan/hidden_scribe/gtk/date-row.ui")]
 public class HiddenScribe.DateRow : Adw.ActionRow, PropertyRow {
+    [GtkChild]
+    private unowned Gtk.Calendar calendar;
+
     private unowned Object _object;
     public unowned Object object {
         get {
@@ -33,8 +36,8 @@ public class HiddenScribe.DateRow : Adw.ActionRow, PropertyRow {
 
     public string property_name { get; set; }
 
-    private DateTime _date;
-    public DateTime date {
+    private DateTime? _date;
+    public DateTime? date {
         get {
             return _date;
         }
@@ -45,7 +48,36 @@ public class HiddenScribe.DateRow : Adw.ActionRow, PropertyRow {
     }
 
     [GtkCallback]
-    private void on_day_selected (Gtk.Calendar calendar) {
+    private void on_day_selected () {
         date = calendar.get_date ();
+    }
+
+    [GtkCallback]
+    private void on_today_button_clicked () {
+        var today_time = new DateTime.now_local ();
+
+        int year, month, day;
+        today_time.get_ymd (out year, out month, out day);
+
+        calendar.year = year;
+        calendar.month = month - 1;
+        calendar.day = day;
+
+        date = today_time;
+    }
+
+    [GtkCallback]
+    private void on_tomorrow_button_clicked () {
+        var tomorrow_time = new DateTime.now_local ();
+        tomorrow_time = tomorrow_time.add_days (1);
+
+        int year, month, day;
+        tomorrow_time.get_ymd (out year, out month, out day);
+
+        calendar.year = year;
+        calendar.month = month - 1;
+        calendar.day = day;
+
+        date = tomorrow_time;
     }
 }

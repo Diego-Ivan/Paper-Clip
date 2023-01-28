@@ -23,8 +23,39 @@
         <property name="popover">
           <object class="GtkPopover">
             <child>
-              <object class="GtkCalendar">
-                <signal name="day-selected" handler="on_day_selected"></signal>
+              <object class="GtkBox">
+                <property name="orientation">vertical</property>
+                <property name="spacing">6</property>
+
+                <child>
+                  <object class="GtkCalendar" id="calendar">
+                    <signal name="day-selected" handler="on_day_selected"></signal>
+                  </object>
+                </child>
+
+                <child>
+                  <object class="GtkBox">
+                    <property name="orientation">horizontal</property>
+                    <property name="homogeneous">true</property>
+                    <style>
+                      <class name="linked"/>
+                    </style>
+
+                    <child>
+                      <object class="GtkButton">
+                        <property name="label" translatable="yes">Today</property>
+                        <signal name="clicked" handler="on_today_button_clicked"></signal>
+                      </object>
+                    </child>
+
+                    <child>
+                      <object class="GtkButton">
+                        <property name="label" translatable="yes">Tomorrow</property>
+                        <signal name="clicked" handler="on_tomorrow_button_clicked"></signal>
+                      </object>
+                    </child>
+                  </object>
+                </child>
               </object>
             </child>
           </object>
