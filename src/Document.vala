@@ -19,7 +19,7 @@
  */
 
 public class HiddenScribe.Document : Object {
-    private Gtk.StringList keyword_list = new Gtk.StringList (null);
+    private ListStore keyword_list = new ListStore (typeof(StringObject));
     private Poppler.Document _document;
     private Poppler.Document document {
         get {
@@ -109,12 +109,13 @@ public class HiddenScribe.Document : Object {
     }
 
     public void add_keyword (string keyword) {
-        keyword_list.append (keyword);
+        keyword_list.append (new StringObject (keyword));
     }
 
     public bool remove_keyword (string keyword) {
         for (int i = 0; i < keyword_list.get_n_items (); i++) {
-            if (keyword == keyword_list.get_string (i)) {
+            var item = (StringObject) keyword_list.get_item (i);
+            if (keyword == item.str) {
                 keyword_list.remove (i);
                 return true;
             }
@@ -129,14 +130,15 @@ public class HiddenScribe.Document : Object {
 
         string[] keyword_array = document.keywords.split (",");
         foreach (string keyword in keyword_array) {
-            keyword_list.append (keyword);
+            keyword_list.append (new StringObject (keyword));
         }
     }
 
     private string serialize_keywords () {
         string format = "";
         for (int i = 0; i < keyword_list.get_n_items (); i++) {
-            format += "%s".printf (keyword_list.get_string (i));
+            var item = (StringObject) keyword_list.get_item (i);
+            format += "%s".printf (item.str);
             if (i == keywords.get_n_items () - 1) {
                 break;
             }
@@ -164,9 +166,8 @@ public class HiddenScribe.Document : Object {
         int res = DirUtils.create_with_parents (destination_path, 0777);
         return_if_fail (res > -1);
 
-        DateTime current_date = new DateTime.now_local ();
         string destination_file = Path.build_filename (destination_path,
-                                                       "%s.pdf".printf (current_date.to_string ()));
+                                                       "%s".printf (original.get_basename ()));
 
         var copy_file = File.new_for_path (destination_file);
         FileCopyFlags flags = NOFOLLOW_SYMLINKS | OVERWRITE | ALL_METADATA;
@@ -182,5 +183,13 @@ public class HiddenScribe.Document : Object {
         }
 
         return copy_file;
+    }
+}
+
+public class HiddenScribe.StringObject : Object {
+    public string str { get; set; default = ""; }
+
+    public StringObject (string str) {
+        Object (str: str);
     }
 }
