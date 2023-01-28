@@ -4,76 +4,90 @@
   <requires lib="Adw" version="1.0"/>
   <template class="HiddenScribeDocumentView" parent="AdwBin">
     <child>
-      <object class="AdwClamp">
+      <object class="GtkScrolledWindow">
+        <property name="vexpand">true</property>
         <child>
-          <object class="GtkBox">
-            <property name="orientation">vertical</property>
-            <property name="spacing">12</property>
-
+          <object class="AdwClamp">
+            <property name="margin-start">12</property>
+            <property name="margin-end">12</property>
             <child>
-              <object class="AdwPreferencesGroup" id="properties_group">
-                <property name="title" translatable="yes">Editable Properties</property>
+              <object class="GtkBox">
+                <property name="orientation">vertical</property>
+                <property name="spacing">12</property>
+
                 <child>
-                  <object class="HiddenScribeEntryRow" id="title_row">
-                    <property name="title" translatable="yes">Title</property>
-                    <property name="property-name">title</property>
+                  <object class="AdwPreferencesGroup" id="properties_group">
+                    <property name="title" translatable="yes">Editable Properties</property>
+                    <child>
+                      <object class="HiddenScribeEntryRow" id="title_row">
+                        <property name="title" translatable="yes">Title</property>
+                        <property name="property-name">title</property>
+                      </object>
+                    </child>
+
+                    <child>
+                      <object class="HiddenScribeEntryRow" id="author_row">
+                        <property name="title" translatable="yes">Author</property>
+                        <property name="property-name">author</property>
+                      </object>
+                    </child>
+
+                    <child>
+                      <object class="HiddenScribeEntryRow" id="creator_row">
+                        <property name="title" translatable="yes">Creator</property>
+                        <property name="property-name">creator</property>
+                      </object>
+                    </child>
+
+                    <child>
+                      <object class="HiddenScribeEntryRow" id="subject_row">
+                        <property name="title" translatable="yes">Subject</property>
+                        <property name="property-name">subject</property>
+                      </object>
+                    </child>
+
+                    <child>
+                      <object class="HiddenScribeEntryRow" id="producer_row">
+                        <property name="title" translatable="yes">Producer</property>
+                        <property name="property-name">producer</property>
+                      </object>
+                    </child>
+
+                    <child>
+                      <object class="HiddenScribeDateRow" id="creation_row">
+                        <property name="title" translatable="yes">Creation Date</property>
+                        <property name="property-name">creation-date</property>
+                      </object>
+                    </child>
+
+                    <child>
+                      <object class="HiddenScribeDateRow" id="modification_row">
+                        <property name="title" translatable="yes">Modification Date</property>
+                        <property name="property-name">modification-date</property>
+                      </object>
+                    </child>
                   </object>
                 </child>
 
                 <child>
-                  <object class="HiddenScribeEntryRow" id="author_row">
-                    <property name="title" translatable="yes">Author</property>
-                    <property name="property-name">author</property>
-                  </object>
-                </child>
+                  <object class="AdwPreferencesGroup">
+                    <property name="title">Keywords</property>
 
-                <child>
-                  <object class="HiddenScribeEntryRow" id="creator_row">
-                    <property name="title" translatable="yes">Creator</property>
-                    <property name="property-name">creator</property>
-                  </object>
-                </child>
+                    <child type="header-suffix">
+                      <object class="GtkButton" id="add_button">
+                        <property name="icon-name">list-add-symbolic</property>
+                        <property name="tooltip-text">Add a keyword</property>
+                        <signal name="clicked" handler="on_add_button_clicked"></signal>
+                      </object>
+                    </child>
 
-                <child>
-                  <object class="HiddenScribeEntryRow" id="subject_row">
-                    <property name="title" translatable="yes">Subject</property>
-                    <property name="property-name">subject</property>
-                  </object>
-                </child>
-
-                <child>
-                  <object class="HiddenScribeEntryRow" id="producer_row">
-                    <property name="title" translatable="yes">Producer</property>
-                    <property name="property-name">producer</property>
-                  </object>
-                </child>
-
-                <child>
-                  <object class="HiddenScribeDateRow" id="creation_row">
-                    <property name="title" translatable="yes">Creation Date</property>
-                    <property name="property-name">creation-date</property>
-                  </object>
-                </child>
-              </object>
-            </child>
-
-            <child>
-              <object class="AdwPreferencesGroup">
-                <property name="title">Keywords</property>
-
-                <child type="header-suffix">
-                  <object class="GtkButton" id="add_button">
-                    <property name="icon-name">list-add-symbolic</property>
-                    <property name="tooltip-text">Add a keyword</property>
-                    <signal name="clicked" handler="on_add_button_clicked"></signal>
-                  </object>
-                </child>
-
-                <child>
-                  <object class="GtkListBox" id="keyword_box">
-                    <style>
-                      <class name="boxed-list"/>
-                    </style>
+                    <child>
+                      <object class="GtkListBox" id="keyword_box">
+                        <style>
+                          <class name="boxed-list"/>
+                        </style>
+                      </object>
+                    </child>
                   </object>
                 </child>
               </object>
@@ -82,6 +96,7 @@
         </child>
       </object>
     </child>
+
 
     <!-- Shortcuts -->
     <child>

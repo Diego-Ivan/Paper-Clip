@@ -33,6 +33,8 @@ public class HiddenScribe.DocumentView : Adw.Bin {
     [GtkChild]
     private unowned DateRow creation_row;
     [GtkChild]
+    private unowned DateRow modification_row;
+    [GtkChild]
     private unowned Gtk.ListBox keyword_box;
 
     private Binding doc_to_win;
@@ -51,6 +53,7 @@ public class HiddenScribe.DocumentView : Adw.Bin {
             subject_row.object = document;
             producer_row.object = document;
             creation_row.object = document;
+            modification_row.object = document;
             keyword_box.bind_model (document.keywords, create_keyword_row);
 
             unowned var window = (Gtk.Window) get_root ();
@@ -59,20 +62,6 @@ public class HiddenScribe.DocumentView : Adw.Bin {
             var manager = new Services.DocManager ();
             manager.document = document;
         }
-    }
-
-    construct {
-        ActionEntry[] entries = {
-            { "save", save_doc },
-        };
-
-        var action_group = new SimpleActionGroup ();
-        action_group.add_action_entries (entries, this);
-        insert_action_group ("editor", action_group);
-    }
-
-    private void save_doc () {
-        message ("Saving doc...");
     }
 
     private Gtk.Widget create_keyword_row (Object item) {

@@ -96,6 +96,15 @@ public class HiddenScribe.Document : Object {
         }
     }
 
+    public DateTime modification_date {
+        owned get {
+            return document.mod_datetime;
+        }
+        set {
+            document.mod_datetime = value;
+        }
+    }
+
     public ListModel keywords {
         get {
             return keyword_list;
