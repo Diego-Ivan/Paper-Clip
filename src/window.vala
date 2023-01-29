@@ -25,6 +25,8 @@ namespace HiddenScribe {
         private unowned DocumentView doc_view;
         [GtkChild]
         private unowned Gtk.Stack view_stack;
+        [GtkChild]
+        private unowned Adw.WindowTitle window_title;
 
         public State state { get; set; default = NONE; }
 
@@ -32,10 +34,29 @@ namespace HiddenScribe {
             Object (application: app);
         }
 
+        public new string title {
+            get {
+                return window_title.title;
+            }
+            set {
+                window_title.title = value;
+            }
+        }
+
+        public string subtitle {
+            get {
+                return window_title.subtitle;
+            }
+            set {
+                window_title.subtitle = value;
+            }
+        }
+
         construct {
             ActionEntry[] entries = {
                 { "open", on_open_action },
-                { "save", save_file }
+                { "save", save_file },
+                { "quit", quit_and_save  },
             };
 
             var action_group = new SimpleActionGroup ();
@@ -77,6 +98,7 @@ namespace HiddenScribe {
         private async void load_document_to_view (File file) {
             doc_view.document = yield new Document (file.get_uri ());
             view_stack.visible_child_name = "editor";
+            subtitle = file.get_basename ();
         }
 
         private void save_file () {
@@ -105,6 +127,17 @@ namespace HiddenScribe {
                 manager.save (file.get_uri ());
 
                 proceed_with_state ();
+            }
+        }
+
+        private void quit_and_save () {
+            state = CLOSING;
+            var manager = new Services.DocManager ();
+            if (manager.changed) {
+                show_unsaved_warning ();
+            }
+            else {
+                GLib.Application.get_default ().quit ();
             }
         }
 

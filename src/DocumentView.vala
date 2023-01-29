@@ -56,7 +56,7 @@ public class HiddenScribe.DocumentView : Adw.Bin {
             modification_row.object = document;
             keyword_box.bind_model (document.keywords, create_keyword_row);
 
-            unowned var window = (Gtk.Window) get_root ();
+            unowned var window = (Window) get_root ();
             doc_to_win = document.bind_property ("title", window, "title", SYNC_CREATE);
 
             var manager = new Services.DocManager ();
