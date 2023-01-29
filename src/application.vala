@@ -21,7 +21,12 @@
 namespace HiddenScribe {
     public class Application : Adw.Application {
         public Application () {
-            Object (application_id: "io.github.diegoivan.hidden_scribe", flags: ApplicationFlags.FLAGS_NONE);
+            Object (application_id: "io.github.diegoivan.hidden_scribe",
+                    flags: ApplicationFlags.FLAGS_NONE);
+
+            Intl.setlocale (LocaleCategory.ALL, "");
+            Intl.bindtextdomain (Config.GETTEXT_PACKAGE, Config.GNOMELOCALEDIR);
+            Intl.textdomain (Config.GETTEXT_PACKAGE);
         }
 
         construct {
@@ -44,8 +49,8 @@ namespace HiddenScribe {
             string[] developers = { "Diego Iván" };
             var about = new Adw.AboutWindow () {
                 transient_for = this.active_window,
-                application_name = "hidden-scribe",
-                application_icon = "io.github.diegoivan.hidden_scribe",
+                application_name = "Hidden Scribe",
+                application_icon = Config.APP_ID,
                 developer_name = "Diego Iván",
                 version = "0.1.0",
                 developers = developers,

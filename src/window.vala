@@ -143,14 +143,14 @@ namespace HiddenScribe {
 
         private void show_unsaved_warning () {
             var message_dialog = new Adw.MessageDialog (this,
-                                                        "Do you want to save the changes?",
-                                                        "Changes that are not saved will be lost permanently");
+                                                        _("Do you want to save the changes?"),
+                                                        _("Changes that are not saved will be lost permanently"));
             message_dialog.close_response = "cancel";
             message_dialog.default_response = "cancel";
 
-            message_dialog.add_response ("cancel", "Cancel");
-            message_dialog.add_response ("discard", "Discard");
-            message_dialog.add_response ("save", "Save");
+            message_dialog.add_response ("cancel", _("Cancel"));
+            message_dialog.add_response ("discard", _("Discard"));
+            message_dialog.add_response ("save", _("Save"));
 
             message_dialog.set_response_appearance ("discard", DESTRUCTIVE);
             message_dialog.set_response_appearance ("save", SUGGESTED);

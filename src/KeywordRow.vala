@@ -26,7 +26,7 @@ public class HiddenScribe.KeywordRow : EntryRow {
         var delete_button = new Gtk.Button.from_icon_name ("cross-symbolic") {
             valign = CENTER,
             css_classes = { "flat" },
-            tooltip_text = "Delete Keyword"
+            tooltip_text = _("Delete Keyword")
         };
         add_prefix (delete_button);
 

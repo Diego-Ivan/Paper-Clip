@@ -7,7 +7,7 @@ project('hidden-scribe', ['c', 'vala'],
 i18n = import('i18n')
 gnome = import('gnome')
 
-
+app_id = 'io.github.diegoivan.hidden_scribe'
 
 subdir('data')
 subdir('src')
