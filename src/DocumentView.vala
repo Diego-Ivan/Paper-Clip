@@ -65,11 +65,13 @@ public class HiddenScribe.DocumentView : Adw.Bin {
     }
 
     private Gtk.Widget create_keyword_row (Object item) {
-        var row = new EntryRow () {
+        var row = new KeywordRow () {
             property_name = "str",
             title = "Keyword",
             object = item,
+            document = document,
         };
+
         return row;
     }
 

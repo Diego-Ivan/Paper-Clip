@@ -31,6 +31,7 @@ public sealed class HiddenScribe.Services.DocManager : Object {
             _document = value;
             changed = false;
             document.notify.connect (on_doc_changed);
+            document.keywords.items_changed.connect (on_doc_changed);
         }
     }
 

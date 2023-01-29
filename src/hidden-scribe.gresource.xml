@@ -9,5 +9,6 @@
 
   <gresource prefix="/io/github/diegoivan/hidden_scribe/icons/scalable/actions/">
     <file preprocess="xml-stripblanks" alias="entry-clear-symbolic.svg">gtk/entry-clear-symbolic.svg</file>
+    <file preprocess="xml-stripblanks" alias="cross-symbolic.svg">gtk/cross-symbolic.svg</file>
   </gresource>
 </gresources>

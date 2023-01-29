@@ -7,6 +7,7 @@ hidden_scribe_sources = [
   'EntryRow.vala',
   'DocumentView.vala',
   'DateRow.vala',
+  'KeywordRow.vala',
 
   # Services
   'Services/DocManager.vala',

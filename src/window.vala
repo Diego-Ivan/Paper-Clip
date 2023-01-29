@@ -142,16 +142,18 @@ namespace HiddenScribe {
         }
 
         private void show_unsaved_warning () {
-            var manager = new Services.DocManager ();
             var message_dialog = new Adw.MessageDialog (this,
-                                                        "%s has changed".printf (manager.document.title),
-                                                        "Save, Cancel or Discard?");
+                                                        "Do you want to save the changes?",
+                                                        "Changes that are not saved will be lost permanently");
             message_dialog.close_response = "cancel";
             message_dialog.default_response = "cancel";
 
             message_dialog.add_response ("cancel", "Cancel");
-            message_dialog.add_response ("save", "Save");
             message_dialog.add_response ("discard", "Discard");
+            message_dialog.add_response ("save", "Save");
+
+            message_dialog.set_response_appearance ("discard", DESTRUCTIVE);
+            message_dialog.set_response_appearance ("save", SUGGESTED);
 
             message_dialog.response.connect (on_warning_response);
             message_dialog.show ();
