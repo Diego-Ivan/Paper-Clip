@@ -43,7 +43,13 @@ public class HiddenScribe.DateRow : Adw.ActionRow, PropertyRow {
         }
         set {
             _date = value;
-            subtitle = date != null ?  date.format ("%x") : "No date set";
+            if (date == null) {
+                subtitle = "No date set";
+                return;
+            }
+
+            subtitle = date.format ("%x");
+            datetime_to_calendar (date);
         }
     }
 
@@ -56,13 +62,7 @@ public class HiddenScribe.DateRow : Adw.ActionRow, PropertyRow {
     private void on_today_button_clicked () {
         var today_time = new DateTime.now_local ();
 
-        int year, month, day;
-        today_time.get_ymd (out year, out month, out day);
-
-        calendar.year = year;
-        calendar.month = month - 1;
-        calendar.day = day;
-
+        datetime_to_calendar (today_time);
         date = today_time;
     }
 
@@ -71,13 +71,16 @@ public class HiddenScribe.DateRow : Adw.ActionRow, PropertyRow {
         var tomorrow_time = new DateTime.now_local ();
         tomorrow_time = tomorrow_time.add_days (1);
 
+        datetime_to_calendar (tomorrow_time);
+        date = tomorrow_time;
+    }
+
+    private void datetime_to_calendar (DateTime date_time) {
         int year, month, day;
-        tomorrow_time.get_ymd (out year, out month, out day);
+        date_time.get_ymd (out year, out month, out day);
 
         calendar.year = year;
         calendar.month = month - 1;
         calendar.day = day;
-
-        date = tomorrow_time;
     }
 }

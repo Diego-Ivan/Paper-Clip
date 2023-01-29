@@ -37,14 +37,12 @@ public class HiddenScribe.DocumentView : Adw.Bin {
     [GtkChild]
     private unowned Gtk.ListBox keyword_box;
 
-    private Binding doc_to_win;
     private Document _document;
     public Document document {
         get {
             return _document;
         }
         set {
-            unbind_doc ();
             _document = value;
 
             title_row.object = document;
@@ -57,7 +55,7 @@ public class HiddenScribe.DocumentView : Adw.Bin {
             keyword_box.bind_model (document.keywords, create_keyword_row);
 
             unowned var window = (Window) get_root ();
-            doc_to_win = document.bind_property ("title", window, "title", SYNC_CREATE);
+            document.bind_property ("title", window, "title", SYNC_CREATE);
 
             var manager = new Services.DocManager ();
             manager.document = document;
@@ -78,12 +76,5 @@ public class HiddenScribe.DocumentView : Adw.Bin {
     [GtkCallback]
     private void on_add_button_clicked () {
         document.add_keyword ("");
-    }
-
-    private void unbind_doc () {
-        if (doc_to_win == null) {
-            return;
-        }
-        doc_to_win.unbind ();
     }
 }

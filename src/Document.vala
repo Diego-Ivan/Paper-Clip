@@ -42,7 +42,7 @@ public class HiddenScribe.Document : Object {
 
     public string creator {
         owned get {
-            return document.author ?? "";
+            return document.creator ?? "";
         }
         set {
             document.creator = value;
@@ -166,9 +166,9 @@ public class HiddenScribe.Document : Object {
     }
 
     private async void load_document (string uri) {
-        File doc_file = yield create_copy (uri);
+        File document_file = yield create_copy (uri);
         try {
-            document = new Poppler.Document.from_gfile (doc_file, null);
+            document = new Poppler.Document.from_gfile (document_file, null);
         }
         catch (Error e) {
             critical ("%s : %s", e.domain.to_string (), e.message);
@@ -179,7 +179,7 @@ public class HiddenScribe.Document : Object {
         var original = File.new_for_uri (uri);
         string destination_path = Path.build_path (Path.DIR_SEPARATOR_S,
                                                    Environment.get_user_cache_dir (),
-                                                   "Copies");
+                                                   "copies");
 
         int res = DirUtils.create_with_parents (destination_path, 0777);
         return_if_fail (res > -1);

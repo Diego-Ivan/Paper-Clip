@@ -21,7 +21,7 @@
         </style>
 
         <property name="popover">
-          <object class="GtkPopover">
+          <object class="GtkPopover" id="calendar_popover">
             <child>
               <object class="GtkBox">
                 <property name="orientation">vertical</property>
