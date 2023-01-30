@@ -36,6 +36,8 @@ public class HiddenScribe.DocumentView : Adw.Bin {
     private unowned DateRow modification_row;
     [GtkChild]
     private unowned Gtk.ListBox keyword_box;
+    [GtkChild]
+    private unowned Adw.StatusPage document_status;
 
     private Document _document;
     public Document document {
@@ -59,7 +61,19 @@ public class HiddenScribe.DocumentView : Adw.Bin {
 
             var manager = new Services.DocManager ();
             manager.document = document;
+
+            document_status.title = document.original_file.get_basename ();
         }
+    }
+
+    construct {
+        ActionEntry[] entries = {
+            { "details", details_action },
+        };
+
+        var action_group = new SimpleActionGroup ();
+        action_group.add_action_entries (entries, this);
+        insert_action_group ("editor", action_group);
     }
 
     private Gtk.Widget create_keyword_row (Object item) {
@@ -71,6 +85,13 @@ public class HiddenScribe.DocumentView : Adw.Bin {
         };
 
         return row;
+    }
+
+    private void details_action () {
+        var details_window = new DetailsWindow (document) {
+            transient_for = (Gtk.Window) get_root ()
+        };
+        details_window.show ();
     }
 
     [GtkCallback]

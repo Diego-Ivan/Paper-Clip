@@ -3,17 +3,51 @@
   <requires lib="gtk" version="4.0"/>
   <requires lib="Adw" version="1.0"/>
   <template class="HiddenScribeDocumentView" parent="AdwBin">
+    <property name="margin-start">12</property>
+    <property name="margin-end">12</property>
     <child>
-      <object class="GtkScrolledWindow">
-        <property name="vexpand">true</property>
+      <object class="AdwStatusPage" id="document_status">
+        <property name="icon-name">rich-text-symbolic</property>
+        <property name="height-request">200</property>
+        <style>
+          <class name="compact"/>
+        </style>
+
         <child>
           <object class="AdwClamp">
-            <property name="margin-start">12</property>
-            <property name="margin-end">12</property>
             <child>
               <object class="GtkBox">
                 <property name="orientation">vertical</property>
                 <property name="spacing">12</property>
+                <child>
+                  <object class="GtkBox">
+                    <property name="orientation">horizontal</property>
+                    <property name="halign">center</property>
+                    <property name="spacing">24</property>
+
+                    <child>
+                      <object class="GtkButton">
+                        <property name="halign">center</property>
+                        <property name="label" translatable="yes">Details</property>
+                        <property name="action-name">editor.details</property>
+                        <style>
+                          <class name="pill"/>
+                        </style>
+                      </object>
+                    </child>
+
+                    <child>
+                      <object class="GtkButton">
+                        <property name="halign">center</property>
+                        <property name="label" translatable="yes">Open</property>
+                        <style>
+                          <class name="pill"/>
+                          <class name="suggested-action"/>
+                        </style>
+                      </object>
+                    </child>
+                  </object>
+                </child>
 
                 <child>
                   <object class="AdwPreferencesGroup" id="properties_group">
@@ -88,10 +122,13 @@
                         </style>
                       </object>
                     </child>
+
                   </object>
                 </child>
+
               </object>
             </child>
+
           </object>
         </child>
       </object>

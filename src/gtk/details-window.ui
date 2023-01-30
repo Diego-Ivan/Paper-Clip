@@ -3,7 +3,10 @@
   <requires lib="gtk" version="4.0"/>
   <requires lib="Adw" version="1.0"/>
   <template class="HiddenScribeDetailsWindow" parent="GtkWindow">
-    <property name="title"></property>
+    <property name="title">Details</property>
+    <property name="default-width">475</property>
+    <property name="default-height">475</property>
+    <property name="modal">true</property>
 
     <child type="titlebar">
       <object class="GtkHeaderBar">
@@ -18,49 +21,74 @@
         <property name="vexpand">true</property>
 
         <child>
-          <object class="GtkListBox">
-            <style>
-              <class name="boxed-list"/>
-            </style>
-
+          <object class="AdwClamp">
+            <property name="margin-start">12</property>
+            <property name="margin-end">12</property>
             <child>
-              <object class="HiddenScribeDetailRow" id="format_row">
-                <property name="title" translatable="yes">Format</property>
-              </object>
-            </child>
+              <object class="GtkListBox">
+                <property name="valign">start</property>
+                <style>
+                  <class name="boxed-list"/>
+                </style>
 
-            <child>
-              <object class="HiddenScribeDetailRow" id="layout_row">
-                <property name="title" translatable="yes">Layout</property>
-              </object>
-            </child>
+                <child>
+                  <object class="HiddenScribeDetailRow" id="format_row">
+                    <property name="title" translatable="yes">Format</property>
+                    <property name="selectable">false</property>
+                  </object>
+                </child>
 
-            <child>
-              <object class="HiddenScribeDetailRow" id="duplex_row">
-                <property name="title" translatable="yes">Duplex</property>
-              </object>
-            </child>
+                <child>
+                  <object class="HiddenScribeDetailRow" id="layout_row">
+                    <property name="title" translatable="yes">Layout</property>
+                    <property name="selectable">false</property>
+                  </object>
+                </child>
 
-            <child>
-              <object class="HiddenScribeDetailRow" id="subtype_row">
-                <property name="title" translatable="yes">Subtype</property>
-              </object>
-            </child>
+                <child>
+                  <object class="HiddenScribeDetailRow" id="duplex_row">
+                    <property name="title" translatable="yes">Duplex</property>
+                    <property name="selectable">false</property>
+                  </object>
+                </child>
 
-            <child>
-              <object class="HiddenScribeStringArrayRow" id="preferences_row">
-                <property name="title" translatable="yes">Viewer Preferences</property>
-              </object>
-            </child>
+                <child>
+                  <object class="HiddenScribeDetailRow" id="subtype_row">
+                    <property name="title" translatable="yes">Subtype</property>
+                    <property name="selectable">false</property>
+                  </object>
+                </child>
 
-            <child>
-              <object class="HiddenScribeStringArrayRow" id="permissions_row">
-                <property name="title" translatable="yes">Permissions</property>
+                <child>
+                  <object class="HiddenScribeStringArrayRow" id="preferences_row">
+                    <property name="title" translatable="yes">Viewer Preferences</property>
+                    <property name="selectable">false</property>
+                  </object>
+                </child>
+
+                <child>
+                  <object class="HiddenScribeStringArrayRow" id="permissions_row">
+                    <property name="title" translatable="yes">Permissions</property>
+                    <property name="selectable">false</property>
+                  </object>
+                </child>
               </object>
             </child>
           </object>
         </child>
 
+      </object>
+    </child>
+
+    <!-- Shortcuts -->
+    <child>
+      <object class="GtkShortcutController">
+        <child>
+          <object class="GtkShortcut">
+            <property name="trigger">Escape</property>
+            <property name="action">action(window.close)</property>
+          </object>
+        </child>
       </object>
     </child>
   </template>

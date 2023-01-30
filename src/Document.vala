@@ -31,6 +31,9 @@ public class HiddenScribe.Document : Object {
         }
     }
 
+    public File original_file { get; private set; }
+    public File cached_file { get; private set; }
+
     public string author {
         owned get {
             return document.author ?? "";
@@ -343,9 +346,9 @@ public class HiddenScribe.Document : Object {
     }
 
     private async void load_document (string uri) {
-        File document_file = yield create_copy (uri);
+        cached_file = yield create_copy (uri);
         try {
-            document = new Poppler.Document.from_gfile (document_file, null);
+            document = new Poppler.Document.from_gfile (cached_file, null);
         }
         catch (Error e) {
             critical ("%s : %s", e.domain.to_string (), e.message);
@@ -353,7 +356,7 @@ public class HiddenScribe.Document : Object {
     }
 
     private async File create_copy (string uri) {
-        var original = File.new_for_uri (uri);
+        original_file = File.new_for_uri (uri);
         string destination_path = Path.build_path (Path.DIR_SEPARATOR_S,
                                                    Environment.get_user_cache_dir (),
                                                    "copies");
@@ -362,13 +365,13 @@ public class HiddenScribe.Document : Object {
         return_if_fail (res > -1);
 
         string destination_file = Path.build_filename (destination_path,
-                                                       "%s".printf (original.get_basename ()));
+                                                       "%s".printf (original_file.get_basename ()));
 
         var copy_file = File.new_for_path (destination_file);
         FileCopyFlags flags = NOFOLLOW_SYMLINKS | OVERWRITE | ALL_METADATA;
 
         try {
-            bool success = yield original.copy_async (copy_file, flags);
+            bool success = yield original_file.copy_async (copy_file, flags);
             if (!success) {
                 critical ("Copy Unsuccessful");
             }

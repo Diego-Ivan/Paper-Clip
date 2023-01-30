@@ -98,7 +98,6 @@ namespace HiddenScribe {
         private async void load_document_to_view (File file) {
             doc_view.document = yield new Document (file.get_uri ());
             view_stack.visible_child_name = "editor";
-            subtitle = file.get_basename ();
         }
 
         private void save_file () {

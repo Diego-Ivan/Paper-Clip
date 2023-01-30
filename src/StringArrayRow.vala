@@ -27,9 +27,11 @@ public class HiddenScribe.StringArrayRow : Adw.ExpanderRow {
         }
     }
 
-    public Gtk.Widget create_row (string item) {
-        return new Adw.PreferencesRow () {
-            title = item
+    public void create_row (string item) {
+        var new_row = new Adw.ActionRow () {
+            title = item,
+            selectable = false,
         };
+        add_row (new_row);
     }
 }

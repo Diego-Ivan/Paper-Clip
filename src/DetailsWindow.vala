@@ -49,4 +49,8 @@ public class HiddenScribe.DetailsWindow : Gtk.Window {
             permissions_row.string_array = document.permissions;
         }
     }
+
+    public DetailsWindow (Document document) {
+        Object (document: document);
+    }
 }
