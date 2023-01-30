@@ -130,7 +130,7 @@ public class HiddenScribe.Document : Object {
     }
 
     [CCode (notify = false)]
-    public string[] viewer_prefereces {
+    public string[] viewer_preferences {
         owned get {
             return viewer_preferences_to_string_array ();
         }
@@ -304,17 +304,17 @@ public class HiddenScribe.Document : Object {
     private string print_duplex_to_string () {
         switch (document.print_duplex) {
             case DUPLEX_FLIP_LONG_EDGE:
-                return _("Flip on the long edge of the sheet");
+                return _("Flip on the long edge");
 
             case DUPLEX_FLIP_SHORT_EDGE:
-                return _("Flip on the short edge of the sheet");
+                return _("Flip on the short edge");
 
             case SIMPLEX:
                 return _("Only single sided");
 
             case NONE:
             default:
-                return _("No preference, duplex allowed");
+                return _("No preference");
         }
     }
 

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0"/>
+  <requires lib="Adw" version="1.0"/>
+  <template class="HiddenScribeDetailsWindow" parent="GtkWindow">
+    <property name="title"></property>
+
+    <child type="titlebar">
+      <object class="GtkHeaderBar">
+        <style>
+          <class name="flat"/>
+        </style>
+      </object>
+    </child>
+
+    <child>
+      <object class="GtkScrolledWindow">
+        <property name="vexpand">true</property>
+
+        <child>
+          <object class="GtkListBox">
+            <style>
+              <class name="boxed-list"/>
+            </style>
+
+            <child>
+              <object class="HiddenScribeDetailRow" id="format_row">
+                <property name="title" translatable="yes">Format</property>
+              </object>
+            </child>
+
+            <child>
+              <object class="HiddenScribeDetailRow" id="layout_row">
+                <property name="title" translatable="yes">Layout</property>
+              </object>
+            </child>
+
+            <child>
+              <object class="HiddenScribeDetailRow" id="duplex_row">
+                <property name="title" translatable="yes">Duplex</property>
+              </object>
+            </child>
+
+            <child>
+              <object class="HiddenScribeDetailRow" id="subtype_row">
+                <property name="title" translatable="yes">Subtype</property>
+              </object>
+            </child>
+
+            <child>
+              <object class="HiddenScribeStringArrayRow" id="preferences_row">
+                <property name="title" translatable="yes">Viewer Preferences</property>
+              </object>
+            </child>
+
+            <child>
+              <object class="HiddenScribeStringArrayRow" id="permissions_row">
+                <property name="title" translatable="yes">Permissions</property>
+              </object>
+            </child>
+          </object>
+        </child>
+
+      </object>
+    </child>
+  </template>
+</interface>
