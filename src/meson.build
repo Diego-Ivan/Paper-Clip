@@ -20,6 +20,7 @@ hidden_scribe_deps = [
   dependency('gtk4'),
   dependency('libadwaita-1'),
   dependency('poppler-glib'),
+  dependency('libportal-gtk4'),
 ]
 
 conf = configuration_data()

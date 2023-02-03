@@ -39,10 +39,10 @@
                     <child>
                       <object class="GtkButton">
                         <property name="halign">center</property>
-                        <property name="label" translatable="yes">Open</property>
+                        <property name="label" translatable="yes">Open in Document Viewer</property>
+                        <property name="action-name">editor.open-app</property>
                         <style>
                           <class name="pill"/>
-                          <class name="suggested-action"/>
                         </style>
                       </object>
                     </child>

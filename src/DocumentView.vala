@@ -69,6 +69,7 @@ public class HiddenScribe.DocumentView : Adw.Bin {
     construct {
         ActionEntry[] entries = {
             { "details", details_action },
+            { "open-app", open_app_action },
         };
 
         var action_group = new SimpleActionGroup ();
@@ -92,6 +93,26 @@ public class HiddenScribe.DocumentView : Adw.Bin {
             transient_for = (Gtk.Window) get_root ()
         };
         details_window.show ();
+    }
+
+    private void open_app_action () {
+        open_on_app.begin ();
+    }
+
+    private async void open_on_app () {
+        var portal = new Xdp.Portal ();
+        var parent = Xdp.parent_new_gtk ((Gtk.Window) get_root ());
+
+        try {
+            bool result = yield portal.open_uri (parent, document.original_file.get_uri (),
+                                                 ASK, null);
+            if (!result) {
+                debug ("File was not opened by the user");
+            }
+        }
+        catch (Error e) {
+            critical (e.message);
+        }
     }
 
     [GtkCallback]

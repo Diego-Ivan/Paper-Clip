@@ -75,6 +75,7 @@ namespace HiddenScribe {
         }
 
         private void open_file () {
+            view_stack.visible_child_name = "empty";
             var filter = new Gtk.FileFilter ();
             filter.add_mime_type ("application/pdf");
 
