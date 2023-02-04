@@ -29,6 +29,7 @@ namespace HiddenScribe {
         private unowned Adw.WindowTitle window_title;
 
         public State state { get; set; default = NONE; }
+        private File? dropped_file { get; set; default = null; }
 
         public Window (Gtk.Application app) {
             Object (application: app);
@@ -57,11 +58,59 @@ namespace HiddenScribe {
                 { "open", on_open_action },
                 { "save", save_file },
                 { "quit", quit_and_save  },
+                { "save-as", save_file_as }
             };
 
             var action_group = new SimpleActionGroup ();
             action_group.add_action_entries (entries, this);
             insert_action_group ("win", action_group);
+
+            // Controller of Drag and Drop
+            var drop_target = new Gtk.DropTarget (typeof(File), COPY);
+
+            drop_target.on_drop.connect (on_file_dropped);
+            drop_target.enter.connect (on_enter);
+            view_stack.add_controller (drop_target);
+        }
+
+        private Gdk.DragAction on_enter () {
+            return COPY;
+        }
+
+        private bool on_file_dropped (Value value) {
+            var file = (File) value;
+            try {
+                FileInfo info = file.query_info ("standard;:*", NOFOLLOW_SYMLINKS);
+                string? content_type = info.get_content_type ();
+                string name = file.get_basename () ?? "";
+
+                if (content_type != "application/pdf" && !name.contains (".pdf")) {
+                    critical ("File is not a PDF");
+                    return false;
+                }
+
+                dropped_file = file;
+                state = OPENING_DROPPED;
+                open_dropped_file.begin ();
+            }
+            catch (Error e) {
+                critical (e.message);
+                return false;
+            }
+            return true;
+        }
+
+        private async void open_dropped_file () {
+            var manager = new Services.DocManager ();
+            if (manager.changed) {
+                show_unsaved_warning ();
+            }
+            else {
+                message ("Loading dropped file to view");
+                yield load_document_to_view (dropped_file);
+                dropped_file = null;
+                state = NONE;
+            }
         }
 
         private void on_open_action () {
@@ -107,6 +156,12 @@ namespace HiddenScribe {
                 return;
             }
 
+            manager.save (manager.document.original_file.get_uri ());
+            proceed_with_state ();
+            state = NONE;
+        }
+
+        private void save_file_as () {
             var filter = new Gtk.FileFilter ();
             filter.add_mime_type ("application/pdf");
 
@@ -128,6 +183,13 @@ namespace HiddenScribe {
 
                 proceed_with_state ();
             }
+            state = NONE;
+        }
+
+        [GtkCallback]
+        private bool on_close_request () {
+            quit_and_save ();
+            return true;
         }
 
         private void quit_and_save () {
@@ -179,6 +241,9 @@ namespace HiddenScribe {
                     return;
                 case OPENING_FILE:
                     open_file ();
+                    break;
+                case OPENING_DROPPED:
+                    open_dropped_file.begin ();
                     break;
                 case CLOSING:
                     GLib.Application.get_default ().quit ();

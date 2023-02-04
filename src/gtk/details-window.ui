@@ -26,6 +26,7 @@
             <property name="margin-end">12</property>
             <child>
               <object class="GtkListBox">
+                <property name="margin-top">12</property>
                 <property name="valign">start</property>
                 <style>
                   <class name="boxed-list"/>

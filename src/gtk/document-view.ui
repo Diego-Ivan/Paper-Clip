@@ -12,7 +12,6 @@
         <style>
           <class name="compact"/>
         </style>
-
         <child>
           <object class="AdwClamp">
             <child>
@@ -133,7 +132,6 @@
         </child>
       </object>
     </child>
-
 
     <!-- Shortcuts -->
     <child>

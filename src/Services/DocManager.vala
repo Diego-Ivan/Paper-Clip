@@ -61,5 +61,6 @@ public sealed class HiddenScribe.Services.DocManager : Object {
 public enum HiddenScribe.State {
     NONE,
     OPENING_FILE,
-    CLOSING
+    CLOSING,
+    OPENING_DROPPED
 }
