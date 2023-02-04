@@ -43,6 +43,7 @@
           <object class="GtkOverlay">
             <child type="overlay">
               <object class="GtkProgressBar" id="progress_bar">
+                <property name="pulse-step">1</property>
                 <property name="valign">start</property>
                 <style>
                   <class name="osd"/>

@@ -108,8 +108,10 @@ namespace HiddenScribe {
                 show_unsaved_warning ();
             }
             else {
-                message ("Loading dropped file to view");
+                pulse_progress_bar ();
                 yield load_document_to_view (dropped_file);
+
+                hide_progress_bar_animation ();
                 dropped_file = null;
                 state = NONE;
             }
@@ -126,7 +128,6 @@ namespace HiddenScribe {
         }
 
         private void open_file () {
-            view_stack.visible_child_name = "empty";
             var filter = new Gtk.FileFilter ();
             filter.add_mime_type ("application/pdf");
 
@@ -142,6 +143,7 @@ namespace HiddenScribe {
             var file_dialog = (Gtk.FileChooser) source;
 
             if (response == Gtk.ResponseType.ACCEPT) {
+                pulse_progress_bar ();
                 load_document_to_view.begin (file_dialog.get_file ());
             }
             state = NONE;
@@ -149,6 +151,7 @@ namespace HiddenScribe {
 
         private async void load_document_to_view (File file) {
             doc_view.document = yield new Document (file.get_uri ());
+            hide_progress_bar_animation ();
             view_stack.visible_child_name = "editor";
         }
 
@@ -208,10 +211,12 @@ namespace HiddenScribe {
                 easing = EASE_IN_OUT_SINE
             };
 
-            animation.done.connect (() => {
-                progress_bar.fraction = 0;
-            });
             animation.play ();
+        }
+
+        private void pulse_progress_bar () {
+            progress_bar.opacity = 1;
+            progress_bar.pulse ();
         }
 
         [GtkCallback]
