@@ -48,13 +48,17 @@ namespace HiddenScribe {
         private void on_about_action () {
             string[] developers = { "Diego Iván" };
             var about = new Adw.AboutWindow () {
-                transient_for = this.active_window,
-                application_name = "Hidden Scribe",
                 application_icon = Config.APP_ID,
-                developer_name = "Diego Iván",
-                version = "0.1.0",
-                developers = developers,
+                application_name = "Hidden Scribe",
                 copyright = "© 2023 Diego Iván",
+                developer_name = "Diego Iván",
+                developers = developers,
+                issue_url = "https://github.com/Diego-Ivan/HiddenScribe/issues",
+                license_type = GPL_3_0,
+                transient_for = this.active_window,
+                translator_credits = _("translator_credits"),
+                version = "0.1.0",
+                website = "https://github.com/Diego-Ivan/HiddenScribe",
             };
 
             about.present ();
