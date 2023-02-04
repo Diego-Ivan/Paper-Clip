@@ -174,6 +174,7 @@ namespace HiddenScribe {
             var filechooser = new Gtk.FileChooserNative (null, this,
                                                          SAVE, null, null);
             filechooser.add_filter (filter);
+            filechooser.set_current_name (doc_view.document.original_file.get_basename ());
 
             filechooser.response.connect (on_file_saved);
             filechooser.show ();
