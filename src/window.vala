@@ -67,6 +67,9 @@ namespace HiddenScribe {
             action_group.add_action_entries (entries, this);
             insert_action_group ("win", action_group);
 
+            action_set_enabled ("save", false);
+            action_set_enabled ("save-as", false);
+
             // Controller of Drag and Drop
             var drop_target = new Gtk.DropTarget (typeof(File), COPY);
 
@@ -146,6 +149,8 @@ namespace HiddenScribe {
                 pulse_progress_bar ();
                 load_document_to_view.begin (file_dialog.get_file ());
             }
+            action_set_enabled ("save", true);
+            action_set_enabled ("save-as", true);
             state = NONE;
         }
 
@@ -168,13 +173,18 @@ namespace HiddenScribe {
         }
 
         private void save_file_as () {
+            var manager = new Services.DocManager ();
+            if (manager.document == null) {
+                return;
+            }
+
             var filter = new Gtk.FileFilter ();
             filter.add_mime_type ("application/pdf");
 
             var filechooser = new Gtk.FileChooserNative (null, this,
                                                          SAVE, null, null);
             filechooser.add_filter (filter);
-            filechooser.set_current_name (doc_view.document.original_file.get_basename ());
+            filechooser.set_current_name (manager.document.original_file.get_basename ());
 
             filechooser.response.connect (on_file_saved);
             filechooser.show ();
