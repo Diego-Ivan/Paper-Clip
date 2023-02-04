@@ -27,6 +27,8 @@ namespace HiddenScribe {
         private unowned Gtk.Stack view_stack;
         [GtkChild]
         private unowned Adw.WindowTitle window_title;
+        [GtkChild]
+        private unowned Gtk.ProgressBar progress_bar;
 
         public State state { get; set; default = NONE; }
         private File? dropped_file { get; set; default = null; }
@@ -152,11 +154,12 @@ namespace HiddenScribe {
 
         private void save_file () {
             var manager = new Services.DocManager ();
-            if (manager.document == null) {
+            if (manager.document == null || !manager.changed) {
                 return;
             }
 
             manager.save (manager.document.original_file.get_uri ());
+            file_save_animation ();
             proceed_with_state ();
             state = NONE;
         }
@@ -180,10 +183,35 @@ namespace HiddenScribe {
 
                 var manager = new Services.DocManager ();
                 manager.save (file.get_uri ());
-
+                file_save_animation ();
                 proceed_with_state ();
             }
             state = NONE;
+        }
+
+        private void file_save_animation () {
+            var property_target = new Adw.PropertyAnimationTarget (progress_bar, "fraction");
+
+            var animation = new Adw.TimedAnimation (progress_bar, 0, 1, 200, property_target) {
+                easing = EASE_IN_OUT_SINE
+            };
+            animation.done.connect (hide_progress_bar_animation);
+
+            progress_bar.fraction = 0;
+            progress_bar.opacity = 1;
+            animation.play ();
+        }
+
+        private void hide_progress_bar_animation () {
+            var property_target = new Adw.PropertyAnimationTarget (progress_bar, "opacity");
+            var animation = new Adw.TimedAnimation (progress_bar, 1, 0, 200, property_target) {
+                easing = EASE_IN_OUT_SINE
+            };
+
+            animation.done.connect (() => {
+                progress_bar.fraction = 0;
+            });
+            animation.play ();
         }
 
         [GtkCallback]

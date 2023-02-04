@@ -6,6 +6,7 @@
     <property name="default-width">600</property>
     <property name="default-height">500</property>
     <signal name="close-request" handler="on_close_request"></signal>
+
     <child>
       <object class="GtkBox">
         <property name="orientation">vertical</property>
@@ -39,44 +40,58 @@
         </child>
 
         <child>
-          <object class="GtkStack" id="view_stack">
-            <property name="transition-type">crossfade</property>
-            <child>
-              <object class="GtkStackPage">
-                <property name="name">empty</property>
-                <property name="child">
-                  <object class="AdwStatusPage">
-                    <property name="title" translatable="yes">Open a PDF Document to edit</property>
-                    <property name="icon-name">emblem-documents-symbolic</property>
+          <object class="GtkOverlay">
+            <child type="overlay">
+              <object class="GtkProgressBar" id="progress_bar">
+                <property name="valign">start</property>
+                <style>
+                  <class name="osd"/>
+                </style>
+              </object>
+            </child>
 
-                    <child>
-                      <object class="GtkButton" id="open_button">
-                        <property name="label" translatable="yes">Open a file</property>
-                        <property name="halign">center</property>
-                        <property name="action-name">win.open</property>
-                        <style>
-                          <class name="pill"/>
-                          <class name="suggested-action"/>
-                        </style>
+            <child>
+              <object class="GtkStack" id="view_stack">
+                <property name="transition-type">crossfade</property>
+                <child>
+                  <object class="GtkStackPage">
+                    <property name="name">empty</property>
+                    <property name="child">
+                      <object class="AdwStatusPage">
+                        <property name="title" translatable="yes">Open a PDF Document to edit</property>
+                        <property name="icon-name">emblem-documents-symbolic</property>
+
+                        <child>
+                          <object class="GtkButton" id="open_button">
+                            <property name="label" translatable="yes">Open a file</property>
+                            <property name="halign">center</property>
+                            <property name="action-name">win.open</property>
+                            <style>
+                              <class name="pill"/>
+                              <class name="suggested-action"/>
+                            </style>
+                          </object>
+                        </child>
+
                       </object>
-                    </child>
-
+                    </property>
                   </object>
-                </property>
+                </child>
+
+                <child>
+                  <object class="GtkStackPage">
+                    <property name="name">editor</property>
+                    <property name="child">
+                      <object class="HiddenScribeDocumentView" id="doc_view"></object>
+                    </property>
+                  </object>
+                </child>
+
               </object>
             </child>
-
-            <child>
-              <object class="GtkStackPage">
-                <property name="name">editor</property>
-                <property name="child">
-                  <object class="HiddenScribeDocumentView" id="doc_view"></object>
-                </property>
-              </object>
-            </child>
-
           </object>
         </child>
+
       </object>
     </child>
 
