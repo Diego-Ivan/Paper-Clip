@@ -59,7 +59,7 @@
                     <property name="name">empty</property>
                     <property name="child">
                       <object class="AdwStatusPage">
-                        <property name="title" translatable="yes">Open a PDF Document to edit</property>
+                        <property name="title" translatable="yes">Drag a document or open</property>
                         <property name="icon-name">emblem-documents-symbolic</property>
 
                         <child>
@@ -120,10 +120,12 @@
       <item>
         <attribute name="label" translatable="yes">_Save</attribute>
         <attribute name="action">win.save</attribute>
+        <attribute name="accel">&lt;control&gt;s</attribute>
       </item>
       <item>
-        <attribute name="label" translatable="yes">_Save as</attribute>
+        <attribute name="label" translatable="yes">Save _As…</attribute>
         <attribute name="action">win.save-as</attribute>
+        <attribute name="accel">&lt;control&gt;&lt;shift&gt;s</attribute>
       </item>
     </section>
     <section>

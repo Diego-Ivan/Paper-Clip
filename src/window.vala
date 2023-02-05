@@ -67,8 +67,8 @@ namespace HiddenScribe {
             action_group.add_action_entries (entries, this);
             insert_action_group ("win", action_group);
 
-            action_set_enabled ("save", false);
-            action_set_enabled ("save-as", false);
+            action_set_enabled ("win.save", false);
+            action_set_enabled ("win.save-as", false);
 
             // Controller of Drag and Drop
             var drop_target = new Gtk.DropTarget (typeof(File), COPY);
@@ -149,13 +149,15 @@ namespace HiddenScribe {
                 pulse_progress_bar ();
                 load_document_to_view.begin (file_dialog.get_file ());
             }
-            action_set_enabled ("save", true);
-            action_set_enabled ("save-as", true);
             state = NONE;
         }
 
         private async void load_document_to_view (File file) {
             doc_view.document = yield new Document (file.get_uri ());
+
+            action_set_enabled ("win.save", true);
+            action_set_enabled ("win.save-as", true);
+
             hide_progress_bar_animation ();
             view_stack.visible_child_name = "editor";
         }

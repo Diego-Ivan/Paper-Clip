@@ -21,10 +21,6 @@
 public class HiddenScribe.KeywordRow : EntryRow {
     public unowned Document document { get; set; }
 
-    ~KeywordRow () {
-        message ("Destroying row");
-    }
-
     construct {
         focusable = true;
         var delete_button = new Gtk.Button.from_icon_name ("cross-symbolic") {
