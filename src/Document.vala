@@ -146,6 +146,8 @@ public class HiddenScribe.Document : Object {
         }
     }
 
+    public signal void keyword_changed ();
+
     public async Document (string uri) {
         yield load_document (uri);
     }
@@ -162,7 +164,11 @@ public class HiddenScribe.Document : Object {
     }
 
     public void add_keyword (string keyword) {
-        keyword_list.append (new StringObject (keyword));
+        var keyword_object = new StringObject (keyword);
+        keyword_object.notify["str"].connect (() => {
+            keyword_changed ();
+        });
+        keyword_list.append (keyword_object);
     }
 
     public bool remove_keyword (string keyword) {
@@ -183,7 +189,7 @@ public class HiddenScribe.Document : Object {
 
         string[] keyword_array = document.keywords.split (",");
         foreach (string keyword in keyword_array) {
-            keyword_list.append (new StringObject (keyword));
+            add_keyword (keyword);
         }
     }
 
