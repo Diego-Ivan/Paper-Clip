@@ -21,15 +21,15 @@
 [GtkTemplate (ui = "/io/github/diegoivan/hidden_scribe/gtk/document-view.ui")]
 public class HiddenScribe.DocumentView : Adw.Bin {
     [GtkChild]
-    private unowned EntryRow title_row;
+    private unowned Adw.EntryRow title_row;
     [GtkChild]
-    private unowned EntryRow author_row;
+    private unowned Adw.EntryRow author_row;
     [GtkChild]
-    private unowned EntryRow creator_row;
+    private unowned Adw.EntryRow creator_row;
     [GtkChild]
-    private unowned EntryRow subject_row;
+    private unowned Adw.EntryRow subject_row;
     [GtkChild]
-    private unowned EntryRow producer_row;
+    private unowned Adw.EntryRow producer_row;
     [GtkChild]
     private unowned DateRow creation_row;
     [GtkChild]
@@ -39,6 +39,8 @@ public class HiddenScribe.DocumentView : Adw.Bin {
     [GtkChild]
     private unowned Adw.StatusPage document_status;
 
+    private BindingGroup document_bindings = new BindingGroup ();
+
     private Document _document;
     public Document document {
         get {
@@ -46,18 +48,12 @@ public class HiddenScribe.DocumentView : Adw.Bin {
         }
         set {
             _document = value;
-
-            title_row.object = document;
-            author_row.object = document;
-            creator_row.object = document;
-            subject_row.object = document;
-            producer_row.object = document;
-            creation_row.object = document;
-            modification_row.object = document;
-            keyword_box.bind_model (document.keywords, create_keyword_row);
+            document_bindings.source = document;
 
             unowned var window = (Window) get_root ();
             document.bind_property ("title", window, "title", SYNC_CREATE);
+
+            keyword_box.bind_model (document.keywords, create_keyword_row);
 
             var manager = new Services.DocManager ();
             manager.document = document;
@@ -75,15 +71,34 @@ public class HiddenScribe.DocumentView : Adw.Bin {
         var action_group = new SimpleActionGroup ();
         action_group.add_action_entries (entries, this);
         insert_action_group ("editor", action_group);
+
+        setup_bindings ();
+    }
+
+    private void setup_bindings () {
+        // Bind Rows
+        document_bindings.bind ("title", title_row, "text",
+                                SYNC_CREATE | BIDIRECTIONAL);
+        document_bindings.bind ("author", author_row, "text",
+                                SYNC_CREATE | BIDIRECTIONAL);
+        document_bindings.bind ("creator", creator_row, "text",
+                                SYNC_CREATE | BIDIRECTIONAL);
+        document_bindings.bind ("subject", subject_row, "text",
+                                SYNC_CREATE | BIDIRECTIONAL);
+        document_bindings.bind ("producer", producer_row, "text",
+                                SYNC_CREATE | BIDIRECTIONAL);
+        document_bindings.bind ("creation-date", creation_row, "date",
+                                SYNC_CREATE | BIDIRECTIONAL);
+        document_bindings.bind ("modification-date", modification_row, "date",
+                                SYNC_CREATE | BIDIRECTIONAL);
     }
 
     private Gtk.Widget create_keyword_row (Object item) {
         var row = new KeywordRow () {
-            property_name = "str",
             title = "Keyword",
-            object = item,
             document = document,
         };
+        item.bind_property ("str", row, "text", SYNC_CREATE | BIDIRECTIONAL);
 
         return row;
     }

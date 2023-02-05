@@ -52,51 +52,44 @@
                   <object class="AdwPreferencesGroup" id="properties_group">
                     <property name="title" translatable="yes">Editable Properties</property>
                     <child>
-                      <object class="HiddenScribeEntryRow" id="title_row">
+                      <object class="AdwEntryRow" id="title_row">
                         <property name="title" translatable="yes">Title</property>
-                        <property name="property-name">title</property>
                       </object>
                     </child>
 
                     <child>
-                      <object class="HiddenScribeEntryRow" id="author_row">
+                      <object class="AdwEntryRow" id="author_row">
                         <property name="title" translatable="yes">Author</property>
-                        <property name="property-name">author</property>
                       </object>
                     </child>
 
                     <child>
-                      <object class="HiddenScribeEntryRow" id="creator_row">
+                      <object class="AdwEntryRow" id="creator_row">
                         <property name="title" translatable="yes">Creator</property>
-                        <property name="property-name">creator</property>
                       </object>
                     </child>
 
                     <child>
-                      <object class="HiddenScribeEntryRow" id="subject_row">
+                      <object class="AdwEntryRow" id="subject_row">
                         <property name="title" translatable="yes">Subject</property>
-                        <property name="property-name">subject</property>
                       </object>
                     </child>
 
                     <child>
-                      <object class="HiddenScribeEntryRow" id="producer_row">
+                      <object class="AdwEntryRow" id="producer_row">
                         <property name="title" translatable="yes">Producer</property>
-                        <property name="property-name">producer</property>
                       </object>
                     </child>
 
                     <child>
                       <object class="HiddenScribeDateRow" id="creation_row">
                         <property name="title" translatable="yes">Creation Date</property>
-                        <property name="property-name">creation-date</property>
                       </object>
                     </child>
 
                     <child>
                       <object class="HiddenScribeDateRow" id="modification_row">
                         <property name="title" translatable="yes">Modification Date</property>
-                        <property name="property-name">modification-date</property>
                       </object>
                     </child>
                   </object>

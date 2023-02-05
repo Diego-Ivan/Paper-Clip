@@ -19,22 +19,9 @@
  */
 
 [GtkTemplate (ui = "/io/github/diegoivan/hidden_scribe/gtk/date-row.ui")]
-public class HiddenScribe.DateRow : Adw.ActionRow, PropertyRow {
+public class HiddenScribe.DateRow : Adw.ActionRow {
     [GtkChild]
     private unowned Gtk.Calendar calendar;
-
-    private unowned Object _object;
-    public unowned Object object {
-        get {
-            return _object;
-        }
-        set {
-            _object = value;
-            object.bind_property (property_name, this, "date", SYNC_CREATE | BIDIRECTIONAL);
-        }
-    }
-
-    public string property_name { get; set; }
 
     private DateTime? _date;
     public DateTime? date {
