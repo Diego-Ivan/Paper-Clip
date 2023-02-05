@@ -1,4 +1,4 @@
-application_id = 'io.github.diegoivan.hidden_scribe'
+application_id = 'io.github.diegoivan.pdf_metadata_editor'
 
 scalable_dir = join_paths('hicolor', 'scalable', 'apps')
 install_data(

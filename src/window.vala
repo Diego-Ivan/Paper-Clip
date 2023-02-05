@@ -19,14 +19,12 @@
  */
 
 namespace HiddenScribe {
-    [GtkTemplate (ui = "/io/github/diegoivan/hidden_scribe/window.ui")]
+    [GtkTemplate (ui = "/io/github/diegoivan/pdf_metadata_editor/window.ui")]
     public class Window : Adw.ApplicationWindow {
         [GtkChild]
         private unowned DocumentView doc_view;
         [GtkChild]
         private unowned Gtk.Stack view_stack;
-        [GtkChild]
-        private unowned Adw.WindowTitle window_title;
         [GtkChild]
         private unowned Gtk.ProgressBar progress_bar;
 
@@ -35,24 +33,6 @@ namespace HiddenScribe {
 
         public Window (Gtk.Application app) {
             Object (application: app);
-        }
-
-        public new string title {
-            get {
-                return window_title.title;
-            }
-            set {
-                window_title.title = value;
-            }
-        }
-
-        public string subtitle {
-            get {
-                return window_title.subtitle;
-            }
-            set {
-                window_title.subtitle = value;
-            }
         }
 
         construct {

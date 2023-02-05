@@ -18,7 +18,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-[GtkTemplate (ui = "/io/github/diegoivan/hidden_scribe/gtk/details-window.ui")]
+[GtkTemplate (ui = "/io/github/diegoivan/pdf_metadata_editor/gtk/details-window.ui")]
 public class HiddenScribe.DetailsWindow : Gtk.Window {
     [GtkChild]
     private unowned DetailRow format_row;

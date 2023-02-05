@@ -1,12 +1,12 @@
 {
-    "app-id" : "io.github.diegoivan.hidden_scribe",
+    "app-id" : "io.github.diegoivan.pdf_metadata_editor",
     "runtime" : "org.gnome.Platform",
     "runtime-version" : "43",
     "sdk" : "org.gnome.Sdk",
     "sdk-extensions" : [
         "org.freedesktop.Sdk.Extension.vala"
     ],
-    "command" : "hidden-scribe",
+    "command" : "pdf-metadata-editor",
     "finish-args" : [
         "--share=network",
         "--share=ipc",

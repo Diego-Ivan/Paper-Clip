@@ -23,7 +23,8 @@ hidden_scribe_deps = [
 
 conf = configuration_data()
 conf.set_quoted('APP_ID', app_id)
-conf.set_quoted('G_LOG_DOMAIN', 'HsMetadataEditor')
+conf.set_quoted('APP_NAME', 'PDF Metadata Editor')
+conf.set_quoted('G_LOG_DOMAIN', 'PDF-Metadata-Editor')
 conf.set_quoted('VERSION', meson.project_version())
 conf.set_quoted('GETTEXT_PACKAGE', meson.project_name())
 conf.set_quoted('DATADIR', join_paths(get_option('prefix'), get_option('datadir')))
@@ -36,12 +37,12 @@ add_project_arguments(
     language: 'c'
 )
 
-hidden_scribe_sources += gnome.compile_resources('hidden-scribe-resources',
-  'hidden-scribe.gresource.xml',
+hidden_scribe_sources += gnome.compile_resources('pdf_metadata_editor-resources',
+  'pdf-metadata-editor.gresource.xml',
   c_name: 'hidden_scribe'
 )
 
-executable('hidden-scribe', hidden_scribe_sources,
+executable('pdf-metadata-editor', hidden_scribe_sources,
   vala_args: [
     meson.project_source_root() + '/vapi/Config.vapi',
     '--vapidir', meson.project_source_root() / 'vapi',

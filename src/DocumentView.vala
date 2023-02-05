@@ -18,7 +18,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-[GtkTemplate (ui = "/io/github/diegoivan/hidden_scribe/gtk/document-view.ui")]
+[GtkTemplate (ui = "/io/github/diegoivan/pdf_metadata_editor/gtk/document-view.ui")]
 public class HiddenScribe.DocumentView : Adw.Bin {
     [GtkChild]
     private unowned Adw.EntryRow title_row;
@@ -50,7 +50,7 @@ public class HiddenScribe.DocumentView : Adw.Bin {
             _document = value;
             document_bindings.source = document;
 
-            unowned var window = (Window) get_root ();
+            unowned var window = (Gtk.Window) get_root ();
             document.bind_property ("title", window, "title", SYNC_CREATE);
 
             keyword_box.bind_model (document.keywords, create_keyword_row);

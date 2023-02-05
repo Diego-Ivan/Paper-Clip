@@ -1,4 +1,4 @@
-project('hidden-scribe', ['c', 'vala'],
+project('pdf-metadata-editor', ['c', 'vala'],
           version: '0.1.0',
     meson_version: '>= 0.59.0',
   default_options: [ 'warning_level=2', 'werror=false', ],
@@ -7,7 +7,7 @@ project('hidden-scribe', ['c', 'vala'],
 i18n = import('i18n')
 gnome = import('gnome')
 
-app_id = 'io.github.diegoivan.hidden_scribe'
+app_id = 'io.github.diegoivan.pdf_metadata_editor'
 
 subdir('data')
 subdir('src')

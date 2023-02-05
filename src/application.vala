@@ -21,7 +21,7 @@
 namespace HiddenScribe {
     public class Application : Adw.Application {
         public Application () {
-            Object (application_id: "io.github.diegoivan.hidden_scribe",
+            Object (application_id: "io.github.diegoivan.pdf_metadata_editor",
                     flags: ApplicationFlags.FLAGS_NONE);
 
             Intl.setlocale (LocaleCategory.ALL, "");
@@ -49,13 +49,14 @@ namespace HiddenScribe {
             string[] developers = { "Diego Iván" };
             var about = new Adw.AboutWindow () {
                 application_icon = Config.APP_ID,
-                application_name = "Hidden Scribe",
+                application_name = _("PDF Metadata Editor"),
                 copyright = "© 2023 Diego Iván",
                 developer_name = "Diego Iván",
                 developers = developers,
                 issue_url = "https://github.com/Diego-Ivan/HiddenScribe/issues",
                 license_type = GPL_3_0,
                 transient_for = this.active_window,
+                // translators: Write your name<email> here :D
                 translator_credits = _("translator_credits"),
                 version = "0.1.0",
                 website = "https://github.com/Diego-Ivan/HiddenScribe",

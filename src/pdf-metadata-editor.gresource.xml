@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gresources>
-  <gresource prefix="/io/github/diegoivan/hidden_scribe">
+  <gresource prefix="/io/github/diegoivan/pdf_metadata_editor">
     <file preprocess="xml-stripblanks">window.ui</file>
-    <file preprocess="xml-stripblanks">gtk/help-overlay.ui</file>
     <file preprocess="xml-stripblanks">gtk/document-view.ui</file>
     <file preprocess="xml-stripblanks">gtk/date-row.ui</file>
     <file preprocess="xml-stripblanks">gtk/details-window.ui</file>
   </gresource>
 
-  <gresource prefix="/io/github/diegoivan/hidden_scribe/icons/scalable/actions/">
+  <gresource prefix="/io/github/diegoivan/pdf_metadata_editor/icons/scalable/actions/">
     <file preprocess="xml-stripblanks" alias="entry-clear-symbolic.svg">gtk/entry-clear-symbolic.svg</file>
     <file preprocess="xml-stripblanks" alias="cross-symbolic.svg">gtk/cross-symbolic.svg</file>
     <file preprocess="xml-stripblanks" alias="rich-text-symbolic.svg">gtk/rich-text-symbolic.svg</file>

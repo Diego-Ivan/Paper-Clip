@@ -18,7 +18,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-[GtkTemplate (ui = "/io/github/diegoivan/hidden_scribe/gtk/date-row.ui")]
+[GtkTemplate (ui = "/io/github/diegoivan/pdf_metadata_editor/gtk/date-row.ui")]
 public class HiddenScribe.DateRow : Adw.ActionRow {
     [GtkChild]
     private unowned Gtk.Calendar calendar;

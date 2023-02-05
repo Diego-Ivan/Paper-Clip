@@ -1,1 +1,1 @@
-i18n.gettext('hidden-scribe', preset: 'glib')
+i18n.gettext('pdf_metadata_editor', preset: 'glib')

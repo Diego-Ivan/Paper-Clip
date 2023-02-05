@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist gettext-domain="pdf_metadata_editor">
+	<schema id="io.github.diegoivan.pdf_metadata_editor" path="/io/github/diegoivan/pdf_metadata_editor/">
+	</schema>
+</schemalist>
