@@ -1,0 +1,314 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the pdf_metadata_editor package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pdf_metadata_editor\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-02-05 19:31-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: data/io.github.diegoivan.pdf_metadata_editor.desktop.in:3
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:7
+#: src/application.vala:52 src/window.ui:10
+msgid "PDF Metadata Editor"
+msgstr ""
+
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:9
+msgid "No description"
+msgstr ""
+
+#. translators: Write your name<email> here :D
+#: src/application.vala:60
+msgid "translator_credits"
+msgstr ""
+
+#: src/window.vala:249
+msgid "Do you want to save the changes?"
+msgstr ""
+
+#: src/window.vala:250
+msgid "Changes that are not saved will be lost permanently"
+msgstr ""
+
+#: src/window.vala:254
+msgid "Cancel"
+msgstr ""
+
+#: src/window.vala:255
+msgid "Discard"
+msgstr ""
+
+#: src/window.vala:256
+msgid "Save"
+msgstr ""
+
+#: src/window.ui:21
+msgid "Select a File"
+msgstr ""
+
+#: src/window.ui:25
+msgid "Open"
+msgstr ""
+
+#: src/window.ui:60
+msgid "Drag a PDF document here"
+msgstr ""
+
+#: src/window.ui:106
+msgid "_Save"
+msgstr ""
+
+#: src/window.ui:111
+msgid "Save _As…"
+msgstr ""
+
+#: src/window.ui:118
+msgid "_Keyboard Shortcuts"
+msgstr ""
+
+#: src/window.ui:122
+msgid "_About PDF Metadata Editor"
+msgstr ""
+
+#: src/DateRow.vala:34
+msgid "No date set"
+msgstr ""
+
+#: src/Document.vala:110
+msgid "Unknown"
+msgstr ""
+
+#: src/Document.vala:212
+msgid "Pages in one column"
+msgstr ""
+
+#: src/Document.vala:215
+msgid "One page at a time"
+msgstr ""
+
+#: src/Document.vala:218
+msgid "Odd numbered pages on the left"
+msgstr ""
+
+#: src/Document.vala:221
+msgid "Odd numbered pages on the right"
+msgstr ""
+
+#: src/Document.vala:224
+msgid "Two odd numbered pages on the left"
+msgstr ""
+
+#: src/Document.vala:227
+msgid "Two odd numbered pages on the right"
+msgstr ""
+
+#: src/Document.vala:231
+msgid "No specific layout"
+msgstr ""
+
+#: src/Document.vala:240
+msgid "Center document's window"
+msgstr ""
+
+#: src/Document.vala:244
+msgid "Reading order is right to left"
+msgstr ""
+
+#: src/Document.vala:248
+msgid "Display document's title"
+msgstr ""
+
+#: src/Document.vala:252
+msgid "Fit document to window"
+msgstr ""
+
+#: src/Document.vala:256
+msgid "Hide window menubar"
+msgstr ""
+
+#: src/Document.vala:260
+msgid "Hide window toolbars"
+msgstr ""
+
+#: src/Document.vala:264
+msgid "Hide UI elements"
+msgstr ""
+
+#: src/Document.vala:268
+msgid "No preferences"
+msgstr ""
+
+#: src/Document.vala:279
+msgid "Adding notes"
+msgstr ""
+
+#: src/Document.vala:283
+msgid "Inserting elements"
+msgstr ""
+
+#: src/Document.vala:287
+msgid "Copying"
+msgstr ""
+
+#: src/Document.vala:291
+msgid "Extracting contents"
+msgstr ""
+
+#: src/Document.vala:295
+msgid "Filling interactive forms"
+msgstr ""
+
+#: src/Document.vala:299
+msgid "Modifying"
+msgstr ""
+
+#: src/Document.vala:303
+msgid "Printing"
+msgstr ""
+
+#: src/Document.vala:307
+msgid "Printing in high resolution"
+msgstr ""
+
+#: src/Document.vala:316
+msgid "Flip on the long edge"
+msgstr ""
+
+#: src/Document.vala:319
+msgid "Flip on the short edge"
+msgstr ""
+
+#: src/Document.vala:322
+msgid "Only single sided"
+msgstr ""
+
+#: src/Document.vala:326
+msgid "No preference"
+msgstr ""
+
+#: src/Document.vala:350
+msgid "Not compliant"
+msgstr ""
+
+#: src/KeywordRow.vala:29
+msgid "Delete Keyword"
+msgstr ""
+
+#: src/gtk/date-row.ui:46
+msgid "Today"
+msgstr ""
+
+#: src/gtk/date-row.ui:53
+msgid "Tomorrow"
+msgstr ""
+
+#: src/gtk/details-window.ui:37
+msgid "Format"
+msgstr ""
+
+#: src/gtk/details-window.ui:44
+msgid "Layout"
+msgstr ""
+
+#: src/gtk/details-window.ui:51
+msgid "Duplex"
+msgstr ""
+
+#: src/gtk/details-window.ui:58
+msgid "Subtype"
+msgstr ""
+
+#: src/gtk/details-window.ui:65
+msgid "Viewer Preferences"
+msgstr ""
+
+#: src/gtk/details-window.ui:72
+msgid "Permissions"
+msgstr ""
+
+#: src/gtk/document-view.ui:30
+msgid "Details"
+msgstr ""
+
+#: src/gtk/document-view.ui:41
+msgid "Open…"
+msgstr ""
+
+#: src/gtk/document-view.ui:42
+msgid "Open in a Document Viewer"
+msgstr ""
+
+#: src/gtk/document-view.ui:55
+msgid "Editable Properties"
+msgstr ""
+
+#: src/gtk/document-view.ui:58
+msgid "Title"
+msgstr ""
+
+#: src/gtk/document-view.ui:64
+msgid "Author"
+msgstr ""
+
+#: src/gtk/document-view.ui:70
+msgid "Creator"
+msgstr ""
+
+#: src/gtk/document-view.ui:76
+msgid "Subject"
+msgstr ""
+
+#: src/gtk/document-view.ui:82
+msgid "Producer"
+msgstr ""
+
+#: src/gtk/document-view.ui:88
+msgid "Creation Date"
+msgstr ""
+
+#: src/gtk/document-view.ui:94
+msgid "Modification Date"
+msgstr ""
+
+#: src/gtk/document-view.ui:102
+msgid "Keywords"
+msgstr ""
+
+#: src/gtk/document-view.ui:107
+msgid "Add a keyword"
+msgstr ""
+
+#: src/gtk/shortcut-window.ui:11
+msgctxt "shortcut window"
+msgid "General"
+msgstr ""
+
+#: src/gtk/shortcut-window.ui:14
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr ""
+
+#: src/gtk/shortcut-window.ui:21
+msgctxt "shortcut window"
+msgid "Open"
+msgstr ""
+
+#: src/gtk/shortcut-window.ui:28
+msgctxt "shortcut window"
+msgid "Save"
+msgstr ""
+
+#: src/gtk/shortcut-window.ui:35
+msgctxt "shortcut window"
+msgid "Save As…"
+msgstr ""

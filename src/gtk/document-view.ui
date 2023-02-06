@@ -99,12 +99,12 @@
 
                 <child>
                   <object class="AdwPreferencesGroup">
-                    <property name="title">Keywords</property>
+                    <property name="title" translatable="yes">Keywords</property>
 
                     <child type="header-suffix">
                       <object class="GtkButton" id="add_button">
                         <property name="icon-name">list-add-symbolic</property>
-                        <property name="tooltip-text">Add a keyword</property>
+                        <property name="tooltip-text" translatable="yes">Add a keyword</property>
                         <signal name="clicked" handler="on_add_button_clicked"></signal>
                       </object>
                     </child>

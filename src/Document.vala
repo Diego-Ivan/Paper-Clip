@@ -347,7 +347,7 @@ public class HiddenScribe.Document : Object {
             case UNSET:
             case NONE:
             default:
-                return _("Not compliant with any standards known");
+                return _("Not compliant");
         }
     }
 

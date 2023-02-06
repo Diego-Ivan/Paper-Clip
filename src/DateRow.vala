@@ -31,7 +31,7 @@ public class HiddenScribe.DateRow : Adw.ActionRow {
         set {
             _date = value;
             if (date == null) {
-                subtitle = "No date set";
+                subtitle = _("No date set");
                 return;
             }
 

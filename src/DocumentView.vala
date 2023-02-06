@@ -95,7 +95,7 @@ public class HiddenScribe.DocumentView : Adw.Bin {
 
     private Gtk.Widget create_keyword_row (Object item) {
         var row = new KeywordRow () {
-            title = "Keyword",
+            title = _("Keyword"),
             document = document,
         };
         item.bind_property ("str", row, "text", SYNC_CREATE | BIDIRECTIONAL);

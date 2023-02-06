@@ -1,6 +1,14 @@
-data/io.github.diegoivan.hidden_scribe.desktop.in
-data/io.github.diegoivan.hidden_scribe.appdata.xml.in
-data/io.github.diegoivan.hidden_scribe.gschema.xml
+data/io.github.diegoivan.pdf_metadata_editor.desktop.in
+data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in
+data/io.github.diegoivan.pdf_metadata_editor.gschema.xml
 src/main.vala
+src/application.vala
 src/window.vala
 src/window.ui
+src/DateRow.vala
+src/Document.vala
+src/KeywordRow.vala
+src/gtk/date-row.ui
+src/gtk/details-window.ui
+src/gtk/document-view.ui
+src/gtk/shortcut-window.ui
