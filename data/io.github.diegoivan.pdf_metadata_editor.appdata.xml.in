@@ -1,11 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop">
-	<id>io.github.diegoivan.pdf_metadata_editor.desktop</id>
-	<metadata_license>CC0-1.0</metadata_license>
-	<project_license>GPL-3.0-or-later</project_license>
+  <id>io.github.diegoivan.pdf_metadata_editor.desktop</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
 
   <name>PDF Metadata Editor</name>
-	<description>
-	  <p>No description</p>
-	</description>
+  <summary>Edit PDF document metadata</summary>
+  <description>
+    <p>Edit the title, author, keywords and more details of your PDF documents</p>
+  </description>
+
+  <releases>
+    <release version="1.0" date="2023-02-07">
+      <description>
+        <p>Release 1.0!</p>
+        <p>Edit your PDF documents:</p>
+        <ul>
+          <li>Title</li>
+          <li>Author</li>
+          <li>Creator</li>
+          <li>Producer</li>
+          <li>Creation Date</li>
+          <li>Modification Date</li>
+          <li>Keywords</li>
+        </ul>
+      </description>
+    </release>
+  </releases>
+
+  <screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/Diego-Ivan/HiddenScribe/main/data/screenshots/01.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/Diego-Ivan/HiddenScribe/main/data/screenshots/02.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/Diego-Ivan/HiddenScribe/main/data/screenshots/03.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/Diego-Ivan/HiddenScribe/main/data/screenshots/04.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/Diego-Ivan/HiddenScribe/main/data/screenshots/05.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/Diego-Ivan/HiddenScribe/main/data/screenshots/06.png</image>
+    </screenshot>
+  </screenshots>
+
+  <!-- Content Rating -->
+  <content_rating type="oars-1.1">
+    <content_attribute id="violence-cartoon">none</content_attribute>
+    <content_attribute id="violence-fantasy">none</content_attribute>
+    <content_attribute id="violence-realistic">none</content_attribute>
+    <content_attribute id="violence-bloodshed">none</content_attribute>
+    <content_attribute id="violence-sexual">none</content_attribute>
+    <content_attribute id="violence-desecration">none</content_attribute>
+    <content_attribute id="violence-slavery">none</content_attribute>
+    <content_attribute id="violence-worship">none</content_attribute>
+    <content_attribute id="drugs-alcohol">none</content_attribute>
+    <content_attribute id="drugs-narcotics">none</content_attribute>
+    <content_attribute id="drugs-tobacco">none</content_attribute>
+    <content_attribute id="sex-nudity">none</content_attribute>
+    <content_attribute id="language-profanity">none</content_attribute>
+    <content_attribute id="language-humor">none</content_attribute>
+    <content_attribute id="language-discrimination">none</content_attribute>
+    <content_attribute id="social-chat">none</content_attribute>
+    <content_attribute id="social-info">none</content_attribute>
+    <content_attribute id="social-audio">none</content_attribute>
+    <content_attribute id="social-location">none</content_attribute>
+    <content_attribute id="social-contacts">none</content_attribute>
+    <content_attribute id="money-purchasing">none</content_attribute>
+    <content_attribute id="money-gambling">none</content_attribute>
+  </content_rating>
+
+  <developer_name>Diego Iván</developer_name>
+  <url type="homepage">https://github.com/Diego-Ivan/HiddenScribe</url>
+  <url type="bugtracker">https://github.com/Diego-Ivan/HiddenScribe/issues</url>
+
+  <!-- Device Support -->
+  <requires>
+    <display_length compare="ge">350</display_length>
+  </requires>
+
+  <recommends>
+    <control>keyboard</control>
+    <control>pointing</control>
+    <control>touch</control>
+  </recommends>
 </component>

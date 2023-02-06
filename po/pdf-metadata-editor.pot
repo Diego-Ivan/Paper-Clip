@@ -1,14 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the pdf_metadata_editor package.
+# This file is distributed under the same license as the pdf-metadata-editor package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: pdf_metadata_editor\n"
+"Project-Id-Version: pdf-metadata-editor\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-05 19:31-0600\n"
+"POT-Creation-Date: 2023-02-05 20:07-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,8 +23,16 @@ msgstr ""
 msgid "PDF Metadata Editor"
 msgstr ""
 
-#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:9
-msgid "No description"
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:8
+msgid "Edit PDF document metadata"
+msgstr ""
+
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:10
+msgid "Edit the title, author, keywords and more details of your PDF documents"
+msgstr ""
+
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:42
+msgid "Diego Iván"
 msgstr ""
 
 #. translators: Write your name<email> here :D
@@ -198,6 +206,10 @@ msgstr ""
 
 #: src/Document.vala:350
 msgid "Not compliant"
+msgstr ""
+
+#: src/DocumentView.vala:98
+msgid "Keyword"
 msgstr ""
 
 #: src/KeywordRow.vala:29

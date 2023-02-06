@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pdf_metadata_editor\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-05 19:31-0600\n"
-"PO-Revision-Date: 2023-02-05 19:05-0600\n"
+"POT-Creation-Date: 2023-02-05 20:07-0600\n"
+"PO-Revision-Date: 2023-02-05 20:09-0600\n"
 "Last-Translator: Diego Iván <diegoivan.mae@gmail.com>\n"
 "Language-Team: Spanish - Mexico <->\n"
 "Language: es\n"
@@ -25,8 +25,17 @@ msgstr ""
 msgid "PDF Metadata Editor"
 msgstr "Editor de Metadatos de PDF"
 
-#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:9
-msgid "No description"
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:8
+msgid "Edit PDF document metadata"
+msgstr "Edite metadatos de documentos PDF"
+
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:10
+msgid "Edit the title, author, keywords and more details of your PDF documents"
+msgstr ""
+"Edite el título, autor, palabras clave y más detalles de sus documentos PDF"
+
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:42
+msgid "Diego Iván"
 msgstr ""
 
 #. translators: Write your name<email> here :D
@@ -202,6 +211,10 @@ msgstr "Sin preferencia"
 msgid "Not compliant"
 msgstr "No cumple con ningún estándar"
 
+#: src/DocumentView.vala:98
+msgid "Keyword"
+msgstr "Palabra Clave"
+
 #: src/KeywordRow.vala:29
 msgid "Delete Keyword"
 msgstr "Borrar palabra clave"
@@ -313,4 +326,4 @@ msgstr "Guardar"
 #: src/gtk/shortcut-window.ui:35
 msgctxt "shortcut window"
 msgid "Save As…"
-msgstr "Guardar _Como…"
+msgstr "Guardar Como…"

@@ -7,6 +7,7 @@ src/window.vala
 src/window.ui
 src/DateRow.vala
 src/Document.vala
+src/DocumentView.vala
 src/KeywordRow.vala
 src/gtk/date-row.ui
 src/gtk/details-window.ui

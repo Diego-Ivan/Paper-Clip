@@ -58,7 +58,7 @@ namespace HiddenScribe {
                 transient_for = this.active_window,
                 // translators: Write your name<email> here :D
                 translator_credits = _("translator_credits"),
-                version = "0.1.0",
+                version = Config.VERSION,
                 website = "https://github.com/Diego-Ivan/HiddenScribe",
             };
 
