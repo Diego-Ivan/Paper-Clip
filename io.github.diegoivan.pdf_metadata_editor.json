@@ -68,8 +68,9 @@
       ],
       "sources": [
         {
-          "url": "https://anongit.freedesktop.org/git/poppler/poppler.git",
-          "type": "git"
+          "url": "https://gitlab.freedesktop.org/poppler/poppler.git",
+          "type": "git",
+          "commit": "083662257ff626d6d3454a37b70928a62990c7ad"
         }
       ]
     },
@@ -81,7 +82,7 @@
       "sources": [
         {
           "type": "git",
-          "url": "file:///var/home/diegoivan/Proyectos"
+          "url": "https://github.com/Diego-Ivan/pdf-metadata-editor"
         }
       ]
     }

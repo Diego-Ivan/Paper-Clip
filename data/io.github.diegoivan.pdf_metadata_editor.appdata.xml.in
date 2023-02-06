@@ -30,22 +30,22 @@
 
   <screenshots>
     <screenshot type="default">
-      <image>https://raw.githubusercontent.com/Diego-Ivan/HiddenScribe/main/data/screenshots/01.png</image>
+      <image>https://raw.githubusercontent.com/Diego-Ivan/pdf-metadata-editor/main/data/screenshots/01.png</image>
     </screenshot>
     <screenshot>
-      <image>https://raw.githubusercontent.com/Diego-Ivan/HiddenScribe/main/data/screenshots/02.png</image>
+      <image>https://raw.githubusercontent.com/Diego-Ivan/pdf-metadata-editor/main/data/screenshots/02.png</image>
     </screenshot>
     <screenshot>
-      <image>https://raw.githubusercontent.com/Diego-Ivan/HiddenScribe/main/data/screenshots/03.png</image>
+      <image>https://raw.githubusercontent.com/Diego-Ivan/pdf-metadata-editor/main/data/screenshots/03.png</image>
     </screenshot>
     <screenshot>
-      <image>https://raw.githubusercontent.com/Diego-Ivan/HiddenScribe/main/data/screenshots/04.png</image>
+      <image>https://raw.githubusercontent.com/Diego-Ivan/pdf-metadata-editor/main/data/screenshots/04.png</image>
     </screenshot>
     <screenshot>
-      <image>https://raw.githubusercontent.com/Diego-Ivan/HiddenScribe/main/data/screenshots/05.png</image>
+      <image>https://raw.githubusercontent.com/Diego-Ivan/pdf-metadata-editor/main/data/screenshots/05.png</image>
     </screenshot>
     <screenshot>
-      <image>https://raw.githubusercontent.com/Diego-Ivan/HiddenScribe/main/data/screenshots/06.png</image>
+      <image>https://raw.githubusercontent.com/Diego-Ivan/pdf-metadata-editor/main/data/screenshots/06.png</image>
     </screenshot>
   </screenshots>
 
@@ -76,8 +76,8 @@
   </content_rating>
 
   <developer_name>Diego Iván</developer_name>
-  <url type="homepage">https://github.com/Diego-Ivan/HiddenScribe</url>
-  <url type="bugtracker">https://github.com/Diego-Ivan/HiddenScribe/issues</url>
+  <url type="homepage">https://github.com/Diego-Ivan/pdf-metadata-editor</url>
+  <url type="bugtracker">https://github.com/Diego-Ivan/pdf-metadata-editor/issues</url>
 
   <!-- Device Support -->
   <requires>
