@@ -40,7 +40,8 @@ namespace HiddenScribe {
                 { "open", on_open_action },
                 { "save", save_file },
                 { "quit", quit_and_save  },
-                { "save-as", save_file_as }
+                { "save-as", save_file_as },
+                { "help", on_help_action }
             };
 
             var action_group = new SimpleActionGroup ();
@@ -56,6 +57,8 @@ namespace HiddenScribe {
             drop_target.on_drop.connect (on_file_dropped);
             drop_target.enter.connect (on_enter);
             view_stack.add_controller (drop_target);
+
+            add_binding_action (Gdk.Key.question, CONTROL_MASK, "win.help", null, null);
         }
 
         private Gdk.DragAction on_enter () {
@@ -196,6 +199,18 @@ namespace HiddenScribe {
             progress_bar.fraction = 0;
             progress_bar.opacity = 1;
             animation.play ();
+        }
+
+        private void on_help_action () {
+            var builder = new Gtk.Builder.from_resource ("/io/github/diegoivan/pdf_metadata_editor/gtk/shortcut-window.ui");
+            var shortcuts_window = builder.get_object ("shortcut_window") as Gtk.ShortcutsWindow;
+            if (shortcuts_window == null) {
+                critical ("Failed to load shortcuts");
+                return;
+            }
+
+            shortcuts_window.transient_for = this;
+            shortcuts_window.show ();
         }
 
         private void hide_progress_bar_animation () {

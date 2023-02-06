@@ -1,8 +1,8 @@
 [Desktop Entry]
-Name=hidden-scribe
-Exec=hidden-scribe
-Icon=io.github.diegoivan.hidden_scribe
+Name=PDF Metadata Editor
+Exec=pdf-metadata-editor
+Icon=io.github.diegoivan.pdf_metadata_editor
 Terminal=false
 Type=Application
-Categories=GTK;
+Categories=GTK;Utility;Office;
 StartupNotify=true

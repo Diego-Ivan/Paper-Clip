@@ -3,6 +3,8 @@
 	<id>io.github.diegoivan.pdf_metadata_editor.desktop</id>
 	<metadata_license>CC0-1.0</metadata_license>
 	<project_license>GPL-3.0-or-later</project_license>
+
+  <name>PDF Metadata Editor</name>
 	<description>
 	  <p>No description</p>
 	</description>
