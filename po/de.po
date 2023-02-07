@@ -1,0 +1,327 @@
+# German translations for pdf_metadata_editor package.
+# Copyright (C) 2023 THE pdf_metadata_editor'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the pdf_metadata_editor package.
+# Jürgen Benvenuti <gastornis@posteo.org>, 2023.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: pdf_metadata_editor\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-02-05 20:07-0600\n"
+"PO-Revision-Date: 2023-02-07 00:10+0100\n"
+"Last-Translator: Jürgen Benvenuti <gastornis@posteo.org>\n"
+"Language-Team: German <gnome-de@gnome.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.1.1\n"
+
+#: data/io.github.diegoivan.pdf_metadata_editor.desktop.in:3
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:7
+#: src/application.vala:52 src/window.ui:10
+msgid "PDF Metadata Editor"
+msgstr "PDF-Metadaten-Editor"
+
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:8
+msgid "Edit PDF document metadata"
+msgstr "Metadaten von PDF-Dokumenten bearbeiten"
+
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:10
+msgid "Edit the title, author, keywords and more details of your PDF documents"
+msgstr "Bearbeiten Sie den Titel, den Autor, Schlüsselwörter und weitere Details Ihrer PDF-Dokumente"
+
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:42
+msgid "Diego Iván"
+msgstr "Diego Iván"
+
+#. translators: Write your name<email> here :D
+#: src/application.vala:60
+msgid "translator_credits"
+msgstr "Jürgen Benvenuti <gastornis@posteo.org>, 2023"
+
+#: src/window.vala:249
+msgid "Do you want to save the changes?"
+msgstr "Möchten Sie die Änderungen speichern?"
+
+#: src/window.vala:250
+msgid "Changes that are not saved will be lost permanently"
+msgstr "Ungespeicherte Änderungen gehen unwiderruflich verloren"
+
+#: src/window.vala:254
+msgid "Cancel"
+msgstr "Abbrechen"
+
+#: src/window.vala:255
+msgid "Discard"
+msgstr "Verwerfen"
+
+#: src/window.vala:256
+msgid "Save"
+msgstr "Speichern"
+
+#: src/window.ui:21
+msgid "Select a File"
+msgstr "Eine Datei auswählen"
+
+#: src/window.ui:25
+msgid "Open"
+msgstr "Öffnen"
+
+#: src/window.ui:60
+msgid "Drag a PDF document here"
+msgstr "Ziehen Sie ein PDF-Dokument hierher"
+
+#: src/window.ui:106
+msgid "_Save"
+msgstr "_Speichern"
+
+#: src/window.ui:111
+msgid "Save _As…"
+msgstr "Speichern _unter …"
+
+#: src/window.ui:118
+msgid "_Keyboard Shortcuts"
+msgstr "_Tastenkürzel"
+
+#: src/window.ui:122
+msgid "_About PDF Metadata Editor"
+msgstr "_Info zu PDF-Metadaten-Editor"
+
+#: src/DateRow.vala:34
+msgid "No date set"
+msgstr "Kein Datum festgelegt"
+
+#: src/Document.vala:110
+msgid "Unknown"
+msgstr "Unbekannt"
+
+#: src/Document.vala:212
+msgid "Pages in one column"
+msgstr "Seiten in einer Spalte"
+
+#: src/Document.vala:215
+msgid "One page at a time"
+msgstr "Eine Seite nach der anderen"
+
+#: src/Document.vala:218
+msgid "Odd numbered pages on the left"
+msgstr "Ungerade Seiten links"
+
+#: src/Document.vala:221
+msgid "Odd numbered pages on the right"
+msgstr "Ungerade Seiten rechts"
+
+#: src/Document.vala:224
+msgid "Two odd numbered pages on the left"
+msgstr "Zwei ungerade Seiten links"
+
+#: src/Document.vala:227
+msgid "Two odd numbered pages on the right"
+msgstr "Zwei ungerade Seiten rechts"
+
+#: src/Document.vala:231
+msgid "No specific layout"
+msgstr "Kein bestimmtes Layout"
+
+#: src/Document.vala:240
+msgid "Center document's window"
+msgstr "Dokumentenfenster zentrieren"
+
+#: src/Document.vala:244
+msgid "Reading order is right to left"
+msgstr "Lesereihenfolge ist von rechts nach links"
+
+#: src/Document.vala:248
+msgid "Display document's title"
+msgstr "Dokumententitel anzeigen"
+
+#: src/Document.vala:252
+msgid "Fit document to window"
+msgstr "Dokument ins Fenster einpassen"
+
+#: src/Document.vala:256
+msgid "Hide window menubar"
+msgstr "Fenster-Menüleiste verbergen"
+
+#: src/Document.vala:260
+msgid "Hide window toolbars"
+msgstr "Fenster-Werkzeugleisten verbergen"
+
+#: src/Document.vala:264
+msgid "Hide UI elements"
+msgstr "Benutzeroberflächen-Elemente verbergen"
+
+#: src/Document.vala:268
+msgid "No preferences"
+msgstr "Keine Einstellungen"
+
+#: src/Document.vala:279
+msgid "Adding notes"
+msgstr "Notizen hinzufügen"
+
+#: src/Document.vala:283
+msgid "Inserting elements"
+msgstr "Elemente einfügen"
+
+#: src/Document.vala:287
+msgid "Copying"
+msgstr "Kopieren"
+
+#: src/Document.vala:291
+msgid "Extracting contents"
+msgstr "Inhalte extrahieren"
+
+#: src/Document.vala:295
+msgid "Filling interactive forms"
+msgstr "Interaktive Formulare ausfüllen"
+
+#: src/Document.vala:299
+msgid "Modifying"
+msgstr "Ändern"
+
+#: src/Document.vala:303
+msgid "Printing"
+msgstr "Drucken"
+
+#: src/Document.vala:307
+msgid "Printing in high resolution"
+msgstr "Drucken in hoher Auflösung"
+
+#: src/Document.vala:316
+msgid "Flip on the long edge"
+msgstr "An der lange Kante spiegeln"
+
+#: src/Document.vala:319
+msgid "Flip on the short edge"
+msgstr "An der kurzen Kante spiegeln"
+
+#: src/Document.vala:322
+msgid "Only single sided"
+msgstr "Nur einseitig"
+
+#: src/Document.vala:326
+msgid "No preference"
+msgstr "Keine Einstellung"
+
+#: src/Document.vala:350
+msgid "Not compliant"
+msgstr "Nicht konform"
+
+#: src/DocumentView.vala:98
+msgid "Keyword"
+msgstr "Schlüsselwort"
+
+#: src/KeywordRow.vala:29
+msgid "Delete Keyword"
+msgstr "Schlüsselwort löschen"
+
+#: src/gtk/date-row.ui:46
+msgid "Today"
+msgstr "Heute"
+
+#: src/gtk/date-row.ui:53
+msgid "Tomorrow"
+msgstr "Morgen"
+
+#: src/gtk/details-window.ui:37
+msgid "Format"
+msgstr "Format"
+
+#: src/gtk/details-window.ui:44
+msgid "Layout"
+msgstr "Layout"
+
+#: src/gtk/details-window.ui:51
+msgid "Duplex"
+msgstr "Duplex"
+
+#: src/gtk/details-window.ui:58
+msgid "Subtype"
+msgstr "Untertyp"
+
+#: src/gtk/details-window.ui:65
+msgid "Viewer Preferences"
+msgstr "Betrachter-Einstellungen"
+
+#: src/gtk/details-window.ui:72
+msgid "Permissions"
+msgstr "Berechtigungen"
+
+#: src/gtk/document-view.ui:30
+msgid "Details"
+msgstr "Details"
+
+#: src/gtk/document-view.ui:41
+msgid "Open…"
+msgstr "Öffnen …"
+
+#: src/gtk/document-view.ui:42
+msgid "Open in a Document Viewer"
+msgstr "In einem Dokumentenbetrachter öffnen"
+
+#: src/gtk/document-view.ui:55
+msgid "Editable Properties"
+msgstr "Bearbeitbare Eigenschaften"
+
+#: src/gtk/document-view.ui:58
+msgid "Title"
+msgstr "Titel"
+
+#: src/gtk/document-view.ui:64
+msgid "Author"
+msgstr "Autor"
+
+#: src/gtk/document-view.ui:70
+msgid "Creator"
+msgstr "Ersteller"
+
+#: src/gtk/document-view.ui:76
+msgid "Subject"
+msgstr "Thema"
+
+#: src/gtk/document-view.ui:82
+msgid "Producer"
+msgstr "Hersteller"
+
+#: src/gtk/document-view.ui:88
+msgid "Creation Date"
+msgstr "Erstellungsdatum"
+
+#: src/gtk/document-view.ui:94
+msgid "Modification Date"
+msgstr "Änderungsdatum"
+
+#: src/gtk/document-view.ui:102
+msgid "Keywords"
+msgstr "Schlüsselwörter"
+
+#: src/gtk/document-view.ui:107
+msgid "Add a keyword"
+msgstr "Ein Schlüsselwort hinzufügen"
+
+#: src/gtk/shortcut-window.ui:11
+msgctxt "shortcut window"
+msgid "General"
+msgstr "Allgemein"
+
+#: src/gtk/shortcut-window.ui:14
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Beenden"
+
+#: src/gtk/shortcut-window.ui:21
+msgctxt "shortcut window"
+msgid "Open"
+msgstr "Öffnen"
+
+#: src/gtk/shortcut-window.ui:28
+msgctxt "shortcut window"
+msgid "Save"
+msgstr "Speichern"
+
+#: src/gtk/shortcut-window.ui:35
+msgctxt "shortcut window"
+msgid "Save As…"
+msgstr "Speichern unter …"
