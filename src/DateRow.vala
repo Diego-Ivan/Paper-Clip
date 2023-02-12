@@ -41,6 +41,11 @@ public class HiddenScribe.DateRow : Adw.ActionRow {
     }
 
     [GtkCallback]
+    private void on_clear_button_clicked () {
+        date = null;
+    }
+
+    [GtkCallback]
     private void on_day_selected () {
         date = calendar.get_date ();
     }

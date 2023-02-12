@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Project xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:foaf="http://xmlns.com/foaf/0.1/"
+         xmlns:gnome="http://api.gnome.org/doap-extensions#"
+         xmlns="http://usefulinc.com/ns/doap#">
+
+  <name xml:lang="en">PDF Metadata Editor</name>
+  <shortdesc xml:lang="en">
+      Edit PDF document metadata
+  </shortdesc>
+  <description xml:lang="en">
+      Edit the title, author, keywords and more details of your PDF documents
+  </description>
+  <homepage rdf:resource="https://github.com/Diego-Ivan/pdf-metadata-editor" />
+  <bug-database rdf:resource="https://github.com/Diego-Ivan/pdf-metadata-editor/issues" />
+
+  <category rdf:resource="http://api.gnome.org/doap-extensions#apps" />
+  <programming-language>Vala</programming-language>
+
+  <maintainer>
+    <foaf:Person>
+      <foaf:name>Diego Iván</foaf:name>
+      <foaf:mbox rdf:resource="mailto:diegoivan.mae@gmail.com" />
+    </foaf:Person>
+  </maintainer>
+</Project>

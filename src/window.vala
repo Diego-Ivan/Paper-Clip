@@ -114,13 +114,7 @@ namespace HiddenScribe {
         }
 
         private void open_file () {
-            var filter = new Gtk.FileFilter ();
-            filter.add_mime_type ("application/pdf");
-
-            var filechooser = new Gtk.FileChooserNative ("Select a PDF file", this,
-                                                         OPEN, null, null);
-            filechooser.add_filter (filter);
-
+            Gtk.FileChooserNative filechooser = create_file_chooser (OPEN);
             filechooser.response.connect (on_file_opened);
             filechooser.show ();
         }
@@ -159,16 +153,11 @@ namespace HiddenScribe {
 
         private void save_file_as () {
             var manager = new Services.DocManager ();
+            message ("Saving as...");
             if (manager.document == null) {
                 return;
             }
-
-            var filter = new Gtk.FileFilter ();
-            filter.add_mime_type ("application/pdf");
-
-            var filechooser = new Gtk.FileChooserNative (null, this,
-                                                         SAVE, null, null);
-            filechooser.add_filter (filter);
+            Gtk.FileChooserNative filechooser = create_file_chooser (SAVE);
             filechooser.set_current_name (manager.document.original_file.get_basename ());
 
             filechooser.response.connect (on_file_saved);
@@ -211,6 +200,16 @@ namespace HiddenScribe {
 
             shortcuts_window.transient_for = this;
             shortcuts_window.show ();
+        }
+
+        private Gtk.FileChooserNative create_file_chooser (Gtk.FileChooserAction action) {
+            var filter = new Gtk.FileFilter ();
+            filter.add_pattern ("*.pdf");
+
+            var filechooser = new Gtk.FileChooserNative (null, this, action, null, null);
+            filechooser.add_filter (filter);
+
+            return filechooser;
         }
 
         private void hide_progress_bar_animation () {
