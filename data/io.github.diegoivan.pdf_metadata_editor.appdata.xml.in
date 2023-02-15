@@ -5,9 +5,12 @@
   <project_license>GPL-3.0-or-later</project_license>
 
   <name>PDF Metadata Editor</name>
+  <name xml:lang="hr">Uređivač PDF metapodataka</name>
   <summary>Edit PDF document metadata</summary>
+  <summary xml:lang="hr">Uredi metapodatke PDF dokumenata</summary>
   <description>
     <p>Edit the title, author, keywords and more details of your PDF documents</p>
+    <p xml:lang="hr">Uredi naslov, autora, ključne riječi i druge podatke PDF dokumenata</p>
   </description>
 
   <releases>

@@ -1,5 +1,6 @@
 [Desktop Entry]
 Name=PDF Metadata Editor
+Name[hr]=Uređivač PDF metapodataka
 Exec=pdf-metadata-editor
 Icon=io.github.diegoivan.pdf_metadata_editor
 Terminal=false
