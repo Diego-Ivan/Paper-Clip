@@ -10,7 +10,7 @@
    id="svg11300"
    sodipodi:version="0.32"
    inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
-   sodipodi:docname="io.github.diegoivan.pdf_metadata_editor.source.svg"
+   sodipodi:docname="io.github.diegoivan.pdf_metadata_editor.Source.svg"
    inkscape:output_extension="org.inkscape.output.svg.inkscape"
    version="1.0"
    style="display:inline;enable-background:new"
@@ -85,10 +85,10 @@
          style="stop-color:#77767b;stop-opacity:1"
          offset="0.43066975"
          id="stop10775" /><stop
-         style="stop-color:#77767b;stop-opacity:1"
+         style="stop-color:#9a9996;stop-opacity:1"
          offset="0.55314553"
          id="stop10773" /><stop
-         style="stop-color:#9a9996;stop-opacity:1"
+         style="stop-color:#77767b;stop-opacity:1"
          offset="0.67562133"
          id="stop10771" /><stop
          style="stop-color:#5e5c64;stop-opacity:1"
@@ -582,10 +582,10 @@
      borderopacity="0.25490196"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="5.6568544"
-     inkscape:cx="78.046909"
-     inkscape:cy="76.190754"
-     inkscape:current-layer="g16258"
+     inkscape:zoom="4.0000001"
+     inkscape:cx="30.374999"
+     inkscape:cy="68.999998"
+     inkscape:current-layer="layer1"
      showgrid="true"
      inkscape:grid-bbox="true"
      inkscape:document-units="px"
@@ -2621,7 +2621,7 @@
        id="g16130"
        style="display:inline"><path
          id="path8536"
-         style="color:#000000;fill:#77767b;-inkscape-stroke:none"
+         style="color:#000000;fill:#5e5c64;-inkscape-stroke:none"
          d="m 72,182 c -13.207391,0 -24,10.7926 -24,24 v 48 c 0,13.2074 10.792609,24 24,24 13.207391,0 24,-10.7926 24,-24 v -36 c 0,-8.78913 -7.210869,-16 -16,-16 -8.789131,0 -16,7.21087 -16,16 v 36 a 8,8 0 0 0 8,8 v -8 -36 c 0,-4.46566 3.534363,-8 8,-8 4.465637,0 8,3.53434 8,8 v 36 c 0,8.88388 -7.116112,16 -16,16 -8.883888,0 -16,-7.11612 -16,-16 v -48 c 0,-8.88388 7.116112,-16 16,-16 5.073923,0 9.557848,2.34974 12.480469,6 h 9.28125 C 89.959973,187.74129 81.642352,182 72,182 Z"
          inkscape:label="clip-chin" /><path
          id="path3695"
