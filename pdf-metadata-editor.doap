@@ -5,7 +5,7 @@
          xmlns:gnome="http://api.gnome.org/doap-extensions#"
          xmlns="http://usefulinc.com/ns/doap#">
 
-  <name xml:lang="en">PDF Metadata Editor</name>
+  <name xml:lang="en">Paper Clip</name>
   <shortdesc xml:lang="en">
       Edit PDF document metadata
   </shortdesc>

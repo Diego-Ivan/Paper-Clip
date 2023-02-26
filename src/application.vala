@@ -50,7 +50,7 @@ namespace HiddenScribe {
             string[] artists = { "Brage Fuglseth" };
             var about = new Adw.AboutWindow () {
                 application_icon = Config.APP_ID,
-                application_name = _("PDF Metadata Editor"),
+                application_name = "Paper Clip",
                 copyright = "© 2023 Diego Iván",
                 developer_name = "Diego Iván",
                 developers = developers,

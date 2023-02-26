@@ -7,7 +7,7 @@
     <property name="default-height">500</property>
     <property name="width-request">350</property>
     <property name="height-request">320</property>
-    <property name="title" translatable="yes">PDF Metadata Editor</property>
+    <property name="title">Paper Clip</property>
     <signal name="close-request" handler="on_close_request"></signal>
 
     <child>
