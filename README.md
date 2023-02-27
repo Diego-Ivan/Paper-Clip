@@ -24,6 +24,10 @@ Edit:
 * Modification Date
 * Keywords
 
+## Conduct
+
+This project follows the [GNOME Code of Conduct](https://wiki.gnome.org/Foundation/CodeOfConduct)
+
 ## Flathub
 
 The only official distribution format for Paper Clip is Flathub. Any other distribution format is unofficial and disencouraged.
