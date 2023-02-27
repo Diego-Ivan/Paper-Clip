@@ -1,6 +1,6 @@
 <div align="center">
 
-# PDF Metadata Editor
+# Paper Clip
 
 <img src="data/icons/hicolor/scalable/apps/io.github.diegoivan.pdf_metadata_editor.svg" width="160" height="160"></img>
 
@@ -26,15 +26,15 @@ Edit:
 
 ## Flathub
 
-The only official distribution format for PDF Metadata Editor is Flathub. Any other distribution format is unofficial and disencouraged.
+The only official distribution format for Paper Clip is Flathub. Any other distribution format is unofficial and disencouraged.
 
 ## GNOME Builder
 
-PDF Metadata Editor comes with a Flatpak manifest, and it it can be compiled and executed in GNOME Builder just by cloning the repository and clicking on the play button.
+Paper Clip comes with a Flatpak manifest, and it it can be compiled and executed in GNOME Builder just by cloning the repository and clicking on the play button.
 
 ## Manual Building
 
-The following are required to build PDF Metadata Editor
+The following are required to build Paper Clip
 
 ```
 libpoppler
