@@ -27,6 +27,8 @@ namespace HiddenScribe {
         private unowned Gtk.Stack view_stack;
         [GtkChild]
         private unowned Gtk.ProgressBar progress_bar;
+        [GtkChild]
+        private unowned Gtk.MenuButton menu_button;
 
         public State state { get; set; default = NONE; }
         private File? dropped_file { get; set; default = null; }
@@ -41,7 +43,8 @@ namespace HiddenScribe {
                 { "save", save_file },
                 { "quit", quit_and_save  },
                 { "save-as", save_file_as },
-                { "help", on_help_action }
+                { "help", on_help_action },
+                { "main-menu", on_main_menu_action }
             };
 
             var action_group = new SimpleActionGroup ();
@@ -200,6 +203,10 @@ namespace HiddenScribe {
 
             shortcuts_window.transient_for = this;
             shortcuts_window.show ();
+        }
+
+        private void on_main_menu_action () {
+            menu_button.popup ();
         }
 
         private Gtk.FileChooserNative create_file_chooser (Gtk.FileChooserAction action) {

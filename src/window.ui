@@ -29,7 +29,7 @@
             </child>
 
             <child type="end">
-              <object class="GtkMenuButton">
+              <object class="GtkMenuButton" id="menu_button">
                 <property name="icon-name">open-menu-symbolic</property>
                 <property name="menu-model">primary_menu</property>
               </object>
@@ -128,6 +128,13 @@
             <property name="action">action(win.quit)</property>
           </object>
         </child>
+
+        <child>
+          <object class="GtkShortcut">
+            <property name="trigger">F10</property>
+            <property name="action">action(win.main-menu)</property>
+          </object>
+        </child>
       </object>
     </child>
 
@@ -148,6 +155,7 @@
     <section>
       <item>
         <attribute name="label" translatable="yes">_Keyboard Shortcuts</attribute>
+        <attribute name="accel">&lt;control&gt;&lt;?</attribute>
         <attribute name="action">win.help</attribute>
       </item>
       <item>
