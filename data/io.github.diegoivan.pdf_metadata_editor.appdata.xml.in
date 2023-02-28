@@ -38,12 +38,6 @@
     <screenshot>
       <image>https://raw.githubusercontent.com/Diego-Ivan/pdf-metadata-editor/main/data/screenshots/04.png</image>
     </screenshot>
-    <screenshot>
-      <image>https://raw.githubusercontent.com/Diego-Ivan/pdf-metadata-editor/main/data/screenshots/05.png</image>
-    </screenshot>
-    <screenshot>
-      <image>https://raw.githubusercontent.com/Diego-Ivan/pdf-metadata-editor/main/data/screenshots/06.png</image>
-    </screenshot>
   </screenshots>
 
   <!-- Content Rating -->
@@ -73,8 +67,8 @@
   </content_rating>
 
   <developer_name>Diego Iván</developer_name>
-  <url type="homepage">https://github.com/Diego-Ivan/pdf-metadata-editor</url>
-  <url type="bugtracker">https://github.com/Diego-Ivan/pdf-metadata-editor/issues</url>
+  <url type="homepage">https://github.com/Diego-Ivan/Paper-Clip</url>
+  <url type="bugtracker">https://github.com/Diego-Ivan/Paper-Clip/issues</url>
 
   <!-- Device Support -->
   <requires>
