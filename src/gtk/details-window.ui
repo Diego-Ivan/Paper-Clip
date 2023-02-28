@@ -2,7 +2,7 @@
 <interface>
   <requires lib="gtk" version="4.0"/>
   <requires lib="Adw" version="1.0"/>
-  <template class="HiddenScribeDetailsWindow" parent="GtkWindow">
+  <template class="PaperClipDetailsWindow" parent="GtkWindow">
     <property name="title">Details</property>
     <property name="default-width">475</property>
     <property name="default-height">475</property>
@@ -33,42 +33,42 @@
                 </style>
 
                 <child>
-                  <object class="HiddenScribeDetailRow" id="format_row">
+                  <object class="PaperClipDetailRow" id="format_row">
                     <property name="title" translatable="yes">Format</property>
                     <property name="selectable">false</property>
                   </object>
                 </child>
 
                 <child>
-                  <object class="HiddenScribeDetailRow" id="layout_row">
+                  <object class="PaperClipDetailRow" id="layout_row">
                     <property name="title" translatable="yes">Layout</property>
                     <property name="selectable">false</property>
                   </object>
                 </child>
 
                 <child>
-                  <object class="HiddenScribeDetailRow" id="duplex_row">
+                  <object class="PaperClipDetailRow" id="duplex_row">
                     <property name="title" translatable="yes">Duplex</property>
                     <property name="selectable">false</property>
                   </object>
                 </child>
 
                 <child>
-                  <object class="HiddenScribeDetailRow" id="subtype_row">
+                  <object class="PaperClipDetailRow" id="subtype_row">
                     <property name="title" translatable="yes">Subtype</property>
                     <property name="selectable">false</property>
                   </object>
                 </child>
 
                 <child>
-                  <object class="HiddenScribeStringArrayRow" id="preferences_row">
+                  <object class="PaperClipStringArrayRow" id="preferences_row">
                     <property name="title" translatable="yes">Viewer Preferences</property>
                     <property name="selectable">false</property>
                   </object>
                 </child>
 
                 <child>
-                  <object class="HiddenScribeStringArrayRow" id="permissions_row">
+                  <object class="PaperClipStringArrayRow" id="permissions_row">
                     <property name="title" translatable="yes">Permissions</property>
                     <property name="selectable">false</property>
                   </object>

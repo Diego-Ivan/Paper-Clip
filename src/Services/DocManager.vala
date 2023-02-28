@@ -19,7 +19,7 @@
  */
 
 [SingleInstance]
-public sealed class HiddenScribe.Services.DocManager : Object {
+public sealed class PaperClip.Services.DocManager : Object {
     public bool changed { get; private set; default = false; }
     private Document _document;
     public Document document {
@@ -59,7 +59,7 @@ public sealed class HiddenScribe.Services.DocManager : Object {
     }
 }
 
-public enum HiddenScribe.State {
+public enum PaperClip.State {
     NONE,
     OPENING_FILE,
     CLOSING,

@@ -18,7 +18,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-public class HiddenScribe.Document : Object {
+public class PaperClip.Document : Object {
     private ListStore keyword_list = new ListStore (typeof(StringObject));
     private Poppler.Document _document;
     private Poppler.Document document {
@@ -390,7 +390,7 @@ public class HiddenScribe.Document : Object {
     }
 }
 
-public class HiddenScribe.StringObject : Object {
+public class PaperClip.StringObject : Object {
     public string str { get; set; default = ""; }
 
     public StringObject (string str) {

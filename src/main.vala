@@ -19,6 +19,6 @@
  */
 
 int main (string[] args) {
-    var app = new HiddenScribe.Application ();
+    var app = new PaperClip.Application ();
     return app.run (args);
 }

@@ -18,7 +18,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-public class HiddenScribe.StringArrayRow : Adw.ExpanderRow {
+public class PaperClip.StringArrayRow : Adw.ExpanderRow {
     public string[] string_array {
         set {
             foreach (string item in value) {

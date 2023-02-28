@@ -19,7 +19,7 @@
  */
 
 [GtkTemplate (ui = "/io/github/diegoivan/pdf_metadata_editor/gtk/document-view.ui")]
-public class HiddenScribe.DocumentView : Adw.Bin {
+public class PaperClip.DocumentView : Adw.Bin {
     [GtkChild]
     private unowned Adw.EntryRow title_row;
     [GtkChild]

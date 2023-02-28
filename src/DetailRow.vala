@@ -18,7 +18,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-public class HiddenScribe.DetailRow : Adw.ActionRow {
+public class PaperClip.DetailRow : Adw.ActionRow {
     private Gtk.Label suffix_label = new Gtk.Label ("");
     public string detail {
         get {
