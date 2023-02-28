@@ -18,8 +18,8 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-[GtkTemplate (ui = "/io/github/diegoivan/pdf_metadata_editor/gtk/details-window.ui")]
-public class PaperClip.DetailsWindow : Gtk.Window {
+[GtkTemplate (ui = "/io/github/diegoivan/pdf_metadata_editor/gtk/details-list.ui")]
+public class PaperClip.DetailsList : Adw.Bin {
     [GtkChild]
     private unowned DetailRow format_row;
     [GtkChild]
@@ -48,9 +48,5 @@ public class PaperClip.DetailsWindow : Gtk.Window {
             preferences_row.string_array = document.viewer_preferences;
             permissions_row.string_array = document.permissions;
         }
-    }
-
-    public DetailsWindow (Document document) {
-        Object (document: document);
     }
 }

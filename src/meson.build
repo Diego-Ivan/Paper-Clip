@@ -6,7 +6,7 @@ hidden_scribe_sources = [
   'DocumentView.vala',
   'DateRow.vala',
   'KeywordRow.vala',
-  'DetailsWindow.vala',
+  'DetailsList.vala',
   'DetailRow.vala',
   'StringArrayRow.vala',
 

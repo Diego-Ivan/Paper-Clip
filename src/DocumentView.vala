@@ -38,6 +38,8 @@ public class PaperClip.DocumentView : Adw.Bin {
     private unowned Gtk.ListBox keyword_box;
     [GtkChild]
     private unowned Adw.StatusPage document_status;
+    [GtkChild]
+    private unowned DetailsList details_list;
 
     private BindingGroup document_bindings = new BindingGroup ();
 
@@ -49,6 +51,7 @@ public class PaperClip.DocumentView : Adw.Bin {
         set {
             _document = value;
             document_bindings.source = document;
+            details_list.document = document;
 
             unowned var window = (Gtk.Window) get_root ();
             document.bind_property ("title", window, "title", SYNC_CREATE);
@@ -64,7 +67,6 @@ public class PaperClip.DocumentView : Adw.Bin {
 
     construct {
         ActionEntry[] entries = {
-            { "details", details_action },
             { "open-app", open_app_action },
         };
 
@@ -101,13 +103,6 @@ public class PaperClip.DocumentView : Adw.Bin {
         item.bind_property ("str", row, "text", SYNC_CREATE | BIDIRECTIONAL);
 
         return row;
-    }
-
-    private void details_action () {
-        var details_window = new DetailsWindow (document) {
-            transient_for = (Gtk.Window) get_root ()
-        };
-        details_window.show ();
     }
 
     private void open_app_action () {

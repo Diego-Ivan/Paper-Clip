@@ -120,6 +120,17 @@
                   </object>
                 </child>
 
+                <child>
+                  <object class="AdwPreferencesGroup" id="details_group">
+                    <property name="title" translatable="yes">Non-Editable Properties</property>
+
+                    <child>
+                      <object class="PaperClipDetailsList" id="details_list"></object>
+                    </child>
+
+                  </object>
+                </child>
+
               </object>
             </child>
 
