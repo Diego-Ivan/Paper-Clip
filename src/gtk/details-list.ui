@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0"/>
+  <requires lib="Adw" version="1.0"/>
+  <template class="PaperClipDetailsList" parent="AdwBin">
+    <child>
+      <object class="GtkListBox">
+        <property name="margin-top">12</property>
+        <property name="valign">start</property>
+        <style>
+          <class name="boxed-list"/>
+        </style>
+
+        <child>
+          <object class="PaperClipDetailRow" id="format_row">
+            <property name="title" translatable="yes">Format</property>
+            <property name="selectable">false</property>
+          </object>
+        </child>
+
+        <child>
+          <object class="PaperClipDetailRow" id="layout_row">
+            <property name="title" translatable="yes">Layout</property>
+            <property name="selectable">false</property>
+          </object>
+        </child>
+
+        <child>
+          <object class="PaperClipDetailRow" id="duplex_row">
+            <property name="title" translatable="yes">Duplex</property>
+            <property name="selectable">false</property>
+          </object>
+        </child>
+
+        <child>
+          <object class="PaperClipDetailRow" id="subtype_row">
+            <property name="title" translatable="yes">Subtype</property>
+            <property name="selectable">false</property>
+          </object>
+        </child>
+
+        <child>
+          <object class="PaperClipStringArrayRow" id="preferences_row">
+            <property name="title" translatable="yes">Viewer Preferences</property>
+            <property name="selectable">false</property>
+          </object>
+        </child>
+
+        <child>
+          <object class="PaperClipStringArrayRow" id="permissions_row">
+            <property name="title" translatable="yes">Permissions</property>
+            <property name="selectable">false</property>
+          </object>
+        </child>
+      </object>
+    </child>
+  </template>
+</interface>
