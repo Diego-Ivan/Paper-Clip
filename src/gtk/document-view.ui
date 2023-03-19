@@ -23,47 +23,31 @@
                 </child>
 
                 <child>
-                  <object class="GtkLabel" id="title_label">
-                    <property name="wrap">true</property>
-                    <property name="justify">center</property>
-                    <style>
-                      <class name="title-1"/>
-                    </style>
-                  </object>
-                </child>
-
-                <child>
-                  <object class="GtkBox">
-                    <property name="orientation">horizontal</property>
-                    <property name="halign">center</property>
-                    <property name="spacing">24</property>
-
-                    <child>
+                  <object class="GtkCenterBox">
+                    <child type="start">
                       <object class="GtkButton">
-                        <property name="halign">center</property>
-                        <property name="label" translatable="yes">Details</property>
-                        <property name="action-name">editor.details</property>
-                        <style>
-                          <class name="pill"/>
-                        </style>
-                      </object>
-                    </child>
-
-                    <child>
-                      <object class="GtkButton">
-                        <property name="halign">center</property>
-                        <property name="label" translatable="yes">Open…</property>
-                        <property name="tooltip-text" translatable="yes">Open in a Document Viewer</property>
+                        <property name="icon-name">chain-link-symbolic</property>
+                        <property name="valign">center</property>
                         <property name="action-name">editor.open-app</property>
                         <style>
-                          <class name="pill"/>
-                          <class name="suggested-action"/>
+                          <class name="flat"/>
                         </style>
                       </object>
                     </child>
 
+                    <child type="center">
+                      <object class="GtkLabel" id="title_label">
+                        <property name="wrap">true</property>
+                        <property name="justify">center</property>
+                        <property name="hexpand">true</property>
+                        <style>
+                          <class name="title-1"/>
+                        </style>
+                      </object>
+                    </child>
                   </object>
                 </child>
+
                 <child>
                   <object class="AdwPreferencesGroup" id="properties_group">
                     <property name="title" translatable="yes">Editable Properties</property>
