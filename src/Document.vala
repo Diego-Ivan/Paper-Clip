@@ -182,6 +182,10 @@ public class PaperClip.Document : Object {
         return false;
     }
 
+    public Poppler.Page get_page_for_index (int index) {
+        return document.get_page (index);
+    }
+
     private void deserialize_keywords () {
         if (document.keywords == null) {
             return;
