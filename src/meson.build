@@ -9,6 +9,7 @@ hidden_scribe_sources = [
   'DetailsList.vala',
   'DetailRow.vala',
   'StringArrayRow.vala',
+  'DocumentThumbnail.vala',
 
   # Services
   'Services/DocManager.vala',
