@@ -35,7 +35,7 @@ public class PaperClip.DocumentView : Adw.Bin {
     [GtkChild]
     private unowned DateRow modification_row;
     [GtkChild]
-    private unowned Gtk.ListBox keyword_box;
+    private unowned KeywordList keyword_list;
     [GtkChild]
     private unowned Gtk.Label title_label;
     [GtkChild]
@@ -55,11 +55,10 @@ public class PaperClip.DocumentView : Adw.Bin {
             document_bindings.source = document;
             details_list.document = document;
             document_thumbnail.document = document;
+            keyword_list.document = document;
 
             unowned var window = (Gtk.Window) get_root ();
             document.bind_property ("title", window, "title", SYNC_CREATE);
-
-            keyword_box.bind_model (document.keywords, create_keyword_row);
 
             var manager = new Services.DocManager ();
             manager.document = document;
@@ -71,7 +70,6 @@ public class PaperClip.DocumentView : Adw.Bin {
     construct {
         ActionEntry[] entries = {
             { "open-app", open_app_action },
-            { "details", test_page_rendering },
         };
 
         var action_group = new SimpleActionGroup ();
@@ -99,26 +97,8 @@ public class PaperClip.DocumentView : Adw.Bin {
                                 SYNC_CREATE | BIDIRECTIONAL);
     }
 
-    private Gtk.Widget create_keyword_row (Object item) {
-        var row = new KeywordRow () {
-            title = _("Keyword"),
-            document = document,
-        };
-        item.bind_property ("str", row, "text", SYNC_CREATE | BIDIRECTIONAL);
-
-        return row;
-    }
-
     private void open_app_action () {
         open_on_app.begin ();
-    }
-
-    private void test_page_rendering () {
-        var window = new Gtk.Window ();
-        var thumbnail = new DocumentThumbnail ();
-        window.child = thumbnail;
-        thumbnail.document = document;
-        window.present ();
     }
 
     private async void open_on_app () {
@@ -135,10 +115,5 @@ public class PaperClip.DocumentView : Adw.Bin {
         catch (Error e) {
             critical (e.message);
         }
-    }
-
-    [GtkCallback]
-    private void on_add_button_clicked () {
-        document.add_keyword ("");
     }
 }
