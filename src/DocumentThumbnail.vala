@@ -19,7 +19,9 @@
  */
 
 public class PaperClip.DocumentThumbnail : Adw.Bin {
-    private Gtk.Picture thumbnail_image = new Gtk.Picture ();
+    private Gtk.Image thumbnail_image = new Gtk.Image ();
+
+    const int MAX_SIZE = 150;
 
     private unowned Document _document;
     public unowned Document document {
@@ -33,24 +35,59 @@ public class PaperClip.DocumentThumbnail : Adw.Bin {
     }
 
     construct {
-        thumbnail_image.width_request = 100;
-        thumbnail_image.height_request = 125;
-
         child = thumbnail_image;
     }
 
     private async void generate_png () {
         try {
-            string image_uri = yield save_thumbnail_to_cache ();
-            var texture = Gdk.Texture.from_filename (image_uri);
-            thumbnail_image.paintable = texture;
+            Gdk.Texture thumbnail_texture = yield create_thumbnail_in_cache ();
+            thumbnail_image.paintable = scale_thumbnail (thumbnail_texture);
         }
         catch (Error e) {
             critical (e.message);
         }
     }
 
-    private async string? save_thumbnail_to_cache () throws Error {
+    private Gdk.Paintable scale_thumbnail (Gdk.Texture thumbnail_texture) {
+        int image_width = thumbnail_texture.width;
+        int image_height = thumbnail_texture.height;
+
+        if (image_width == image_height) {
+            return thumbnail_texture;
+        }
+
+        message ("%i.%i", Gtk.MAJOR_VERSION, Gtk.MINOR_VERSION);
+
+        float size = MAX_SIZE * scale_factor;
+        float scaled_height, scaled_width;
+
+        if (image_width > image_height) {
+            scaled_height = size;
+            scaled_width = image_width * scaled_height / image_height;
+        } else if (image_height > image_width) {
+            scaled_width = size;
+            scaled_height = image_height * scaled_width / image_width;
+        } else {
+            scaled_width = scaled_height = size;
+        }
+
+        // TODO: Scaling for the texture
+        var snapshot = new Gtk.Snapshot ();
+        Gsk.ScalingFilter filter = NEAREST;
+        if (image_width < scaled_width || image_height < scaled_height) {
+            filter = TRILINEAR;
+        }
+
+        var thumbnail_rectangle = Graphene.Rect ();
+
+        thumbnail_rectangle = thumbnail_rectangle.init (0, 0, scaled_width, scaled_height);
+        snapshot.append_scaled_texture (thumbnail_texture, thumbnail_rectangle, filter);
+        thumbnail_image.pixel_size = (int) size;
+
+        return snapshot.to_paintable ({scaled_width, scaled_height});
+    }
+
+    private async Gdk.Texture? create_thumbnail_in_cache () throws Error {
         Cairo.Status status = NULL_POINTER;
         string? cache_path = "";
 
@@ -74,7 +111,7 @@ public class PaperClip.DocumentThumbnail : Adw.Bin {
 
             status = surface.write_to_png (create_cache_file ());
 
-            Idle.add (save_thumbnail_to_cache.callback);
+            Idle.add (create_thumbnail_in_cache.callback);
         });
 
         yield;
@@ -83,7 +120,7 @@ public class PaperClip.DocumentThumbnail : Adw.Bin {
             throw new ThumbnailError.FAILED_EXPORT ("Failed to export PNG file: %s", status.to_string ());
         }
 
-        return cache_path;
+        return Gdk.Texture.from_filename (cache_path);;
     }
 
     private string? create_cache_file () {
