@@ -3,7 +3,7 @@
   <requires lib="gtk" version="4.0"/>
   <requires lib="Adw" version="1.0"/>
   <template class="HiddenScribeDetailsWindow" parent="GtkWindow">
-    <property name="title">Details</property>
+    <property name="title" translatable="yes">Details</property>
     <property name="default-width">475</property>
     <property name="default-height">475</property>
     <property name="modal">true</property>
