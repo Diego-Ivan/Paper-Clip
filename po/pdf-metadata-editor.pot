@@ -64,27 +64,27 @@ msgstr ""
 msgid "Select a File"
 msgstr ""
 
-#: src/window.ui:25
-msgid "Open"
+#: src/window.ui:80
+msgid "Open a Document"
 msgstr ""
 
-#: src/window.ui:60
-msgid "Drag a PDF document here"
+#: src/window.ui:89
+msgid "Drag and drop a PDF file here"
 msgstr ""
 
-#: src/window.ui:106
+#: src/window.ui:145
 msgid "_Save"
 msgstr ""
 
-#: src/window.ui:111
+#: src/window.ui:150
 msgid "Save _As…"
 msgstr ""
 
-#: src/window.ui:118
+#: src/window.ui:157
 msgid "_Keyboard Shortcuts"
 msgstr ""
 
-#: src/window.ui:122
+#: src/window.ui:162
 msgid "_About PDF Metadata Editor"
 msgstr ""
 
@@ -216,12 +216,16 @@ msgstr ""
 msgid "Delete Keyword"
 msgstr ""
 
-#: src/gtk/date-row.ui:46
+#: src/gtk/date-row.ui:47
 msgid "Today"
 msgstr ""
 
-#: src/gtk/date-row.ui:53
+#: src/gtk/date-row.ui:54
 msgid "Tomorrow"
+msgstr ""
+
+#: src/gtk/details-window.ui:6
+msgid "Details"
 msgstr ""
 
 #: src/gtk/details-window.ui:37
@@ -246,10 +250,6 @@ msgstr ""
 
 #: src/gtk/details-window.ui:72
 msgid "Permissions"
-msgstr ""
-
-#: src/gtk/document-view.ui:30
-msgid "Details"
 msgstr ""
 
 #: src/gtk/document-view.ui:41
