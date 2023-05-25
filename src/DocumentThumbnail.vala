@@ -21,7 +21,7 @@
 public class PaperClip.DocumentThumbnail : Adw.Bin {
     private Gtk.Image thumbnail_image = new Gtk.Image ();
 
-    const int MAX_SIZE = 150;
+    const int MAX_SIZE = 175;
 
     private unowned Document _document;
     public unowned Document document {
@@ -36,6 +36,7 @@ public class PaperClip.DocumentThumbnail : Adw.Bin {
 
     construct {
         child = thumbnail_image;
+        thumbnail_image.add_css_class ("icon-dropshadow");
     }
 
     private async void generate_png () {
@@ -71,9 +72,8 @@ public class PaperClip.DocumentThumbnail : Adw.Bin {
             scaled_width = scaled_height = size;
         }
 
-        // TODO: Scaling for the texture
         var snapshot = new Gtk.Snapshot ();
-        Gsk.ScalingFilter filter = NEAREST;
+        Gsk.ScalingFilter filter = LINEAR;
         if (image_width < scaled_width || image_height < scaled_height) {
             filter = TRILINEAR;
         }
@@ -81,7 +81,7 @@ public class PaperClip.DocumentThumbnail : Adw.Bin {
         var thumbnail_rectangle = Graphene.Rect ();
 
         thumbnail_rectangle = thumbnail_rectangle.init (0, 0, scaled_width, scaled_height);
-        snapshot.append_scaled_texture (thumbnail_texture, thumbnail_rectangle, filter);
+        snapshot.append_scaled_texture (thumbnail_texture, filter, thumbnail_rectangle);
         thumbnail_image.pixel_size = (int) size;
 
         return snapshot.to_paintable ({scaled_width, scaled_height});
