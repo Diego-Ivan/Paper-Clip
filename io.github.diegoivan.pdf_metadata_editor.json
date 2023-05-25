@@ -6,10 +6,6 @@
   "sdk-extensions" : [
     "org.freedesktop.Sdk.Extension.vala"
   ],
-  "build-options" : {
-    "prepend-path" : "/usr/lib/sdk/vala/bin/",
-    "prepend-ld-library-path" : "/usr/lib/sdk/vala/lib"
-  },
   "command": "pdf-metadata-editor",
   "finish-args": [
     "--share=network",
@@ -18,6 +14,10 @@
     "--device=dri",
     "--socket=wayland"
   ],
+  "build-options" : {
+    "prepend-path" : "/usr/lib/sdk/vala/bin/",
+    "prepend-ld-library-path" : "/usr/lib/sdk/vala/lib"
+  },
   "cleanup": [
     "/include",
     "/lib/pkgconfig",
