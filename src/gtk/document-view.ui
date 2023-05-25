@@ -23,28 +23,13 @@
                 </child>
 
                 <child>
-                  <object class="GtkCenterBox">
-                    <child type="start">
-                      <object class="GtkButton">
-                        <property name="icon-name">chain-link-symbolic</property>
-                        <property name="valign">center</property>
-                        <property name="action-name">editor.open-app</property>
-                        <style>
-                          <class name="flat"/>
-                        </style>
-                      </object>
-                    </child>
-
-                    <child type="center">
-                      <object class="GtkLabel" id="title_label">
-                        <property name="wrap">true</property>
-                        <property name="justify">center</property>
-                        <property name="hexpand">true</property>
-                        <style>
-                          <class name="title-1"/>
-                        </style>
-                      </object>
-                    </child>
+                  <object class="GtkLabel" id="title_label">
+                    <property name="wrap">true</property>
+                    <property name="justify">center</property>
+                    <property name="hexpand">true</property>
+                    <style>
+                      <class name="title-1"/>
+                    </style>
                   </object>
                 </child>
 
