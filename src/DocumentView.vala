@@ -68,12 +68,7 @@ public class PaperClip.DocumentView : Adw.Bin {
     }
 
     construct {
-        ActionEntry[] entries = {
-            { "open-app", open_app_action },
-        };
-
         var action_group = new SimpleActionGroup ();
-        action_group.add_action_entries (entries, this);
         insert_action_group ("editor", action_group);
 
         setup_bindings ();
@@ -97,11 +92,7 @@ public class PaperClip.DocumentView : Adw.Bin {
                                 SYNC_CREATE | BIDIRECTIONAL);
     }
 
-    private void open_app_action () {
-        open_on_app.begin ();
-    }
-
-    private async void open_on_app () {
+    public async void open_on_app () {
         var portal = new Xdp.Portal ();
         var parent = Xdp.parent_new_gtk ((Gtk.Window) get_root ());
 

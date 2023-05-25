@@ -40,6 +40,7 @@ namespace PaperClip {
         construct {
             ActionEntry[] entries = {
                 { "open", on_open_action },
+                { "open-with", on_open_with_action },
                 { "save", save_file },
                 { "quit", quit_and_save  },
                 { "save-as", save_file_as },
@@ -53,6 +54,7 @@ namespace PaperClip {
 
             action_set_enabled ("win.save", false);
             action_set_enabled ("win.save-as", false);
+            action_set_enabled ("win.open-with", false);
 
             // Controller of Drag and Drop
             var drop_target = new Gtk.DropTarget (typeof(File), COPY);
@@ -122,6 +124,10 @@ namespace PaperClip {
             filechooser.show ();
         }
 
+        private void on_open_with_action () {
+            doc_view.open_on_app.begin ();
+        }
+
         private void on_file_opened (Gtk.NativeDialog source, int response) {
             var file_dialog = (Gtk.FileChooser) source;
 
@@ -137,6 +143,7 @@ namespace PaperClip {
 
             action_set_enabled ("win.save", true);
             action_set_enabled ("win.save-as", true);
+            action_set_enabled ("win.open-with", true);
 
             hide_progress_bar_animation ();
             view_stack.visible_child_name = "editor";

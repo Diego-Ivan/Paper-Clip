@@ -151,6 +151,10 @@
         <attribute name="action">win.save-as</attribute>
         <attribute name="accel">&lt;control&gt;&lt;shift&gt;s</attribute>
       </item>
+      <item>
+        <attribute name="label" translatable="yes">Open _With…</attribute>
+        <attribute name="action">win.open-with</attribute>
+      </item>
     </section>
     <section>
       <item>
