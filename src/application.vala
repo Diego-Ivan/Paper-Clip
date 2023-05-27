@@ -32,8 +32,10 @@ namespace PaperClip {
         construct {
             ActionEntry[] action_entries = {
                 { "about", this.on_about_action },
+                { "shortcuts", shortcuts_action }
             };
             this.add_action_entries (action_entries, this);
+            set_accels_for_action ("app.shortcuts", { "<Ctrl>question" });
         }
 
         public override void activate () {
@@ -43,6 +45,11 @@ namespace PaperClip {
                 win = new PaperClip.Window (this);
             }
             win.present ();
+        }
+
+        private void shortcuts_action () {
+            var window = (Window) active_window;
+            window.shortcuts ();
         }
 
         private void on_about_action () {

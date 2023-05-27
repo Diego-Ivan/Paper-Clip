@@ -44,7 +44,6 @@ namespace PaperClip {
                 { "save", save_file },
                 { "quit", quit_save_action  },
                 { "save-as", save_file_as_action },
-                { "help", on_help_action },
                 { "main-menu", on_main_menu_action }
             };
 
@@ -62,8 +61,6 @@ namespace PaperClip {
             drop_target.drop.connect (on_file_dropped);
             drop_target.enter.connect (on_enter);
             view_stack.add_controller (drop_target);
-
-            add_binding_action (Gdk.Key.question, CONTROL_MASK, "win.help", null, null);
         }
 
         private Gdk.DragAction on_enter () {
@@ -199,7 +196,7 @@ namespace PaperClip {
             animation.play ();
         }
 
-        private void on_help_action () {
+        public void shortcuts () {
             var builder = new Gtk.Builder.from_resource ("/io/github/diegoivan/pdf_metadata_editor/gtk/shortcut-window.ui");
             var shortcuts_window = builder.get_object ("shortcut_window") as Gtk.ShortcutsWindow;
             if (shortcuts_window == null) {
