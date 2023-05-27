@@ -12,7 +12,7 @@
             <child>
               <object class="GtkBox">
                 <property name="orientation">vertical</property>
-                <property name="spacing">12</property>
+                <property name="spacing">18</property>
                 <property name="margin-start">12</property>
                 <property name="margin-bottom">12</property>
                 <property name="margin-end">12</property>
@@ -36,7 +36,6 @@
 
                 <child>
                   <object class="AdwPreferencesGroup" id="properties_group">
-                    <property name="title" translatable="yes">Editable Properties</property>
                     <child>
                       <object class="AdwEntryRow" id="title_row">
                         <property name="title" translatable="yes">Title</property>
