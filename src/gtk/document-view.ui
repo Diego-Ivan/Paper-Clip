@@ -51,7 +51,7 @@
 
                     <child>
                       <object class="AdwEntryRow" id="creator_row">
-                        <property name="title" translatable="yes">Creator</property>
+                        <property name="title" translatable="yes">Editor</property>
                       </object>
                     </child>
 
@@ -63,7 +63,7 @@
 
                     <child>
                       <object class="AdwEntryRow" id="producer_row">
-                        <property name="title" translatable="yes">Producer</property>
+                        <property name="title" translatable="yes">Generator</property>
                       </object>
                     </child>
 
