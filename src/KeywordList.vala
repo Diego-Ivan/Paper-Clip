@@ -76,11 +76,14 @@ public class PaperClip.KeywordList : Adw.PreferencesGroup {
         }
 
         int i = 0;
-        Gtk.Widget? current_row;
+        Gtk.ListBoxRow? current_row;
         while ((current_row = listbox.get_row_at_index (i)) != null) {
             if (current_row == empty_state_row) {
                 listbox.remove (empty_state_row);
                 break;
+            }
+            if (listbox.get_row_at_index (i+1) == null) {
+                current_row.grab_focus ();
             }
             i++;
         }
@@ -98,14 +101,10 @@ public class PaperClip.KeywordList : Adw.PreferencesGroup {
 
         empty_state_row = new Adw.PreferencesRow () {
             child = label,
-            activatable = true
+            activatable = false
         };
 
         unowned var row = (Gtk.ListBoxRow) empty_state_row;
-        row.activate.connect (() => {
-            message ("Clicked");
-        });
-
         listbox.append (empty_state_row);
     }
 }
