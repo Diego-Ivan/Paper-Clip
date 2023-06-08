@@ -18,8 +18,11 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
+[GtkTemplate (ui = "/io/github/diegoivan/pdf_metadata_editor/gtk/keyword-list.ui")]
 public class PaperClip.KeywordList : Adw.PreferencesGroup {
-    private Gtk.ListBox listbox = new Gtk.ListBox ();
+    [GtkChild]
+    private unowned Gtk.ListBox listbox;
+
     private Gtk.Widget? empty_state_row = null;
 
     private unowned Document _document;
@@ -33,31 +36,6 @@ public class PaperClip.KeywordList : Adw.PreferencesGroup {
             document.keywords.items_changed.connect (on_items_changed);
             on_items_changed ();
         }
-    }
-
-    construct {
-        title = _("Keywords");
-
-        var label = new Gtk.Label (_("Press the “+” button to add a keyword")) {
-            justify = CENTER,
-            hexpand = true,
-            wrap = true
-        };
-        label.add_css_class ("dim-label");
-
-        listbox.add_css_class ("boxed-list");
-        listbox.row_activated.connect (on_row_activated);
-        add (listbox);
-
-        var add_button = new Gtk.Button.from_icon_name ("list-add-symbolic") {
-            tooltip_text = _("Add a keyword")
-        };
-
-        add_button.clicked.connect (() => {
-            document.add_keyword ("");
-        });
-
-        header_suffix = add_button;
     }
 
     private Gtk.Widget create_keyword_row (Object item) {
@@ -109,10 +87,16 @@ public class PaperClip.KeywordList : Adw.PreferencesGroup {
         listbox.append (empty_state_row);
     }
 
+    [GtkCallback]
     private void on_row_activated (Gtk.ListBoxRow selected_row) {
         if (selected_row != empty_state_row) {
             return;
         }
+        document.add_keyword ("");
+    }
+
+    [GtkCallback]
+    private void on_add_button_clicked () {
         document.add_keyword ("");
     }
 }
