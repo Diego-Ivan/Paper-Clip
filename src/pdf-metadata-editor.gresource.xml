@@ -5,6 +5,7 @@
     <file preprocess="xml-stripblanks">gtk/document-view.ui</file>
     <file preprocess="xml-stripblanks">gtk/date-row.ui</file>
     <file preprocess="xml-stripblanks">gtk/details-list.ui</file>
+    <file preprocess="xml-stripblanks">gtk/keyword-list.ui</file>
     <file preprocess="xml-stripblanks">gtk/shortcut-window.ui</file>
   </gresource>
 
