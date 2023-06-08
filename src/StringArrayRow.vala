@@ -41,7 +41,7 @@ public class PaperClip.ContentRow : Gtk.ListBoxRow {
             css_classes = { "dim-label" },
             halign = START,
             margin_start = 12,
-            margin_top = 12,
+            margin_top = 18,
         };
         content_label.add_css_class ("dim-label");
         child = content_label;

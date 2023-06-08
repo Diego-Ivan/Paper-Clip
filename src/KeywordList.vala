@@ -46,6 +46,7 @@ public class PaperClip.KeywordList : Adw.PreferencesGroup {
         label.add_css_class ("dim-label");
 
         listbox.add_css_class ("boxed-list");
+        listbox.row_activated.connect (on_row_activated);
         add (listbox);
 
         var add_button = new Gtk.Button.from_icon_name ("list-add-symbolic") {
@@ -101,10 +102,17 @@ public class PaperClip.KeywordList : Adw.PreferencesGroup {
 
         empty_state_row = new Adw.PreferencesRow () {
             child = label,
-            activatable = false
+            activatable = true,
+            selectable = false
         };
 
-        unowned var row = (Gtk.ListBoxRow) empty_state_row;
         listbox.append (empty_state_row);
+    }
+
+    private void on_row_activated (Gtk.ListBoxRow selected_row) {
+        if (selected_row != empty_state_row) {
+            return;
+        }
+        document.add_keyword ("");
     }
 }
