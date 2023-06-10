@@ -10,6 +10,9 @@
         <property name="icon-name">list-add-symbolic</property>
         <property name="tooltip-text" translatable="yes">Add a keyword</property>
         <signal name="clicked" swapped="no" handler="on_add_button_clicked"/>
+        <style>
+          <class name="flat"/>
+        </style>
       </object>
     </child>
 

@@ -56,9 +56,9 @@
                   <object class="GtkStackPage">
                     <property name="name">empty</property>
                     <property name="child">
-                      <object class="AdwClamp">
+                      <object class="AdwClamp" id="welcome_clamp">
                         <child>
-                          <object class="GtkBox">
+                          <object class="GtkBox" id="welcome_status">
                             <property name="orientation">vertical</property>
                             <property name="valign">center</property>
                             <property name="spacing">15</property>
@@ -100,7 +100,9 @@
                   <object class="GtkStackPage">
                     <property name="name">editor</property>
                     <property name="child">
-                      <object class="PaperClipDocumentView" id="doc_view"></object>
+                      <object class="PaperClipDocumentView" id="doc_view">
+                        <signal name="file-dropped" handler="on_file_dropped" swapped="no"/>
+                      </object>
                     </property>
                   </object>
                 </child>

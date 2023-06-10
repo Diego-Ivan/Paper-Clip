@@ -18,6 +18,9 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
+// TODO: I should clean up this thing, too many children and bindings it is hard to read.
+// The "main" rows should probably be moved to their individual widget something like DetailsList
+
 [GtkTemplate (ui = "/io/github/diegoivan/pdf_metadata_editor/gtk/document-view.ui")]
 public class PaperClip.DocumentView : Adw.Bin {
     [GtkChild]
@@ -44,8 +47,12 @@ public class PaperClip.DocumentView : Adw.Bin {
     private unowned DocumentThumbnail document_thumbnail;
     [GtkChild]
     private unowned Gtk.ScrolledWindow scrolled_window;
+    [GtkChild]
+    private unowned Gtk.Box content_box;
 
     private BindingGroup document_bindings = new BindingGroup ();
+
+    public signal bool file_dropped (Value dropped_file);
 
     private Document _document;
     public Document document {
@@ -78,6 +85,12 @@ public class PaperClip.DocumentView : Adw.Bin {
         insert_action_group ("editor", action_group);
 
         setup_bindings ();
+
+        var drop_target = new Gtk.DropTarget (typeof(File), COPY);
+        drop_target.drop.connect ((@value) => {
+            return file_dropped (@value);
+        });
+        content_box.add_controller (drop_target);
     }
 
     private void setup_bindings () {
