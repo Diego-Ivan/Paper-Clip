@@ -48,7 +48,7 @@ public class PaperClip.DocumentView : Adw.Bin {
     [GtkChild]
     private unowned Gtk.ScrolledWindow scrolled_window;
     [GtkChild]
-    private unowned Gtk.Box content_box;
+    private unowned Adw.Clamp content_clamp;
 
     private BindingGroup document_bindings = new BindingGroup ();
 
@@ -90,7 +90,7 @@ public class PaperClip.DocumentView : Adw.Bin {
         drop_target.drop.connect ((@value) => {
             return file_dropped (@value);
         });
-        content_box.add_controller (drop_target);
+        content_clamp.add_controller (drop_target);
     }
 
     private void setup_bindings () {

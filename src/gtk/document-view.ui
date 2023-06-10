@@ -9,9 +9,12 @@
         <property name="propagate-natural-width">true</property>
 
         <child>
-          <object class="AdwClamp">
+          <object class="AdwClamp" id="content_clamp">
+            <style>
+              <class name="document-view-drop"/>
+            </style>
             <child>
-              <object class="GtkBox" id="content_box">
+              <object class="GtkBox">
                 <property name="orientation">vertical</property>
                 <property name="spacing">18</property>
                 <property name="margin-start">12</property>

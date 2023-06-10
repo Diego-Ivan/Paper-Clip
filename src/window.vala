@@ -126,6 +126,7 @@ namespace PaperClip {
             var file_dialog = new Gtk.FileDialog ();
             try {
                 File opened_file = yield file_dialog.open (this, null);
+                pulse_progress_bar ();
                 yield load_document_to_view (opened_file);
             }
             catch (Error e) {
