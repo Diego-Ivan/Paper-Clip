@@ -29,6 +29,8 @@ namespace PaperClip {
         private unowned Gtk.ProgressBar progress_bar;
         [GtkChild]
         private unowned Gtk.MenuButton menu_button;
+        [GtkChild]
+        private unowned Adw.Clamp welcome_clamp;
 
         public State state { get; set; default = NONE; }
         private File? dropped_file { get; set; default = null; }
@@ -60,13 +62,14 @@ namespace PaperClip {
 
             drop_target.drop.connect (on_file_dropped);
             drop_target.enter.connect (on_enter);
-            view_stack.add_controller (drop_target);
+            welcome_clamp.add_controller (drop_target);
         }
 
         private Gdk.DragAction on_enter () {
             return COPY;
         }
 
+        [GtkCallback]
         private bool on_file_dropped (Value value) {
             var file = (File) value;
             try {
