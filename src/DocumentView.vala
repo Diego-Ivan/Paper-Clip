@@ -42,6 +42,8 @@ public class PaperClip.DocumentView : Adw.Bin {
     private unowned DetailsList details_list;
     [GtkChild]
     private unowned DocumentThumbnail document_thumbnail;
+    [GtkChild]
+    private unowned Gtk.ScrolledWindow scrolled_window;
 
     private BindingGroup document_bindings = new BindingGroup ();
 
@@ -63,7 +65,11 @@ public class PaperClip.DocumentView : Adw.Bin {
             var manager = new Services.DocManager ();
             manager.document = document;
 
+            measure_filename ();
             title_label.label = document.original_file.get_basename ();
+
+            title_row.grab_focus_without_selecting ();
+            scrolled_window.vadjustment.value = 0;
         }
     }
 
@@ -90,6 +96,28 @@ public class PaperClip.DocumentView : Adw.Bin {
                                 SYNC_CREATE | BIDIRECTIONAL);
         document_bindings.bind ("modification-date", modification_row, "date",
                                 SYNC_CREATE | BIDIRECTIONAL);
+    }
+
+    private void measure_filename () {
+        string? basename = document.original_file.get_basename ();
+        if (basename == null) {
+            return;
+        }
+
+        title_label.remove_css_class ("long-filename");
+        title_label.ellipsize = NONE;
+
+        // A long file name that does contain spaces in the name, we will assign an special
+        // class that will reduce the size of the label
+        if (basename.length > 45 && " " in basename) {
+            title_label.add_css_class ("long-filename");
+            return;
+        }
+
+        // Now, we have to check for files with long filenames but that do not have any spaces
+        if (basename.length > 21 && !(" " in basename)) {
+            title_label.ellipsize = END;
+        }
     }
 
     public async void open_on_app () {

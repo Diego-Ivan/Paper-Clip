@@ -4,7 +4,7 @@
   <requires lib="Adw" version="1.0"/>
   <template class="PaperClipDocumentView" parent="AdwBin">
     <child>
-      <object class="GtkScrolledWindow">
+      <object class="GtkScrolledWindow" id="scrolled_window">
         <property name="propagate-natural-height">true</property>
         <property name="propagate-natural-width">true</property>
         <child>
