@@ -22,8 +22,10 @@ public class PaperClip.StringArrayRow : Adw.ExpanderRow {
     private ContentRow content_row = new ContentRow ();
     public string[] string_array {
         set {
+            content_row.contents = "";
+
             foreach (string item in value) {
-                content_row.append_line (item);
+                content_row.contents += "• %s\n".printf (item);
             }
         }
     }
@@ -36,6 +38,15 @@ public class PaperClip.StringArrayRow : Adw.ExpanderRow {
 public class PaperClip.ContentRow : Gtk.ListBoxRow {
     private Gtk.Label content_label;
 
+    public string contents {
+        get {
+            return content_label.label;
+        }
+        set {
+            content_label.label = value;
+        }
+    }
+
     construct {
         content_label = new Gtk.Label ("") {
             css_classes = { "dim-label" },
@@ -45,9 +56,5 @@ public class PaperClip.ContentRow : Gtk.ListBoxRow {
         };
         content_label.add_css_class ("dim-label");
         child = content_label;
-    }
-
-    public void append_line (string line) {
-        content_label.label += "• %s\n".printf (line);
     }
 }
