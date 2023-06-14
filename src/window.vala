@@ -18,7 +18,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-namespace HiddenScribe {
+namespace PaperClip {
     [GtkTemplate (ui = "/io/github/diegoivan/pdf_metadata_editor/window.ui")]
     public class Window : Adw.ApplicationWindow {
         [GtkChild]

@@ -18,7 +18,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-public class HiddenScribe.KeywordRow : Adw.EntryRow {
+public class PaperClip.KeywordRow : Adw.EntryRow {
     public unowned Document document { get; set; }
 
     construct {

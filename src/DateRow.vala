@@ -19,7 +19,7 @@
  */
 
 [GtkTemplate (ui = "/io/github/diegoivan/pdf_metadata_editor/gtk/date-row.ui")]
-public class HiddenScribe.DateRow : Adw.ActionRow {
+public class PaperClip.DateRow : Adw.ActionRow {
     [GtkChild]
     private unowned Gtk.Calendar calendar;
 

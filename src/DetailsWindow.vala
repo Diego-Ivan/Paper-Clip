@@ -19,7 +19,7 @@
  */
 
 [GtkTemplate (ui = "/io/github/diegoivan/pdf_metadata_editor/gtk/details-window.ui")]
-public class HiddenScribe.DetailsWindow : Gtk.Window {
+public class PaperClip.DetailsWindow : Gtk.Window {
     [GtkChild]
     private unowned DetailRow format_row;
     [GtkChild]

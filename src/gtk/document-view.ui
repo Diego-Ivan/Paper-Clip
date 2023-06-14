@@ -2,7 +2,7 @@
 <interface>
   <requires lib="gtk" version="4.0"/>
   <requires lib="Adw" version="1.0"/>
-  <template class="HiddenScribeDocumentView" parent="AdwBin">
+  <template class="PaperClipDocumentView" parent="AdwBin">
     <property name="margin-start">12</property>
     <property name="margin-end">12</property>
     <child>
@@ -84,13 +84,13 @@
                     </child>
 
                     <child>
-                      <object class="HiddenScribeDateRow" id="creation_row">
+                      <object class="PaperClipDateRow" id="creation_row">
                         <property name="title" translatable="yes">Creation Date</property>
                       </object>
                     </child>
 
                     <child>
-                      <object class="HiddenScribeDateRow" id="modification_row">
+                      <object class="PaperClipDateRow" id="modification_row">
                         <property name="title" translatable="yes">Modification Date</property>
                       </object>
                     </child>
