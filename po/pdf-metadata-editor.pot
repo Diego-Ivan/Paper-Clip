@@ -115,10 +115,21 @@ msgstr ""
 msgid "Select a File"
 msgstr ""
 
-#: src/window.ui:25
-msgid "Open"
+#: src/window.ui:80
+msgid "Open a Document"
 msgstr ""
 
+
+#: src/window.ui:147
+msgid "_Save"
+msgstr ""
+
+#: src/window.ui:152
+#: src/window.ui:145
+msgid "_Save"
+msgstr ""
+
+#: src/window.ui:150
 #: src/window.ui:80
 msgid "Open a Document"
 msgstr ""
@@ -311,7 +322,6 @@ msgstr ""
 msgid "Permissions"
 msgstr ""
 
-#: src/gtk/document-view.ui:45
 msgid "Title"
 msgstr ""
 
