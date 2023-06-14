@@ -11,7 +11,6 @@ src/DocumentView.vala
 src/KeywordRow.vala
 src/KeywordList.vala
 src/gtk/date-row.ui
-src/gtk/details-window.ui
 src/gtk/details-list.ui
 src/gtk/document-view.ui
 src/gtk/shortcut-window.ui
