@@ -18,8 +18,11 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
+// TODO: I should clean up this thing, too many children and bindings it is hard to read.
+// The "main" rows should probably be moved to their individual widget something like DetailsList
+
 [GtkTemplate (ui = "/io/github/diegoivan/pdf_metadata_editor/gtk/document-view.ui")]
-public class HiddenScribe.DocumentView : Adw.Bin {
+public class PaperClip.DocumentView : Adw.Bin {
     [GtkChild]
     private unowned Adw.EntryRow title_row;
     [GtkChild]
@@ -35,11 +38,21 @@ public class HiddenScribe.DocumentView : Adw.Bin {
     [GtkChild]
     private unowned DateRow modification_row;
     [GtkChild]
-    private unowned Gtk.ListBox keyword_box;
+    private unowned KeywordList keyword_list;
     [GtkChild]
-    private unowned Adw.StatusPage document_status;
+    private unowned Gtk.Label title_label;
+    [GtkChild]
+    private unowned DetailsList details_list;
+    [GtkChild]
+    private unowned DocumentThumbnail document_thumbnail;
+    [GtkChild]
+    private unowned Gtk.ScrolledWindow scrolled_window;
+    [GtkChild]
+    private unowned Adw.Clamp content_clamp;
 
     private BindingGroup document_bindings = new BindingGroup ();
+
+    public signal bool file_dropped (Value dropped_file);
 
     private Document _document;
     public Document document {
@@ -49,30 +62,35 @@ public class HiddenScribe.DocumentView : Adw.Bin {
         set {
             _document = value;
             document_bindings.source = document;
+            details_list.document = document;
+            document_thumbnail.document = document;
+            keyword_list.document = document;
 
             unowned var window = (Gtk.Window) get_root ();
             document.bind_property ("title", window, "title", SYNC_CREATE);
 
-            keyword_box.bind_model (document.keywords, create_keyword_row);
-
             var manager = new Services.DocManager ();
             manager.document = document;
 
-            document_status.title = document.original_file.get_basename ();
+            measure_filename ();
+            title_label.label = document.original_file.get_basename ();
+
+            title_row.grab_focus_without_selecting ();
+            scrolled_window.vadjustment.value = 0;
         }
     }
 
     construct {
-        ActionEntry[] entries = {
-            { "details", details_action },
-            { "open-app", open_app_action },
-        };
-
         var action_group = new SimpleActionGroup ();
-        action_group.add_action_entries (entries, this);
         insert_action_group ("editor", action_group);
 
         setup_bindings ();
+
+        var drop_target = new Gtk.DropTarget (typeof(File), COPY);
+        drop_target.drop.connect ((@value) => {
+            return file_dropped (@value);
+        });
+        content_clamp.add_controller (drop_target);
     }
 
     private void setup_bindings () {
@@ -93,28 +111,29 @@ public class HiddenScribe.DocumentView : Adw.Bin {
                                 SYNC_CREATE | BIDIRECTIONAL);
     }
 
-    private Gtk.Widget create_keyword_row (Object item) {
-        var row = new KeywordRow () {
-            title = _("Keyword"),
-            document = document,
-        };
-        item.bind_property ("str", row, "text", SYNC_CREATE | BIDIRECTIONAL);
+    private void measure_filename () {
+        string? basename = document.original_file.get_basename ();
+        if (basename == null) {
+            return;
+        }
 
-        return row;
+        title_label.remove_css_class ("long-filename");
+        title_label.ellipsize = NONE;
+
+        // A long file name that does contain spaces in the name, we will assign an special
+        // class that will reduce the size of the label
+        if (basename.length > 45 && " " in basename) {
+            title_label.add_css_class ("long-filename");
+            return;
+        }
+
+        // Now, we have to check for files with long filenames but that do not have any spaces
+        if (basename.length > 21 && !(" " in basename)) {
+            title_label.ellipsize = END;
+        }
     }
 
-    private void details_action () {
-        var details_window = new DetailsWindow (document) {
-            transient_for = (Gtk.Window) get_root ()
-        };
-        details_window.show ();
-    }
-
-    private void open_app_action () {
-        open_on_app.begin ();
-    }
-
-    private async void open_on_app () {
+    public async void open_on_app () {
         var portal = new Xdp.Portal ();
         var parent = Xdp.parent_new_gtk ((Gtk.Window) get_root ());
 
@@ -128,10 +147,5 @@ public class HiddenScribe.DocumentView : Adw.Bin {
         catch (Error e) {
             critical (e.message);
         }
-    }
-
-    [GtkCallback]
-    private void on_add_button_clicked () {
-        document.add_keyword ("");
     }
 }

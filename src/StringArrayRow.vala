@@ -18,20 +18,43 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-public class HiddenScribe.StringArrayRow : Adw.ExpanderRow {
+public class PaperClip.StringArrayRow : Adw.ExpanderRow {
+    private ContentRow content_row = new ContentRow ();
     public string[] string_array {
         set {
+            content_row.contents = "";
+
             foreach (string item in value) {
-                create_row (item);
+                content_row.contents += "• %s\n".printf (item);
             }
         }
     }
 
-    public void create_row (string item) {
-        var new_row = new Adw.ActionRow () {
-            title = item,
-            selectable = false,
+    construct {
+        add_row (content_row);
+    }
+}
+
+public class PaperClip.ContentRow : Gtk.ListBoxRow {
+    private Gtk.Label content_label;
+
+    public string contents {
+        get {
+            return content_label.label;
+        }
+        set {
+            content_label.label = value;
+        }
+    }
+
+    construct {
+        content_label = new Gtk.Label ("") {
+            css_classes = { "dim-label" },
+            halign = START,
+            margin_start = 12,
+            margin_top = 18,
         };
-        add_row (new_row);
+        content_label.add_css_class ("dim-label");
+        child = content_label;
     }
 }

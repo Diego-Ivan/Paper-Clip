@@ -1,9 +1,9 @@
 {
   "app-id": "io.github.diegoivan.pdf_metadata_editor",
   "runtime": "org.gnome.Platform",
-  "runtime-version": "43",
+  "runtime-version": "44",
   "sdk": "org.gnome.Sdk",
-  "sdk-extensions": [
+  "sdk-extensions" : [
     "org.freedesktop.Sdk.Extension.vala"
   ],
   "command": "pdf-metadata-editor",
@@ -14,9 +14,9 @@
     "--device=dri",
     "--socket=wayland"
   ],
-  "build-options": {
-    "append-path": "/usr/lib/sdk/vala/bin",
-    "prepend-ld-library-path": "/usr/lib/sdk/vala/lib"
+  "build-options" : {
+    "prepend-path" : "/usr/lib/sdk/vala/bin/",
+    "prepend-ld-library-path" : "/usr/lib/sdk/vala/lib"
   },
   "cleanup": [
     "/include",

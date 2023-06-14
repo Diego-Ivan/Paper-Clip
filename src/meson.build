@@ -6,16 +6,18 @@ hidden_scribe_sources = [
   'DocumentView.vala',
   'DateRow.vala',
   'KeywordRow.vala',
-  'DetailsWindow.vala',
+  'DetailsList.vala',
   'DetailRow.vala',
   'StringArrayRow.vala',
+  'DocumentThumbnail.vala',
+  'KeywordList.vala',
 
   # Services
   'Services/DocManager.vala',
 ]
 
 hidden_scribe_deps = [
-  dependency('gtk4'),
+  dependency('gtk4', version:'>=4.10'),
   dependency('libadwaita-1'),
   dependency('poppler-glib'),
   dependency('libportal-gtk4'),
@@ -23,8 +25,8 @@ hidden_scribe_deps = [
 
 conf = configuration_data()
 conf.set_quoted('APP_ID', app_id)
-conf.set_quoted('APP_NAME', 'PDF Metadata Editor')
-conf.set_quoted('G_LOG_DOMAIN', 'PDF-Metadata-Editor')
+conf.set_quoted('APP_NAME', 'Paper Clip')
+conf.set_quoted('G_LOG_DOMAIN', 'Paper Clip')
 conf.set_quoted('VERSION', meson.project_version())
 conf.set_quoted('GETTEXT_PACKAGE', meson.project_name())
 conf.set_quoted('DATADIR', join_paths(get_option('prefix'), get_option('datadir')))

@@ -2,57 +2,44 @@
 <interface>
   <requires lib="gtk" version="4.0"/>
   <requires lib="Adw" version="1.0"/>
-  <template class="HiddenScribeDocumentView" parent="AdwBin">
-    <property name="margin-start">12</property>
-    <property name="margin-end">12</property>
+  <template class="PaperClipDocumentView" parent="AdwBin">
     <child>
-      <object class="AdwStatusPage" id="document_status">
-        <property name="icon-name">rich-text-symbolic</property>
-        <property name="height-request">200</property>
-        <style>
-          <class name="compact"/>
-        </style>
+      <object class="GtkScrolledWindow" id="scrolled_window">
+        <property name="propagate-natural-height">true</property>
+        <property name="propagate-natural-width">true</property>
+
         <child>
-          <object class="AdwClamp">
+          <object class="AdwClamp" id="content_clamp">
+            <style>
+              <class name="document-view-drop"/>
+            </style>
             <child>
               <object class="GtkBox">
                 <property name="orientation">vertical</property>
-                <property name="spacing">12</property>
+                <property name="spacing">18</property>
+                <property name="margin-start">12</property>
+                <property name="margin-bottom">24</property>
+                <property name="margin-end">12</property>
+
                 <child>
-                  <object class="GtkBox">
-                    <property name="orientation">horizontal</property>
-                    <property name="halign">center</property>
-                    <property name="spacing">24</property>
+                  <object class="PaperClipDocumentThumbnail" id="document_thumbnail">
+                    <property name="margin-top">12</property>
+                  </object>
+                </child>
 
-                    <child>
-                      <object class="GtkButton">
-                        <property name="halign">center</property>
-                        <property name="label" translatable="yes">Details</property>
-                        <property name="action-name">editor.details</property>
-                        <style>
-                          <class name="pill"/>
-                        </style>
-                      </object>
-                    </child>
-
-                    <child>
-                      <object class="GtkButton">
-                        <property name="halign">center</property>
-                        <property name="label" translatable="yes">Open…</property>
-                        <property name="tooltip-text" translatable="yes">Open in a Document Viewer</property>
-                        <property name="action-name">editor.open-app</property>
-                        <style>
-                          <class name="pill"/>
-                          <class name="suggested-action"/>
-                        </style>
-                      </object>
-                    </child>
+                <child>
+                  <object class="GtkLabel" id="title_label">
+                    <property name="wrap">true</property>
+                    <property name="justify">center</property>
+                    <property name="hexpand">true</property>
+                    <style>
+                      <class name="title-1"/>
+                    </style>
                   </object>
                 </child>
 
                 <child>
                   <object class="AdwPreferencesGroup" id="properties_group">
-                    <property name="title" translatable="yes">Editable Properties</property>
                     <child>
                       <object class="AdwEntryRow" id="title_row">
                         <property name="title" translatable="yes">Title</property>
@@ -67,7 +54,7 @@
 
                     <child>
                       <object class="AdwEntryRow" id="creator_row">
-                        <property name="title" translatable="yes">Creator</property>
+                        <property name="title" translatable="yes">Creation Software</property>
                       </object>
                     </child>
 
@@ -84,13 +71,13 @@
                     </child>
 
                     <child>
-                      <object class="HiddenScribeDateRow" id="creation_row">
+                      <object class="PaperClipDateRow" id="creation_row">
                         <property name="title" translatable="yes">Creation Date</property>
                       </object>
                     </child>
 
                     <child>
-                      <object class="HiddenScribeDateRow" id="modification_row">
+                      <object class="PaperClipDateRow" id="modification_row">
                         <property name="title" translatable="yes">Modification Date</property>
                       </object>
                     </child>
@@ -98,35 +85,27 @@
                 </child>
 
                 <child>
-                  <object class="AdwPreferencesGroup">
-                    <property name="title" translatable="yes">Keywords</property>
+                  <object class="PaperClipKeywordList" id="keyword_list">
+                  </object>
+                </child>
 
-                    <child type="header-suffix">
-                      <object class="GtkButton" id="add_button">
-                        <property name="icon-name">list-add-symbolic</property>
-                        <property name="tooltip-text" translatable="yes">Add a keyword</property>
-                        <signal name="clicked" handler="on_add_button_clicked"></signal>
-                      </object>
-                    </child>
+                <child>
+                  <object class="AdwPreferencesGroup" id="details_group">
+                    <property name="title" translatable="yes">Non-Editable Properties</property>
 
                     <child>
-                      <object class="GtkListBox" id="keyword_box">
-                        <style>
-                          <class name="boxed-list"/>
-                        </style>
-                      </object>
+                      <object class="PaperClipDetailsList" id="details_list"></object>
                     </child>
 
                   </object>
                 </child>
-
               </object>
             </child>
-
           </object>
         </child>
       </object>
     </child>
+
 
     <!-- Shortcuts -->
     <child>

@@ -2,7 +2,7 @@
 <interface>
   <requires lib="gtk" version="4.0"/>
   <requires lib="Adw" version="1.0"/>
-  <template class="HiddenScribeDateRow" parent="AdwActionRow">
+  <template class="PaperClipDateRow" parent="AdwActionRow">
     <child type="suffix">
       <object class="GtkButton">
         <property name="icon-name">entry-clear-symbolic</property>

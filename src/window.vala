@@ -18,7 +18,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-namespace HiddenScribe {
+namespace PaperClip {
     [GtkTemplate (ui = "/io/github/diegoivan/pdf_metadata_editor/window.ui")]
     public class Window : Adw.ApplicationWindow {
         [GtkChild]
@@ -29,6 +29,8 @@ namespace HiddenScribe {
         private unowned Gtk.ProgressBar progress_bar;
         [GtkChild]
         private unowned Gtk.MenuButton menu_button;
+        [GtkChild]
+        private unowned Adw.Clamp welcome_clamp;
 
         public State state { get; set; default = NONE; }
         private File? dropped_file { get; set; default = null; }
@@ -40,10 +42,10 @@ namespace HiddenScribe {
         construct {
             ActionEntry[] entries = {
                 { "open", on_open_action },
+                { "open-with", on_open_with_action },
                 { "save", save_file },
-                { "quit", quit_and_save  },
-                { "save-as", save_file_as },
-                { "help", on_help_action },
+                { "quit", quit_save_action  },
+                { "save-as", save_file_as_action },
                 { "main-menu", on_main_menu_action }
             };
 
@@ -53,21 +55,21 @@ namespace HiddenScribe {
 
             action_set_enabled ("win.save", false);
             action_set_enabled ("win.save-as", false);
+            action_set_enabled ("win.open-with", false);
 
             // Controller of Drag and Drop
             var drop_target = new Gtk.DropTarget (typeof(File), COPY);
 
-            drop_target.on_drop.connect (on_file_dropped);
+            drop_target.drop.connect (on_file_dropped);
             drop_target.enter.connect (on_enter);
-            view_stack.add_controller (drop_target);
-
-            add_binding_action (Gdk.Key.question, CONTROL_MASK, "win.help", null, null);
+            welcome_clamp.add_controller (drop_target);
         }
 
         private Gdk.DragAction on_enter () {
             return COPY;
         }
 
+        [GtkCallback]
         private bool on_file_dropped (Value value) {
             var file = (File) value;
             try {
@@ -94,42 +96,47 @@ namespace HiddenScribe {
         private async void open_dropped_file () {
             var manager = new Services.DocManager ();
             if (manager.changed) {
-                show_unsaved_warning ();
+                show_unsaved_warning.begin ();
             }
             else {
-                pulse_progress_bar ();
-                yield load_document_to_view (dropped_file);
-
-                hide_progress_bar_animation ();
-                dropped_file = null;
-                state = NONE;
+                load_dropped_file.begin ();
             }
+        }
+
+        private async void load_dropped_file () {
+            pulse_progress_bar ();
+            yield load_document_to_view (dropped_file);
+
+            hide_progress_bar_animation ();
+            dropped_file = null;
+            state = NONE;
         }
 
         private void on_open_action () {
             state = OPENING_FILE;
             var doc_manager = new Services.DocManager ();
             if (doc_manager.changed) {
-                show_unsaved_warning ();
+                show_unsaved_warning.begin ();
             } else {
-                open_file ();
+                open_file.begin ();
             }
         }
 
-        private void open_file () {
-            Gtk.FileChooserNative filechooser = create_file_chooser (OPEN);
-            filechooser.response.connect (on_file_opened);
-            filechooser.show ();
-        }
-
-        private void on_file_opened (Gtk.NativeDialog source, int response) {
-            var file_dialog = (Gtk.FileChooser) source;
-
-            if (response == Gtk.ResponseType.ACCEPT) {
+        private async void open_file () {
+            var file_dialog = new Gtk.FileDialog ();
+            try {
+                File opened_file = yield file_dialog.open (this, null);
                 pulse_progress_bar ();
-                load_document_to_view.begin (file_dialog.get_file ());
+                yield load_document_to_view (opened_file);
+            }
+            catch (Error e) {
+                critical (e.message);
             }
             state = NONE;
+        }
+
+        private void on_open_with_action () {
+            doc_view.open_on_app.begin ();
         }
 
         private async void load_document_to_view (File file) {
@@ -137,6 +144,7 @@ namespace HiddenScribe {
 
             action_set_enabled ("win.save", true);
             action_set_enabled ("win.save-as", true);
+            action_set_enabled ("win.open-with", true);
 
             hide_progress_bar_animation ();
             view_stack.visible_child_name = "editor";
@@ -154,28 +162,27 @@ namespace HiddenScribe {
             state = NONE;
         }
 
-        private void save_file_as () {
+        private void save_file_as_action () {
+            save_file_as.begin ();
+        }
+
+        private async void save_file_as () {
             var manager = new Services.DocManager ();
-            message ("Saving as...");
             if (manager.document == null) {
                 return;
             }
-            Gtk.FileChooserNative filechooser = create_file_chooser (SAVE);
-            filechooser.set_current_name (manager.document.original_file.get_basename ());
 
-            filechooser.response.connect (on_file_saved);
-            filechooser.show ();
-        }
-
-        private void on_file_saved (Gtk.NativeDialog source, int response) {
-            var file_dialog = (Gtk.FileChooser) source;
-            if (response == Gtk.ResponseType.ACCEPT) {
-                var file = file_dialog.get_file ();
-
-                var manager = new Services.DocManager ();
+            var file_dialog = new Gtk.FileDialog () {
+                initial_name = manager.document.original_file.get_basename ()
+            };
+            try {
+                File file = yield file_dialog.save (this, null);
                 manager.save (file.get_uri ());
                 file_save_animation ();
                 proceed_with_state ();
+            }
+            catch (Error e) {
+                critical (e.message);
             }
             state = NONE;
         }
@@ -193,7 +200,7 @@ namespace HiddenScribe {
             animation.play ();
         }
 
-        private void on_help_action () {
+        public void shortcuts () {
             var builder = new Gtk.Builder.from_resource ("/io/github/diegoivan/pdf_metadata_editor/gtk/shortcut-window.ui");
             var shortcuts_window = builder.get_object ("shortcut_window") as Gtk.ShortcutsWindow;
             if (shortcuts_window == null) {
@@ -207,16 +214,6 @@ namespace HiddenScribe {
 
         private void on_main_menu_action () {
             menu_button.popup ();
-        }
-
-        private Gtk.FileChooserNative create_file_chooser (Gtk.FileChooserAction action) {
-            var filter = new Gtk.FileFilter ();
-            filter.add_pattern ("*.pdf");
-
-            var filechooser = new Gtk.FileChooserNative (null, this, action, null, null);
-            filechooser.add_filter (filter);
-
-            return filechooser;
         }
 
         private void hide_progress_bar_animation () {
@@ -235,22 +232,26 @@ namespace HiddenScribe {
 
         [GtkCallback]
         private bool on_close_request () {
-            quit_and_save ();
+            quit_and_save.begin ();
             return true;
         }
 
-        private void quit_and_save () {
+        private void quit_save_action () {
+            quit_and_save.begin ();
+        }
+
+        private async void quit_and_save () {
             state = CLOSING;
             var manager = new Services.DocManager ();
             if (manager.changed) {
-                show_unsaved_warning ();
+                yield show_unsaved_warning ();
             }
             else {
                 GLib.Application.get_default ().quit ();
             }
         }
 
-        private void show_unsaved_warning () {
+        private async void show_unsaved_warning () {
             var message_dialog = new Adw.MessageDialog (this,
                                                         _("Save Changes?"),
                                                         _("Changes that are not saved will be lost permanently"));
@@ -264,11 +265,7 @@ namespace HiddenScribe {
             message_dialog.set_response_appearance ("discard", DESTRUCTIVE);
             message_dialog.set_response_appearance ("save", SUGGESTED);
 
-            message_dialog.response.connect (on_warning_response);
-            message_dialog.show ();
-        }
-
-        private void on_warning_response (Adw.MessageDialog sender, string response) {
+            string response = yield message_dialog.choose (null);
             if (response == "cancel") {
                 state = NONE;
                 return;
@@ -287,10 +284,10 @@ namespace HiddenScribe {
                 case NONE:
                     return;
                 case OPENING_FILE:
-                    open_file ();
+                    open_file.begin ();
                     break;
                 case OPENING_DROPPED:
-                    open_dropped_file.begin ();
+                    load_dropped_file.begin ();
                     break;
                 case CLOSING:
                     GLib.Application.get_default ().quit ();

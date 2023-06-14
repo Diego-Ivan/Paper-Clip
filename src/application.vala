@@ -18,7 +18,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-namespace HiddenScribe {
+namespace PaperClip {
     public class Application : Adw.Application {
         public Application () {
             Object (application_id: "io.github.diegoivan.pdf_metadata_editor",
@@ -32,17 +32,24 @@ namespace HiddenScribe {
         construct {
             ActionEntry[] action_entries = {
                 { "about", this.on_about_action },
+                { "shortcuts", shortcuts_action }
             };
             this.add_action_entries (action_entries, this);
+            set_accels_for_action ("app.shortcuts", { "<Ctrl>question" });
         }
 
         public override void activate () {
             base.activate ();
             var win = this.active_window;
             if (win == null) {
-                win = new HiddenScribe.Window (this);
+                win = new PaperClip.Window (this);
             }
             win.present ();
+        }
+
+        private void shortcuts_action () {
+            var window = (Window) active_window;
+            window.shortcuts ();
         }
 
         private void on_about_action () {
