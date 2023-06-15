@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pdf_metadata_editor\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-14 13:24-0600\n"
+"POT-Creation-Date: 2023-06-15 11:48-0600\n"
 "PO-Revision-Date: 2023-02-07 00:10+0100\n"
 "Last-Translator: Jürgen Benvenuti <gastornis@posteo.org>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
@@ -32,61 +32,53 @@ msgstr "PDF-Metadaten-Editor"
 msgid "Edit PDF document metadata"
 msgstr "Metadaten von PDF-Dokumenten bearbeiten"
 
-#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:9
-msgid "Uredi metapodatke PDF dokumenata"
-msgstr ""
-
-#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:11
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:10
 msgid "Edit the title, author, keywords and more details of your PDF documents"
 msgstr ""
 "Bearbeiten Sie den Titel, den Autor, Schlüsselwörter und weitere Details "
 "Ihrer PDF-Dokumente"
 
-#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:12
-msgid "Uredi naslov, autora, ključne riječi i druge podatke PDF dokumenata"
-msgstr ""
-
-#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:18
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:16
 msgid ""
 "Version 2.0: After a three month development hiatus, Paper Clip sees its "
 "second release!"
 msgstr ""
 
-#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:19
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:17
 msgid "This version includes a nicer UI with:"
 msgstr ""
 
-#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:21
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:19
 msgid "Fix many UI papercuts to match the GNOME HIG"
 msgstr ""
 
-#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:22
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:20
 msgid "The main view now features a thumbnail of the document"
 msgstr ""
 
-#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:23
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:21
 msgid ""
 "The term \"Creator\" has been changed for \"Creation Software\" to avoid "
 "confusion with \"Author\""
 msgstr ""
 
-#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:24
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:22
 msgid ""
 "The main view now handles large document titles as special cases to avoid "
 "breaking the UI"
 msgstr ""
 
-#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:25
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:23
 msgid "The keyword list now has a nicer UI"
 msgstr ""
 
-#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:26
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:24
 msgid ""
 "The details window has been removed, and the non editable properties of the "
 "document have been moved to the bottom of the view"
 msgstr ""
 
-#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:73
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:71
 msgid "Diego Iván"
 msgstr "Diego Iván"
 
