@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegoivan.pdf_metadata_editor\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-05 20:07-0600\n"
+"POT-Creation-Date: 2023-06-15 11:48-0600\n"
 "PO-Revision-Date: 2023-05-22 06:12+0300\n"
 "Last-Translator: Sabri Ünal <libreajans@gmail.com>\n"
 "Language-Team: Turkish <takim@gnome.org.tr>\n"
@@ -23,8 +23,12 @@ msgstr ""
 
 #: data/io.github.diegoivan.pdf_metadata_editor.desktop.in:3
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:7
-#: src/application.vala:52 src/window.ui:10
-msgid "PDF Metadata Editor"
+msgid "Paper Clip"
+msgstr ""
+
+#: data/io.github.diegoivan.pdf_metadata_editor.desktop.in:8
+#, fuzzy
+msgid "PDF;Metadata;Editor;"
 msgstr "PDF Üst Veri Düzenleyici"
 
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:8
@@ -37,32 +41,72 @@ msgstr ""
 "PDF belgelerinin başlığını, yazarını, anahtar kelimelerini ve daha fazla "
 "ayrıntısını düzenle"
 
-#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:42
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:16
+msgid ""
+"Version 2.0: After a three month development hiatus, Paper Clip sees its "
+"second release!"
+msgstr ""
+
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:17
+msgid "This version includes a nicer UI with:"
+msgstr ""
+
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:19
+msgid "Fix many UI papercuts to match the GNOME HIG"
+msgstr ""
+
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:20
+msgid "The main view now features a thumbnail of the document"
+msgstr ""
+
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:21
+msgid ""
+"The term \"Creator\" has been changed for \"Creation Software\" to avoid "
+"confusion with \"Author\""
+msgstr ""
+
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:22
+msgid ""
+"The main view now handles large document titles as special cases to avoid "
+"breaking the UI"
+msgstr ""
+
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:23
+msgid "The keyword list now has a nicer UI"
+msgstr ""
+
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:24
+msgid ""
+"The details window has been removed, and the non editable properties of the "
+"document have been moved to the bottom of the view"
+msgstr ""
+
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:71
 msgid "Diego Iván"
 msgstr "Diego Iván"
 
 #. translators: Write your name<email> here :D
-#: src/application.vala:60
+#: src/application.vala:69
 msgid "translator_credits"
 msgstr "Sabri Ünal <libreajans@gmail.com>, 2023"
 
-#: src/window.vala:249
-msgid "Do you want to save the changes?"
-msgstr "Değişiklikleri kaydetmek ister misiniz?"
+#: src/window.vala:256
+msgid "Save Changes?"
+msgstr ""
 
-#: src/window.vala:250
+#: src/window.vala:257
 msgid "Changes that are not saved will be lost permanently"
 msgstr "Kaydedilmemiş değişiklikler kalıcı olarak yitirilecek"
 
-#: src/window.vala:254
+#: src/window.vala:261
 msgid "Cancel"
 msgstr "İptal"
 
-#: src/window.vala:255
+#: src/window.vala:262
 msgid "Discard"
 msgstr "Yoksay"
 
-#: src/window.vala:256
+#: src/window.vala:263
 msgid "Save"
 msgstr "Kaydet"
 
@@ -82,21 +126,26 @@ msgstr "Belge Aç"
 msgid "Drag and drop a PDF file here"
 msgstr "PDF belgesini sürükleyip buraya bırakın"
 
-#: src/window.ui:145
+#: src/window.ui:147
 msgid "_Save"
 msgstr "_Kaydet"
 
-#: src/window.ui:150
+#: src/window.ui:152
 msgid "Save _As…"
 msgstr "Farklı _Kaydet…"
 
 #: src/window.ui:157
+#, fuzzy
+msgid "Open _With…"
+msgstr "Aç…"
+
+#: src/window.ui:163
 msgid "_Keyboard Shortcuts"
 msgstr "_Klavye Kısayolları"
 
-#: src/window.ui:162
-msgid "_About PDF Metadata Editor"
-msgstr "PDF Üst Veri Düzenleyici _Hakkında"
+#: src/window.ui:167
+msgid "_About Paper Clip"
+msgstr ""
 
 #: src/DateRow.vala:34
 msgid "No date set"
@@ -106,125 +155,129 @@ msgstr "Tarih ayarlanmadı"
 msgid "Unknown"
 msgstr "Bilinmiyor"
 
-#: src/Document.vala:212
+#: src/Document.vala:216
 msgid "Pages in one column"
 msgstr "Sayfalar tek sütunda"
 
-#: src/Document.vala:215
+#: src/Document.vala:219
 msgid "One page at a time"
 msgstr "Her seferinde tek sayfa"
 
-#: src/Document.vala:218
+#: src/Document.vala:222
 msgid "Odd numbered pages on the left"
 msgstr "Tek numaralı sayfalar solda"
 
-#: src/Document.vala:221
+#: src/Document.vala:225
 msgid "Odd numbered pages on the right"
 msgstr "Tek numaralı sayfalar sağda"
 
-#: src/Document.vala:224
+#: src/Document.vala:228
 msgid "Two odd numbered pages on the left"
 msgstr "Çift tek numaralı sayfalar solda"
 
-#: src/Document.vala:227
+#: src/Document.vala:231
 msgid "Two odd numbered pages on the right"
 msgstr "Çift tek numaralı sayfalar sağda"
 
-#: src/Document.vala:231
+#: src/Document.vala:235
 msgid "No specific layout"
 msgstr "Belirtilmiş bir düzen yok"
 
-#: src/Document.vala:240
+#: src/Document.vala:244
 msgid "Center document's window"
 msgstr "Belgenin penceresini ortala"
 
-#: src/Document.vala:244
+#: src/Document.vala:248
 msgid "Reading order is right to left"
 msgstr "Okuma sırası sağdan sola"
 
-#: src/Document.vala:248
+#: src/Document.vala:252
 msgid "Display document's title"
 msgstr "Belgenin başlığını görüntüle"
 
-#: src/Document.vala:252
+#: src/Document.vala:256
 msgid "Fit document to window"
 msgstr "Belgeyi pencereye sığdır"
 
-#: src/Document.vala:256
+#: src/Document.vala:260
 msgid "Hide window menubar"
 msgstr "Pencere menü çubuğunu gizle"
 
-#: src/Document.vala:260
+#: src/Document.vala:264
 msgid "Hide window toolbars"
 msgstr "Pencere araç çubuklarını gizle"
 
-#: src/Document.vala:264
+#: src/Document.vala:268
 msgid "Hide UI elements"
 msgstr "Arayüz ögelerini gizle"
 
-#: src/Document.vala:268
+#: src/Document.vala:272
 msgid "No preferences"
 msgstr "Tercih yok"
 
-#: src/Document.vala:279
+#: src/Document.vala:283
 msgid "Adding notes"
 msgstr "Not ekleme"
 
-#: src/Document.vala:283
+#: src/Document.vala:287
 msgid "Inserting elements"
 msgstr "Öge ekleme"
 
-#: src/Document.vala:287
+#: src/Document.vala:291
 msgid "Copying"
 msgstr "Kopyalama"
 
-#: src/Document.vala:291
+#: src/Document.vala:295
 msgid "Extracting contents"
 msgstr "İçerik çıkarma"
 
-#: src/Document.vala:295
+#: src/Document.vala:299
 msgid "Filling interactive forms"
 msgstr "Etkileşimli formları doldurma"
 
-#: src/Document.vala:299
+#: src/Document.vala:303
 msgid "Modifying"
 msgstr "Düzenleme"
 
-#: src/Document.vala:303
+#: src/Document.vala:307
 msgid "Printing"
 msgstr "Yazdırma"
 
-#: src/Document.vala:307
+#: src/Document.vala:311
 msgid "Printing in high resolution"
 msgstr "Yüksek çözünürlükte yazdırma"
 
-#: src/Document.vala:316
+#: src/Document.vala:320
 msgid "Flip on the long edge"
 msgstr "Uzun kenarda çevirme"
 
-#: src/Document.vala:319
+#: src/Document.vala:323
 msgid "Flip on the short edge"
 msgstr "Kısa kenarda çevirme"
 
-#: src/Document.vala:322
+#: src/Document.vala:326
 msgid "Only single sided"
 msgstr "Sadece tek taraflı"
 
-#: src/Document.vala:326
+#: src/Document.vala:330
 msgid "No preference"
 msgstr "Tercih yok"
 
-#: src/Document.vala:350
+#: src/Document.vala:354
 msgid "Not compliant"
 msgstr "Uyumsuz"
-
-#: src/DocumentView.vala:98
-msgid "Keyword"
-msgstr "Anahtar sözcük"
 
 #: src/KeywordRow.vala:29
 msgid "Delete Keyword"
 msgstr "Anahtar Sözcük Sil"
+
+#: src/KeywordList.vala:43
+msgid "Keyword"
+msgstr "Anahtar sözcük"
+
+#: src/KeywordList.vala:72
+msgid "Press the “+” button to add a keyword"
+msgstr ""
 
 #: src/gtk/date-row.ui:47
 msgid "Today"
@@ -234,81 +287,63 @@ msgstr "Bugün"
 msgid "Tomorrow"
 msgstr "Yarın"
 
-#: src/gtk/details-window.ui:6
-msgid "Details"
-msgstr "Ayrıntılar"
-
-#: src/gtk/details-window.ui:37
+#: src/gtk/details-list.ui:15
 msgid "Format"
 msgstr "Biçim"
 
-#: src/gtk/details-window.ui:44
+#: src/gtk/details-list.ui:22
 msgid "Layout"
 msgstr "Yerleşim Düzeni"
 
-#: src/gtk/details-window.ui:51
+#: src/gtk/details-list.ui:29
 msgid "Duplex"
 msgstr "Çift Taraflı"
 
-#: src/gtk/details-window.ui:58
+#: src/gtk/details-list.ui:36
 msgid "Subtype"
 msgstr "Alt Tür"
 
-#: src/gtk/details-window.ui:65
+#: src/gtk/details-list.ui:43
 msgid "Viewer Preferences"
 msgstr "Görüntüleyici Tercihleri"
 
-#: src/gtk/details-window.ui:72
+#: src/gtk/details-list.ui:50
 msgid "Permissions"
 msgstr "İzinler"
 
-#: src/gtk/document-view.ui:41
-msgid "Open…"
-msgstr "Aç…"
-
-#: src/gtk/document-view.ui:42
-msgid "Open in a Document Viewer"
-msgstr "Belge Görüntüleyici ile Aç"
-
-#: src/gtk/document-view.ui:55
-msgid "Editable Properties"
-msgstr "Düzenlenebilir Özellikler"
-
-#: src/gtk/document-view.ui:58
+#: src/gtk/document-view.ui:45
 msgid "Title"
 msgstr "Başlık"
 
-#: src/gtk/document-view.ui:64
+#: src/gtk/document-view.ui:51
 msgid "Author"
 msgstr "Yazar"
 
-#: src/gtk/document-view.ui:70
-msgid "Creator"
-msgstr "Oluşturan"
+#: src/gtk/document-view.ui:57
+#, fuzzy
+msgid "Creation Software"
+msgstr "Oluşturma Tarihi"
 
-#: src/gtk/document-view.ui:76
+#: src/gtk/document-view.ui:63
 msgid "Subject"
 msgstr "Konu"
 
-#: src/gtk/document-view.ui:82
+#: src/gtk/document-view.ui:69
 msgid "Producer"
 msgstr "Üretici"
 
-#: src/gtk/document-view.ui:88
+#: src/gtk/document-view.ui:75
 msgid "Creation Date"
 msgstr "Oluşturma Tarihi"
 
-#: src/gtk/document-view.ui:94
+#: src/gtk/document-view.ui:81
 msgid "Modification Date"
 msgstr "Değiştirilme Tarihi"
 
-#: src/gtk/document-view.ui:102
-msgid "Keywords"
-msgstr "Anahtar Sözcükler"
-
-#: src/gtk/document-view.ui:107
-msgid "Add a keyword"
-msgstr "Anahtar sözcük ekle"
+#: src/gtk/document-view.ui:94
+#, fuzzy
+msgid "Non-Editable Properties"
+msgstr "Düzenlenebilir Özellikler"
 
 #: src/gtk/shortcut-window.ui:11
 msgctxt "shortcut window"
@@ -334,3 +369,24 @@ msgstr "Kaydet"
 msgctxt "shortcut window"
 msgid "Save As…"
 msgstr "Farklı Kaydet…"
+
+#~ msgid "Do you want to save the changes?"
+#~ msgstr "Değişiklikleri kaydetmek ister misiniz?"
+
+#~ msgid "_About PDF Metadata Editor"
+#~ msgstr "PDF Üst Veri Düzenleyici _Hakkında"
+
+#~ msgid "Details"
+#~ msgstr "Ayrıntılar"
+
+#~ msgid "Open in a Document Viewer"
+#~ msgstr "Belge Görüntüleyici ile Aç"
+
+#~ msgid "Creator"
+#~ msgstr "Oluşturan"
+
+#~ msgid "Keywords"
+#~ msgstr "Anahtar Sözcükler"
+
+#~ msgid "Add a keyword"
+#~ msgstr "Anahtar sözcük ekle"
