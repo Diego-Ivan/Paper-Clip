@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: io.github.diegoivan.pdf_metadata_editor\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-06-15 11:48-0600\n"
-"PO-Revision-Date: 2023-05-22 06:12+0300\n"
+"PO-Revision-Date: 2023-06-16 23:37+0300\n"
 "Last-Translator: Sabri Ünal <libreajans@gmail.com>\n"
 "Language-Team: Turkish <takim@gnome.org.tr>\n"
 "Language: tr\n"
@@ -24,12 +24,11 @@ msgstr ""
 #: data/io.github.diegoivan.pdf_metadata_editor.desktop.in:3
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:7
 msgid "Paper Clip"
-msgstr ""
+msgstr "Paper Clip"
 
 #: data/io.github.diegoivan.pdf_metadata_editor.desktop.in:8
-#, fuzzy
 msgid "PDF;Metadata;Editor;"
-msgstr "PDF Üst Veri Düzenleyici"
+msgstr "PDF;Metadata;Editor;Üstveri;Üst Veri;Düzenleyici;"
 
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:8
 msgid "Edit PDF document metadata"
@@ -92,7 +91,7 @@ msgstr "Sabri Ünal <libreajans@gmail.com>, 2023"
 
 #: src/window.vala:256
 msgid "Save Changes?"
-msgstr ""
+msgstr "Değişiklikler Kaydedilsin Mi?"
 
 #: src/window.vala:257
 msgid "Changes that are not saved will be lost permanently"
@@ -135,9 +134,8 @@ msgid "Save _As…"
 msgstr "Farklı _Kaydet…"
 
 #: src/window.ui:157
-#, fuzzy
 msgid "Open _With…"
-msgstr "Aç…"
+msgstr "_Birlikte Aç…"
 
 #: src/window.ui:163
 msgid "_Keyboard Shortcuts"
@@ -145,7 +143,7 @@ msgstr "_Klavye Kısayolları"
 
 #: src/window.ui:167
 msgid "_About Paper Clip"
-msgstr ""
+msgstr "Paper Clip _Hakkında"
 
 #: src/DateRow.vala:34
 msgid "No date set"
@@ -277,7 +275,7 @@ msgstr "Anahtar sözcük"
 
 #: src/KeywordList.vala:72
 msgid "Press the “+” button to add a keyword"
-msgstr ""
+msgstr "Anahtar kelime eklemek için “+” düğmesine basın"
 
 #: src/gtk/date-row.ui:47
 msgid "Today"
@@ -320,7 +318,6 @@ msgid "Author"
 msgstr "Yazar"
 
 #: src/gtk/document-view.ui:57
-#, fuzzy
 msgid "Creation Software"
 msgstr "Oluşturma Tarihi"
 
@@ -341,9 +338,8 @@ msgid "Modification Date"
 msgstr "Değiştirilme Tarihi"
 
 #: src/gtk/document-view.ui:94
-#, fuzzy
 msgid "Non-Editable Properties"
-msgstr "Düzenlenebilir Özellikler"
+msgstr "Düzenlenemez Özellikler"
 
 #: src/gtk/shortcut-window.ui:11
 msgctxt "shortcut window"
