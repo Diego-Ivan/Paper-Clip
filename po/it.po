@@ -8,9 +8,9 @@ msgstr ""
 "Project-Id-Version: pdf-metadata-editor\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-06-15 11:48-0600\n"
-"PO-Revision-Date: 2023-02-27 20:02+0100\n"
+"PO-Revision-Date: 2023-06-16 5:02+0100\n"
 "Last-Translator: Albano Battistella <albano_battistella@hotmail.com>\n"
-"Language-Team: \n"
+"Language-Team: Italian\n"
 "Language: it_IT\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,12 +21,11 @@ msgstr ""
 #: data/io.github.diegoivan.pdf_metadata_editor.desktop.in:3
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:7
 msgid "Paper Clip"
-msgstr ""
+msgstr "Paper Clip"
 
 #: data/io.github.diegoivan.pdf_metadata_editor.desktop.in:8
-#, fuzzy
 msgid "PDF;Metadata;Editor;"
-msgstr "PDF Metadata Editor"
+msgstr "PDF;Metadata;Editor;"
 
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:8
 msgid "Edit PDF document metadata"
@@ -43,40 +42,48 @@ msgid ""
 "Version 2.0: After a three month development hiatus, Paper Clip sees its "
 "second release!"
 msgstr ""
+"Versione 2.0: Dopo una pausa di sviluppo di tre mesi, Paper Clip vede la sua "
+"seconda uscita!"
 
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:17
 msgid "This version includes a nicer UI with:"
-msgstr ""
+msgstr "Questa versione include un'interfaccia utente migliore con:"
 
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:19
 msgid "Fix many UI papercuts to match the GNOME HIG"
-msgstr ""
+msgstr "Correggi molti tagli di carta dell'interfaccia utente per abbinarli a GNOME HIG"
 
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:20
 msgid "The main view now features a thumbnail of the document"
-msgstr ""
+msgstr "La vista principale ora presenta una miniatura del documento"
 
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:21
 msgid ""
 "The term \"Creator\" has been changed for \"Creation Software\" to avoid "
 "confusion with \"Author\""
 msgstr ""
+"Il termine \"Creatore\" è stato modificato per \"Creatore Software\" per evitare "
+"confusione con l'\"Autore\""
 
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:22
 msgid ""
 "The main view now handles large document titles as special cases to avoid "
 "breaking the UI"
 msgstr ""
+"La vista principale ora gestisce i titoli di documenti di grandi dimensioni come casi speciali, da evitare "
+"per non corrompere l'interfaccia utente"
 
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:23
 msgid "The keyword list now has a nicer UI"
-msgstr ""
+msgstr "L'elenco delle parole chiave ora ha un'interfaccia utente più gradevole"
 
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:24
 msgid ""
 "The details window has been removed, and the non editable properties of the "
 "document have been moved to the bottom of the view"
 msgstr ""
+"La finestra dei dettagli è stata rimossa e le proprietà non modificabili del "
+"documento sono state spostate in fondo alla vista"
 
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:71
 msgid "Diego Iván"
@@ -89,7 +96,7 @@ msgstr "Albano Battistella"
 
 #: src/window.vala:256
 msgid "Save Changes?"
-msgstr ""
+msgstr "Salvare le modifiche?"
 
 #: src/window.vala:257
 msgid "Changes that are not saved will be lost permanently"
@@ -116,14 +123,12 @@ msgid "Open"
 msgstr "Apri"
 
 #: src/window.ui:80
-#, fuzzy
 msgid "Open a Document"
-msgstr "Apri in un visualizzatore di documenti"
+msgstr "Apri un documento"
 
 #: src/window.ui:89
-#, fuzzy
 msgid "Drag and drop a PDF file here"
-msgstr "Trascina qui un documento PDF"
+msgstr "Trascina e rilascia un file PDF qui"
 
 #: src/window.ui:147
 msgid "_Save"
@@ -134,9 +139,8 @@ msgid "Save _As…"
 msgstr "Salva _come…"
 
 #: src/window.ui:157
-#, fuzzy
 msgid "Open _With…"
-msgstr "Apri..."
+msgstr "Apri con…"
 
 #: src/window.ui:163
 msgid "_Keyboard Shortcuts"
@@ -144,7 +148,7 @@ msgstr "_Scorciatoie da tastiera"
 
 #: src/window.ui:167
 msgid "_About Paper Clip"
-msgstr ""
+msgstr "_Informazioni su Paper Clip"
 
 #: src/DateRow.vala:34
 msgid "No date set"
@@ -276,7 +280,7 @@ msgstr "Parola chiave"
 
 #: src/KeywordList.vala:72
 msgid "Press the “+” button to add a keyword"
-msgstr ""
+msgstr "Premi il pulsante "+" per aggiungere una parola chiave"
 
 #: src/gtk/date-row.ui:47
 msgid "Today"
@@ -319,9 +323,8 @@ msgid "Author"
 msgstr "Autore"
 
 #: src/gtk/document-view.ui:57
-#, fuzzy
 msgid "Creation Software"
-msgstr "Data di creazione"
+msgstr "Creatore software"
 
 #: src/gtk/document-view.ui:63
 msgid "Subject"
@@ -340,9 +343,8 @@ msgid "Modification Date"
 msgstr "Data di modifica"
 
 #: src/gtk/document-view.ui:94
-#, fuzzy
 msgid "Non-Editable Properties"
-msgstr "Proprietà editabili"
+msgstr "Proprietà non modificabili"
 
 #: src/gtk/shortcut-window.ui:11
 msgctxt "shortcut window"
@@ -367,7 +369,7 @@ msgstr "Salva"
 #: src/gtk/shortcut-window.ui:35
 msgctxt "shortcut window"
 msgid "Save As…"
-msgstr "Salva come..."
+msgstr "Salva come…"
 
 #~ msgid "Do you want to save the changes?"
 #~ msgstr "Vuoi salvare le modifiche?"
