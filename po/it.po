@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: pdf-metadata-editor\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-06-15 11:48-0600\n"
-"PO-Revision-Date: 2023-06-16 5:02+0100\n"
-"Last-Translator: Albano Battistella <albano_battistella@hotmail.com>\n"
+"PO-Revision-Date: 2023-06-17 00:18+0200\n"
+"Last-Translator: Davide Ferracin <davide.ferracin@protonmail.com>\n"
 "Language-Team: Italian\n"
 "Language: it_IT\n"
 "MIME-Version: 1.0\n"
@@ -25,11 +25,11 @@ msgstr "Paper Clip"
 
 #: data/io.github.diegoivan.pdf_metadata_editor.desktop.in:8
 msgid "PDF;Metadata;Editor;"
-msgstr "PDF;Metadata;Editor;"
+msgstr "PDF;Metadati;Editor;"
 
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:8
 msgid "Edit PDF document metadata"
-msgstr "Modifica i metadati del documento PDF"
+msgstr "Modifica i metadati di documenti PDF"
 
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:10
 msgid "Edit the title, author, keywords and more details of your PDF documents"
@@ -51,7 +51,7 @@ msgstr "Questa versione include un'interfaccia utente migliore con:"
 
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:19
 msgid "Fix many UI papercuts to match the GNOME HIG"
-msgstr "Correggi molti tagli di carta dell'interfaccia utente per abbinarli a GNOME HIG"
+msgstr "Correzione di tanti piccoli bug nell'interfaccia utente, in modo da aderire alle HIG di GNOME"
 
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:20
 msgid "The main view now features a thumbnail of the document"
@@ -62,16 +62,16 @@ msgid ""
 "The term \"Creator\" has been changed for \"Creation Software\" to avoid "
 "confusion with \"Author\""
 msgstr ""
-"Il termine \"Creatore\" è stato modificato per \"Creatore Software\" per evitare "
-"confusione con l'\"Autore\""
+"Il termine «Creatore» è stato modificato per «Software di creazione» per evitare "
+"confusione con «Autore»"
 
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:22
 msgid ""
 "The main view now handles large document titles as special cases to avoid "
 "breaking the UI"
 msgstr ""
-"La vista principale ora gestisce i titoli di documenti di grandi dimensioni come casi speciali, da evitare "
-"per non corrompere l'interfaccia utente"
+"La vista principale ora gestisce i titoli di documenti di grandi dimensioni come casi speciali, "
+"in modo da non creare problemi con l'interfaccia utente"
 
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:23
 msgid "The keyword list now has a nicer UI"
@@ -82,7 +82,7 @@ msgid ""
 "The details window has been removed, and the non editable properties of the "
 "document have been moved to the bottom of the view"
 msgstr ""
-"La finestra dei dettagli è stata rimossa e le proprietà non modificabili del "
+"La finestra dei dettagli è stata rimossa, e le proprietà non modificabili del "
 "documento sono state spostate in fondo alla vista"
 
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:71
@@ -100,15 +100,15 @@ msgstr "Salvare le modifiche?"
 
 #: src/window.vala:257
 msgid "Changes that are not saved will be lost permanently"
-msgstr "Le modifiche non salvate andranno perse definitivamente"
+msgstr "Le modifiche non salvate saranno perse definitivamente"
 
 #: src/window.vala:261
 msgid "Cancel"
-msgstr "Cancella"
+msgstr "Annulla"
 
 #: src/window.vala:262
 msgid "Discard"
-msgstr "Abbandona"
+msgstr "Scarta"
 
 #: src/window.vala:263
 msgid "Save"
@@ -128,7 +128,7 @@ msgstr "Apri un documento"
 
 #: src/window.ui:89
 msgid "Drag and drop a PDF file here"
-msgstr "Trascina e rilascia un file PDF qui"
+msgstr "Trascinare e rilasciare qui un file PDF"
 
 #: src/window.ui:147
 msgid "_Save"
@@ -140,11 +140,11 @@ msgstr "Salva _come…"
 
 #: src/window.ui:157
 msgid "Open _With…"
-msgstr "Apri con…"
+msgstr "_Apri con…"
 
 #: src/window.ui:163
 msgid "_Keyboard Shortcuts"
-msgstr "_Scorciatoie da tastiera"
+msgstr "Scorciatoie da _tastiera"
 
 #: src/window.ui:167
 msgid "_About Paper Clip"
@@ -152,7 +152,7 @@ msgstr "_Informazioni su Paper Clip"
 
 #: src/DateRow.vala:34
 msgid "No date set"
-msgstr "Nessuna data stabilita"
+msgstr "Nessuna data impostata"
 
 #: src/Document.vala:110
 msgid "Unknown"
@@ -204,7 +204,7 @@ msgstr "Adatta il documento alla finestra"
 
 #: src/Document.vala:260
 msgid "Hide window menubar"
-msgstr "Nascondi la barra dei menu della finestra"
+msgstr "Nascondi la barra dei menù della finestra"
 
 #: src/Document.vala:264
 msgid "Hide window toolbars"
@@ -220,11 +220,11 @@ msgstr "Nessuna preferenza"
 
 #: src/Document.vala:283
 msgid "Adding notes"
-msgstr "Aggiunta di note"
+msgstr "Aggiungere annotazioni"
 
 #: src/Document.vala:287
 msgid "Inserting elements"
-msgstr "Inserimento di elementi"
+msgstr "Inserire elementi"
 
 #: src/Document.vala:291
 msgid "Copying"
@@ -232,11 +232,11 @@ msgstr "Copiare"
 
 #: src/Document.vala:295
 msgid "Extracting contents"
-msgstr "Estrazione dei contenuti"
+msgstr "Estrarre contenuti"
 
 #: src/Document.vala:299
 msgid "Filling interactive forms"
-msgstr "Compilazione moduli interattivi"
+msgstr "Compilare moduli interattivi"
 
 #: src/Document.vala:303
 msgid "Modifying"
@@ -248,19 +248,20 @@ msgstr "Stampare"
 
 #: src/Document.vala:311
 msgid "Printing in high resolution"
-msgstr "Stampa in alta risoluzione"
+msgstr "Stampare in alta risoluzione"
 
+# [DF] Qui si parla di "girare pagina".
 #: src/Document.vala:320
 msgid "Flip on the long edge"
-msgstr "Capovolgere sul lato lungo"
+msgstr "Girare sul lato lungo"
 
 #: src/Document.vala:323
 msgid "Flip on the short edge"
-msgstr "Capovolgi sul lato corto"
+msgstr "Girare sul lato corto"
 
 #: src/Document.vala:326
 msgid "Only single sided"
-msgstr "Solo a lato singolo"
+msgstr "Solo su una facciata"
 
 #: src/Document.vala:330
 msgid "No preference"
@@ -280,7 +281,7 @@ msgstr "Parola chiave"
 
 #: src/KeywordList.vala:72
 msgid "Press the “+” button to add a keyword"
-msgstr "Premi il pulsante "+" per aggiungere una parola chiave"
+msgstr "Premere il pulsante «+» per aggiungere una parola chiave"
 
 #: src/gtk/date-row.ui:47
 msgid "Today"
@@ -300,7 +301,7 @@ msgstr "Layout"
 
 #: src/gtk/details-list.ui:29
 msgid "Duplex"
-msgstr "Duplex"
+msgstr "Fronte/retro"
 
 #: src/gtk/details-list.ui:36
 msgid "Subtype"
@@ -324,11 +325,11 @@ msgstr "Autore"
 
 #: src/gtk/document-view.ui:57
 msgid "Creation Software"
-msgstr "Creatore software"
+msgstr "Software di creazione"
 
 #: src/gtk/document-view.ui:63
 msgid "Subject"
-msgstr "Soggetto"
+msgstr "Argomento"
 
 #: src/gtk/document-view.ui:69
 msgid "Producer"
@@ -354,12 +355,12 @@ msgstr "Generale"
 #: src/gtk/shortcut-window.ui:14
 msgctxt "shortcut window"
 msgid "Quit"
-msgstr "Esci"
+msgstr "Esce"
 
 #: src/gtk/shortcut-window.ui:21
 msgctxt "shortcut window"
 msgid "Open"
-msgstr "Apri"
+msgstr "Apre"
 
 #: src/gtk/shortcut-window.ui:28
 msgctxt "shortcut window"
