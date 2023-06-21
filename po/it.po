@@ -280,7 +280,7 @@ msgstr "Parola chiave"
 
 #: src/KeywordList.vala:72
 msgid "Press the “+” button to add a keyword"
-msgstr "Premi il pulsante "+" per aggiungere una parola chiave"
+msgstr "Premi il pulsante “+” per aggiungere una parola chiave"
 
 #: src/gtk/date-row.ui:47
 msgid "Today"
