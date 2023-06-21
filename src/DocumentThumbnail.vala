@@ -57,8 +57,6 @@ public class PaperClip.DocumentThumbnail : Adw.Bin {
             return thumbnail_texture;
         }
 
-        message ("%i.%i", Gtk.MAJOR_VERSION, Gtk.MINOR_VERSION);
-
         float size = MAX_SIZE * scale_factor;
         float scaled_height, scaled_width;
 
