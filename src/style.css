@@ -2,6 +2,17 @@
   font-size: 140%;
 }
 
-.document-view-drop:drop(active) {
-	box-shadow: 0 0 0 2px @accent_bg_color inset;
+stack:drop(active) {
+  box-shadow: none;
+}
+
+.overlay-drag-area {
+  border-radius: 8px;
+  margin: 24px;
+  background-color: alpha(@accent_color, 0.2);
+  border: 2px @accent_color solid;
+}
+
+.overlay_drag_vertical {
+  margin: 0px 24px;
 }

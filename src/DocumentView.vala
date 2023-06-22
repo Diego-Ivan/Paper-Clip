@@ -52,8 +52,6 @@ public class PaperClip.DocumentView : Adw.Bin {
 
     private BindingGroup document_bindings = new BindingGroup ();
 
-    public signal bool file_dropped (Value dropped_file);
-
     private Document _document;
     public Document document {
         get {
@@ -85,12 +83,6 @@ public class PaperClip.DocumentView : Adw.Bin {
         insert_action_group ("editor", action_group);
 
         setup_bindings ();
-
-        var drop_target = new Gtk.DropTarget (typeof(File), COPY);
-        drop_target.drop.connect ((@value) => {
-            return file_dropped (@value);
-        });
-        content_clamp.add_controller (drop_target);
     }
 
     private void setup_bindings () {
