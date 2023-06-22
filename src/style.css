@@ -9,8 +9,7 @@ stack:drop(active) {
 .overlay-drag-area {
   border-radius: 8px;
   margin: 24px;
-  background-color: alpha(@accent_color, 0.2);
-  border: 2px @accent_color solid;
+  background-color: alpha(@accent_color, 0.35);
 }
 
 .overlay_drag_vertical {
