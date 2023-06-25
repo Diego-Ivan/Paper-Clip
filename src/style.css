@@ -11,7 +11,3 @@ stack:drop(active) {
   margin: 24px;
   background-color: alpha(@accent_color, 0.35);
 }
-
-.overlay_drag_vertical {
-  margin: 0px 24px;
-}

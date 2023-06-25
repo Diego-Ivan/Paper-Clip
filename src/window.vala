@@ -68,9 +68,6 @@ namespace PaperClip {
 
         private Gdk.DragAction on_enter () {
             dnd_box.add_css_class ("overlay-drag-area");
-            if (view_stack.visible_child_name == "editor") {
-                dnd_box.add_css_class ("overlay_drag_vertical");
-            }
             return COPY;
         }
 
