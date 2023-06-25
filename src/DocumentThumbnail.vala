@@ -79,6 +79,9 @@ public class PaperClip.DocumentThumbnail : Adw.Bin {
         var thumbnail_rectangle = Graphene.Rect ();
 
         thumbnail_rectangle = thumbnail_rectangle.init (0, 0, scaled_width, scaled_height);
+
+        // Append White Background in case the image is transparent
+        snapshot.append_color ({1, 1, 1, 1}, thumbnail_rectangle);
         snapshot.append_scaled_texture (thumbnail_texture, filter, thumbnail_rectangle);
         thumbnail_image.pixel_size = (int) size;
 
