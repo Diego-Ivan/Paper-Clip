@@ -47,8 +47,6 @@ public class PaperClip.DocumentView : Adw.Bin {
     private unowned DocumentThumbnail document_thumbnail;
     [GtkChild]
     private unowned Gtk.ScrolledWindow scrolled_window;
-    [GtkChild]
-    private unowned Adw.Clamp content_clamp;
 
     private BindingGroup document_bindings = new BindingGroup ();
 

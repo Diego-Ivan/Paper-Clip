@@ -11,17 +11,14 @@
   </description>
 
   <releases>
-    <release version="2.0" date="2023-06-14">
+    <release version="3.0" date="2023-06-26">
       <description>
-        <p>Version 2.0: After a three month development hiatus, Paper Clip sees its second release!</p>
-        <p>This version includes a nicer UI with: </p>
+        <p>Version 3.0! </p>
+        <p>This version features some adjustment to the user interface</p>
         <ul>
-          <li>Fix many UI papercuts to match the GNOME HIG</li>
-          <li>The main view now features a thumbnail of the document</li>
-          <li>The term "Creator" has been changed for "Creation Software" to avoid confusion with "Author"</li>
-          <li>The main view now handles large document titles as special cases to avoid breaking the UI</li>
-          <li>The keyword list now has a nicer UI</li>
-          <li>The details window has been removed, and the non editable properties of the document have been moved to the bottom of the view</li>
+          <li>The rows to set the creation and modification dates now have tooltips</li>
+          <li>The DND feature now has a nicer semi-transparent overlay instead of discrete blue shadow around the interface</li>
+          <li>PDFs with a transparent background are now given a white background layer so they are more visible in the interface</li>
         </ul>
       </description>
     </release>
