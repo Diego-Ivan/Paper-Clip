@@ -8,6 +8,7 @@
     <child type="header-suffix">
       <object class="GtkButton" id="add_button">
         <property name="icon-name">list-add-symbolic</property>
+        <property name="visible" bind-source="PaperClipKeywordList" bind-property="is-empty" bind-flags="sync-create | invert-boolean"/>
         <property name="tooltip-text" translatable="yes">Add a keyword</property>
         <signal name="clicked" swapped="no" handler="on_add_button_clicked"/>
         <style>

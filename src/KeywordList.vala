@@ -23,6 +23,8 @@ public class PaperClip.KeywordList : Adw.PreferencesGroup {
     [GtkChild]
     private unowned Gtk.ListBox listbox;
 
+    public bool is_empty { get; private set; }
+
     private Gtk.Widget? empty_state_row = null;
 
     private unowned Document _document;
@@ -51,6 +53,7 @@ public class PaperClip.KeywordList : Adw.PreferencesGroup {
     private void on_items_changed () {
         if (document.keywords.get_n_items () == 0) {
             create_default_row ();
+            is_empty = true;
             return;
         }
 
@@ -59,6 +62,7 @@ public class PaperClip.KeywordList : Adw.PreferencesGroup {
         while ((current_row = listbox.get_row_at_index (i)) != null) {
             if (current_row == empty_state_row) {
                 listbox.remove (empty_state_row);
+                is_empty = false;
                 break;
             }
             if (listbox.get_row_at_index (i+1) == null) {
@@ -66,20 +70,31 @@ public class PaperClip.KeywordList : Adw.PreferencesGroup {
             }
             i++;
         }
+
+        if (document.keywords.get_n_items () == 1) {
+            listbox.get_first_child ().grab_focus ();
+        }
     }
 
     private void create_default_row () {
-        var label = new Gtk.Label (_("Press the “+” button to add a keyword")) {
+        var center_box = new Gtk.CenterBox ();
+
+        var label = new Gtk.Label (_("Add Keyword")) {
             justify = CENTER,
-            hexpand = true,
             wrap = true,
             margin_top = 12,
             margin_bottom = 12
         };
-        label.add_css_class ("dim-label");
+
+        center_box.center_widget = label;
+        center_box.start_widget = new Gtk.Image.from_icon_name ("list-add-symbolic") {
+            halign = END,
+            hexpand = true,
+            margin_end = 12
+        };
 
         empty_state_row = new Adw.PreferencesRow () {
-            child = label,
+            child = center_box,
             activatable = true,
             selectable = false
         };

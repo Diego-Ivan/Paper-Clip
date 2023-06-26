@@ -30,7 +30,7 @@ namespace PaperClip {
         [GtkChild]
         private unowned Gtk.MenuButton menu_button;
         [GtkChild]
-        private unowned Adw.Clamp welcome_clamp;
+        private unowned Gtk.Box dnd_box;
 
         public State state { get; set; default = NONE; }
         private File? dropped_file { get; set; default = null; }
@@ -62,14 +62,19 @@ namespace PaperClip {
 
             drop_target.drop.connect (on_file_dropped);
             drop_target.enter.connect (on_enter);
-            welcome_clamp.add_controller (drop_target);
+            drop_target.leave.connect (on_leave);
+            view_stack.add_controller (drop_target);
         }
 
         private Gdk.DragAction on_enter () {
+            dnd_box.add_css_class ("overlay-drag-area");
             return COPY;
         }
 
-        [GtkCallback]
+        private void on_leave () {
+            dnd_box.remove_css_class ("overlay-drag-area");
+        }
+
         private bool on_file_dropped (Value value) {
             var file = (File) value;
             try {

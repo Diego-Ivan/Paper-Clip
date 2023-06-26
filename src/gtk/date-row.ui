@@ -5,6 +5,7 @@
   <template class="PaperClipDateRow" parent="AdwActionRow">
     <child type="suffix">
       <object class="GtkButton">
+        <property name="tooltip-text" translatable="yes">Remove Date</property>
         <property name="icon-name">entry-clear-symbolic</property>
         <property name="valign">center</property>
         <signal name="clicked" handler="on_clear_button_clicked"></signal>
@@ -16,6 +17,7 @@
 
     <child type="suffix">
       <object class="GtkMenuButton">
+        <property name="tooltip-text" translatable="yes">Show Calendar</property>
         <property name="valign">center</property>
         <style>
           <class name="flat"/>
