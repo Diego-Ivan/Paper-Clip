@@ -6,14 +6,12 @@
          xmlns="http://usefulinc.com/ns/doap#">
 
   <name xml:lang="en">Paper Clip</name>
-  <shortdesc xml:lang="en">
-      Edit PDF document metadata
-  </shortdesc>
-  <description xml:lang="en">
-      Edit the title, author, keywords and more details of your PDF documents
-  </description>
-  <homepage rdf:resource="https://github.com/Diego-Ivan/pdf-metadata-editor" />
-  <bug-database rdf:resource="https://github.com/Diego-Ivan/pdf-metadata-editor/issues" />
+  <platform>GTK 4</platform>
+  <platform>Libadwaita</platform>
+  <shortdesc xml:lang="en">Edit PDF document metadata</shortdesc>
+  <description xml:lang="en">Edit the title, author, keywords and more details of your PDF documents</description>
+  <homepage rdf:resource="https://github.com/Diego-Ivan/Paper-Clip"/>
+  <bug-database rdf:resource="https://github.com/Diego-Ivan/Paper-Clip/issues" />
 
   <category rdf:resource="http://api.gnome.org/doap-extensions#apps" />
   <programming-language>Vala</programming-language>
@@ -22,6 +20,16 @@
     <foaf:Person>
       <foaf:name>Diego Iván</foaf:name>
       <foaf:mbox rdf:resource="mailto:diegoivan.mae@gmail.com" />
+      <foaf:account>
+        <foaf:OnlineAccount>
+          <foaf:accountServiceHomepage rdf:resource="https://github.com"/>
+          <foaf:accountName>Diego-Ivan</foaf:accountName>
+        </foaf:OnlineAccount>
+        <foaf:OnlineAccount>
+          <foaf:accountServiceHomepage rdf:resource="https://gitlab.gnome.org"/>
+          <foaf:accountName>DiegoIvanME</foaf:accountName>
+        </foaf:OnlineAccount>
+      </foaf:account>
     </foaf:Person>
   </maintainer>
 </Project>
