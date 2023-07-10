@@ -53,14 +53,12 @@ namespace PaperClip {
 
             foreach (unowned string argument in cmd_line.get_arguments ()) {
                 if (file_array.length > 0) {
+                    warning ("Paper Clip can only open a single file to edit");
                     break;
                 }
 
                 File file = cmd_line.create_file_for_arg (argument);
-                if (!file.query_exists ()) {
-                    continue;
-                }
-
+                message ("Found a file");
                 file_array += file;
             }
 

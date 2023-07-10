@@ -1,90 +1,89 @@
 {
-  "app-id": "io.github.diegoivan.pdf_metadata_editor",
-  "runtime": "org.gnome.Platform",
-  "runtime-version": "44",
-  "sdk": "org.gnome.Sdk",
-  "sdk-extensions" : [
-    "org.freedesktop.Sdk.Extension.vala"
-  ],
-  "command": "pdf-metadata-editor",
-  "finish-args": [
-    "--share=ipc",
-    "--socket=fallback-x11",
-    "--device=dri",
-    "--socket=wayland"
-  ],
-  "build-options" : {
-    "prepend-path" : "/usr/lib/sdk/vala/bin/",
-    "prepend-ld-library-path" : "/usr/lib/sdk/vala/lib"
-  },
-  "cleanup": [
-    "/include",
-    "/lib/pkgconfig",
-    "/man",
-    "/share/doc",
-    "/share/gtk-doc",
-    "/share/man",
-    "/share/pkgconfig",
-    "/share/vala",
-    "*.la",
-    "*.a"
-  ],
-  "modules": [
-    {
-      "name": "libportal",
-      "buildsystem": "meson",
-      "config-opts": [
-        "-Dbackend-gtk3=disabled",
-        "-Dbackend-gtk4=enabled",
-        "-Dbackend-qt5=disabled",
-        "-Ddocs=false",
-        "-Dtests=false"
-      ],
-      "sources": [
-        {
-          "url": "https://github.com/flatpak/libportal.git",
-          "type": "git",
-          "commit": "09ec040159b754c14610ad02e4de17d0b9bc6612"
-        }
-      ]
+    "app-id" : "io.github.diegoivan.pdf_metadata_editor",
+    "runtime" : "org.gnome.Platform",
+    "runtime-version" : "44",
+    "sdk" : "org.gnome.Sdk",
+    "sdk-extensions" : [
+        "org.freedesktop.Sdk.Extension.vala"
+    ],
+    "command" : "pdf-metadata-editor",
+    "finish-args" : [
+        "--share=ipc",
+        "--socket=fallback-x11",
+        "--device=dri",
+        "--socket=wayland"
+    ],
+    "build-options" : {
+        "prepend-path" : "/usr/lib/sdk/vala/bin/",
+        "prepend-ld-library-path" : "/usr/lib/sdk/vala/lib",
+        "env" : {        }
     },
-
-    {
-      "name": "poppler",
-      "buildsystem": "cmake-ninja",
-      "config-opts": [
-        "-DENABLE_LIBOPENJPEG:STRING=none",
-        "-DBUILD_GTK_TESTS=OFF",
-        "-DBUILD_QT5_TESTS=OFF",
-        "-DBUILD_QT6_TESTS=OFF",
-        "-DBUILD_CPP_TESTS=OFF",
-        "-DBUILD_MANUAL_TESTS=OFF",
-        "-DENABLE_UTILS=OFF",
-        "-DENABLE_CPP=OFF",
-        "-DENABLE_QT5=OFF",
-        "-DENABLE_QT6=OFF",
-        "-DENABLE_BOOST=OFF"
-      ],
-      "sources": [
+    "cleanup" : [
+        "/include",
+        "/lib/pkgconfig",
+        "/man",
+        "/share/doc",
+        "/share/gtk-doc",
+        "/share/man",
+        "/share/pkgconfig",
+        "/share/vala",
+        "*.la",
+        "*.a"
+    ],
+    "modules" : [
         {
-          "url": "https://gitlab.freedesktop.org/poppler/poppler.git",
-          "type": "git",
-          "tag": "poppler-23.01.0",
-          "commit": "4259ff0c2067d302f97d87221a442eec8e88d45c"
-        }
-      ]
-    },
-
-    {
-      "name": "hidden-scribe",
-      "builddir": true,
-      "buildsystem": "meson",
-      "sources": [
+            "name" : "libportal",
+            "buildsystem" : "meson",
+            "config-opts" : [
+                "-Dbackend-gtk3=disabled",
+                "-Dbackend-gtk4=enabled",
+                "-Dbackend-qt5=disabled",
+                "-Ddocs=false",
+                "-Dtests=false"
+            ],
+            "sources" : [
+                {
+                    "url" : "https://github.com/flatpak/libportal.git",
+                    "type" : "git",
+                    "commit" : "09ec040159b754c14610ad02e4de17d0b9bc6612"
+                }
+            ]
+        },
         {
-          "type": "git",
-          "url": "https://github.com/Diego-Ivan/pdf-metadata-editor"
+            "name" : "poppler",
+            "buildsystem" : "cmake-ninja",
+            "config-opts" : [
+                "-DENABLE_LIBOPENJPEG:STRING=none",
+                "-DBUILD_GTK_TESTS=OFF",
+                "-DBUILD_QT5_TESTS=OFF",
+                "-DBUILD_QT6_TESTS=OFF",
+                "-DBUILD_CPP_TESTS=OFF",
+                "-DBUILD_MANUAL_TESTS=OFF",
+                "-DENABLE_UTILS=OFF",
+                "-DENABLE_CPP=OFF",
+                "-DENABLE_QT5=OFF",
+                "-DENABLE_QT6=OFF",
+                "-DENABLE_BOOST=OFF"
+            ],
+            "sources" : [
+                {
+                    "url" : "https://gitlab.freedesktop.org/poppler/poppler.git",
+                    "type" : "git",
+                    "tag" : "poppler-23.01.0",
+                    "commit" : "4259ff0c2067d302f97d87221a442eec8e88d45c"
+                }
+            ]
+        },
+        {
+            "name" : "hidden-scribe",
+            "builddir" : true,
+            "buildsystem" : "meson",
+            "sources" : [
+                {
+                    "type" : "git",
+                    "url" : "https://github.com/Diego-Ivan/pdf-metadata-editor"
+                }
+            ]
         }
-      ]
-    }
-  ]
+    ]
 }
