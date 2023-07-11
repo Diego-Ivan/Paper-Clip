@@ -24,7 +24,7 @@ namespace PaperClip {
 
         public Application () {
             Object (application_id: "io.github.diegoivan.pdf_metadata_editor",
-                    flags: ApplicationFlags.HANDLES_COMMAND_LINE | ApplicationFlags.HANDLES_OPEN);
+                    flags: ApplicationFlags.HANDLES_OPEN);
 
             Intl.setlocale (LocaleCategory.ALL, "");
             Intl.bindtextdomain (Config.GETTEXT_PACKAGE, Config.GNOMELOCALEDIR);
@@ -46,25 +46,6 @@ namespace PaperClip {
                 main_window = new PaperClip.Window (this);
             }
             main_window.present ();
-        }
-
-        public override int command_line (ApplicationCommandLine cmd_line) {
-            File[] file_array = {};
-
-            foreach (unowned string argument in cmd_line.get_arguments ()) {
-                if (file_array.length > 0) {
-                    warning ("Paper Clip can only open a single file to edit");
-                    break;
-                }
-
-                File file = cmd_line.create_file_for_arg (argument);
-                message ("Found a file");
-                file_array += file;
-            }
-
-            open (file_array, "");
-
-            return 0;
         }
 
         public override void open (File[] files, string hint) {

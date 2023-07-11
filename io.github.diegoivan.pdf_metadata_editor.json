@@ -75,9 +75,12 @@
             ]
         },
         {
-            "name" : "hidden-scribe",
+            "name" : "Paper-Clip",
             "builddir" : true,
             "buildsystem" : "meson",
+            "config-opts" : [
+                "-Dprofile=devel"
+            ],
             "sources" : [
                 {
                     "type" : "git",

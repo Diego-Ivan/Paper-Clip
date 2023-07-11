@@ -9,6 +9,9 @@ gnome = import('gnome')
 
 app_id = 'io.github.diegoivan.pdf_metadata_editor'
 
+if get_option ('profile') == 'devel'
+endif
+
 subdir('data')
 subdir('src')
 subdir('po')
