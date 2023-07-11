@@ -11,15 +11,11 @@
   </description>
 
   <releases>
-    <release version="3.0" date="2023-06-26">
+    <release version="3.1" date="2023-07-11">
       <description>
-        <p>Version 3.0! </p>
-        <p>This version features some adjustment to the user interface</p>
-        <ul>
-          <li>The rows to set the creation and modification dates now have tooltips</li>
-          <li>The DND feature now has a nicer semi-transparent overlay instead of discrete blue shadow around the interface</li>
-          <li>PDFs with a transparent background are now given a white background layer so they are more visible in the interface</li>
-        </ul>
+        <p>Version 3.1 features:</p>
+        <p>Minor Bugfixes</p>
+        <p>Paper Clip can now open files from the file explorer</p>
       </description>
     </release>
   </releases>
