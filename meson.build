@@ -1,5 +1,5 @@
 project('pdf-metadata-editor', ['c', 'vala'],
-          version: '3.0',
+          version: '3.1',
     meson_version: '>= 0.59.0',
   default_options: [ 'warning_level=2', 'werror=false', ],
 )
@@ -8,6 +8,9 @@ i18n = import('i18n')
 gnome = import('gnome')
 
 app_id = 'io.github.diegoivan.pdf_metadata_editor'
+
+if get_option ('profile') == 'devel'
+endif
 
 subdir('data')
 subdir('src')

@@ -117,6 +117,14 @@ namespace PaperClip {
             state = NONE;
         }
 
+        public void open_command_line_file (File file)
+            requires (file.query_exists ())
+        {
+            state = OPENING_FILE;
+            dropped_file = file;
+            open_dropped_file.begin ();
+        }
+
         private void on_open_action () {
             state = OPENING_FILE;
             var doc_manager = new Services.DocManager ();

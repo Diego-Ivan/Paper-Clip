@@ -1,9 +1,10 @@
 [Desktop Entry]
 Name=Paper Clip
-Exec=pdf-metadata-editor
+Exec=pdf-metadata-editor %U
 Icon=io.github.diegoivan.pdf_metadata_editor
 Terminal=false
 Type=Application
 Keywords=PDF;Metadata;Editor;
 Categories=GTK;Utility;Office;
+MimeType=application/pdf;
 StartupNotify=true

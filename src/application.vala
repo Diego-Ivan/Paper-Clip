@@ -20,9 +20,11 @@
 
 namespace PaperClip {
     public class Application : Adw.Application {
+        private Window main_window;
+
         public Application () {
             Object (application_id: "io.github.diegoivan.pdf_metadata_editor",
-                    flags: ApplicationFlags.FLAGS_NONE);
+                    flags: ApplicationFlags.HANDLES_OPEN);
 
             Intl.setlocale (LocaleCategory.ALL, "");
             Intl.bindtextdomain (Config.GETTEXT_PACKAGE, Config.GNOMELOCALEDIR);
@@ -40,11 +42,19 @@ namespace PaperClip {
 
         public override void activate () {
             base.activate ();
-            var win = this.active_window;
-            if (win == null) {
-                win = new PaperClip.Window (this);
+            if (main_window == null) {
+                main_window = new PaperClip.Window (this);
             }
-            win.present ();
+            main_window.present ();
+        }
+
+        public override void open (File[] files, string hint) {
+            activate ();
+            if (files.length <= 0) {
+                return;
+            }
+
+            main_window.open_command_line_file (files[0]);
         }
 
         private void shortcuts_action () {
