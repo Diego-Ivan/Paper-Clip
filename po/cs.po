@@ -1,0 +1,369 @@
+# Czech translation for Paper Clip.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the pdf-metadata-editor package.
+# Amerey.eu <info@amerey.eu>, 2023.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: pdf-metadata-editor\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-06-15 11:48-0600\n"
+"PO-Revision-Date: 2023-07-18 13:52+0200\n"
+"Last-Translator: Amerey.eu <info@amerey.eu>\n"
+"Language-Team: \n"
+"Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.3.1\n"
+
+#: data/io.github.diegoivan.pdf_metadata_editor.desktop.in:3
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:7
+msgid "Paper Clip"
+msgstr "Paper Clip"
+
+#: data/io.github.diegoivan.pdf_metadata_editor.desktop.in:8
+msgid "PDF;Metadata;Editor;"
+msgstr "PDF;Metadata;Editor;"
+
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:8
+msgid "Edit PDF document metadata"
+msgstr "Upravte metadata dokumentu PDF"
+
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:10
+msgid "Edit the title, author, keywords and more details of your PDF documents"
+msgstr ""
+"Upravte název, autora, klíčová slova a další podrobnosti vašich dokumentů PDF"
+
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:16
+msgid ""
+"Version 2.0: After a three month development hiatus, Paper Clip sees its "
+"second release!"
+msgstr ""
+"Verze 2.0: Po tříměsíční pauze ve vývoji se Paper Clip dočkal druhého vydání!"
+
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:17
+msgid "This version includes a nicer UI with:"
+msgstr "Tato verze obsahuje hezčí uživatelské rozhraní s:"
+
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:19
+msgid "Fix many UI papercuts to match the GNOME HIG"
+msgstr "Oprava uživatelského rozhraní, aby odpovídalo GNOME HIG"
+
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:20
+msgid "The main view now features a thumbnail of the document"
+msgstr "Hlavní zobrazení nyní obsahuje miniaturu dokumentu"
+
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:21
+msgid ""
+"The term \"Creator\" has been changed for \"Creation Software\" to avoid "
+"confusion with \"Author\""
+msgstr ""
+"Termín „Tvůrce“ byl změněn pro „Software pro tvorbu“, aby se předešlo záměně "
+"s výrazem „Autor“"
+
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:22
+msgid ""
+"The main view now handles large document titles as special cases to avoid "
+"breaking the UI"
+msgstr ""
+"Hlavní zobrazení nyní zpracovává velké názvy dokumentů jako speciální "
+"případy, aby nedošlo k porušení uživatelského rozhraní"
+
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:23
+msgid "The keyword list now has a nicer UI"
+msgstr "Seznam klíčových slov má nyní hezčí uživatelské rozhraní"
+
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:24
+msgid ""
+"The details window has been removed, and the non editable properties of the "
+"document have been moved to the bottom of the view"
+msgstr ""
+"Okno podrobností bylo odstraněno a neupravitelné vlastnosti dokumentu byly "
+"přesunuty do spodní části pohledu"
+
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:71
+msgid "Diego Iván"
+msgstr "Diego Iván"
+
+#. translators: Write your name<email> here :D
+#: src/application.vala:69
+msgid "translator_credits"
+msgstr "Amerey.eu"
+
+#: src/window.vala:256
+msgid "Save Changes?"
+msgstr "Uložit změny?"
+
+#: src/window.vala:257
+msgid "Changes that are not saved will be lost permanently"
+msgstr "Neuložené změny budou trvale ztraceny"
+
+#: src/window.vala:261
+msgid "Cancel"
+msgstr "Zrušit"
+
+#: src/window.vala:262
+msgid "Discard"
+msgstr "Zahodit"
+
+#: src/window.vala:263
+msgid "Save"
+msgstr "Uložit"
+
+#: src/window.ui:21
+msgid "Select a File"
+msgstr "Vybrat soubor"
+
+#: src/window.ui:25
+msgid "Open"
+msgstr "Otevřít"
+
+#: src/window.ui:80
+msgid "Open a Document"
+msgstr "Otevřít soubor"
+
+#: src/window.ui:89
+msgid "Drag and drop a PDF file here"
+msgstr "Sem přetáhněte PDF soubor"
+
+#: src/window.ui:147
+msgid "_Save"
+msgstr "_Uložit"
+
+#: src/window.ui:152
+msgid "Save _As…"
+msgstr "Uložit _jako…"
+
+#: src/window.ui:157
+msgid "Open _With…"
+msgstr "Otevřít _s…"
+
+#: src/window.ui:163
+msgid "_Keyboard Shortcuts"
+msgstr "_Klávesové zkratky"
+
+#: src/window.ui:167
+msgid "_About Paper Clip"
+msgstr "_O aplikaci Paper Clip"
+
+#: src/DateRow.vala:34
+msgid "No date set"
+msgstr "Není nastaveno žádné datum"
+
+#: src/Document.vala:110
+msgid "Unknown"
+msgstr "Neznámý"
+
+#: src/Document.vala:216
+msgid "Pages in one column"
+msgstr "Stránky v jednom sloupci"
+
+#: src/Document.vala:219
+msgid "One page at a time"
+msgstr "Po jedné stránce"
+
+#: src/Document.vala:222
+msgid "Odd numbered pages on the left"
+msgstr "Liché stránky vlevo"
+
+#: src/Document.vala:225
+msgid "Odd numbered pages on the right"
+msgstr "Liché stránky vpravo"
+
+#: src/Document.vala:228
+msgid "Two odd numbered pages on the left"
+msgstr "Dvě liché stránky vlevo"
+
+#: src/Document.vala:231
+msgid "Two odd numbered pages on the right"
+msgstr "Dvě liché stránky vpravo"
+
+#: src/Document.vala:235
+msgid "No specific layout"
+msgstr "Žádné konkrétní rozložení"
+
+#: src/Document.vala:244
+msgid "Center document's window"
+msgstr "Vycentrovat okno dokumentu"
+
+#: src/Document.vala:248
+msgid "Reading order is right to left"
+msgstr "Pořadí čtení je zprava doleva"
+
+#: src/Document.vala:252
+msgid "Display document's title"
+msgstr "Zobrazit název dokumentu"
+
+#: src/Document.vala:256
+msgid "Fit document to window"
+msgstr "Přizpůsobit dokument oknu"
+
+#: src/Document.vala:260
+msgid "Hide window menubar"
+msgstr "Skrýt panel nabídek okna"
+
+#: src/Document.vala:264
+msgid "Hide window toolbars"
+msgstr "Skrýt panely nástrojů okna"
+
+#: src/Document.vala:268
+msgid "Hide UI elements"
+msgstr "Skrýt prvky uživatelského rozhraní"
+
+#: src/Document.vala:272
+msgid "No preferences"
+msgstr "Žádné preference"
+
+#: src/Document.vala:283
+msgid "Adding notes"
+msgstr "Přidávání poznámek"
+
+#: src/Document.vala:287
+msgid "Inserting elements"
+msgstr "Vkládání prvků"
+
+#: src/Document.vala:291
+msgid "Copying"
+msgstr "Kopírování"
+
+#: src/Document.vala:295
+msgid "Extracting contents"
+msgstr "Extrakce obsahu"
+
+#: src/Document.vala:299
+msgid "Filling interactive forms"
+msgstr "Vyplňování interaktivních formulářů"
+
+#: src/Document.vala:303
+msgid "Modifying"
+msgstr "Upravování"
+
+#: src/Document.vala:307
+msgid "Printing"
+msgstr "Tisk"
+
+#: src/Document.vala:311
+msgid "Printing in high resolution"
+msgstr "Tisk ve vysokém rozlišení"
+
+#: src/Document.vala:320
+msgid "Flip on the long edge"
+msgstr "Otočit svisle"
+
+#: src/Document.vala:323
+msgid "Flip on the short edge"
+msgstr "Otočit vodorovně"
+
+#: src/Document.vala:326
+msgid "Only single sided"
+msgstr "Pouze jednostranné"
+
+#: src/Document.vala:330
+msgid "No preference"
+msgstr "Žádná preference"
+
+#: src/Document.vala:354
+msgid "Not compliant"
+msgstr "Nevyhovuje"
+
+#: src/KeywordRow.vala:29
+msgid "Delete Keyword"
+msgstr "Smazat klíčové slovo"
+
+#: src/KeywordList.vala:43
+msgid "Keyword"
+msgstr "Klíčové slovo"
+
+#: src/KeywordList.vala:72
+msgid "Press the “+” button to add a keyword"
+msgstr "Stisknutím tlačítka „+“ přidáte klíčové slovo"
+
+#: src/gtk/date-row.ui:47
+msgid "Today"
+msgstr "Dnes"
+
+#: src/gtk/date-row.ui:54
+msgid "Tomorrow"
+msgstr "Zítra"
+
+#: src/gtk/details-list.ui:15
+msgid "Format"
+msgstr "Formát"
+
+#: src/gtk/details-list.ui:22
+msgid "Layout"
+msgstr "Rozložení"
+
+#: src/gtk/details-list.ui:29
+msgid "Duplex"
+msgstr "Duplex"
+
+#: src/gtk/details-list.ui:36
+msgid "Subtype"
+msgstr "Podtyp"
+
+#: src/gtk/details-list.ui:43
+msgid "Viewer Preferences"
+msgstr "Předvolby prohlížeče"
+
+#: src/gtk/details-list.ui:50
+msgid "Permissions"
+msgstr "Oprávnění"
+
+#: src/gtk/document-view.ui:45
+msgid "Title"
+msgstr "Název"
+
+#: src/gtk/document-view.ui:51
+msgid "Author"
+msgstr "Autor"
+
+#: src/gtk/document-view.ui:57
+msgid "Creation Software"
+msgstr "Software pro tvorbu"
+
+#: src/gtk/document-view.ui:63
+msgid "Subject"
+msgstr "Předmět"
+
+#: src/gtk/document-view.ui:69
+msgid "Producer"
+msgstr "Producent"
+
+#: src/gtk/document-view.ui:75
+msgid "Creation Date"
+msgstr "Datum vytvoření"
+
+#: src/gtk/document-view.ui:81
+msgid "Modification Date"
+msgstr "Datum změny"
+
+#: src/gtk/document-view.ui:94
+msgid "Non-Editable Properties"
+msgstr "Vlastnosti, které nelze upravovat"
+
+#: src/gtk/shortcut-window.ui:11
+msgctxt "shortcut window"
+msgid "General"
+msgstr "Obecné"
+
+#: src/gtk/shortcut-window.ui:14
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Ukončit"
+
+#: src/gtk/shortcut-window.ui:21
+msgctxt "shortcut window"
+msgid "Open"
+msgstr "Otevřít"
+
+#: src/gtk/shortcut-window.ui:28
+msgctxt "shortcut window"
+msgid "Save"
+msgstr "Uložit"
+
+#: src/gtk/shortcut-window.ui:35
+msgctxt "shortcut window"
+msgid "Save As…"
+msgstr "Uložit jako…"
