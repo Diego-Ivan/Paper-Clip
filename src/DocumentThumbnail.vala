@@ -41,7 +41,7 @@ public class PaperClip.DocumentThumbnail : Adw.Bin {
 
     private async void generate_png () {
         try {
-            Gdk.Texture thumbnail_texture = yield create_thumbnail_in_cache ();
+            Gdk.Texture thumbnail_texture = yield ThreadManager.run_in_thread (create_thumbnail_in_cache);
             thumbnail_image.paintable = scale_thumbnail (thumbnail_texture);
         }
         catch (Error e) {
@@ -88,37 +88,30 @@ public class PaperClip.DocumentThumbnail : Adw.Bin {
         return snapshot.to_paintable ({scaled_width, scaled_height});
     }
 
-    private async Gdk.Texture? create_thumbnail_in_cache () throws Error {
+    private Gdk.Texture? create_thumbnail_in_cache () throws Error {
         Cairo.Status status = NULL_POINTER;
         string? cache_path = "";
 
-        new Thread<void>("image-renderer", () => {
-            Poppler.Page first_page = document.get_page_for_index (0);
-            double width, height;
+        Poppler.Page first_page = document.get_page_for_index (0);
+        double width, height;
 
-            first_page.get_size (out width, out height);
+        first_page.get_size (out width, out height);
 
-            var surface = new Cairo.ImageSurface (Cairo.Format.ARGB32, (int) width, (int) height);
-            var context = new Cairo.Context (surface);
+        var surface = new Cairo.ImageSurface (Cairo.Format.ARGB32, (int) width, (int) height);
+        var context = new Cairo.Context (surface);
 
-            first_page.render (context);
+        first_page.render (context);
 
-            cache_path = create_cache_file ();
+        cache_path = create_cache_file ();
 
-            if (cache_path == null) {
-                status = INVALID_PATH_DATA;
-                return;
-            }
+        if (cache_path == null) {
+            status = INVALID_PATH_DATA;
+        }
 
-            status = surface.write_to_png (create_cache_file ());
-
-            Idle.add (create_thumbnail_in_cache.callback);
-        });
-
-        yield;
+        status = surface.write_to_png (create_cache_file ());
 
         if (status != SUCCESS || cache_path == null || cache_path == "") {
-            throw new ThumbnailError.FAILED_EXPORT ("Failed to export PNG file: %s", status.to_string ());
+            throw new ThumbnailError.FAILED_EXPORT (@"Failed to export PNG file: $status");
         }
 
         return Gdk.Texture.from_filename (cache_path);;
@@ -126,7 +119,7 @@ public class PaperClip.DocumentThumbnail : Adw.Bin {
 
     private string? create_cache_file () {
         string destination_path = Path.build_path (Path.DIR_SEPARATOR_S,
-                                                   Environment.get_user_cache_dir (),
+                                                   Environment.get_tmp_dir (),
                                                    "thumbnails");
         int result = DirUtils.create_with_parents (destination_path, 0777);
         return_if_fail (result > -1);

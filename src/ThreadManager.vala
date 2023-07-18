@@ -7,15 +7,11 @@
 
 namespace ThreadManager {
     private static ThreadPool<Task> thread_pool;
-    private static bool initiated;
-    private static bool supported;
+    private static bool initiated = false;
+    private static bool supported = true;
 
     public delegate G ThreadFunc<G> () throws Error;
     public delegate void TaskFunc ();
-
-    public errordomain ThreadManagerError {
-        NOT_SUPPORTED;
-    }
 
     [Compact]
     private class Task {
@@ -56,7 +52,8 @@ namespace ThreadManager {
         }
 
         if (!supported) {
-            throw new ThreadManagerError.NOT_SUPPORTED ("Thread creation is not supported");
+            critical ("Thread Creation not supported in this context. Running synchronously...");
+            return thread_func ();
         }
 
         Error? error = null;
