@@ -12,6 +12,8 @@ hidden_scribe_sources = [
   'DocumentThumbnail.vala',
   'KeywordList.vala',
 
+  'ThreadManager.vala',
+
   # Services
   'Services/DocManager.vala',
 ]
