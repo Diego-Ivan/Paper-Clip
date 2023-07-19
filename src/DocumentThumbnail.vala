@@ -21,7 +21,7 @@
 public class PaperClip.DocumentThumbnail : Adw.Bin {
     private Gtk.Image thumbnail_image = new Gtk.Image ();
 
-    const int MAX_SIZE = 175;
+    const int MAX_SIZE = 350;
 
     private unowned Document _document;
     public unowned Document document {
@@ -60,6 +60,7 @@ public class PaperClip.DocumentThumbnail : Adw.Bin {
         float size = MAX_SIZE * scale_factor;
         float scaled_height, scaled_width;
 
+        // Translated this from AdwAvatar source code. Works nicely :)
         if (image_width > image_height) {
             scaled_height = size;
             scaled_width = image_width * scaled_height / image_height;
@@ -70,20 +71,23 @@ public class PaperClip.DocumentThumbnail : Adw.Bin {
             scaled_width = scaled_height = size;
         }
 
-        var snapshot = new Gtk.Snapshot ();
         Gsk.ScalingFilter filter = LINEAR;
-        if (image_width < scaled_width || image_height < scaled_height) {
+        if (scaled_width > image_width || scaled_height > image_height) {
+            filter = NEAREST;
+        } else {
             filter = TRILINEAR;
         }
 
-        var thumbnail_rectangle = Graphene.Rect ();
+        debug (@"Current filter for thumbnail: $filter");
 
+        var thumbnail_rectangle = Graphene.Rect ();
         thumbnail_rectangle = thumbnail_rectangle.init (0, 0, scaled_width, scaled_height);
 
+        var snapshot = new Gtk.Snapshot ();
         // Append White Background in case the image is transparent
         snapshot.append_color ({1, 1, 1, 1}, thumbnail_rectangle);
         snapshot.append_scaled_texture (thumbnail_texture, filter, thumbnail_rectangle);
-        thumbnail_image.pixel_size = (int) size;
+        thumbnail_image.pixel_size = (int) MAX_SIZE / 2;
 
         return snapshot.to_paintable ({scaled_width, scaled_height});
     }
