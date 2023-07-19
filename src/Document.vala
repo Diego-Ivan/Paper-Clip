@@ -368,7 +368,7 @@ public class PaperClip.Document : Object {
     private async File create_copy (string uri) {
         original_file = File.new_for_uri (uri);
         string destination_path = Path.build_path (Path.DIR_SEPARATOR_S,
-                                                   Environment.get_user_cache_dir (),
+                                                   Environment.get_tmp_dir (),
                                                    "copies");
 
         int res = DirUtils.create_with_parents (destination_path, 0777);
