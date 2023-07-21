@@ -18,9 +18,6 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-// TODO: I should clean up this thing, too many children and bindings it is hard to read.
-// The "main" rows should probably be moved to their individual widget something like DetailsList
-
 [GtkTemplate (ui = "/io/github/diegoivan/pdf_metadata_editor/gtk/document-view.ui")]
 public class PaperClip.DocumentView : Adw.Bin {
     [GtkChild]
@@ -62,8 +59,7 @@ public class PaperClip.DocumentView : Adw.Bin {
             document_thumbnail.document = document;
             keyword_list.document = document;
 
-            unowned var window = (Gtk.Window) get_root ();
-            document.bind_property ("title", window, "title", SYNC_CREATE);
+            document.bind_property ("title", root, "title", SYNC_CREATE);
 
             var manager = new Services.DocManager ();
             manager.document = document;

@@ -78,11 +78,10 @@ namespace PaperClip {
         private bool on_file_dropped (Value value) {
             var file = (File) value;
             try {
-                FileInfo info = file.query_info ("standard;:*", NOFOLLOW_SYMLINKS);
+                FileInfo info = file.query_info ("standard::*", NOFOLLOW_SYMLINKS);
                 string? content_type = info.get_content_type ();
-                string name = file.get_basename () ?? "";
 
-                if (content_type != "application/pdf" && !name.contains (".pdf")) {
+                if (content_type != "application/pdf") {
                     critical ("File is not a PDF");
                     return false;
                 }
@@ -137,6 +136,17 @@ namespace PaperClip {
 
         private async void open_file () {
             var file_dialog = new Gtk.FileDialog ();
+
+            var pdf_filter = new Gtk.FileFilter () {
+               name = "PDF"
+            };
+            pdf_filter.add_mime_type ("application/pdf");
+
+            var filters = new ListStore (typeof (Gtk.FileFilter));
+            filters.append (pdf_filter);
+
+            file_dialog.filters = filters;
+
             try {
                 File opened_file = yield file_dialog.open (this, null);
                 pulse_progress_bar ();
@@ -188,6 +198,17 @@ namespace PaperClip {
             var file_dialog = new Gtk.FileDialog () {
                 initial_name = manager.document.original_file.get_basename ()
             };
+
+            var pdf_filter = new Gtk.FileFilter () {
+               name = "PDF"
+            };
+            pdf_filter.add_mime_type ("application/pdf");
+
+            var filters = new ListStore (typeof (Gtk.FileFilter));
+            filters.append (pdf_filter);
+
+            file_dialog.filters = filters;
+
             try {
                 File file = yield file_dialog.save (this, null);
                 manager.save (file.get_uri ());
