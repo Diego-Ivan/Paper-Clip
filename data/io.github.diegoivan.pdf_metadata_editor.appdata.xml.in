@@ -11,11 +11,15 @@
   </description>
 
   <releases>
-    <release version="3.1" date="2023-07-11">
+    <release version="3.2" date="2023-07-20">
       <description>
-        <p>Version 3.1 features:</p>
-        <p>Minor Bugfixes</p>
-        <p>Paper Clip can now open files from the file explorer</p>
+        <p>Paper Clip Version 3.2</p>
+        <p>This new version of Paper Clip has the following changes</p>
+        <ul>
+          <li>Czech translation</li>
+          <li>Better rendering for thumbnails</li>
+          <li>Better cache management</li>
+        </ul>
       </description>
     </release>
   </releases>
