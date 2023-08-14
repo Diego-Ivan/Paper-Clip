@@ -67,7 +67,9 @@
 
   <developer_name>Diego Iván</developer_name>
   <url type="homepage">https://github.com/Diego-Ivan/Paper-Clip</url>
+  <url type="vcs-browser">https://github.com/Diego-Ivan/Paper-Clip</url>
   <url type="bugtracker">https://github.com/Diego-Ivan/Paper-Clip/issues</url>
+  <url type="translate">https://github.com/Diego-Ivan/Paper-Clip/tree/main/po</url>
 
   <!-- Device Support -->
   <requires>
