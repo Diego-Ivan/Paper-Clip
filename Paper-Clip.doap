@@ -25,6 +25,8 @@
           <foaf:accountServiceHomepage rdf:resource="https://github.com"/>
           <foaf:accountName>Diego-Ivan</foaf:accountName>
         </foaf:OnlineAccount>
+      </foaf:account>
+      <foaf:account>
         <foaf:OnlineAccount>
           <foaf:accountServiceHomepage rdf:resource="https://gitlab.gnome.org"/>
           <foaf:accountName>DiegoIvanME</foaf:accountName>
