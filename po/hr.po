@@ -64,7 +64,7 @@ msgid ""
 "confusion with \"Author\""
 msgstr ""
 "Engleski izraz „Creator” je promijenjen u „Creation Software” kako bi se "
-"izbjegla zabuna s podatkom „Author”. Hrvatski prijevo je i nadalje „Softver "
+"izbjegla zabuna s podatkom „Author”. Hrvatski prijevod je i nadalje „Softver "
 "izvornog dokumenta”"
 
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:22
