@@ -11,10 +11,9 @@
     <signal name="close-request" handler="on_close_request"></signal>
 
     <child>
-      <object class="GtkBox">
-        <property name="orientation">vertical</property>
-        <child>
-          <object class="GtkHeaderBar" id="header_bar">
+      <object class="AdwToolbarView">
+        <child type="top">
+          <object class="AdwHeaderBar" id="header_bar">
             <child type="start">
               <object class="GtkButton">
                 <property name="action-name">win.open</property>
@@ -36,8 +35,6 @@
             </child>
           </object>
         </child>
-
-
         <child>
           <object class="GtkOverlay" id="view_overlay">
             <child type="overlay">
@@ -117,7 +114,6 @@
             </child>
           </object>
         </child>
-
       </object>
     </child>
 
@@ -153,15 +149,18 @@
         <attribute name="label" translatable="yes">_Save</attribute>
         <attribute name="action">win.save</attribute>
         <attribute name="accel">&lt;control&gt;s</attribute>
+        <attribute name="hidden-when">action-disabled</attribute>
       </item>
       <item>
         <attribute name="label" translatable="yes">Save _As…</attribute>
         <attribute name="action">win.save-as</attribute>
         <attribute name="accel">&lt;control&gt;&lt;shift&gt;s</attribute>
+        <attribute name="hidden-when">action-disabled</attribute>
       </item>
       <item>
         <attribute name="label" translatable="yes">Open _With…</attribute>
         <attribute name="action">win.open-with</attribute>
+        <attribute name="hidden-when">action-disabled</attribute>
       </item>
     </section>
     <section>

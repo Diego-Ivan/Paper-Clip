@@ -37,6 +37,10 @@ namespace PaperClip {
 
         public Window (Gtk.Application app) {
             Object (application: app);
+
+            action_set_enabled ("win.save", false);
+            action_set_enabled ("win.save-as", false);
+            action_set_enabled ("win.open-with", false);
         }
 
         construct {
@@ -52,10 +56,6 @@ namespace PaperClip {
             var action_group = new SimpleActionGroup ();
             action_group.add_action_entries (entries, this);
             insert_action_group ("win", action_group);
-
-            action_set_enabled ("win.save", false);
-            action_set_enabled ("win.save-as", false);
-            action_set_enabled ("win.open-with", false);
 
             // Controller of Drag and Drop
             var drop_target = new Gtk.DropTarget (typeof(File), COPY);
