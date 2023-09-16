@@ -28,8 +28,10 @@ public sealed class PaperClip.Services.DocManager : Object {
         }
         set {
             disconnect_document ();
+
             _document = value;
             changed = false;
+
             document.notify.connect (on_doc_changed);
             document.keywords.items_changed.connect (on_doc_changed);
             document.keyword_changed.connect (on_doc_changed);
@@ -52,6 +54,8 @@ public sealed class PaperClip.Services.DocManager : Object {
             return;
         }
         document.notify.disconnect (on_doc_changed);
+        document.keywords.items_changed.disconnect (on_doc_changed);
+        document.keyword_changed.disconnect (on_doc_changed);
     }
 
     private void on_doc_changed () {

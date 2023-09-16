@@ -165,9 +165,7 @@ public class PaperClip.Document : Object {
 
     public void add_keyword (string keyword) {
         var keyword_object = new StringObject (keyword);
-        keyword_object.notify["str"].connect (() => {
-            keyword_changed ();
-        });
+        keyword_object.notify["str"].connect (() => keyword_changed ());
         keyword_list.append (keyword_object);
     }
 

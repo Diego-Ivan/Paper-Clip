@@ -72,13 +72,13 @@ namespace PaperClip {
                 developer_name = "Diego Iván",
                 developers = developers,
                 artists = artists,
-                issue_url = "https://github.com/Diego-Ivan/HiddenScribe/issues",
+                issue_url = "https://github.com/Diego-Ivan/Paper-Clip/issues",
                 license_type = GPL_3_0,
                 transient_for = this.active_window,
                 // translators: Write your name<email> here :D
                 translator_credits = _("translator_credits"),
                 version = Config.VERSION,
-                website = "https://github.com/Diego-Ivan/HiddenScribe",
+                website = "https://github.com/Diego-Ivan/Paper-Clip",
             };
 
             about.present ();
