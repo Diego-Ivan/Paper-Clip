@@ -21,13 +21,13 @@
 [GtkTemplate (ui = "/io/github/diegoivan/pdf_metadata_editor/gtk/details-list.ui")]
 public class PaperClip.DetailsList : Adw.Bin {
     [GtkChild]
-    private unowned DetailRow format_row;
+    private unowned Adw.ActionRow format_row;
     [GtkChild]
-    private unowned DetailRow layout_row;
+    private unowned Adw.ActionRow layout_row;
     [GtkChild]
-    private unowned DetailRow duplex_row;
+    private unowned Adw.ActionRow duplex_row;
     [GtkChild]
-    private unowned DetailRow subtype_row;
+    private unowned Adw.ActionRow subtype_row;
     [GtkChild]
     private unowned StringArrayRow preferences_row;
     [GtkChild]
@@ -41,10 +41,10 @@ public class PaperClip.DetailsList : Adw.Bin {
         set {
             _document = value;
 
-            format_row.detail = document.format;
-            layout_row.detail = document.layout;
-            duplex_row.detail = document.print_duplex;
-            subtype_row.detail = document.subtype;
+            format_row.subtitle = document.format;
+            layout_row.subtitle = document.layout;
+            duplex_row.subtitle = document.print_duplex;
+            subtype_row.subtitle = document.subtype;
             preferences_row.string_array = document.viewer_preferences;
             permissions_row.string_array = document.permissions;
         }

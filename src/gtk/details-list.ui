@@ -11,30 +11,42 @@
         </style>
 
         <child>
-          <object class="PaperClipDetailRow" id="format_row">
+          <object class="AdwActionRow" id="format_row">
             <property name="title" translatable="yes">Format</property>
             <property name="selectable">false</property>
+            <style>
+              <class name="property"/>
+            </style>
           </object>
         </child>
 
         <child>
-          <object class="PaperClipDetailRow" id="layout_row">
+          <object class="AdwActionRow" id="layout_row">
             <property name="title" translatable="yes">Layout</property>
             <property name="selectable">false</property>
+            <style>
+              <class name="property"/>
+            </style>
           </object>
         </child>
 
         <child>
-          <object class="PaperClipDetailRow" id="duplex_row">
+          <object class="AdwActionRow" id="duplex_row">
             <property name="title" translatable="yes">Duplex</property>
             <property name="selectable">false</property>
+            <style>
+              <class name="property"/>
+            </style>
           </object>
         </child>
 
         <child>
-          <object class="PaperClipDetailRow" id="subtype_row">
+          <object class="AdwActionRow" id="subtype_row">
             <property name="title" translatable="yes">Subtype</property>
             <property name="selectable">false</property>
+            <style>
+              <class name="property"/>
+            </style>
           </object>
         </child>
 
