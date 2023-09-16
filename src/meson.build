@@ -14,7 +14,7 @@ hidden_scribe_sources = [
   'ThreadManager.vala',
 
   # Services
-  'Services/DocManager.vala',
+  'Services/DocumentManager.vala',
 ]
 
 hidden_scribe_deps = [

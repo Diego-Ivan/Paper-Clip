@@ -1,4 +1,4 @@
-/* DocManager.vala
+/* DocumentManager.vala
  *
  * Copyright 2023 Diego Iván <diegoivan.mae@gmail.com>
  *
@@ -18,8 +18,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-[SingleInstance]
-public sealed class PaperClip.Services.DocManager : Object {
+public sealed class PaperClip.Services.DocumentManager : Object {
     public bool changed { get; private set; default = false; }
     private Document _document;
     public Document document {
@@ -38,12 +37,6 @@ public sealed class PaperClip.Services.DocManager : Object {
         }
     }
 
-    private DocManager instance = null;
-    public DocManager () {
-        if (instance == null) {
-            instance = this;
-        }
-    }
     public void save (string uri) {
         document.save (uri);
         changed = false;
@@ -61,11 +54,4 @@ public sealed class PaperClip.Services.DocManager : Object {
     private void on_doc_changed () {
         changed = true;
     }
-}
-
-public enum PaperClip.State {
-    NONE,
-    OPENING_FILE,
-    CLOSING,
-    OPENING_DROPPED
 }

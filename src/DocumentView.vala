@@ -61,9 +61,6 @@ public class PaperClip.DocumentView : Adw.Bin {
 
             document.bind_property ("title", root, "title", SYNC_CREATE);
 
-            var manager = new Services.DocManager ();
-            manager.document = document;
-
             measure_filename ();
             title_label.label = document.original_file.get_basename ();
 
