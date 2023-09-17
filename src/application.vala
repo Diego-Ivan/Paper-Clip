@@ -34,10 +34,14 @@ namespace PaperClip {
         construct {
             ActionEntry[] action_entries = {
                 { "about", this.on_about_action },
-                { "shortcuts", shortcuts_action }
+                { "shortcuts", shortcuts_action },
+                { "query-quit", on_query_quit_action },
+                { "new-window", on_new_window_action }
             };
             this.add_action_entries (action_entries, this);
             set_accels_for_action ("app.shortcuts", { "<Ctrl>question" });
+            set_accels_for_action ("app.query-quit", { "<Ctrl>q" });
+            set_accels_for_action ("app.new-window", { "<Ctrl>n" });
         }
 
         public override void activate () {
@@ -60,6 +64,61 @@ namespace PaperClip {
         private void shortcuts_action () {
             var window = (Window) active_window;
             window.shortcuts ();
+        }
+
+        private void on_new_window_action () {
+            var window = new PaperClip.Window (this);
+            window.present ();
+        }
+
+        private void on_query_quit_action () {
+            on_query_quit_action_async.begin ();
+        }
+
+        private async void on_query_quit_action_async () {
+            Services.DocumentManager[] managers = {};
+
+            foreach (unowned Gtk.Window toplevel in Gtk.Window.list_toplevels ()) {
+                var window = toplevel as Window;
+                if (window == null || !window.document_manager.changed) {
+                    continue;
+                }
+
+                managers += window.document_manager;
+            }
+
+            if (managers.length < 1) {
+                quit ();
+                return;
+            }
+
+            var changes_dialog = new SaveChangesDialog () {
+                transient_for = active_window,
+                modal = true
+            };
+
+            SaveChangesResponse response = yield changes_dialog.ask (managers, null);
+
+            switch (response) {
+                case SAVE:
+                    save_unsaved_managers (changes_dialog);
+                    break;
+                case DISCARD:
+                    quit ();
+                    break;
+                case CANCEL:
+                default:
+                    return;
+            }
+        }
+
+        private void save_unsaved_managers (SaveChangesDialog changes_dialog) {
+            ListModel unsaved_documents = changes_dialog.selected_documents;
+            for (int i = 0; i < unsaved_documents.get_n_items (); i++) {
+                var unsaved_manager = (Services.DocumentManager) unsaved_documents.get_item (i);
+                unsaved_manager.save ();
+            }
+            quit ();
         }
 
         private void on_about_action () {
