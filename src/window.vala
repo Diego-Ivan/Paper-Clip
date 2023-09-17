@@ -54,7 +54,6 @@ namespace PaperClip {
                 { "open", on_open_action },
                 { "open-with", on_open_with_action },
                 { "save", save_file },
-                { "quit", quit_save_action  },
                 { "save-as", save_file_as_action },
                 { "main-menu", on_main_menu_action }
             };
@@ -268,45 +267,33 @@ namespace PaperClip {
 
         [GtkCallback]
         private bool on_close_request () {
+            if (!document_manager.changed || state == CLOSING) {
+                state = NONE;
+                return false;
+            }
+
             quit_and_save.begin ();
             return true;
         }
 
-        private void quit_save_action () {
-            quit_and_save.begin ();
-        }
-
         private async void quit_and_save () {
             state = CLOSING;
-            if (document_manager.changed) {
-                yield show_unsaved_warning ();
-            }
-            else {
-                GLib.Application.get_default ().quit ();
-            }
+            yield show_unsaved_warning ();
         }
 
         private async void show_unsaved_warning () {
-            var message_dialog = new Adw.MessageDialog (this,
-                                                        _("Save Changes?"),
-                                                        _("Changes that are not saved will be lost permanently"));
-            message_dialog.close_response = "cancel";
-            message_dialog.default_response = "cancel";
+            var save_changes_dialog = new SaveChangesDialog () {
+                transient_for = this,
+                modal = true
+            };
+            SaveChangesResponse response = yield save_changes_dialog.ask ({document_manager}, null);
 
-            message_dialog.add_response ("cancel", _("Cancel"));
-            message_dialog.add_response ("discard", _("Discard"));
-            message_dialog.add_response ("save", _("Save"));
-
-            message_dialog.set_response_appearance ("discard", DESTRUCTIVE);
-            message_dialog.set_response_appearance ("save", SUGGESTED);
-
-            string response = yield message_dialog.choose (null);
-            if (response == "cancel") {
+            if (response == CANCEL) {
                 state = NONE;
                 return;
             }
 
-            if (response == "save") {
+            if (response == SAVE) {
                 save_file ();
                 return;
             }
@@ -325,7 +312,7 @@ namespace PaperClip {
                     load_dropped_file.begin ();
                     break;
                 case CLOSING:
-                    GLib.Application.get_default ().quit ();
+                    this.close ();
                     break;
             }
         }

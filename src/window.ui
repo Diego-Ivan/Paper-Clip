@@ -128,8 +128,8 @@
 
         <child>
           <object class="GtkShortcut">
-            <property name="trigger">&lt;Control&gt;q</property>
-            <property name="action">action(win.quit)</property>
+            <property name="trigger">&lt;Control&gt;w</property>
+            <property name="action">action(window.close)</property>
           </object>
         </child>
 
