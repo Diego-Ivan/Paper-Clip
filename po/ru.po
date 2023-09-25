@@ -1,0 +1,377 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the pdf-metadata-editor package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: pdf-metadata-editor\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-06-15 11:48-0600\n"
+"PO-Revision-Date: 2023-09-23 22:15+1000\n"
+"Last-Translator: Ser82-png <asvmail.as@gmail.com>\n"
+"Language-Team: \n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"X-Generator: Poedit 3.0.1\n"
+
+#: data/io.github.diegoivan.pdf_metadata_editor.desktop.in:3
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:7
+msgid "Paper Clip"
+msgstr "Paper Clip"
+
+#: data/io.github.diegoivan.pdf_metadata_editor.desktop.in:8
+msgid "PDF;Metadata;Editor;"
+msgstr "PDF;Metadata;Editor;редактор;"
+
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:8
+msgid "Edit PDF document metadata"
+msgstr "Редактор метаданных PDF-документа"
+
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:10
+msgid "Edit the title, author, keywords and more details of your PDF documents"
+msgstr ""
+"Отредактируйте название, автора, ключевые слова и более подробную информацию "
+"в ваших PDF-документах"
+
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:16
+msgid ""
+"Version 2.0: After a three month development hiatus, Paper Clip sees its "
+"second release!"
+msgstr ""
+"Версия 2.0: После трехмесячного перерыва в разработке Paper Clip выходит во "
+"второй раз!"
+
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:17
+msgid "This version includes a nicer UI with:"
+msgstr ""
+"Эта версия включает в себя более приятный пользовательский интерфейс со "
+"следующими изменениями:"
+
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:19
+msgid "Fix many UI papercuts to match the GNOME HIG"
+msgstr ""
+"Многочисленные исправления интерфейса, чтобы он соответствовал GNOME HIG"
+
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:20
+msgid "The main view now features a thumbnail of the document"
+msgstr "На главном экране теперь отображается миниатюра документа"
+
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:21
+msgid ""
+"The term \"Creator\" has been changed for \"Creation Software\" to avoid "
+"confusion with \"Author\""
+msgstr ""
+"Пункт «Создатель» был заменен на «Программное обеспечение для создания», "
+"чтобы избежать путаницы с «Автором»."
+
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:22
+msgid ""
+"The main view now handles large document titles as special cases to avoid "
+"breaking the UI"
+msgstr ""
+"Главное представление теперь обрабатывает большие заголовки документов как "
+"особые случаи, чтобы избежать нарушения пользовательского интерфейса"
+
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:23
+msgid "The keyword list now has a nicer UI"
+msgstr ""
+"Список ключевых слов теперь имеет более приятный пользовательский интерфейс"
+
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:24
+msgid ""
+"The details window has been removed, and the non editable properties of the "
+"document have been moved to the bottom of the view"
+msgstr ""
+"Окно сведений было удалено, а не редактируемые свойства документа были "
+"перемещены в нижнюю часть представления"
+
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:71
+msgid "Diego Iván"
+msgstr "Diego Iván"
+
+#. translators: Write your name<email> here :D
+#: src/application.vala:69
+msgid "translator_credits"
+msgstr "Ser82-png <asvmail.as@gmail.com>, 2023"
+
+#: src/window.vala:256
+msgid "Save Changes?"
+msgstr "Сохранить изменения?"
+
+#: src/window.vala:257
+msgid "Changes that are not saved will be lost permanently"
+msgstr "Несохранённые изменения будут безвозвратно утеряны"
+
+#: src/window.vala:261
+msgid "Cancel"
+msgstr "Отменить"
+
+#: src/window.vala:262
+msgid "Discard"
+msgstr "Не сохранять"
+
+#: src/window.vala:263
+msgid "Save"
+msgstr "Сохранить"
+
+#: src/window.ui:21
+msgid "Select a File"
+msgstr "Выберите файл"
+
+#: src/window.ui:25
+msgid "Open"
+msgstr "Открыть"
+
+#: src/window.ui:80
+msgid "Open a Document"
+msgstr "Открыть документ"
+
+#: src/window.ui:89
+msgid "Drag and drop a PDF file here"
+msgstr "Перетащите сюда PDF-файл"
+
+#: src/window.ui:147
+msgid "_Save"
+msgstr "_Сохранить"
+
+#: src/window.ui:152
+msgid "Save _As…"
+msgstr "Сохранить _как…"
+
+#: src/window.ui:157
+msgid "Open _With…"
+msgstr "Открыть с _помощью…"
+
+#: src/window.ui:163
+msgid "_Keyboard Shortcuts"
+msgstr "_Комбинации клавиш"
+
+#: src/window.ui:167
+msgid "_About Paper Clip"
+msgstr "_О приложении"
+
+#: src/DateRow.vala:34
+msgid "No date set"
+msgstr "Дата не установлена"
+
+#: src/Document.vala:110
+msgid "Unknown"
+msgstr "Неизвестно"
+
+#: src/Document.vala:216
+msgid "Pages in one column"
+msgstr "Страницы в одну колонку"
+
+#: src/Document.vala:219
+msgid "One page at a time"
+msgstr "По одной странице за раз"
+
+#: src/Document.vala:222
+msgid "Odd numbered pages on the left"
+msgstr "Страницы с нечетными номерами слева"
+
+#: src/Document.vala:225
+msgid "Odd numbered pages on the right"
+msgstr "Страницы с нечетными номерами справа"
+
+#: src/Document.vala:228
+msgid "Two odd numbered pages on the left"
+msgstr "Две страницы с нечётными номерами слева"
+
+#: src/Document.vala:231
+msgid "Two odd numbered pages on the right"
+msgstr "Две страницы с нечётными номерами справа"
+
+#: src/Document.vala:235
+msgid "No specific layout"
+msgstr "Нет конкретной компоновки"
+
+#: src/Document.vala:244
+msgid "Center document's window"
+msgstr "Документ по центру экрана"
+
+#: src/Document.vala:248
+msgid "Reading order is right to left"
+msgstr "Порядок чтения - справа налево"
+
+#: src/Document.vala:252
+msgid "Display document's title"
+msgstr "Отображать название документа"
+
+#: src/Document.vala:256
+msgid "Fit document to window"
+msgstr "Подогнать документ под размеры окна"
+
+#: src/Document.vala:260
+msgid "Hide window menubar"
+msgstr "Скрыть панель меню"
+
+#: src/Document.vala:264
+msgid "Hide window toolbars"
+msgstr "Скрыть панель инструментов"
+
+#: src/Document.vala:268
+msgid "Hide UI elements"
+msgstr "Скрыть элементы пользовательского интерфейса"
+
+#: src/Document.vala:272
+msgid "No preferences"
+msgstr "Нет параметров"
+
+#: src/Document.vala:283
+msgid "Adding notes"
+msgstr "Добавление заметок"
+
+#: src/Document.vala:287
+msgid "Inserting elements"
+msgstr "Вставка элементов"
+
+#: src/Document.vala:291
+msgid "Copying"
+msgstr "Копирование"
+
+#: src/Document.vala:295
+msgid "Extracting contents"
+msgstr "Извлечение содержимого"
+
+#: src/Document.vala:299
+msgid "Filling interactive forms"
+msgstr "Заполнение интерактивных форм"
+
+#: src/Document.vala:303
+msgid "Modifying"
+msgstr "Изменение"
+
+#: src/Document.vala:307
+msgid "Printing"
+msgstr "Печать"
+
+#: src/Document.vala:311
+msgid "Printing in high resolution"
+msgstr "Печать в высоком разрешении"
+
+#: src/Document.vala:320
+msgid "Flip on the long edge"
+msgstr "Перевернуть по длинной стороне краю"
+
+#: src/Document.vala:323
+msgid "Flip on the short edge"
+msgstr "Перевернуть по короткой стороне"
+
+#: src/Document.vala:326
+msgid "Only single sided"
+msgstr "Только односторонняя"
+
+#: src/Document.vala:330
+msgid "No preference"
+msgstr "Нет параметра"
+
+#: src/Document.vala:354
+msgid "Not compliant"
+msgstr "Не соответствует"
+
+#: src/KeywordRow.vala:29
+msgid "Delete Keyword"
+msgstr "Удалить ключевое слово"
+
+#: src/KeywordList.vala:43
+msgid "Keyword"
+msgstr "Ключевое слово"
+
+#: src/KeywordList.vala:72
+msgid "Press the “+” button to add a keyword"
+msgstr "Нажмите клавишу «+», чтобы добавить ключевое слово"
+
+#: src/gtk/date-row.ui:47
+msgid "Today"
+msgstr "Сегодня"
+
+#: src/gtk/date-row.ui:54
+msgid "Tomorrow"
+msgstr "Завтра"
+
+#: src/gtk/details-list.ui:15
+msgid "Format"
+msgstr "Формат"
+
+#: src/gtk/details-list.ui:22
+msgid "Layout"
+msgstr "Компоновка"
+
+#: src/gtk/details-list.ui:29
+msgid "Duplex"
+msgstr "Двусторонняя"
+
+#: src/gtk/details-list.ui:36
+msgid "Subtype"
+msgstr "Подтип"
+
+#: src/gtk/details-list.ui:43
+msgid "Viewer Preferences"
+msgstr "Параметры просмотра"
+
+#: src/gtk/details-list.ui:50
+msgid "Permissions"
+msgstr "Разрешения"
+
+#: src/gtk/document-view.ui:45
+msgid "Title"
+msgstr "Название"
+
+#: src/gtk/document-view.ui:51
+msgid "Author"
+msgstr "Автор"
+
+#: src/gtk/document-view.ui:57
+msgid "Creation Software"
+msgstr "Программное обеспечение для создания"
+
+#: src/gtk/document-view.ui:63
+msgid "Subject"
+msgstr "Тема"
+
+#: src/gtk/document-view.ui:69
+msgid "Producer"
+msgstr "Программа"
+
+#: src/gtk/document-view.ui:75
+msgid "Creation Date"
+msgstr "Дата создания"
+
+#: src/gtk/document-view.ui:81
+msgid "Modification Date"
+msgstr "Дата изменения"
+
+#: src/gtk/document-view.ui:94
+msgid "Non-Editable Properties"
+msgstr "Нередактируемые свойства"
+
+#: src/gtk/shortcut-window.ui:11
+msgctxt "shortcut window"
+msgid "General"
+msgstr "Общее"
+
+#: src/gtk/shortcut-window.ui:14
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Выход"
+
+#: src/gtk/shortcut-window.ui:21
+msgctxt "shortcut window"
+msgid "Open"
+msgstr "Открыть"
+
+#: src/gtk/shortcut-window.ui:28
+msgctxt "shortcut window"
+msgid "Save"
+msgstr "Сохранить"
+
+#: src/gtk/shortcut-window.ui:35
+msgctxt "shortcut window"
+msgid "Save As…"
+msgstr "Сохранить как…"
