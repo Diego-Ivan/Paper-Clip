@@ -1,7 +1,7 @@
 {
     "app-id" : "io.github.diegoivan.pdf_metadata_editor",
     "runtime" : "org.gnome.Platform",
-    "runtime-version" : "master",
+    "runtime-version" : "45",
     "sdk" : "org.gnome.Sdk",
     "sdk-extensions" : [
         "org.freedesktop.Sdk.Extension.vala"
@@ -65,26 +65,12 @@
                 "-DENABLE_QT6=OFF",
                 "-DENABLE_BOOST=OFF"
             ],
-            "modules": [
-                {
-                    "name" : "libtiff",
-                    "buildsystem" : "cmake-ninja",
-                    "sources" : [
-                        {
-                            "url" : "https://gitlab.com/libtiff/libtiff.git",
-                            "type" : "git",
-                            "tag" : "v4.5.0",
-                            "commit" : "38eb7b00cb5767770017fb91743a960ffd96d774"
-                        }
-                    ]
-                }
-            ],
             "sources" : [
                 {
                     "url" : "https://gitlab.freedesktop.org/poppler/poppler.git",
                     "type" : "git",
-                    "tag" : "poppler-23.09.0",
-                    "commit" : "6e2c0fe0434cfadc3d161e7cd348212f644b725e"
+                    "tag" : "poppler-23.01.0",
+                    "commit" : "4259ff0c2067d302f97d87221a442eec8e88d45c"
                 }
             ]
         },
