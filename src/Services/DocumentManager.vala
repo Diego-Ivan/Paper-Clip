@@ -1,4 +1,4 @@
-/* DocManager.vala
+/* DocumentManager.vala
  *
  * Copyright 2023 Diego Iván <diegoivan.mae@gmail.com>
  *
@@ -18,8 +18,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-[SingleInstance]
-public sealed class PaperClip.Services.DocManager : Object {
+public sealed class PaperClip.Services.DocumentManager : Object {
     public bool changed { get; private set; default = false; }
     private Document _document;
     public Document document {
@@ -28,22 +27,18 @@ public sealed class PaperClip.Services.DocManager : Object {
         }
         set {
             disconnect_document ();
+
             _document = value;
             changed = false;
+
             document.notify.connect (on_doc_changed);
             document.keywords.items_changed.connect (on_doc_changed);
             document.keyword_changed.connect (on_doc_changed);
         }
     }
 
-    private DocManager instance = null;
-    public DocManager () {
-        if (instance == null) {
-            instance = this;
-        }
-    }
-    public void save (string uri) {
-        document.save (uri);
+    public void save (string? uri = null) {
+        document.save (uri ?? document.original_file.get_uri ());
         changed = false;
     }
 
@@ -52,16 +47,11 @@ public sealed class PaperClip.Services.DocManager : Object {
             return;
         }
         document.notify.disconnect (on_doc_changed);
+        document.keywords.items_changed.disconnect (on_doc_changed);
+        document.keyword_changed.disconnect (on_doc_changed);
     }
 
     private void on_doc_changed () {
         changed = true;
     }
-}
-
-public enum PaperClip.State {
-    NONE,
-    OPENING_FILE,
-    CLOSING,
-    OPENING_DROPPED
 }

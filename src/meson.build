@@ -7,7 +7,7 @@ hidden_scribe_sources = [
   'DateRow.vala',
   'KeywordRow.vala',
   'DetailsList.vala',
-  'DetailRow.vala',
+  'SaveChangesDialog.vala',
   'StringArrayRow.vala',
   'DocumentThumbnail.vala',
   'KeywordList.vala',
@@ -15,7 +15,7 @@ hidden_scribe_sources = [
   'ThreadManager.vala',
 
   # Services
-  'Services/DocManager.vala',
+  'Services/DocumentManager.vala',
 ]
 
 hidden_scribe_deps = [

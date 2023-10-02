@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pdf-metadata-editor\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-15 11:48-0600\n"
+"POT-Creation-Date: 2023-10-02 13:04-0600\n"
 "PO-Revision-Date: 2023-02-10 17:22+0100\n"
 "Last-Translator: Heimen Stoffels <vistausss@fastmail.com>\n"
 "Language-Team: Dutch\n"
@@ -37,110 +37,94 @@ msgstr ""
 "Bewerk de titel, auteur, trefwoorden en meer informatie van uw pdf-bestanden"
 
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:16
-msgid ""
-"Version 2.0: After a three month development hiatus, Paper Clip sees its "
-"second release!"
+msgid "Paper Clip Version 3.5"
 msgstr ""
 
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:17
-msgid "This version includes a nicer UI with:"
+msgid "The latest release of Paper Clip brings the following changes:"
 msgstr ""
 
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:19
-msgid "Fix many UI papercuts to match the GNOME HIG"
+msgid "Small cosmetic changes to follow GNOME 45 look-and-feel"
 msgstr ""
 
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:20
-msgid "The main view now features a thumbnail of the document"
+msgid "The app can open now multiple files in different windows"
 msgstr ""
 
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:21
-msgid ""
-"The term \"Creator\" has been changed for \"Creation Software\" to avoid "
-"confusion with \"Author\""
+msgid "Russian Translation by Ser82-png"
 msgstr ""
 
-#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:22
-msgid ""
-"The main view now handles large document titles as special cases to avoid "
-"breaking the UI"
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:27
+msgid "Paper Clip Version 3.2"
 msgstr ""
 
-#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:23
-msgid "The keyword list now has a nicer UI"
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:28
+msgid "This new version of Paper Clip has the following changes"
 msgstr ""
 
-#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:24
-msgid ""
-"The details window has been removed, and the non editable properties of the "
-"document have been moved to the bottom of the view"
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:30
+msgid "Czech translation"
 msgstr ""
 
-#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:71
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:31
+msgid "Better rendering for thumbnails"
+msgstr ""
+
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:32
+msgid "Better cache management"
+msgstr ""
+
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:79
 msgid "Diego Iván"
 msgstr "Diego Iván"
 
 #. translators: Write your name<email> here :D
-#: src/application.vala:69
+#: src/application.vala:152
 msgid "translator_credits"
 msgstr "Heimen Stoffels <vistausss@fastmail.com>"
 
-#: src/window.vala:256
-msgid "Save Changes?"
-msgstr ""
-
-#: src/window.vala:257
-msgid "Changes that are not saved will be lost permanently"
-msgstr "Als u ze niet opslaat, worden ze definitief gewist"
-
-#: src/window.vala:261
-msgid "Cancel"
-msgstr "Annuleren"
-
-#: src/window.vala:262
-msgid "Discard"
-msgstr "Niet opslaan"
-
-#: src/window.vala:263
-msgid "Save"
-msgstr "Opslaan"
-
-#: src/window.ui:21
+#: src/window.ui:20
 msgid "Select a File"
 msgstr "Kies een bestand"
 
-#: src/window.ui:25
+#: src/window.ui:24
 msgid "Open"
 msgstr "Openen"
 
-#: src/window.ui:80
+#: src/window.ui:84
 #, fuzzy
 msgid "Open a Document"
 msgstr "Openen in documentweergave"
 
-#: src/window.ui:89
+#: src/window.ui:93
 #, fuzzy
 msgid "Drag and drop a PDF file here"
 msgstr "Sleep een pdf-bestand hierheen"
 
-#: src/window.ui:147
+#: src/window.ui:149
+msgid "_New Window"
+msgstr ""
+
+#: src/window.ui:155 src/gtk/save-changes-dialog.ui:13
 msgid "_Save"
 msgstr "Op_slaan"
 
-#: src/window.ui:152
+#: src/window.ui:161
 msgid "Save _As…"
 msgstr "Opslaan _als…"
 
-#: src/window.ui:157
+#: src/window.ui:167
 #, fuzzy
 msgid "Open _With…"
 msgstr "Openen…"
 
-#: src/window.ui:163
+#: src/window.ui:174
 msgid "_Keyboard Shortcuts"
 msgstr "_Sneltoetsen"
 
-#: src/window.ui:167
+#: src/window.ui:178
 msgid "_About Paper Clip"
 msgstr ""
 
@@ -152,115 +136,115 @@ msgstr "Geen datum ingesteld"
 msgid "Unknown"
 msgstr "Onbekend"
 
-#: src/Document.vala:216
+#: src/Document.vala:214
 msgid "Pages in one column"
 msgstr "Alle pagina's in één kolom"
 
-#: src/Document.vala:219
+#: src/Document.vala:217
 msgid "One page at a time"
 msgstr "Eén pagina per keer"
 
-#: src/Document.vala:222
+#: src/Document.vala:220
 msgid "Odd numbered pages on the left"
 msgstr "Oneven pagina's aan linkerzijde"
 
-#: src/Document.vala:225
+#: src/Document.vala:223
 msgid "Odd numbered pages on the right"
 msgstr "Oneven pagina's aan rechterzijde"
 
-#: src/Document.vala:228
+#: src/Document.vala:226
 msgid "Two odd numbered pages on the left"
 msgstr "Twee oneven pagina's aan linkerzijde"
 
-#: src/Document.vala:231
+#: src/Document.vala:229
 msgid "Two odd numbered pages on the right"
 msgstr "Twee oneven pagina's aan rechterzijde"
 
-#: src/Document.vala:235
+#: src/Document.vala:233
 msgid "No specific layout"
 msgstr "Geen specifieke indeling"
 
-#: src/Document.vala:244
+#: src/Document.vala:242
 msgid "Center document's window"
 msgstr "Document centreren"
 
-#: src/Document.vala:248
+#: src/Document.vala:246
 msgid "Reading order is right to left"
 msgstr "Leesvolgorde rechts-naar-links"
 
-#: src/Document.vala:252
+#: src/Document.vala:250
 msgid "Display document's title"
 msgstr "Documentnaam tonen"
 
-#: src/Document.vala:256
+#: src/Document.vala:254
 msgid "Fit document to window"
 msgstr "Document inpassen in venster"
 
-#: src/Document.vala:260
+#: src/Document.vala:258
 msgid "Hide window menubar"
 msgstr "Menubalk verbergen"
 
-#: src/Document.vala:264
+#: src/Document.vala:262
 msgid "Hide window toolbars"
 msgstr "Werkbalken verbergen"
 
-#: src/Document.vala:268
+#: src/Document.vala:266
 msgid "Hide UI elements"
 msgstr "Schermvullende weergave"
 
-#: src/Document.vala:272
+#: src/Document.vala:270
 msgid "No preferences"
 msgstr "Geen voorkeuren"
 
-#: src/Document.vala:283
+#: src/Document.vala:281
 msgid "Adding notes"
 msgstr "Aantekeningen maken"
 
-#: src/Document.vala:287
+#: src/Document.vala:285
 msgid "Inserting elements"
 msgstr "Items invoegen"
 
-#: src/Document.vala:291
+#: src/Document.vala:289
 msgid "Copying"
 msgstr "Kopiëren"
 
-#: src/Document.vala:295
+#: src/Document.vala:293
 msgid "Extracting contents"
 msgstr "Extraheren"
 
-#: src/Document.vala:299
+#: src/Document.vala:297
 msgid "Filling interactive forms"
 msgstr "Interactieve formulieren invullen"
 
-#: src/Document.vala:303
+#: src/Document.vala:301
 msgid "Modifying"
 msgstr "Bewerken"
 
-#: src/Document.vala:307
+#: src/Document.vala:305
 msgid "Printing"
 msgstr "Afdrukken"
 
-#: src/Document.vala:311
+#: src/Document.vala:309
 msgid "Printing in high resolution"
 msgstr "Afdrukken met hoge resolutie"
 
-#: src/Document.vala:320
+#: src/Document.vala:318
 msgid "Flip on the long edge"
 msgstr "Omdraaien aan lange zijde"
 
-#: src/Document.vala:323
+#: src/Document.vala:321
 msgid "Flip on the short edge"
 msgstr "Omdraaien aan korte zijde"
 
-#: src/Document.vala:326
+#: src/Document.vala:324
 msgid "Only single sided"
 msgstr "Eenzijdig"
 
-#: src/Document.vala:330
+#: src/Document.vala:328
 msgid "No preference"
 msgstr "Geen voorkeur"
 
-#: src/Document.vala:354
+#: src/Document.vala:352
 msgid "Not compliant"
 msgstr "Ongeschikt"
 
@@ -268,19 +252,28 @@ msgstr "Ongeschikt"
 msgid "Delete Keyword"
 msgstr "Trefwoord wissen"
 
-#: src/KeywordList.vala:43
+#: src/KeywordList.vala:45
 msgid "Keyword"
 msgstr "Trefwoord"
 
-#: src/KeywordList.vala:72
-msgid "Press the “+” button to add a keyword"
+#: src/KeywordList.vala:82
+#, fuzzy
+msgid "Add Keyword"
+msgstr "Trefwoord toevoegen"
+
+#: src/gtk/date-row.ui:8
+msgid "Remove Date"
 msgstr ""
 
-#: src/gtk/date-row.ui:47
+#: src/gtk/date-row.ui:20
+msgid "Show Calendar"
+msgstr ""
+
+#: src/gtk/date-row.ui:49
 msgid "Today"
 msgstr "Vandaag"
 
-#: src/gtk/date-row.ui:54
+#: src/gtk/date-row.ui:56
 msgid "Tomorrow"
 msgstr "Morgen"
 
@@ -288,23 +281,23 @@ msgstr "Morgen"
 msgid "Format"
 msgstr "Opmaak"
 
-#: src/gtk/details-list.ui:22
+#: src/gtk/details-list.ui:25
 msgid "Layout"
 msgstr "Indeling"
 
-#: src/gtk/details-list.ui:29
+#: src/gtk/details-list.ui:35
 msgid "Duplex"
 msgstr "Duplex"
 
-#: src/gtk/details-list.ui:36
+#: src/gtk/details-list.ui:45
 msgid "Subtype"
 msgstr "Subtype"
 
-#: src/gtk/details-list.ui:43
+#: src/gtk/details-list.ui:55
 msgid "Viewer Preferences"
 msgstr "Weergavevoorkeuren"
 
-#: src/gtk/details-list.ui:50
+#: src/gtk/details-list.ui:62
 msgid "Permissions"
 msgstr "Rechten"
 
@@ -326,8 +319,9 @@ msgid "Subject"
 msgstr "Onderwerp"
 
 #: src/gtk/document-view.ui:69
-msgid "Producer"
-msgstr "Leverancier"
+#, fuzzy
+msgid "Conversion Software"
+msgstr "Aanmaakdatum"
 
 #: src/gtk/document-view.ui:75
 msgid "Creation Date"
@@ -342,6 +336,26 @@ msgstr "Bewerkdatum"
 msgid "Non-Editable Properties"
 msgstr "Bewerkbare eigenschappen"
 
+#: src/gtk/save-changes-dialog.ui:6
+msgid "Save Changes?"
+msgstr ""
+
+#: src/gtk/save-changes-dialog.ui:7
+msgid ""
+"Open documents contain unsaved changes. Changes which are not saved will be "
+"permanently lost."
+msgstr ""
+
+#: src/gtk/save-changes-dialog.ui:11
+#, fuzzy
+msgid "_Cancel"
+msgstr "Annuleren"
+
+#: src/gtk/save-changes-dialog.ui:12
+#, fuzzy
+msgid "_Discard"
+msgstr "Niet opslaan"
+
 #: src/gtk/shortcut-window.ui:11
 msgctxt "shortcut window"
 msgid "General"
@@ -354,18 +368,48 @@ msgstr "Afsluiten"
 
 #: src/gtk/shortcut-window.ui:21
 msgctxt "shortcut window"
+msgid "New window"
+msgstr ""
+
+#: src/gtk/shortcut-window.ui:28
+msgctxt "shortcut window"
+msgid "Close window"
+msgstr ""
+
+#: src/gtk/shortcut-window.ui:35
+#, fuzzy
+msgctxt "shortcut window"
+msgid "Keyboard Shortcuts"
+msgstr "_Sneltoetsen"
+
+#: src/gtk/shortcut-window.ui:43
+msgctxt "shortcut window"
+msgid "Editor"
+msgstr ""
+
+#: src/gtk/shortcut-window.ui:47
+msgctxt "shortcut window"
 msgid "Open"
 msgstr "Openen"
 
-#: src/gtk/shortcut-window.ui:28
+#: src/gtk/shortcut-window.ui:54
 msgctxt "shortcut window"
 msgid "Save"
 msgstr "Opslaan"
 
-#: src/gtk/shortcut-window.ui:35
+#: src/gtk/shortcut-window.ui:61
 msgctxt "shortcut window"
 msgid "Save As…"
 msgstr "Opslaan als…"
+
+#~ msgid "Changes that are not saved will be lost permanently"
+#~ msgstr "Als u ze niet opslaat, worden ze definitief gewist"
+
+#~ msgid "Save"
+#~ msgstr "Opslaan"
+
+#~ msgid "Producer"
+#~ msgstr "Leverancier"
 
 #~ msgid "Do you want to save the changes?"
 #~ msgstr "Wilt u de wijzigingen opslaan?"
@@ -381,6 +425,3 @@ msgstr "Opslaan als…"
 
 #~ msgid "Keywords"
 #~ msgstr "Trefwoorden"
-
-#~ msgid "Add a keyword"
-#~ msgstr "Trefwoord toevoegen"

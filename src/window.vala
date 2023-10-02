@@ -32,11 +32,21 @@ namespace PaperClip {
         [GtkChild]
         private unowned Gtk.Box dnd_box;
 
-        public State state { get; set; default = NONE; }
+        public WindowState state { get; set; default = NONE; }
+
+        public Services.DocumentManager document_manager {
+            get;
+            default = new Services.DocumentManager ();
+        }
+
         private File? dropped_file { get; set; default = null; }
 
         public Window (Gtk.Application app) {
             Object (application: app);
+
+            action_set_enabled ("win.save", false);
+            action_set_enabled ("win.save-as", false);
+            action_set_enabled ("win.open-with", false);
         }
 
         construct {
@@ -44,7 +54,6 @@ namespace PaperClip {
                 { "open", on_open_action },
                 { "open-with", on_open_with_action },
                 { "save", save_file },
-                { "quit", quit_save_action  },
                 { "save-as", save_file_as_action },
                 { "main-menu", on_main_menu_action }
             };
@@ -52,10 +61,6 @@ namespace PaperClip {
             var action_group = new SimpleActionGroup ();
             action_group.add_action_entries (entries, this);
             insert_action_group ("win", action_group);
-
-            action_set_enabled ("win.save", false);
-            action_set_enabled ("win.save-as", false);
-            action_set_enabled ("win.open-with", false);
 
             // Controller of Drag and Drop
             var drop_target = new Gtk.DropTarget (typeof(File), COPY);
@@ -98,8 +103,7 @@ namespace PaperClip {
         }
 
         private async void open_dropped_file () {
-            var manager = new Services.DocManager ();
-            if (manager.changed) {
+            if (document_manager.changed) {
                 show_unsaved_warning.begin ();
             }
             else {
@@ -126,8 +130,7 @@ namespace PaperClip {
 
         private void on_open_action () {
             state = OPENING_FILE;
-            var doc_manager = new Services.DocManager ();
-            if (doc_manager.changed) {
+            if (document_manager.changed) {
                 show_unsaved_warning.begin ();
             } else {
                 open_file.begin ();
@@ -163,7 +166,7 @@ namespace PaperClip {
         }
 
         private async void load_document_to_view (File file) {
-            doc_view.document = yield new Document (file.get_uri ());
+            document_manager.document = doc_view.document = yield new Document (file.get_uri ());
 
             action_set_enabled ("win.save", true);
             action_set_enabled ("win.save-as", true);
@@ -174,12 +177,11 @@ namespace PaperClip {
         }
 
         private void save_file () {
-            var manager = new Services.DocManager ();
-            if (manager.document == null || !manager.changed) {
+            if (document_manager.document == null || !document_manager.changed) {
                 return;
             }
 
-            manager.save (manager.document.original_file.get_uri ());
+            document_manager.save (document_manager.document.original_file.get_uri ());
             file_save_animation ();
             proceed_with_state ();
             state = NONE;
@@ -190,13 +192,12 @@ namespace PaperClip {
         }
 
         private async void save_file_as () {
-            var manager = new Services.DocManager ();
-            if (manager.document == null) {
+            if (document_manager.document == null) {
                 return;
             }
 
             var file_dialog = new Gtk.FileDialog () {
-                initial_name = manager.document.original_file.get_basename ()
+                initial_name = document_manager.document.original_file.get_basename ()
             };
 
             var pdf_filter = new Gtk.FileFilter () {
@@ -211,7 +212,7 @@ namespace PaperClip {
 
             try {
                 File file = yield file_dialog.save (this, null);
-                manager.save (file.get_uri ());
+                document_manager.save (file.get_uri ());
                 file_save_animation ();
                 proceed_with_state ();
             }
@@ -266,46 +267,33 @@ namespace PaperClip {
 
         [GtkCallback]
         private bool on_close_request () {
+            if (!document_manager.changed || state == CLOSING) {
+                state = NONE;
+                return false;
+            }
+
             quit_and_save.begin ();
             return true;
         }
 
-        private void quit_save_action () {
-            quit_and_save.begin ();
-        }
-
         private async void quit_and_save () {
             state = CLOSING;
-            var manager = new Services.DocManager ();
-            if (manager.changed) {
-                yield show_unsaved_warning ();
-            }
-            else {
-                GLib.Application.get_default ().quit ();
-            }
+            yield show_unsaved_warning ();
         }
 
         private async void show_unsaved_warning () {
-            var message_dialog = new Adw.MessageDialog (this,
-                                                        _("Save Changes?"),
-                                                        _("Changes that are not saved will be lost permanently"));
-            message_dialog.close_response = "cancel";
-            message_dialog.default_response = "cancel";
+            var save_changes_dialog = new SaveChangesDialog () {
+                transient_for = this,
+                modal = true
+            };
+            SaveChangesResponse response = yield save_changes_dialog.ask ({document_manager}, null);
 
-            message_dialog.add_response ("cancel", _("Cancel"));
-            message_dialog.add_response ("discard", _("Discard"));
-            message_dialog.add_response ("save", _("Save"));
-
-            message_dialog.set_response_appearance ("discard", DESTRUCTIVE);
-            message_dialog.set_response_appearance ("save", SUGGESTED);
-
-            string response = yield message_dialog.choose (null);
-            if (response == "cancel") {
+            if (response == CANCEL) {
                 state = NONE;
                 return;
             }
 
-            if (response == "save") {
+            if (response == SAVE) {
                 save_file ();
                 return;
             }
@@ -324,9 +312,16 @@ namespace PaperClip {
                     load_dropped_file.begin ();
                     break;
                 case CLOSING:
-                    GLib.Application.get_default ().quit ();
+                    this.close ();
                     break;
             }
         }
     }
+}
+
+public enum PaperClip.WindowState {
+    NONE,
+    OPENING_FILE,
+    CLOSING,
+    OPENING_DROPPED
 }
