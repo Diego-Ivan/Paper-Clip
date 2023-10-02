@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pdf_metadata_editor\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-15 11:48-0600\n"
-"PO-Revision-Date: 2023-06-14 13:31-0600\n"
+"POT-Creation-Date: 2023-10-02 13:04-0600\n"
+"PO-Revision-Date: 2023-10-02 13:10-0600\n"
 "Last-Translator: Diego Iván <diegoivan.mae@gmail.com>\n"
 "Language-Team: Spanish - Mexico <->\n"
 "Language: es\n"
@@ -17,12 +17,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"X-Generator: Gtranslator 42.0\n"
+"X-Generator: Gtranslator 45.1\n"
 
 #: data/io.github.diegoivan.pdf_metadata_editor.desktop.in:3
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:7
 msgid "Paper Clip"
-msgstr ""
+msgstr "Paper Clip"
 
 #: data/io.github.diegoivan.pdf_metadata_editor.desktop.in:8
 msgid "PDF;Metadata;Editor;"
@@ -38,115 +38,92 @@ msgstr ""
 "Edite el título, autor, palabras clave y más detalles de sus documentos PDF"
 
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:16
-msgid ""
-"Version 2.0: After a three month development hiatus, Paper Clip sees its "
-"second release!"
-msgstr ""
-"Versión 2.0: Después de tres meses de hiato, ¡Paper Clip tiene su segunda "
-"versión!"
+msgid "Paper Clip Version 3.5"
+msgstr "Paper Clip Versión 3.5"
 
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:17
-msgid "This version includes a nicer UI with:"
-msgstr "Esta versión tiene una interfaz más agradable con:"
+msgid "The latest release of Paper Clip brings the following changes:"
+msgstr "La última versión de Paper Clip trae los siguientes cambios"
 
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:19
-msgid "Fix many UI papercuts to match the GNOME HIG"
-msgstr "Arreglar varios problemas con la interfaz para alinearse al GNOME HIG"
+msgid "Small cosmetic changes to follow GNOME 45 look-and-feel"
+msgstr "Pequeños cambios cosméticos para seguir la estética de GNOME 45"
 
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:20
-msgid "The main view now features a thumbnail of the document"
-msgstr "La vista principal ahora cuenta con una miniatura del documento"
+msgid "The app can open now multiple files in different windows"
+msgstr ""
+"La aplicación ahora puede abrir múltiples archivos en diferentes ventanas"
 
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:21
-msgid ""
-"The term \"Creator\" has been changed for \"Creation Software\" to avoid "
-"confusion with \"Author\""
-msgstr ""
-"El termino \"Creador\" ha sido cambiado por \"Software de Creación\" para "
-"evitar confusión con \"Autor\""
+msgid "Russian Translation by Ser82-png"
+msgstr "Traducción al Ruso por Ser82-png"
 
-#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:22
-msgid ""
-"The main view now handles large document titles as special cases to avoid "
-"breaking the UI"
-msgstr ""
-"La vista principal ahora maneja nombres de documentos largos para evitar "
-"romper la interfaz"
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:27
+msgid "Paper Clip Version 3.2"
+msgstr "Paper Clip Versión 3.2"
 
-#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:23
-msgid "The keyword list now has a nicer UI"
-msgstr "La lista de palabras clave para tiene una mejor interfaz"
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:28
+msgid "This new version of Paper Clip has the following changes"
+msgstr "Esta nueva versión de Paper Clip trae los siguientes cambios"
 
-#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:24
-msgid ""
-"The details window has been removed, and the non editable properties of the "
-"document have been moved to the bottom of the view"
-msgstr ""
-"La ventana de detalles ha sido removida, las propiedades no editables del "
-"documento han sido movidas al final de la vista"
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:30
+msgid "Czech translation"
+msgstr "Traducción al Checo"
 
-#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:71
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:31
+msgid "Better rendering for thumbnails"
+msgstr "Mejor renderizado de miniaturas"
+
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:32
+msgid "Better cache management"
+msgstr "Mejor manejo de caché"
+
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:79
 msgid "Diego Iván"
-msgstr ""
+msgstr "Diego Iván"
 
 #. translators: Write your name<email> here :D
-#: src/application.vala:69
+#: src/application.vala:152
 msgid "translator_credits"
-msgstr "Diego Iván<diegoivan.mae@gmail.com>"
+msgstr "Diego Iván M.E<diegoivan.mae@gmail.com>"
 
-#: src/window.vala:256
-msgid "Save Changes?"
-msgstr "¿Quiere Guardar Los Cambios?"
-
-#: src/window.vala:257
-msgid "Changes that are not saved will be lost permanently"
-msgstr "Los cambios que no se guarden se perderán permanentemente"
-
-#: src/window.vala:261
-msgid "Cancel"
-msgstr "Cancelar"
-
-#: src/window.vala:262
-msgid "Discard"
-msgstr "Descartar"
-
-#: src/window.vala:263
-msgid "Save"
-msgstr "Guardar"
-
-#: src/window.ui:21
+#: src/window.ui:20
 msgid "Select a File"
 msgstr "Seleccionar un Archivo"
 
-#: src/window.ui:25
+#: src/window.ui:24
 msgid "Open"
 msgstr "Abrir"
 
-#: src/window.ui:80
+#: src/window.ui:84
 msgid "Open a Document"
 msgstr "Abrir un Documento"
 
-#: src/window.ui:89
+#: src/window.ui:93
 msgid "Drag and drop a PDF file here"
 msgstr "Arrastre un documento PDF aquí"
 
-#: src/window.ui:147
+#: src/window.ui:149
+msgid "_New Window"
+msgstr "Nueva Ventana"
+
+#: src/window.ui:155 src/gtk/save-changes-dialog.ui:13
 msgid "_Save"
 msgstr "_Guardar"
 
-#: src/window.ui:152
+#: src/window.ui:161
 msgid "Save _As…"
 msgstr "Guardar _Como…"
 
-#: src/window.ui:157
+#: src/window.ui:167
 msgid "Open _With…"
 msgstr "Abrir con…"
 
-#: src/window.ui:163
+#: src/window.ui:174
 msgid "_Keyboard Shortcuts"
 msgstr "_Atajos de Teclado"
 
-#: src/window.ui:167
+#: src/window.ui:178
 msgid "_About Paper Clip"
 msgstr "_Acerca de Paper Clip"
 
@@ -158,115 +135,115 @@ msgstr "Sin fecha establecida"
 msgid "Unknown"
 msgstr "Desconocido"
 
-#: src/Document.vala:216
+#: src/Document.vala:214
 msgid "Pages in one column"
 msgstr "Páginas en una columna"
 
-#: src/Document.vala:219
+#: src/Document.vala:217
 msgid "One page at a time"
 msgstr "Una página a la vez"
 
-#: src/Document.vala:222
+#: src/Document.vala:220
 msgid "Odd numbered pages on the left"
 msgstr "Páginas nones a la izquierda"
 
-#: src/Document.vala:225
+#: src/Document.vala:223
 msgid "Odd numbered pages on the right"
 msgstr "Páginas pares a la derecha"
 
-#: src/Document.vala:228
+#: src/Document.vala:226
 msgid "Two odd numbered pages on the left"
 msgstr "Dos páginas nones a la izquierda"
 
-#: src/Document.vala:231
+#: src/Document.vala:229
 msgid "Two odd numbered pages on the right"
 msgstr "Dos páginas nones a la derecha"
 
-#: src/Document.vala:235
+#: src/Document.vala:233
 msgid "No specific layout"
 msgstr "Sin disposición específica"
 
-#: src/Document.vala:244
+#: src/Document.vala:242
 msgid "Center document's window"
 msgstr "Centrar la ventana del documento"
 
-#: src/Document.vala:248
+#: src/Document.vala:246
 msgid "Reading order is right to left"
 msgstr "Orden de lectura de derecha a izquierda"
 
-#: src/Document.vala:252
+#: src/Document.vala:250
 msgid "Display document's title"
 msgstr "Mostrar el título del documento"
 
-#: src/Document.vala:256
+#: src/Document.vala:254
 msgid "Fit document to window"
 msgstr "Ajustar el documento a la ventana"
 
-#: src/Document.vala:260
+#: src/Document.vala:258
 msgid "Hide window menubar"
 msgstr "Esconder la barra de menús"
 
-#: src/Document.vala:264
+#: src/Document.vala:262
 msgid "Hide window toolbars"
 msgstr "Esconder la barra de herramientas"
 
-#: src/Document.vala:268
+#: src/Document.vala:266
 msgid "Hide UI elements"
 msgstr "Esconder elementos de la interfaz gráfica"
 
-#: src/Document.vala:272
+#: src/Document.vala:270
 msgid "No preferences"
 msgstr "Sin preferencias"
 
-#: src/Document.vala:283
+#: src/Document.vala:281
 msgid "Adding notes"
 msgstr "Añadir notas"
 
-#: src/Document.vala:287
+#: src/Document.vala:285
 msgid "Inserting elements"
 msgstr "Insertar elementos"
 
-#: src/Document.vala:291
+#: src/Document.vala:289
 msgid "Copying"
 msgstr "Copiar"
 
-#: src/Document.vala:295
+#: src/Document.vala:293
 msgid "Extracting contents"
 msgstr "Extraer contenidos"
 
-#: src/Document.vala:299
+#: src/Document.vala:297
 msgid "Filling interactive forms"
 msgstr "Llenar formulario interactivos"
 
-#: src/Document.vala:303
+#: src/Document.vala:301
 msgid "Modifying"
 msgstr "Modificar"
 
-#: src/Document.vala:307
+#: src/Document.vala:305
 msgid "Printing"
 msgstr "Imprimir"
 
-#: src/Document.vala:311
+#: src/Document.vala:309
 msgid "Printing in high resolution"
 msgstr "Imprimir en alta definición"
 
-#: src/Document.vala:320
+#: src/Document.vala:318
 msgid "Flip on the long edge"
 msgstr "Voltear de lado largo"
 
-#: src/Document.vala:323
+#: src/Document.vala:321
 msgid "Flip on the short edge"
 msgstr "Voltear del lado corto"
 
-#: src/Document.vala:326
+#: src/Document.vala:324
 msgid "Only single sided"
 msgstr "De un solo lado"
 
-#: src/Document.vala:330
+#: src/Document.vala:328
 msgid "No preference"
 msgstr "Sin preferencia"
 
-#: src/Document.vala:354
+#: src/Document.vala:352
 msgid "Not compliant"
 msgstr "No cumple con ningún estándar"
 
@@ -274,19 +251,27 @@ msgstr "No cumple con ningún estándar"
 msgid "Delete Keyword"
 msgstr "Borrar palabra clave"
 
-#: src/KeywordList.vala:43
+#: src/KeywordList.vala:45
 msgid "Keyword"
 msgstr "Palabra Clave"
 
-#: src/KeywordList.vala:72
-msgid "Press the “+” button to add a keyword"
-msgstr "Presione el botón “+” para añadir una palabra clave"
+#: src/KeywordList.vala:82
+msgid "Add Keyword"
+msgstr "Añadir Palabra Clave"
 
-#: src/gtk/date-row.ui:47
+#: src/gtk/date-row.ui:8
+msgid "Remove Date"
+msgstr "Quitar Fecha"
+
+#: src/gtk/date-row.ui:20
+msgid "Show Calendar"
+msgstr "Mostrar Calendario"
+
+#: src/gtk/date-row.ui:49
 msgid "Today"
 msgstr "Hoy"
 
-#: src/gtk/date-row.ui:54
+#: src/gtk/date-row.ui:56
 msgid "Tomorrow"
 msgstr "Mañana"
 
@@ -294,23 +279,23 @@ msgstr "Mañana"
 msgid "Format"
 msgstr "Formato"
 
-#: src/gtk/details-list.ui:22
+#: src/gtk/details-list.ui:25
 msgid "Layout"
 msgstr "Disposición"
 
-#: src/gtk/details-list.ui:29
+#: src/gtk/details-list.ui:35
 msgid "Duplex"
 msgstr "Dúplex"
 
-#: src/gtk/details-list.ui:36
+#: src/gtk/details-list.ui:45
 msgid "Subtype"
 msgstr "Subtipo"
 
-#: src/gtk/details-list.ui:43
+#: src/gtk/details-list.ui:55
 msgid "Viewer Preferences"
 msgstr "Preferencias del visor"
 
-#: src/gtk/details-list.ui:50
+#: src/gtk/details-list.ui:62
 msgid "Permissions"
 msgstr "Permisos"
 
@@ -331,8 +316,8 @@ msgid "Subject"
 msgstr "Tema"
 
 #: src/gtk/document-view.ui:69
-msgid "Producer"
-msgstr "Productor"
+msgid "Conversion Software"
+msgstr "Software de Conversión"
 
 #: src/gtk/document-view.ui:75
 msgid "Creation Date"
@@ -346,6 +331,26 @@ msgstr "Fecha de Modificación"
 msgid "Non-Editable Properties"
 msgstr "Propiedades No Editables"
 
+#: src/gtk/save-changes-dialog.ui:6
+msgid "Save Changes?"
+msgstr "¿Quiere Guardar Los Cambios?"
+
+#: src/gtk/save-changes-dialog.ui:7
+msgid ""
+"Open documents contain unsaved changes. Changes which are not saved will be "
+"permanently lost."
+msgstr ""
+"Los documentos abiertos contienen cambios sin guardar. Los cambio que no se "
+"guarden se perderán de forma permanente."
+
+#: src/gtk/save-changes-dialog.ui:11
+msgid "_Cancel"
+msgstr "_Cancelar"
+
+#: src/gtk/save-changes-dialog.ui:12
+msgid "_Discard"
+msgstr "_Descartar"
+
 #: src/gtk/shortcut-window.ui:11
 msgctxt "shortcut window"
 msgid "General"
@@ -358,18 +363,91 @@ msgstr "Salir"
 
 #: src/gtk/shortcut-window.ui:21
 msgctxt "shortcut window"
+msgid "New window"
+msgstr "Nueva Ventana"
+
+#: src/gtk/shortcut-window.ui:28
+msgctxt "shortcut window"
+msgid "Close window"
+msgstr "Cerrar Ventana"
+
+#: src/gtk/shortcut-window.ui:35
+msgctxt "shortcut window"
+msgid "Keyboard Shortcuts"
+msgstr "Atajos de Teclado"
+
+#: src/gtk/shortcut-window.ui:43
+msgctxt "shortcut window"
+msgid "Editor"
+msgstr "Editor"
+
+#: src/gtk/shortcut-window.ui:47
+msgctxt "shortcut window"
 msgid "Open"
 msgstr "Abrir"
 
-#: src/gtk/shortcut-window.ui:28
+#: src/gtk/shortcut-window.ui:54
 msgctxt "shortcut window"
 msgid "Save"
 msgstr "Guardar"
 
-#: src/gtk/shortcut-window.ui:35
+#: src/gtk/shortcut-window.ui:61
 msgctxt "shortcut window"
 msgid "Save As…"
 msgstr "Guardar Como…"
+
+#~ msgid ""
+#~ "Version 2.0: After a three month development hiatus, Paper Clip sees its "
+#~ "second release!"
+#~ msgstr ""
+#~ "Versión 2.0: Después de tres meses de hiato, ¡Paper Clip tiene su segunda "
+#~ "versión!"
+
+#~ msgid "This version includes a nicer UI with:"
+#~ msgstr "Esta versión tiene una interfaz más agradable con:"
+
+#~ msgid "Fix many UI papercuts to match the GNOME HIG"
+#~ msgstr ""
+#~ "Arreglar varios problemas con la interfaz para alinearse al GNOME HIG"
+
+#~ msgid "The main view now features a thumbnail of the document"
+#~ msgstr "La vista principal ahora cuenta con una miniatura del documento"
+
+#~ msgid ""
+#~ "The term \"Creator\" has been changed for \"Creation Software\" to avoid "
+#~ "confusion with \"Author\""
+#~ msgstr ""
+#~ "El termino \"Creador\" ha sido cambiado por \"Software de Creación\" para "
+#~ "evitar confusión con \"Autor\""
+
+#~ msgid ""
+#~ "The main view now handles large document titles as special cases to avoid "
+#~ "breaking the UI"
+#~ msgstr ""
+#~ "La vista principal ahora maneja nombres de documentos largos para evitar "
+#~ "romper la interfaz"
+
+#~ msgid "The keyword list now has a nicer UI"
+#~ msgstr "La lista de palabras clave para tiene una mejor interfaz"
+
+#~ msgid ""
+#~ "The details window has been removed, and the non editable properties of "
+#~ "the document have been moved to the bottom of the view"
+#~ msgstr ""
+#~ "La ventana de detalles ha sido removida, las propiedades no editables del "
+#~ "documento han sido movidas al final de la vista"
+
+#~ msgid "Changes that are not saved will be lost permanently"
+#~ msgstr "Los cambios que no se guarden se perderán permanentemente"
+
+#~ msgid "Save"
+#~ msgstr "Guardar"
+
+#~ msgid "Press the “+” button to add a keyword"
+#~ msgstr "Presione el botón “+” para añadir una palabra clave"
+
+#~ msgid "Producer"
+#~ msgstr "Productor"
 
 #~ msgid "Do you want to save the changes?"
 #~ msgstr "¿Quiere guardar los cambios?"
@@ -385,6 +463,3 @@ msgstr "Guardar Como…"
 
 #~ msgid "Keywords"
 #~ msgstr "Palabras Clave"
-
-#~ msgid "Add a keyword"
-#~ msgstr "Añadir una palabra clave"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pdf-metadata-editor\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-15 11:48-0600\n"
+"POT-Creation-Date: 2023-10-02 13:04-0600\n"
 "PO-Revision-Date: 2023-07-18 13:52+0200\n"
 "Last-Translator: Amerey.eu <info@amerey.eu>\n"
 "Language-Team: \n"
@@ -36,114 +36,93 @@ msgstr ""
 "Upravte název, autora, klíčová slova a další podrobnosti vašich dokumentů PDF"
 
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:16
-msgid ""
-"Version 2.0: After a three month development hiatus, Paper Clip sees its "
-"second release!"
-msgstr ""
-"Verze 2.0: Po tříměsíční pauze ve vývoji se Paper Clip dočkal druhého vydání!"
+#, fuzzy
+msgid "Paper Clip Version 3.5"
+msgstr "Paper Clip"
 
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:17
-msgid "This version includes a nicer UI with:"
-msgstr "Tato verze obsahuje hezčí uživatelské rozhraní s:"
+msgid "The latest release of Paper Clip brings the following changes:"
+msgstr ""
 
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:19
-msgid "Fix many UI papercuts to match the GNOME HIG"
-msgstr "Oprava uživatelského rozhraní, aby odpovídalo GNOME HIG"
+msgid "Small cosmetic changes to follow GNOME 45 look-and-feel"
+msgstr ""
 
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:20
-msgid "The main view now features a thumbnail of the document"
-msgstr "Hlavní zobrazení nyní obsahuje miniaturu dokumentu"
+msgid "The app can open now multiple files in different windows"
+msgstr ""
 
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:21
-msgid ""
-"The term \"Creator\" has been changed for \"Creation Software\" to avoid "
-"confusion with \"Author\""
+msgid "Russian Translation by Ser82-png"
 msgstr ""
-"Termín „Tvůrce“ byl změněn pro „Software pro tvorbu“, aby se předešlo záměně "
-"s výrazem „Autor“"
 
-#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:22
-msgid ""
-"The main view now handles large document titles as special cases to avoid "
-"breaking the UI"
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:27
+#, fuzzy
+msgid "Paper Clip Version 3.2"
+msgstr "Paper Clip"
+
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:28
+msgid "This new version of Paper Clip has the following changes"
 msgstr ""
-"Hlavní zobrazení nyní zpracovává velké názvy dokumentů jako speciální "
-"případy, aby nedošlo k porušení uživatelského rozhraní"
 
-#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:23
-msgid "The keyword list now has a nicer UI"
-msgstr "Seznam klíčových slov má nyní hezčí uživatelské rozhraní"
-
-#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:24
-msgid ""
-"The details window has been removed, and the non editable properties of the "
-"document have been moved to the bottom of the view"
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:30
+msgid "Czech translation"
 msgstr ""
-"Okno podrobností bylo odstraněno a neupravitelné vlastnosti dokumentu byly "
-"přesunuty do spodní části pohledu"
 
-#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:71
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:31
+msgid "Better rendering for thumbnails"
+msgstr ""
+
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:32
+msgid "Better cache management"
+msgstr ""
+
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:79
 msgid "Diego Iván"
 msgstr "Diego Iván"
 
 #. translators: Write your name<email> here :D
-#: src/application.vala:69
+#: src/application.vala:152
 msgid "translator_credits"
 msgstr "Amerey.eu"
 
-#: src/window.vala:256
-msgid "Save Changes?"
-msgstr "Uložit změny?"
-
-#: src/window.vala:257
-msgid "Changes that are not saved will be lost permanently"
-msgstr "Neuložené změny budou trvale ztraceny"
-
-#: src/window.vala:261
-msgid "Cancel"
-msgstr "Zrušit"
-
-#: src/window.vala:262
-msgid "Discard"
-msgstr "Zahodit"
-
-#: src/window.vala:263
-msgid "Save"
-msgstr "Uložit"
-
-#: src/window.ui:21
+#: src/window.ui:20
 msgid "Select a File"
 msgstr "Vybrat soubor"
 
-#: src/window.ui:25
+#: src/window.ui:24
 msgid "Open"
 msgstr "Otevřít"
 
-#: src/window.ui:80
+#: src/window.ui:84
 msgid "Open a Document"
 msgstr "Otevřít soubor"
 
-#: src/window.ui:89
+#: src/window.ui:93
 msgid "Drag and drop a PDF file here"
 msgstr "Sem přetáhněte PDF soubor"
 
-#: src/window.ui:147
+#: src/window.ui:149
+msgid "_New Window"
+msgstr ""
+
+#: src/window.ui:155 src/gtk/save-changes-dialog.ui:13
 msgid "_Save"
 msgstr "_Uložit"
 
-#: src/window.ui:152
+#: src/window.ui:161
 msgid "Save _As…"
 msgstr "Uložit _jako…"
 
-#: src/window.ui:157
+#: src/window.ui:167
 msgid "Open _With…"
 msgstr "Otevřít _s…"
 
-#: src/window.ui:163
+#: src/window.ui:174
 msgid "_Keyboard Shortcuts"
 msgstr "_Klávesové zkratky"
 
-#: src/window.ui:167
+#: src/window.ui:178
 msgid "_About Paper Clip"
 msgstr "_O aplikaci Paper Clip"
 
@@ -155,115 +134,115 @@ msgstr "Není nastaveno žádné datum"
 msgid "Unknown"
 msgstr "Neznámý"
 
-#: src/Document.vala:216
+#: src/Document.vala:214
 msgid "Pages in one column"
 msgstr "Stránky v jednom sloupci"
 
-#: src/Document.vala:219
+#: src/Document.vala:217
 msgid "One page at a time"
 msgstr "Po jedné stránce"
 
-#: src/Document.vala:222
+#: src/Document.vala:220
 msgid "Odd numbered pages on the left"
 msgstr "Liché stránky vlevo"
 
-#: src/Document.vala:225
+#: src/Document.vala:223
 msgid "Odd numbered pages on the right"
 msgstr "Liché stránky vpravo"
 
-#: src/Document.vala:228
+#: src/Document.vala:226
 msgid "Two odd numbered pages on the left"
 msgstr "Dvě liché stránky vlevo"
 
-#: src/Document.vala:231
+#: src/Document.vala:229
 msgid "Two odd numbered pages on the right"
 msgstr "Dvě liché stránky vpravo"
 
-#: src/Document.vala:235
+#: src/Document.vala:233
 msgid "No specific layout"
 msgstr "Žádné konkrétní rozložení"
 
-#: src/Document.vala:244
+#: src/Document.vala:242
 msgid "Center document's window"
 msgstr "Vycentrovat okno dokumentu"
 
-#: src/Document.vala:248
+#: src/Document.vala:246
 msgid "Reading order is right to left"
 msgstr "Pořadí čtení je zprava doleva"
 
-#: src/Document.vala:252
+#: src/Document.vala:250
 msgid "Display document's title"
 msgstr "Zobrazit název dokumentu"
 
-#: src/Document.vala:256
+#: src/Document.vala:254
 msgid "Fit document to window"
 msgstr "Přizpůsobit dokument oknu"
 
-#: src/Document.vala:260
+#: src/Document.vala:258
 msgid "Hide window menubar"
 msgstr "Skrýt panel nabídek okna"
 
-#: src/Document.vala:264
+#: src/Document.vala:262
 msgid "Hide window toolbars"
 msgstr "Skrýt panely nástrojů okna"
 
-#: src/Document.vala:268
+#: src/Document.vala:266
 msgid "Hide UI elements"
 msgstr "Skrýt prvky uživatelského rozhraní"
 
-#: src/Document.vala:272
+#: src/Document.vala:270
 msgid "No preferences"
 msgstr "Žádné preference"
 
-#: src/Document.vala:283
+#: src/Document.vala:281
 msgid "Adding notes"
 msgstr "Přidávání poznámek"
 
-#: src/Document.vala:287
+#: src/Document.vala:285
 msgid "Inserting elements"
 msgstr "Vkládání prvků"
 
-#: src/Document.vala:291
+#: src/Document.vala:289
 msgid "Copying"
 msgstr "Kopírování"
 
-#: src/Document.vala:295
+#: src/Document.vala:293
 msgid "Extracting contents"
 msgstr "Extrakce obsahu"
 
-#: src/Document.vala:299
+#: src/Document.vala:297
 msgid "Filling interactive forms"
 msgstr "Vyplňování interaktivních formulářů"
 
-#: src/Document.vala:303
+#: src/Document.vala:301
 msgid "Modifying"
 msgstr "Upravování"
 
-#: src/Document.vala:307
+#: src/Document.vala:305
 msgid "Printing"
 msgstr "Tisk"
 
-#: src/Document.vala:311
+#: src/Document.vala:309
 msgid "Printing in high resolution"
 msgstr "Tisk ve vysokém rozlišení"
 
-#: src/Document.vala:320
+#: src/Document.vala:318
 msgid "Flip on the long edge"
 msgstr "Otočit svisle"
 
-#: src/Document.vala:323
+#: src/Document.vala:321
 msgid "Flip on the short edge"
 msgstr "Otočit vodorovně"
 
-#: src/Document.vala:326
+#: src/Document.vala:324
 msgid "Only single sided"
 msgstr "Pouze jednostranné"
 
-#: src/Document.vala:330
+#: src/Document.vala:328
 msgid "No preference"
 msgstr "Žádná preference"
 
-#: src/Document.vala:354
+#: src/Document.vala:352
 msgid "Not compliant"
 msgstr "Nevyhovuje"
 
@@ -271,19 +250,28 @@ msgstr "Nevyhovuje"
 msgid "Delete Keyword"
 msgstr "Smazat klíčové slovo"
 
-#: src/KeywordList.vala:43
+#: src/KeywordList.vala:45
 msgid "Keyword"
 msgstr "Klíčové slovo"
 
-#: src/KeywordList.vala:72
-msgid "Press the “+” button to add a keyword"
-msgstr "Stisknutím tlačítka „+“ přidáte klíčové slovo"
+#: src/KeywordList.vala:82
+#, fuzzy
+msgid "Add Keyword"
+msgstr "Klíčové slovo"
 
-#: src/gtk/date-row.ui:47
+#: src/gtk/date-row.ui:8
+msgid "Remove Date"
+msgstr ""
+
+#: src/gtk/date-row.ui:20
+msgid "Show Calendar"
+msgstr ""
+
+#: src/gtk/date-row.ui:49
 msgid "Today"
 msgstr "Dnes"
 
-#: src/gtk/date-row.ui:54
+#: src/gtk/date-row.ui:56
 msgid "Tomorrow"
 msgstr "Zítra"
 
@@ -291,23 +279,23 @@ msgstr "Zítra"
 msgid "Format"
 msgstr "Formát"
 
-#: src/gtk/details-list.ui:22
+#: src/gtk/details-list.ui:25
 msgid "Layout"
 msgstr "Rozložení"
 
-#: src/gtk/details-list.ui:29
+#: src/gtk/details-list.ui:35
 msgid "Duplex"
 msgstr "Duplex"
 
-#: src/gtk/details-list.ui:36
+#: src/gtk/details-list.ui:45
 msgid "Subtype"
 msgstr "Podtyp"
 
-#: src/gtk/details-list.ui:43
+#: src/gtk/details-list.ui:55
 msgid "Viewer Preferences"
 msgstr "Předvolby prohlížeče"
 
-#: src/gtk/details-list.ui:50
+#: src/gtk/details-list.ui:62
 msgid "Permissions"
 msgstr "Oprávnění"
 
@@ -328,8 +316,9 @@ msgid "Subject"
 msgstr "Předmět"
 
 #: src/gtk/document-view.ui:69
-msgid "Producer"
-msgstr "Producent"
+#, fuzzy
+msgid "Conversion Software"
+msgstr "Software pro tvorbu"
 
 #: src/gtk/document-view.ui:75
 msgid "Creation Date"
@@ -343,6 +332,26 @@ msgstr "Datum změny"
 msgid "Non-Editable Properties"
 msgstr "Vlastnosti, které nelze upravovat"
 
+#: src/gtk/save-changes-dialog.ui:6
+msgid "Save Changes?"
+msgstr "Uložit změny?"
+
+#: src/gtk/save-changes-dialog.ui:7
+msgid ""
+"Open documents contain unsaved changes. Changes which are not saved will be "
+"permanently lost."
+msgstr ""
+
+#: src/gtk/save-changes-dialog.ui:11
+#, fuzzy
+msgid "_Cancel"
+msgstr "Zrušit"
+
+#: src/gtk/save-changes-dialog.ui:12
+#, fuzzy
+msgid "_Discard"
+msgstr "Zahodit"
+
 #: src/gtk/shortcut-window.ui:11
 msgctxt "shortcut window"
 msgid "General"
@@ -355,15 +364,88 @@ msgstr "Ukončit"
 
 #: src/gtk/shortcut-window.ui:21
 msgctxt "shortcut window"
+msgid "New window"
+msgstr ""
+
+#: src/gtk/shortcut-window.ui:28
+msgctxt "shortcut window"
+msgid "Close window"
+msgstr ""
+
+#: src/gtk/shortcut-window.ui:35
+#, fuzzy
+msgctxt "shortcut window"
+msgid "Keyboard Shortcuts"
+msgstr "_Klávesové zkratky"
+
+#: src/gtk/shortcut-window.ui:43
+msgctxt "shortcut window"
+msgid "Editor"
+msgstr ""
+
+#: src/gtk/shortcut-window.ui:47
+msgctxt "shortcut window"
 msgid "Open"
 msgstr "Otevřít"
 
-#: src/gtk/shortcut-window.ui:28
+#: src/gtk/shortcut-window.ui:54
 msgctxt "shortcut window"
 msgid "Save"
 msgstr "Uložit"
 
-#: src/gtk/shortcut-window.ui:35
+#: src/gtk/shortcut-window.ui:61
 msgctxt "shortcut window"
 msgid "Save As…"
 msgstr "Uložit jako…"
+
+#~ msgid ""
+#~ "Version 2.0: After a three month development hiatus, Paper Clip sees its "
+#~ "second release!"
+#~ msgstr ""
+#~ "Verze 2.0: Po tříměsíční pauze ve vývoji se Paper Clip dočkal druhého "
+#~ "vydání!"
+
+#~ msgid "This version includes a nicer UI with:"
+#~ msgstr "Tato verze obsahuje hezčí uživatelské rozhraní s:"
+
+#~ msgid "Fix many UI papercuts to match the GNOME HIG"
+#~ msgstr "Oprava uživatelského rozhraní, aby odpovídalo GNOME HIG"
+
+#~ msgid "The main view now features a thumbnail of the document"
+#~ msgstr "Hlavní zobrazení nyní obsahuje miniaturu dokumentu"
+
+#~ msgid ""
+#~ "The term \"Creator\" has been changed for \"Creation Software\" to avoid "
+#~ "confusion with \"Author\""
+#~ msgstr ""
+#~ "Termín „Tvůrce“ byl změněn pro „Software pro tvorbu“, aby se předešlo "
+#~ "záměně s výrazem „Autor“"
+
+#~ msgid ""
+#~ "The main view now handles large document titles as special cases to avoid "
+#~ "breaking the UI"
+#~ msgstr ""
+#~ "Hlavní zobrazení nyní zpracovává velké názvy dokumentů jako speciální "
+#~ "případy, aby nedošlo k porušení uživatelského rozhraní"
+
+#~ msgid "The keyword list now has a nicer UI"
+#~ msgstr "Seznam klíčových slov má nyní hezčí uživatelské rozhraní"
+
+#~ msgid ""
+#~ "The details window has been removed, and the non editable properties of "
+#~ "the document have been moved to the bottom of the view"
+#~ msgstr ""
+#~ "Okno podrobností bylo odstraněno a neupravitelné vlastnosti dokumentu "
+#~ "byly přesunuty do spodní části pohledu"
+
+#~ msgid "Changes that are not saved will be lost permanently"
+#~ msgstr "Neuložené změny budou trvale ztraceny"
+
+#~ msgid "Save"
+#~ msgstr "Uložit"
+
+#~ msgid "Press the “+” button to add a keyword"
+#~ msgstr "Stisknutím tlačítka „+“ přidáte klíčové slovo"
+
+#~ msgid "Producer"
+#~ msgstr "Producent"
