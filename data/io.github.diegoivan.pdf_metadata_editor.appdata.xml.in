@@ -22,17 +22,6 @@
         </ul>
       </description>
     </release>
-    <release version="3.2" date="2023-07-20">
-      <description>
-        <p>Paper Clip Version 3.2</p>
-        <p>This new version of Paper Clip has the following changes</p>
-        <ul>
-          <li>Czech translation</li>
-          <li>Better rendering for thumbnails</li>
-          <li>Better cache management</li>
-        </ul>
-      </description>
-    </release>
   </releases>
 
   <screenshots>
