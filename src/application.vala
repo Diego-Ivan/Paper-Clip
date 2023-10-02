@@ -136,13 +136,13 @@ public class PaperClip.Application : Adw.Application {
     }
 
     private void on_about_action () {
-        string[] developers = { "Diego Iván" };
+        string[] developers = { "Diego Iván M.E" };
         string[] artists = { "Brage Fuglseth" };
         var about = new Adw.AboutWindow () {
             application_icon = Config.APP_ID,
             application_name = "Paper Clip",
-            copyright = "© 2023 Diego Iván",
-            developer_name = "Diego Iván",
+            copyright = "© 2023 Diego Iván M.E",
+            developer_name = "Diego Iván M.E",
             developers = developers,
             artists = artists,
             issue_url = "https://github.com/Diego-Ivan/Paper-Clip/issues",

@@ -11,6 +11,17 @@
   </description>
 
   <releases>
+    <release version="3.5" date="2023-10-02">
+      <description>
+        <p>Paper Clip Version 3.5</p>
+        <p>The latest release of Paper Clip brings the following changes:</p>
+        <ul>
+          <li>Small cosmetic changes to follow GNOME 45 look-and-feel</li>
+          <li>The app can open now multiple files in different windows</li>
+          <li>Russian Translation by Ser82-png</li>
+        </ul>
+      </description>
+    </release>
     <release version="3.2" date="2023-07-20">
       <description>
         <p>Paper Clip Version 3.2</p>
