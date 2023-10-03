@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pdf-metadata-editor\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-15 11:48-0600\n"
-"PO-Revision-Date: 2023-09-23 22:15+1000\n"
+"POT-Creation-Date: 2023-10-02 13:04-0600\n"
+"PO-Revision-Date: 2023-10-03 19:38+1000\n"
 "Last-Translator: Ser82-png <asvmail.as@gmail.com>\n"
 "Language-Team: \n"
 "Language: ru\n"
@@ -39,119 +39,92 @@ msgstr ""
 "в ваших PDF-документах"
 
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:16
-msgid ""
-"Version 2.0: After a three month development hiatus, Paper Clip sees its "
-"second release!"
-msgstr ""
-"Версия 2.0: После трехмесячного перерыва в разработке Paper Clip выходит во "
-"второй раз!"
+msgid "Paper Clip Version 3.5"
+msgstr "«Paper Clip», версия 3.5"
 
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:17
-msgid "This version includes a nicer UI with:"
-msgstr ""
-"Эта версия включает в себя более приятный пользовательский интерфейс со "
-"следующими изменениями:"
+msgid "The latest release of Paper Clip brings the following changes:"
+msgstr "В последней версии «Paper Clip» внесены следующие изменения:"
 
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:19
-msgid "Fix many UI papercuts to match the GNOME HIG"
+msgid "Small cosmetic changes to follow GNOME 45 look-and-feel"
 msgstr ""
-"Многочисленные исправления интерфейса, чтобы он соответствовал GNOME HIG"
+"Небольшие косметические изменения, соответствующие внешнему виду GNOME 45"
 
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:20
-msgid "The main view now features a thumbnail of the document"
-msgstr "На главном экране теперь отображается миниатюра документа"
+msgid "The app can open now multiple files in different windows"
+msgstr "Теперь приложение может открывать несколько файлов в разных окнах"
 
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:21
-msgid ""
-"The term \"Creator\" has been changed for \"Creation Software\" to avoid "
-"confusion with \"Author\""
-msgstr ""
-"Пункт «Создатель» был заменен на «Программное обеспечение для создания», "
-"чтобы избежать путаницы с «Автором»."
+msgid "Russian Translation by Ser82-png"
+msgstr "Перевод на русский от Ser82-png"
 
-#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:22
-msgid ""
-"The main view now handles large document titles as special cases to avoid "
-"breaking the UI"
-msgstr ""
-"Главное представление теперь обрабатывает большие заголовки документов как "
-"особые случаи, чтобы избежать нарушения пользовательского интерфейса"
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:27
+msgid "Paper Clip Version 3.2"
+msgstr "Paper Clip Version 3.5"
 
-#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:23
-msgid "The keyword list now has a nicer UI"
-msgstr ""
-"Список ключевых слов теперь имеет более приятный пользовательский интерфейс"
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:28
+msgid "This new version of Paper Clip has the following changes"
+msgstr "В этой новой версии «Paper Clip» внесены следующие изменения"
 
-#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:24
-msgid ""
-"The details window has been removed, and the non editable properties of the "
-"document have been moved to the bottom of the view"
-msgstr ""
-"Окно сведений было удалено, а не редактируемые свойства документа были "
-"перемещены в нижнюю часть представления"
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:30
+msgid "Czech translation"
+msgstr "Перевод на чешский"
 
-#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:71
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:31
+msgid "Better rendering for thumbnails"
+msgstr "Улучшенный рендеринг миниатюр"
+
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:32
+msgid "Better cache management"
+msgstr "Улучшенное управление кэшем"
+
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:79
 msgid "Diego Iván"
 msgstr "Diego Iván"
 
 #. translators: Write your name<email> here :D
-#: src/application.vala:69
+#: src/application.vala:152
 msgid "translator_credits"
 msgstr "Ser82-png <asvmail.as@gmail.com>, 2023"
 
-#: src/window.vala:256
-msgid "Save Changes?"
-msgstr "Сохранить изменения?"
-
-#: src/window.vala:257
-msgid "Changes that are not saved will be lost permanently"
-msgstr "Несохранённые изменения будут безвозвратно утеряны"
-
-#: src/window.vala:261
-msgid "Cancel"
-msgstr "Отменить"
-
-#: src/window.vala:262
-msgid "Discard"
-msgstr "Не сохранять"
-
-#: src/window.vala:263
-msgid "Save"
-msgstr "Сохранить"
-
-#: src/window.ui:21
+#: src/window.ui:20
 msgid "Select a File"
 msgstr "Выберите файл"
 
-#: src/window.ui:25
+#: src/window.ui:24
 msgid "Open"
 msgstr "Открыть"
 
-#: src/window.ui:80
+#: src/window.ui:84
 msgid "Open a Document"
 msgstr "Открыть документ"
 
-#: src/window.ui:89
+#: src/window.ui:93
 msgid "Drag and drop a PDF file here"
 msgstr "Перетащите сюда PDF-файл"
 
-#: src/window.ui:147
+#: src/window.ui:149
+msgid "_New Window"
+msgstr "_Новое окно"
+
+#: src/window.ui:155 src/gtk/save-changes-dialog.ui:13
 msgid "_Save"
 msgstr "_Сохранить"
 
-#: src/window.ui:152
+#: src/window.ui:161
 msgid "Save _As…"
 msgstr "Сохранить _как…"
 
-#: src/window.ui:157
+#: src/window.ui:167
 msgid "Open _With…"
 msgstr "Открыть с _помощью…"
 
-#: src/window.ui:163
+#: src/window.ui:174
 msgid "_Keyboard Shortcuts"
 msgstr "_Комбинации клавиш"
 
-#: src/window.ui:167
+#: src/window.ui:178
 msgid "_About Paper Clip"
 msgstr "_О приложении"
 
@@ -163,115 +136,115 @@ msgstr "Дата не установлена"
 msgid "Unknown"
 msgstr "Неизвестно"
 
-#: src/Document.vala:216
+#: src/Document.vala:214
 msgid "Pages in one column"
 msgstr "Страницы в одну колонку"
 
-#: src/Document.vala:219
+#: src/Document.vala:217
 msgid "One page at a time"
 msgstr "По одной странице за раз"
 
-#: src/Document.vala:222
+#: src/Document.vala:220
 msgid "Odd numbered pages on the left"
 msgstr "Страницы с нечетными номерами слева"
 
-#: src/Document.vala:225
+#: src/Document.vala:223
 msgid "Odd numbered pages on the right"
 msgstr "Страницы с нечетными номерами справа"
 
-#: src/Document.vala:228
+#: src/Document.vala:226
 msgid "Two odd numbered pages on the left"
 msgstr "Две страницы с нечётными номерами слева"
 
-#: src/Document.vala:231
+#: src/Document.vala:229
 msgid "Two odd numbered pages on the right"
 msgstr "Две страницы с нечётными номерами справа"
 
-#: src/Document.vala:235
+#: src/Document.vala:233
 msgid "No specific layout"
 msgstr "Нет конкретной компоновки"
 
-#: src/Document.vala:244
+#: src/Document.vala:242
 msgid "Center document's window"
 msgstr "Документ по центру экрана"
 
-#: src/Document.vala:248
+#: src/Document.vala:246
 msgid "Reading order is right to left"
 msgstr "Порядок чтения - справа налево"
 
-#: src/Document.vala:252
+#: src/Document.vala:250
 msgid "Display document's title"
 msgstr "Отображать название документа"
 
-#: src/Document.vala:256
+#: src/Document.vala:254
 msgid "Fit document to window"
 msgstr "Подогнать документ под размеры окна"
 
-#: src/Document.vala:260
+#: src/Document.vala:258
 msgid "Hide window menubar"
 msgstr "Скрыть панель меню"
 
-#: src/Document.vala:264
+#: src/Document.vala:262
 msgid "Hide window toolbars"
 msgstr "Скрыть панель инструментов"
 
-#: src/Document.vala:268
+#: src/Document.vala:266
 msgid "Hide UI elements"
 msgstr "Скрыть элементы пользовательского интерфейса"
 
-#: src/Document.vala:272
+#: src/Document.vala:270
 msgid "No preferences"
 msgstr "Нет параметров"
 
-#: src/Document.vala:283
+#: src/Document.vala:281
 msgid "Adding notes"
 msgstr "Добавление заметок"
 
-#: src/Document.vala:287
+#: src/Document.vala:285
 msgid "Inserting elements"
 msgstr "Вставка элементов"
 
-#: src/Document.vala:291
+#: src/Document.vala:289
 msgid "Copying"
 msgstr "Копирование"
 
-#: src/Document.vala:295
+#: src/Document.vala:293
 msgid "Extracting contents"
 msgstr "Извлечение содержимого"
 
-#: src/Document.vala:299
+#: src/Document.vala:297
 msgid "Filling interactive forms"
 msgstr "Заполнение интерактивных форм"
 
-#: src/Document.vala:303
+#: src/Document.vala:301
 msgid "Modifying"
 msgstr "Изменение"
 
-#: src/Document.vala:307
+#: src/Document.vala:305
 msgid "Printing"
 msgstr "Печать"
 
-#: src/Document.vala:311
+#: src/Document.vala:309
 msgid "Printing in high resolution"
 msgstr "Печать в высоком разрешении"
 
-#: src/Document.vala:320
+#: src/Document.vala:318
 msgid "Flip on the long edge"
 msgstr "Перевернуть по длинной стороне краю"
 
-#: src/Document.vala:323
+#: src/Document.vala:321
 msgid "Flip on the short edge"
 msgstr "Перевернуть по короткой стороне"
 
-#: src/Document.vala:326
+#: src/Document.vala:324
 msgid "Only single sided"
 msgstr "Только односторонняя"
 
-#: src/Document.vala:330
+#: src/Document.vala:328
 msgid "No preference"
 msgstr "Нет параметра"
 
-#: src/Document.vala:354
+#: src/Document.vala:352
 msgid "Not compliant"
 msgstr "Не соответствует"
 
@@ -279,19 +252,27 @@ msgstr "Не соответствует"
 msgid "Delete Keyword"
 msgstr "Удалить ключевое слово"
 
-#: src/KeywordList.vala:43
+#: src/KeywordList.vala:45
 msgid "Keyword"
 msgstr "Ключевое слово"
 
-#: src/KeywordList.vala:72
-msgid "Press the “+” button to add a keyword"
-msgstr "Нажмите клавишу «+», чтобы добавить ключевое слово"
+#: src/KeywordList.vala:82
+msgid "Add Keyword"
+msgstr "Добавить ключевое слово"
 
-#: src/gtk/date-row.ui:47
+#: src/gtk/date-row.ui:8
+msgid "Remove Date"
+msgstr "Удалить дату"
+
+#: src/gtk/date-row.ui:20
+msgid "Show Calendar"
+msgstr "Показать календарь"
+
+#: src/gtk/date-row.ui:49
 msgid "Today"
 msgstr "Сегодня"
 
-#: src/gtk/date-row.ui:54
+#: src/gtk/date-row.ui:56
 msgid "Tomorrow"
 msgstr "Завтра"
 
@@ -299,29 +280,29 @@ msgstr "Завтра"
 msgid "Format"
 msgstr "Формат"
 
-#: src/gtk/details-list.ui:22
+#: src/gtk/details-list.ui:25
 msgid "Layout"
 msgstr "Компоновка"
 
-#: src/gtk/details-list.ui:29
+#: src/gtk/details-list.ui:35
 msgid "Duplex"
 msgstr "Двусторонняя"
 
-#: src/gtk/details-list.ui:36
+#: src/gtk/details-list.ui:45
 msgid "Subtype"
 msgstr "Подтип"
 
-#: src/gtk/details-list.ui:43
+#: src/gtk/details-list.ui:55
 msgid "Viewer Preferences"
 msgstr "Параметры просмотра"
 
-#: src/gtk/details-list.ui:50
+#: src/gtk/details-list.ui:62
 msgid "Permissions"
 msgstr "Разрешения"
 
 #: src/gtk/document-view.ui:45
 msgid "Title"
-msgstr "Название"
+msgstr "Заголовок"
 
 #: src/gtk/document-view.ui:51
 msgid "Author"
@@ -336,8 +317,8 @@ msgid "Subject"
 msgstr "Тема"
 
 #: src/gtk/document-view.ui:69
-msgid "Producer"
-msgstr "Программа"
+msgid "Conversion Software"
+msgstr "Программное обеспечение для конвертации"
 
 #: src/gtk/document-view.ui:75
 msgid "Creation Date"
@@ -351,6 +332,26 @@ msgstr "Дата изменения"
 msgid "Non-Editable Properties"
 msgstr "Нередактируемые свойства"
 
+#: src/gtk/save-changes-dialog.ui:6
+msgid "Save Changes?"
+msgstr "Сохранить изменения?"
+
+#: src/gtk/save-changes-dialog.ui:7
+msgid ""
+"Open documents contain unsaved changes. Changes which are not saved will be "
+"permanently lost."
+msgstr ""
+"В открытых документах есть несохраненные изменения. Изменения, которые не "
+"были сохранены, будут безвозвратно потеряны."
+
+#: src/gtk/save-changes-dialog.ui:11
+msgid "_Cancel"
+msgstr "_Отменить"
+
+#: src/gtk/save-changes-dialog.ui:12
+msgid "_Discard"
+msgstr "_Не сохранять"
+
 #: src/gtk/shortcut-window.ui:11
 msgctxt "shortcut window"
 msgid "General"
@@ -363,15 +364,92 @@ msgstr "Выход"
 
 #: src/gtk/shortcut-window.ui:21
 msgctxt "shortcut window"
+msgid "New window"
+msgstr "Новое окно"
+
+#: src/gtk/shortcut-window.ui:28
+msgctxt "shortcut window"
+msgid "Close window"
+msgstr "Закрыть окно"
+
+#: src/gtk/shortcut-window.ui:35
+msgctxt "shortcut window"
+msgid "Keyboard Shortcuts"
+msgstr "Комбинации клавиш"
+
+#: src/gtk/shortcut-window.ui:43
+msgctxt "shortcut window"
+msgid "Editor"
+msgstr "Редактор"
+
+#: src/gtk/shortcut-window.ui:47
+msgctxt "shortcut window"
 msgid "Open"
 msgstr "Открыть"
 
-#: src/gtk/shortcut-window.ui:28
+#: src/gtk/shortcut-window.ui:54
 msgctxt "shortcut window"
 msgid "Save"
 msgstr "Сохранить"
 
-#: src/gtk/shortcut-window.ui:35
+#: src/gtk/shortcut-window.ui:61
 msgctxt "shortcut window"
 msgid "Save As…"
 msgstr "Сохранить как…"
+
+#~ msgid ""
+#~ "Version 2.0: After a three month development hiatus, Paper Clip sees its "
+#~ "second release!"
+#~ msgstr ""
+#~ "Версия 2.0: После трехмесячного перерыва в разработке Paper Clip выходит "
+#~ "во второй раз!"
+
+#~ msgid "This version includes a nicer UI with:"
+#~ msgstr ""
+#~ "Эта версия включает в себя более приятный пользовательский интерфейс со "
+#~ "следующими изменениями:"
+
+#~ msgid "Fix many UI papercuts to match the GNOME HIG"
+#~ msgstr ""
+#~ "Многочисленные исправления интерфейса, чтобы он соответствовал GNOME HIG"
+
+#~ msgid "The main view now features a thumbnail of the document"
+#~ msgstr "На главном экране теперь отображается миниатюра документа"
+
+#~ msgid ""
+#~ "The term \"Creator\" has been changed for \"Creation Software\" to avoid "
+#~ "confusion with \"Author\""
+#~ msgstr ""
+#~ "Пункт «Создатель» был заменен на «Программное обеспечение для создания», "
+#~ "чтобы избежать путаницы с «Автором»."
+
+#~ msgid ""
+#~ "The main view now handles large document titles as special cases to avoid "
+#~ "breaking the UI"
+#~ msgstr ""
+#~ "Главное представление теперь обрабатывает большие заголовки документов "
+#~ "как особые случаи, чтобы избежать нарушения пользовательского интерфейса"
+
+#~ msgid "The keyword list now has a nicer UI"
+#~ msgstr ""
+#~ "Список ключевых слов теперь имеет более приятный пользовательский "
+#~ "интерфейс"
+
+#~ msgid ""
+#~ "The details window has been removed, and the non editable properties of "
+#~ "the document have been moved to the bottom of the view"
+#~ msgstr ""
+#~ "Окно сведений было удалено, а не редактируемые свойства документа были "
+#~ "перемещены в нижнюю часть представления"
+
+#~ msgid "Changes that are not saved will be lost permanently"
+#~ msgstr "Несохранённые изменения будут безвозвратно утеряны"
+
+#~ msgid "Save"
+#~ msgstr "Сохранить"
+
+#~ msgid "Press the “+” button to add a keyword"
+#~ msgstr "Нажмите клавишу «+», чтобы добавить ключевое слово"
+
+#~ msgid "Producer"
+#~ msgstr "Программа"
