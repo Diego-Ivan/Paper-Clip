@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pdf-metadata-editor\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-02 13:04-0600\n"
-"PO-Revision-Date: 2023-06-15 22:52+0200\n"
+"PO-Revision-Date: 2023-10-03 13:13+0200\n"
 "Last-Translator: Irénée Thirion <irenee.thirion@e.email>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 3.3.1\n"
+"X-Generator: Poedit 3.3.2\n"
 
 #: data/io.github.diegoivan.pdf_metadata_editor.desktop.in:3
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:7
@@ -38,46 +38,46 @@ msgstr ""
 "documents PDF"
 
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:16
-#, fuzzy
 msgid "Paper Clip Version 3.5"
-msgstr "Trombone"
+msgstr "Trombone version 3.5"
 
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:17
 msgid "The latest release of Paper Clip brings the following changes:"
-msgstr ""
+msgstr "La dernière version de Trombone apporte les changements suivants :"
 
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:19
 msgid "Small cosmetic changes to follow GNOME 45 look-and-feel"
-msgstr ""
+msgstr "Petits changements cosmétiques pour suivre l’interface de GNOME 45"
 
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:20
 msgid "The app can open now multiple files in different windows"
 msgstr ""
+"L’application peut désormais ouvrir plusieurs fichiers dans différentes "
+"fenêtres"
 
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:21
 msgid "Russian Translation by Ser82-png"
-msgstr ""
+msgstr "Traduction en russe par Ser82-png"
 
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:27
-#, fuzzy
 msgid "Paper Clip Version 3.2"
-msgstr "Trombone"
+msgstr "Trombone version 3.2"
 
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:28
 msgid "This new version of Paper Clip has the following changes"
-msgstr ""
+msgstr "Cette nouvelle version de Trombone comprend les changements suivants :"
 
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:30
 msgid "Czech translation"
-msgstr ""
+msgstr "Traduction en tchèque"
 
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:31
 msgid "Better rendering for thumbnails"
-msgstr ""
+msgstr "Rendu des vignettes amélioré"
 
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:32
 msgid "Better cache management"
-msgstr ""
+msgstr "Meilleure gestion des données en cache"
 
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:79
 msgid "Diego Iván"
@@ -106,7 +106,7 @@ msgstr "Glissez et déposez un document PDF ici"
 
 #: src/window.ui:149
 msgid "_New Window"
-msgstr ""
+msgstr "_Nouvelle fenêtre"
 
 #: src/window.ui:155 src/gtk/save-changes-dialog.ui:13
 msgid "_Save"
@@ -257,17 +257,16 @@ msgid "Keyword"
 msgstr "Mot-clé"
 
 #: src/KeywordList.vala:82
-#, fuzzy
 msgid "Add Keyword"
 msgstr "Ajouter un mot-clé"
 
 #: src/gtk/date-row.ui:8
 msgid "Remove Date"
-msgstr ""
+msgstr "Supprimer la date"
 
 #: src/gtk/date-row.ui:20
 msgid "Show Calendar"
-msgstr ""
+msgstr "Afficher le calendrier"
 
 #: src/gtk/date-row.ui:49
 msgid "Today"
@@ -318,9 +317,8 @@ msgid "Subject"
 msgstr "Sujet"
 
 #: src/gtk/document-view.ui:69
-#, fuzzy
 msgid "Conversion Software"
-msgstr "Logiciel de création"
+msgstr "Logiciel de conversion"
 
 #: src/gtk/document-view.ui:75
 msgid "Creation Date"
@@ -343,16 +341,16 @@ msgid ""
 "Open documents contain unsaved changes. Changes which are not saved will be "
 "permanently lost."
 msgstr ""
+"Des documents ouverts contiennent des modifications non enregistrées. Ces "
+"modifications non enregistrées seront définitivement perdues."
 
 #: src/gtk/save-changes-dialog.ui:11
-#, fuzzy
 msgid "_Cancel"
-msgstr "Annuler"
+msgstr "A_nnuler"
 
 #: src/gtk/save-changes-dialog.ui:12
-#, fuzzy
 msgid "_Discard"
-msgstr "Abandonner"
+msgstr "_Abandonner"
 
 #: src/gtk/shortcut-window.ui:11
 msgctxt "shortcut window"
@@ -367,23 +365,22 @@ msgstr "Quitter"
 #: src/gtk/shortcut-window.ui:21
 msgctxt "shortcut window"
 msgid "New window"
-msgstr ""
+msgstr "Nouvelle fenêtre"
 
 #: src/gtk/shortcut-window.ui:28
 msgctxt "shortcut window"
 msgid "Close window"
-msgstr ""
+msgstr "Fermer la fenêtre"
 
 #: src/gtk/shortcut-window.ui:35
-#, fuzzy
 msgctxt "shortcut window"
 msgid "Keyboard Shortcuts"
-msgstr "_Raccourcis clavier"
+msgstr "Raccourcis clavier"
 
 #: src/gtk/shortcut-window.ui:43
 msgctxt "shortcut window"
 msgid "Editor"
-msgstr ""
+msgstr "Éditeur"
 
 #: src/gtk/shortcut-window.ui:47
 msgctxt "shortcut window"
