@@ -75,7 +75,7 @@ msgstr "Улучшение рендеринга миниатюр"
 
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:32
 msgid "Better cache management"
-msgstr "Улучшенное управление кэшом"
+msgstr "Улучшенное управление кэшем"
 
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:79
 msgid "Diego Iván"
