@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegoivan.pdf_metadata_editor\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-02 13:04-0600\n"
-"PO-Revision-Date: 2023-06-16 23:37+0300\n"
+"POT-Creation-Date: 2023-10-07 07:33+0300\n"
+"PO-Revision-Date: 2023-10-07 07:39+0300\n"
 "Last-Translator: Sabri Ünal <libreajans@gmail.com>\n"
 "Language-Team: Turkish <takim@gnome.org.tr>\n"
 "Language: tr\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Poedit 3.4\n"
 "X-POOTLE-MTIME: 1433334275.000000\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
@@ -41,48 +41,27 @@ msgstr ""
 "ayrıntısını düzenle"
 
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:16
-#, fuzzy
 msgid "Paper Clip Version 3.5"
-msgstr "Paper Clip"
+msgstr "Paper Clip 3.5 Sürümü"
 
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:17
 msgid "The latest release of Paper Clip brings the following changes:"
-msgstr ""
+msgstr "Paper Clip'in son sürümü aşağıdaki değişikliklerle geliyor:"
 
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:19
 msgid "Small cosmetic changes to follow GNOME 45 look-and-feel"
 msgstr ""
+"GNOME 45 görünüm ve hissini takip etmek için küçük kozmetik değişiklikler"
 
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:20
 msgid "The app can open now multiple files in different windows"
-msgstr ""
+msgstr "Uygulama artık birden çok dosyayı farklı pencerelerde açabiliyor"
 
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:21
 msgid "Russian Translation by Ser82-png"
-msgstr ""
+msgstr " Rusça çeviri eklendi, teşekkürler Ser82-png"
 
-#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:27
-#, fuzzy
-msgid "Paper Clip Version 3.2"
-msgstr "Paper Clip"
-
-#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:28
-msgid "This new version of Paper Clip has the following changes"
-msgstr ""
-
-#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:30
-msgid "Czech translation"
-msgstr ""
-
-#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:31
-msgid "Better rendering for thumbnails"
-msgstr ""
-
-#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:32
-msgid "Better cache management"
-msgstr ""
-
-#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:79
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:68
 msgid "Diego Iván"
 msgstr "Diego Iván"
 
@@ -109,7 +88,7 @@ msgstr "PDF belgesini sürükleyip buraya bırakın"
 
 #: src/window.ui:149
 msgid "_New Window"
-msgstr ""
+msgstr "_Yeni Pencere"
 
 #: src/window.ui:155 src/gtk/save-changes-dialog.ui:13
 msgid "_Save"
@@ -251,26 +230,25 @@ msgstr "Tercih yok"
 msgid "Not compliant"
 msgstr "Uyumsuz"
 
-#: src/KeywordRow.vala:29
-msgid "Delete Keyword"
-msgstr "Anahtar Sözcük Sil"
-
 #: src/KeywordList.vala:45
 msgid "Keyword"
 msgstr "Anahtar sözcük"
 
 #: src/KeywordList.vala:82
-#, fuzzy
 msgid "Add Keyword"
-msgstr "Anahtar sözcük ekle"
+msgstr "Anahtar Sözcük Ekle"
+
+#: src/KeywordRow.vala:29
+msgid "Delete Keyword"
+msgstr "Anahtar Sözcük Sil"
 
 #: src/gtk/date-row.ui:8
 msgid "Remove Date"
-msgstr ""
+msgstr "Tarihi kaldır"
 
 #: src/gtk/date-row.ui:20
 msgid "Show Calendar"
-msgstr ""
+msgstr "Takvimi Göster"
 
 #: src/gtk/date-row.ui:49
 msgid "Today"
@@ -321,9 +299,8 @@ msgid "Subject"
 msgstr "Konu"
 
 #: src/gtk/document-view.ui:69
-#, fuzzy
 msgid "Conversion Software"
-msgstr "Oluşturma Tarihi"
+msgstr "Dönüştürme Yazılımı"
 
 #: src/gtk/document-view.ui:75
 msgid "Creation Date"
@@ -337,6 +314,14 @@ msgstr "Değiştirilme Tarihi"
 msgid "Non-Editable Properties"
 msgstr "Düzenlenemez Özellikler"
 
+#: src/gtk/keyword-list.ui:6
+msgid "Keywords"
+msgstr "Anahtar Sözcükler"
+
+#: src/gtk/keyword-list.ui:12
+msgid "Add a keyword"
+msgstr "Anahtar sözcük ekle"
+
 #: src/gtk/save-changes-dialog.ui:6
 msgid "Save Changes?"
 msgstr "Değişiklikler Kaydedilsin Mi?"
@@ -346,16 +331,16 @@ msgid ""
 "Open documents contain unsaved changes. Changes which are not saved will be "
 "permanently lost."
 msgstr ""
+"Açık belgeler kaydedilmemiş değişiklikler içeriyor. Kaydedilmeyen "
+"değişiklikler kalıcı olarak yitirilecek."
 
 #: src/gtk/save-changes-dialog.ui:11
-#, fuzzy
 msgid "_Cancel"
-msgstr "İptal"
+msgstr "İ_ptal"
 
 #: src/gtk/save-changes-dialog.ui:12
-#, fuzzy
 msgid "_Discard"
-msgstr "Yoksay"
+msgstr "_Vazgeç"
 
 #: src/gtk/shortcut-window.ui:11
 msgctxt "shortcut window"
@@ -370,23 +355,22 @@ msgstr "Çık"
 #: src/gtk/shortcut-window.ui:21
 msgctxt "shortcut window"
 msgid "New window"
-msgstr ""
+msgstr "Yeni pencere"
 
 #: src/gtk/shortcut-window.ui:28
 msgctxt "shortcut window"
 msgid "Close window"
-msgstr ""
+msgstr "Pencereyi kapat"
 
 #: src/gtk/shortcut-window.ui:35
-#, fuzzy
 msgctxt "shortcut window"
 msgid "Keyboard Shortcuts"
-msgstr "_Klavye Kısayolları"
+msgstr "Klavye Kısayolları"
 
 #: src/gtk/shortcut-window.ui:43
 msgctxt "shortcut window"
 msgid "Editor"
-msgstr ""
+msgstr "Düzenleyici"
 
 #: src/gtk/shortcut-window.ui:47
 msgctxt "shortcut window"
@@ -402,33 +386,3 @@ msgstr "Kaydet"
 msgctxt "shortcut window"
 msgid "Save As…"
 msgstr "Farklı Kaydet…"
-
-#~ msgid "Changes that are not saved will be lost permanently"
-#~ msgstr "Kaydedilmemiş değişiklikler kalıcı olarak yitirilecek"
-
-#~ msgid "Save"
-#~ msgstr "Kaydet"
-
-#~ msgid "Press the “+” button to add a keyword"
-#~ msgstr "Anahtar kelime eklemek için “+” düğmesine basın"
-
-#~ msgid "Producer"
-#~ msgstr "Üretici"
-
-#~ msgid "Do you want to save the changes?"
-#~ msgstr "Değişiklikleri kaydetmek ister misiniz?"
-
-#~ msgid "_About PDF Metadata Editor"
-#~ msgstr "PDF Üst Veri Düzenleyici _Hakkında"
-
-#~ msgid "Details"
-#~ msgstr "Ayrıntılar"
-
-#~ msgid "Open in a Document Viewer"
-#~ msgstr "Belge Görüntüleyici ile Aç"
-
-#~ msgid "Creator"
-#~ msgstr "Oluşturan"
-
-#~ msgid "Keywords"
-#~ msgstr "Anahtar Sözcükler"
