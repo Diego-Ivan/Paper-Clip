@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pdf-metadata-editor\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-02 13:04-0600\n"
+"POT-Creation-Date: 2023-10-07 07:33+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -54,27 +54,7 @@ msgstr ""
 msgid "Russian Translation by Ser82-png"
 msgstr ""
 
-#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:27
-msgid "Paper Clip Version 3.2"
-msgstr ""
-
-#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:28
-msgid "This new version of Paper Clip has the following changes"
-msgstr ""
-
-#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:30
-msgid "Czech translation"
-msgstr ""
-
-#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:31
-msgid "Better rendering for thumbnails"
-msgstr ""
-
-#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:32
-msgid "Better cache management"
-msgstr ""
-
-#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:79
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:68
 msgid "Diego Iván"
 msgstr ""
 
@@ -243,16 +223,16 @@ msgstr ""
 msgid "Not compliant"
 msgstr ""
 
-#: src/KeywordRow.vala:29
-msgid "Delete Keyword"
-msgstr ""
-
 #: src/KeywordList.vala:45
 msgid "Keyword"
 msgstr ""
 
 #: src/KeywordList.vala:82
 msgid "Add Keyword"
+msgstr ""
+
+#: src/KeywordRow.vala:29
+msgid "Delete Keyword"
 msgstr ""
 
 #: src/gtk/date-row.ui:8
@@ -325,6 +305,14 @@ msgstr ""
 
 #: src/gtk/document-view.ui:94
 msgid "Non-Editable Properties"
+msgstr ""
+
+#: src/gtk/keyword-list.ui:6
+msgid "Keywords"
+msgstr ""
+
+#: src/gtk/keyword-list.ui:12
+msgid "Add a keyword"
 msgstr ""
 
 #: src/gtk/save-changes-dialog.ui:6
