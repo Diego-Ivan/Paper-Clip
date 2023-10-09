@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pdf-metadata-editor\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-02 13:04-0600\n"
-"PO-Revision-Date: 2023-06-16 5:02+0100\n"
+"PO-Revision-Date: 2023-10-08 08:02+0100\n"
 "Last-Translator: Albano Battistella <albano_battistella@hotmail.com>\n"
 "Language-Team: Italian\n"
 "Language: it_IT\n"
@@ -38,46 +38,45 @@ msgstr ""
 "documenti PDF"
 
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:16
-#, fuzzy
 msgid "Paper Clip Version 3.5"
-msgstr "Paper Clip"
+msgstr "Paper Clip versione 3.5"
 
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:17
 msgid "The latest release of Paper Clip brings the following changes:"
-msgstr ""
+msgstr "L'ultima versione di Paper Clip apporta le seguenti modifiche:"
 
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:19
 msgid "Small cosmetic changes to follow GNOME 45 look-and-feel"
-msgstr ""
+msgstr "Piccole modifiche estetiche per seguire l'aspetto di GNOME 45"
 
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:20
 msgid "The app can open now multiple files in different windows"
-msgstr ""
+msgstr "L'app ora può aprire più file in finestre diverse"
 
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:21
 msgid "Russian Translation by Ser82-png"
-msgstr ""
+msgstr "Traduzione russa di Ser82-png"
 
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:27
 #, fuzzy
 msgid "Paper Clip Version 3.2"
-msgstr "Paper Clip"
+msgstr "Paper Clip versione 3.2"
 
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:28
 msgid "This new version of Paper Clip has the following changes"
-msgstr ""
+msgstr "Questa nuova versione di Paper Clip presenta le seguenti modifiche"
 
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:30
 msgid "Czech translation"
-msgstr ""
+msgstr "Traduzione ceca"
 
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:31
 msgid "Better rendering for thumbnails"
-msgstr ""
+msgstr "Migliore rendering per le miniature"
 
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:32
 msgid "Better cache management"
-msgstr ""
+msgstr "Migliore gestione della cache"
 
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:79
 msgid "Diego Iván"
@@ -106,7 +105,7 @@ msgstr "Trascina e rilascia un file PDF qui"
 
 #: src/window.ui:149
 msgid "_New Window"
-msgstr ""
+msgstr "_Nuova finestra"
 
 #: src/window.ui:155 src/gtk/save-changes-dialog.ui:13
 msgid "_Save"
@@ -257,17 +256,16 @@ msgid "Keyword"
 msgstr "Parola chiave"
 
 #: src/KeywordList.vala:82
-#, fuzzy
 msgid "Add Keyword"
-msgstr "Aggiungi una parola chiave"
+msgstr "Aggiungi parola chiave"
 
 #: src/gtk/date-row.ui:8
 msgid "Remove Date"
-msgstr ""
+msgstr "Rimuovi data"
 
 #: src/gtk/date-row.ui:20
 msgid "Show Calendar"
-msgstr ""
+msgstr "Mostra calendario"
 
 #: src/gtk/date-row.ui:49
 msgid "Today"
@@ -318,9 +316,8 @@ msgid "Subject"
 msgstr "Soggetto"
 
 #: src/gtk/document-view.ui:69
-#, fuzzy
 msgid "Conversion Software"
-msgstr "Creatore software"
+msgstr "Software di conversione"
 
 #: src/gtk/document-view.ui:75
 msgid "Creation Date"
@@ -343,16 +340,16 @@ msgid ""
 "Open documents contain unsaved changes. Changes which are not saved will be "
 "permanently lost."
 msgstr ""
+"I documenti aperti contengono modifiche non salvate. Le modifiche che non vengono salvate verranno "
+"perdute definitivamente."
 
 #: src/gtk/save-changes-dialog.ui:11
-#, fuzzy
 msgid "_Cancel"
-msgstr "Cancella"
+msgstr "_Annulla"
 
 #: src/gtk/save-changes-dialog.ui:12
-#, fuzzy
 msgid "_Discard"
-msgstr "Abbandona"
+msgstr "_Abbandona"
 
 #: src/gtk/shortcut-window.ui:11
 msgctxt "shortcut window"
@@ -367,18 +364,17 @@ msgstr "Esci"
 #: src/gtk/shortcut-window.ui:21
 msgctxt "shortcut window"
 msgid "New window"
-msgstr ""
+msgstr "Nuova finestra"
 
 #: src/gtk/shortcut-window.ui:28
 msgctxt "shortcut window"
 msgid "Close window"
-msgstr ""
+msgstr "Chiudi finestra"
 
 #: src/gtk/shortcut-window.ui:35
-#, fuzzy
 msgctxt "shortcut window"
 msgid "Keyboard Shortcuts"
-msgstr "_Scorciatoie da tastiera"
+msgstr "Scorciatoie da tastiera"
 
 #: src/gtk/shortcut-window.ui:43
 msgctxt "shortcut window"
