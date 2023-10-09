@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pdf-metadata-editor\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-02 13:04-0600\n"
-"PO-Revision-Date: 2023-10-03 16:11+0300\n"
+"POT-Creation-Date: 2023-10-07 07:33+0300\n"
+"PO-Revision-Date: 2023-10-09 14:28+0300\n"
 "Last-Translator: Aleksandr Melman <Alexmelman88@gmail.com>\n"
 "Language-Team: \n"
 "Language: ru_RU\n"
@@ -57,27 +57,7 @@ msgstr "Теперь приложение может открывать неск
 msgid "Russian Translation by Ser82-png"
 msgstr "Перевод на русский язык от Ser82-png"
 
-#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:27
-msgid "Paper Clip Version 3.2"
-msgstr "Paper Clip версия 3.2"
-
-#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:28
-msgid "This new version of Paper Clip has the following changes"
-msgstr "В этой новой версии Paper Clip произошли следующие изменения"
-
-#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:30
-msgid "Czech translation"
-msgstr "Чешский перевод"
-
-#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:31
-msgid "Better rendering for thumbnails"
-msgstr "Улучшение рендеринга миниатюр"
-
-#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:32
-msgid "Better cache management"
-msgstr "Улучшенное управление кэшем"
-
-#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:79
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:68
 msgid "Diego Iván"
 msgstr "Diego Iván"
 
@@ -248,10 +228,6 @@ msgstr "Нет параметра"
 msgid "Not compliant"
 msgstr "Не соответствует"
 
-#: src/KeywordRow.vala:29
-msgid "Delete Keyword"
-msgstr "Удалить ключевое слово"
-
 #: src/KeywordList.vala:45
 msgid "Keyword"
 msgstr "Ключевое слово"
@@ -259,6 +235,10 @@ msgstr "Ключевое слово"
 #: src/KeywordList.vala:82
 msgid "Add Keyword"
 msgstr "Добавить ключевое слово"
+
+#: src/KeywordRow.vala:29
+msgid "Delete Keyword"
+msgstr "Удалить ключевое слово"
 
 #: src/gtk/date-row.ui:8
 msgid "Remove Date"
@@ -332,6 +312,14 @@ msgstr "Дата изменения"
 msgid "Non-Editable Properties"
 msgstr "Нередактируемые свойства"
 
+#: src/gtk/keyword-list.ui:6
+msgid "Keywords"
+msgstr "Ключевые слова"
+
+#: src/gtk/keyword-list.ui:12
+msgid "Add a keyword"
+msgstr "Добавьте ключевое слово"
+
 #: src/gtk/save-changes-dialog.ui:6
 msgid "Save Changes?"
 msgstr "Сохранить изменения?"
@@ -396,6 +384,21 @@ msgstr "Сохранить"
 msgctxt "shortcut window"
 msgid "Save As…"
 msgstr "Сохранить как…"
+
+#~ msgid "Paper Clip Version 3.2"
+#~ msgstr "Paper Clip версия 3.2"
+
+#~ msgid "This new version of Paper Clip has the following changes"
+#~ msgstr "В этой новой версии Paper Clip произошли следующие изменения"
+
+#~ msgid "Czech translation"
+#~ msgstr "Чешский перевод"
+
+#~ msgid "Better rendering for thumbnails"
+#~ msgstr "Улучшение рендеринга миниатюр"
+
+#~ msgid "Better cache management"
+#~ msgstr "Улучшенное управление кэшем"
 
 #~ msgid ""
 #~ "Version 2.0: After a three month development hiatus, Paper Clip sees its "
