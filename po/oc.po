@@ -1,0 +1,384 @@
+# Occitan translation file.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the pdf-metadata-editor package.
+# Quentin PAGÈS, 2023.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: pdf-metadata-editor\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-10-07 07:33+0300\n"
+"PO-Revision-Date: 2023-10-14 19:28+0200\n"
+"Last-Translator: Quentin PAGÈS\n"
+"Language-Team: \n"
+"Language: oc\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.4\n"
+
+#: data/io.github.diegoivan.pdf_metadata_editor.desktop.in:3
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:7
+msgid "Paper Clip"
+msgstr "Paper Clip"
+
+#: data/io.github.diegoivan.pdf_metadata_editor.desktop.in:8
+msgid "PDF;Metadata;Editor;"
+msgstr "PDF;Metadonadas;Editor;"
+
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:8
+msgid "Edit PDF document metadata"
+msgstr "Modificar las metadonadas de document PDF"
+
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:10
+msgid "Edit the title, author, keywords and more details of your PDF documents"
+msgstr ""
+"Modificatz lo títol, l’autor, los mots clau e mai de detalhs de vòstres "
+"documents PDF"
+
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:16
+msgid "Paper Clip Version 3.5"
+msgstr "Paper Clip Version 3.5"
+
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:17
+msgid "The latest release of Paper Clip brings the following changes:"
+msgstr "La darrièra version de Paper Clip apòrta los cambiaments seguents :"
+
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:19
+msgid "Small cosmetic changes to follow GNOME 45 look-and-feel"
+msgstr "Modificacions cosmeticas petitas per sègre l’aparéncia GNOME 45"
+
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:20
+msgid "The app can open now multiple files in different windows"
+msgstr ""
+"Aquesta aplicacion pòt ara dobrir mantun fichièr dins diferentas fenèstras"
+
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:21
+msgid "Russian Translation by Ser82-png"
+msgstr "Traduccion en rus per Ser82-png"
+
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:68
+msgid "Diego Iván"
+msgstr "Diego Iván"
+
+#. translators: Write your name<email> here :D
+#: src/application.vala:152
+msgid "translator_credits"
+msgstr "Quentin PAGÈS"
+
+#: src/window.ui:20
+msgid "Select a File"
+msgstr "Seleccionar un fichièr"
+
+#: src/window.ui:24
+msgid "Open"
+msgstr "Dobrir"
+
+#: src/window.ui:84
+msgid "Open a Document"
+msgstr "Dobrir un document"
+
+#: src/window.ui:93
+msgid "Drag and drop a PDF file here"
+msgstr "Lisatz e depausatz un document PDF aquí"
+
+#: src/window.ui:149
+msgid "_New Window"
+msgstr "_Novèla fenèstra"
+
+#: src/window.ui:155 src/gtk/save-changes-dialog.ui:13
+msgid "_Save"
+msgstr "_Enregistrar"
+
+#: src/window.ui:161
+msgid "Save _As…"
+msgstr "Enregistr_ar jos…"
+
+#: src/window.ui:167
+msgid "Open _With…"
+msgstr "Dobrir _amb…"
+
+#: src/window.ui:174
+msgid "_Keyboard Shortcuts"
+msgstr "_Acorchis de clavièr"
+
+#: src/window.ui:178
+msgid "_About Paper Clip"
+msgstr "A prepaus de Paper Clip"
+
+#: src/DateRow.vala:34
+msgid "No date set"
+msgstr "Cap de data pas definida"
+
+#: src/Document.vala:110
+msgid "Unknown"
+msgstr "Desconegut"
+
+#: src/Document.vala:214
+msgid "Pages in one column"
+msgstr "Pagina dins una colomna"
+
+#: src/Document.vala:217
+msgid "One page at a time"
+msgstr "Una pagina a l’encòp"
+
+#: src/Document.vala:220
+msgid "Odd numbered pages on the left"
+msgstr "Paginas imparas a man esquèrra"
+
+#: src/Document.vala:223
+msgid "Odd numbered pages on the right"
+msgstr "Paginas imparas a man drecha"
+
+#: src/Document.vala:226
+msgid "Two odd numbered pages on the left"
+msgstr "Doas paginas imparas a man esquèrra"
+
+#: src/Document.vala:229
+msgid "Two odd numbered pages on the right"
+msgstr "Doas paginas imparas a man drecha"
+
+#: src/Document.vala:233
+msgid "No specific layout"
+msgstr "Cap de disposicion especifica"
+
+#: src/Document.vala:242
+msgid "Center document's window"
+msgstr "Centrar la fenèstra del document"
+
+#: src/Document.vala:246
+msgid "Reading order is right to left"
+msgstr "Òrdre de lectura es esquèrra cap a drecha"
+
+#: src/Document.vala:250
+msgid "Display document's title"
+msgstr "Afichar lo títol del document"
+
+#: src/Document.vala:254
+msgid "Fit document to window"
+msgstr "Adaptar lo document a la fenèstra"
+
+#: src/Document.vala:258
+msgid "Hide window menubar"
+msgstr "Amagar la barra de menú fenèstra"
+
+#: src/Document.vala:262
+msgid "Hide window toolbars"
+msgstr "Rescondre las barras d'aisinas fenèstra"
+
+#: src/Document.vala:266
+msgid "Hide UI elements"
+msgstr "Amagar los elements d’interfàcia"
+
+#: src/Document.vala:270
+msgid "No preferences"
+msgstr "Cap de preferéncias"
+
+#: src/Document.vala:281
+msgid "Adding notes"
+msgstr "Apondon de nòtas"
+
+#: src/Document.vala:285
+msgid "Inserting elements"
+msgstr "Insercion d’elements"
+
+#: src/Document.vala:289
+msgid "Copying"
+msgstr "Còpia"
+
+#: src/Document.vala:293
+msgid "Extracting contents"
+msgstr "Extraccion del contengut"
+
+#: src/Document.vala:297
+msgid "Filling interactive forms"
+msgstr "Garnir los formularis interactius"
+
+#: src/Document.vala:301
+msgid "Modifying"
+msgstr "Modificacion"
+
+#: src/Document.vala:305
+msgid "Printing"
+msgstr "Impression"
+
+#: src/Document.vala:309
+msgid "Printing in high resolution"
+msgstr "Impression en nauta resolucion"
+
+#: src/Document.vala:318
+msgid "Flip on the long edge"
+msgstr "Pivotar sul bòrd long"
+
+#: src/Document.vala:321
+msgid "Flip on the short edge"
+msgstr "Pivotar sul bòrd cort"
+
+#: src/Document.vala:324
+msgid "Only single sided"
+msgstr "Solament una fàcia unica"
+
+#: src/Document.vala:328
+msgid "No preference"
+msgstr "Cap de preferéncia"
+
+#: src/Document.vala:352
+msgid "Not compliant"
+msgstr "Non confòrme"
+
+#: src/KeywordList.vala:45
+msgid "Keyword"
+msgstr "Mot clau"
+
+#: src/KeywordList.vala:82
+msgid "Add Keyword"
+msgstr "Apondre un mot clau"
+
+#: src/KeywordRow.vala:29
+msgid "Delete Keyword"
+msgstr "Suprimir lo mot clau"
+
+#: src/gtk/date-row.ui:8
+msgid "Remove Date"
+msgstr "Suprimir la data"
+
+#: src/gtk/date-row.ui:20
+msgid "Show Calendar"
+msgstr "Afichar lo calendièr"
+
+#: src/gtk/date-row.ui:49
+msgid "Today"
+msgstr "Uèi"
+
+#: src/gtk/date-row.ui:56
+msgid "Tomorrow"
+msgstr "Deman"
+
+#: src/gtk/details-list.ui:15
+msgid "Format"
+msgstr "Format"
+
+#: src/gtk/details-list.ui:25
+msgid "Layout"
+msgstr "Disposicion"
+
+#: src/gtk/details-list.ui:35
+msgid "Duplex"
+msgstr "Recto-verso"
+
+#: src/gtk/details-list.ui:45
+msgid "Subtype"
+msgstr "Sostipe"
+
+#: src/gtk/details-list.ui:55
+msgid "Viewer Preferences"
+msgstr "Preferéncias del visionador"
+
+#: src/gtk/details-list.ui:62
+msgid "Permissions"
+msgstr "Autorizacions"
+
+#: src/gtk/document-view.ui:45
+msgid "Title"
+msgstr "Títol"
+
+#: src/gtk/document-view.ui:51
+msgid "Author"
+msgstr "Autor"
+
+#: src/gtk/document-view.ui:57
+msgid "Creation Software"
+msgstr "Logicial de creacion"
+
+#: src/gtk/document-view.ui:63
+msgid "Subject"
+msgstr "Subjècte"
+
+#: src/gtk/document-view.ui:69
+msgid "Conversion Software"
+msgstr "Logicial de conversion"
+
+#: src/gtk/document-view.ui:75
+msgid "Creation Date"
+msgstr "Data de creacion"
+
+#: src/gtk/document-view.ui:81
+msgid "Modification Date"
+msgstr "Data de modificacion"
+
+#: src/gtk/document-view.ui:94
+msgid "Non-Editable Properties"
+msgstr "Proprietats non modificablas"
+
+#: src/gtk/keyword-list.ui:6
+msgid "Keywords"
+msgstr "Mots clau"
+
+#: src/gtk/keyword-list.ui:12
+msgid "Add a keyword"
+msgstr "Apondre un mot clau"
+
+#: src/gtk/save-changes-dialog.ui:6
+msgid "Save Changes?"
+msgstr "Enregistrar las modificacions ?"
+
+#: src/gtk/save-changes-dialog.ui:7
+msgid ""
+"Open documents contain unsaved changes. Changes which are not saved will be "
+"permanently lost."
+msgstr ""
+"Los document dobèrts contenon de modificacions pas enregistradas. Las "
+"modificacions pas enregistradas seràn perdudas per totjorn."
+
+#: src/gtk/save-changes-dialog.ui:11
+msgid "_Cancel"
+msgstr "_Anullar"
+
+#: src/gtk/save-changes-dialog.ui:12
+msgid "_Discard"
+msgstr "_Ignorar"
+
+#: src/gtk/shortcut-window.ui:11
+msgctxt "shortcut window"
+msgid "General"
+msgstr "General"
+
+#: src/gtk/shortcut-window.ui:14
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Sortir"
+
+#: src/gtk/shortcut-window.ui:21
+msgctxt "shortcut window"
+msgid "New window"
+msgstr "Fenèstra novèla"
+
+#: src/gtk/shortcut-window.ui:28
+msgctxt "shortcut window"
+msgid "Close window"
+msgstr "Tampar la fenèstra"
+
+#: src/gtk/shortcut-window.ui:35
+msgctxt "shortcut window"
+msgid "Keyboard Shortcuts"
+msgstr "Acorchis de clavièr"
+
+#: src/gtk/shortcut-window.ui:43
+msgctxt "shortcut window"
+msgid "Editor"
+msgstr "Editor"
+
+#: src/gtk/shortcut-window.ui:47
+msgctxt "shortcut window"
+msgid "Open"
+msgstr "Dobrir"
+
+#: src/gtk/shortcut-window.ui:54
+msgctxt "shortcut window"
+msgid "Save"
+msgstr "Enregistrar"
+
+#: src/gtk/shortcut-window.ui:61
+msgctxt "shortcut window"
+msgid "Save As…"
+msgstr "Enregistrar jos…"
