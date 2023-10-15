@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: io.github.diegoivan.pdf_metadata_editor\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-07 07:33+0300\n"
-"PO-Revision-Date: 2023-10-07 07:39+0300\n"
+"PO-Revision-Date: 2023-10-15 13:15+0300\n"
 "Last-Translator: Sabri Ünal <libreajans@gmail.com>\n"
 "Language-Team: Turkish <takim@gnome.org.tr>\n"
 "Language: tr\n"
@@ -340,7 +340,7 @@ msgstr "İ_ptal"
 
 #: src/gtk/save-changes-dialog.ui:12
 msgid "_Discard"
-msgstr "_Vazgeç"
+msgstr "_Gözden Çıkar"
 
 #: src/gtk/shortcut-window.ui:11
 msgctxt "shortcut window"
