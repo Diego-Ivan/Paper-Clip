@@ -40,6 +40,16 @@ public class PaperClip.KeywordList : Adw.PreferencesGroup {
         }
     }
 
+    construct {
+        var action_group = new SimpleActionGroup ();
+        var action = new SimpleAction ("add-keyword", null);
+        action.activate.connect (() => document.add_keyword (""));
+
+        action_group.add_action (action);
+
+        insert_action_group ("keyword-list", action_group);
+    }
+
     private Gtk.Widget create_keyword_row (Object item) {
         var row = new KeywordRow () {
             title = _("Keyword"),
@@ -107,11 +117,6 @@ public class PaperClip.KeywordList : Adw.PreferencesGroup {
         if (selected_row != empty_state_row) {
             return;
         }
-        document.add_keyword ("");
-    }
-
-    [GtkCallback]
-    private void on_add_button_clicked () {
         document.add_keyword ("");
     }
 }

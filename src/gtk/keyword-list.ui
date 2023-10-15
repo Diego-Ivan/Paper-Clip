@@ -10,7 +10,7 @@
         <property name="icon-name">list-add-symbolic</property>
         <property name="visible" bind-source="PaperClipKeywordList" bind-property="is-empty" bind-flags="sync-create | invert-boolean"/>
         <property name="tooltip-text" translatable="yes">Add a keyword</property>
-        <signal name="clicked" swapped="no" handler="on_add_button_clicked"/>
+        <property name="action-name">keyword-list.add-keyword</property>
         <style>
           <class name="flat"/>
         </style>
@@ -23,6 +23,17 @@
         <style>
           <class name="boxed-list"/>
         </style>
+      </object>
+    </child>
+
+    <child>
+      <object class="GtkShortcutController">
+        <child>
+          <object class="GtkShortcut">
+            <property name="trigger">&lt;Control&gt;Return</property>
+            <property name="action">action(keyword-list.add-keyword)</property>
+          </object>
+        </child>
       </object>
     </child>
   </template>
