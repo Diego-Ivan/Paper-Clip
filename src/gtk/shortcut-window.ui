@@ -62,6 +62,13 @@
                 <property name="accelerator">&lt;control&gt;&lt;shift&gt;s</property>
               </object>
             </child>
+
+            <child>
+              <object class="GtkShortcutsShortcut">
+                <property name="title" translatable="yes" context="shortcut window">Add a keyword</property>
+                <property name="accelerator">&lt;control&gt;Return</property>
+              </object>
+            </child>
           </object>
         </child>
       </object>
