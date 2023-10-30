@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: io.github.diegoivan.pdf_metadata_editor\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-07 07:33+0300\n"
-"PO-Revision-Date: 2023-10-15 13:15+0300\n"
+"POT-Creation-Date: 2023-10-29 16:39+0300\n"
+"PO-Revision-Date: 2023-10-29 16:40+0300\n"
 "Last-Translator: Sabri Ünal <libreajans@gmail.com>\n"
 "Language-Team: Turkish <takim@gnome.org.tr>\n"
 "Language: tr\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.4\n"
+"X-Generator: Poedit 3.4.1\n"
 "X-POOTLE-MTIME: 1433334275.000000\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
@@ -40,30 +40,17 @@ msgstr ""
 "PDF belgelerinin başlığını, yazarını, anahtar kelimelerini ve daha fazla "
 "ayrıntısını düzenle"
 
-#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:16
-msgid "Paper Clip Version 3.5"
-msgstr "Paper Clip 3.5 Sürümü"
-
-#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:17
-msgid "The latest release of Paper Clip brings the following changes:"
-msgstr "Paper Clip'in son sürümü aşağıdaki değişikliklerle geliyor:"
-
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:19
-msgid "Small cosmetic changes to follow GNOME 45 look-and-feel"
-msgstr ""
-"GNOME 45 görünüm ve hissini takip etmek için küçük kozmetik değişiklikler"
+msgid "PDF"
+msgstr "PDF"
 
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:20
-msgid "The app can open now multiple files in different windows"
-msgstr "Uygulama artık birden çok dosyayı farklı pencerelerde açabiliyor"
+msgid "Metadata"
+msgstr "Üst veri"
 
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:21
-msgid "Russian Translation by Ser82-png"
-msgstr " Rusça çeviri eklendi, teşekkürler Ser82-png"
-
-#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:68
-msgid "Diego Iván"
-msgstr "Diego Iván"
+msgid "Editor"
+msgstr "Düzenleyici"
 
 #. translators: Write your name<email> here :D
 #: src/application.vala:152
@@ -230,11 +217,11 @@ msgstr "Tercih yok"
 msgid "Not compliant"
 msgstr "Uyumsuz"
 
-#: src/KeywordList.vala:45
+#: src/KeywordList.vala:55
 msgid "Keyword"
 msgstr "Anahtar sözcük"
 
-#: src/KeywordList.vala:82
+#: src/KeywordList.vala:92
 msgid "Add Keyword"
 msgstr "Anahtar Sözcük Ekle"
 
@@ -386,3 +373,27 @@ msgstr "Kaydet"
 msgctxt "shortcut window"
 msgid "Save As…"
 msgstr "Farklı Kaydet…"
+
+#: src/gtk/shortcut-window.ui:68
+msgctxt "shortcut window"
+msgid "Add a keyword"
+msgstr "Anahtar sözcük ekle"
+
+#~ msgid "Paper Clip Version 3.5"
+#~ msgstr "Paper Clip 3.5 Sürümü"
+
+#~ msgid "The latest release of Paper Clip brings the following changes:"
+#~ msgstr "Paper Clip'in son sürümü aşağıdaki değişikliklerle geliyor:"
+
+#~ msgid "Small cosmetic changes to follow GNOME 45 look-and-feel"
+#~ msgstr ""
+#~ "GNOME 45 görünüm ve hissini takip etmek için küçük kozmetik değişiklikler"
+
+#~ msgid "The app can open now multiple files in different windows"
+#~ msgstr "Uygulama artık birden çok dosyayı farklı pencerelerde açabiliyor"
+
+#~ msgid "Russian Translation by Ser82-png"
+#~ msgstr " Rusça çeviri eklendi, teşekkürler Ser82-png"
+
+#~ msgid "Diego Iván"
+#~ msgstr "Diego Iván"
