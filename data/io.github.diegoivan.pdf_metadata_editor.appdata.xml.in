@@ -9,6 +9,17 @@
   <description>
     <p>Edit the title, author, keywords and more details of your PDF documents</p>
   </description>
+  
+  <categories>
+      <category>GTK</category>
+      <category>Utility</category>
+      <category>Office</category>
+  </categories>
+  <keywords>
+      <keyword>PDF</keyword>
+      <keyword>Metadata</keyword>
+      <keyword>Editor</keyword>
+  </keywords>    
 
   <releases>
     <release version="3.5" date="2023-10-02">
@@ -65,7 +76,9 @@
     <content_attribute id="money-gambling">none</content_attribute>
   </content_rating>
 
-  <developer_name>Diego Iván</developer_name>
+  <developer_name translatable="no">Diego Iván</developer_name>
+  <translation type="gettext">pdf-metadata-editor</translation>
+  <launchable type="desktop-id">io.github.diegoivan.pdf_metadata_editor.desktop</launchable>
   <url type="homepage">https://github.com/Diego-Ivan/Paper-Clip</url>
   <url type="vcs-browser">https://github.com/Diego-Ivan/Paper-Clip</url>
   <url type="bugtracker">https://github.com/Diego-Ivan/Paper-Clip/issues</url>
