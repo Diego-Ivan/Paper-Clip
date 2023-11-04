@@ -22,14 +22,13 @@
   </keywords>    
 
   <releases>
-    <release version="3.5" date="2023-10-02">
+    <release version="3.6" date="2023-11-03">
       <description translatable="no">
-        <p>Paper Clip Version 3.5</p>
-        <p>The latest release of Paper Clip brings the following changes:</p>
+        <p>Paper Clip Version 3.6: Keyboard Accelerated</p>
+        <p>The latest release of Paper Clip brings a couple of small improvements: </p>
         <ul>
-          <li>Small cosmetic changes to follow GNOME 45 look-and-feel</li>
-          <li>The app can open now multiple files in different windows</li>
-          <li>Russian Translation by Ser82-png</li>
+          <li>Ctrl+Return now adds a new keyword in the list</li>
+          <li>Updated Translations</li>
         </ul>
       </description>
     </release>
