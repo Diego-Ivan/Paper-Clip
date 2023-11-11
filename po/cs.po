@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: pdf-metadata-editor\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-02 13:04-0600\n"
-"PO-Revision-Date: 2023-07-18 13:52+0200\n"
+"PO-Revision-Date: 2023-11-11 11:36+0100\n"
 "Last-Translator: Amerey.eu <info@amerey.eu>\n"
 "Language-Team: \n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.3.1\n"
+"X-Generator: Poedit 3.4.1\n"
 
 #: data/io.github.diegoivan.pdf_metadata_editor.desktop.in:3
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:7
@@ -36,46 +36,44 @@ msgstr ""
 "Upravte název, autora, klíčová slova a další podrobnosti vašich dokumentů PDF"
 
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:16
-#, fuzzy
 msgid "Paper Clip Version 3.5"
-msgstr "Paper Clip"
+msgstr "Paper Clip verze 3.5"
 
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:17
 msgid "The latest release of Paper Clip brings the following changes:"
-msgstr ""
+msgstr "Nejnovější verze Paper Clip přináší následující změny:"
 
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:19
 msgid "Small cosmetic changes to follow GNOME 45 look-and-feel"
-msgstr ""
+msgstr "Malé kosmetické změny, které odpovídají vzhledu a chování GNOME 45"
 
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:20
 msgid "The app can open now multiple files in different windows"
-msgstr ""
+msgstr "Aplikace nyní může otevřít více souborů v různých oknech"
 
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:21
 msgid "Russian Translation by Ser82-png"
-msgstr ""
+msgstr "Ruský překlad od Ser82-png"
 
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:27
-#, fuzzy
 msgid "Paper Clip Version 3.2"
-msgstr "Paper Clip"
+msgstr "Paper Clip verze 3.2"
 
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:28
 msgid "This new version of Paper Clip has the following changes"
-msgstr ""
+msgstr "Tato nová verze má následující změny"
 
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:30
 msgid "Czech translation"
-msgstr ""
+msgstr "Český překlad"
 
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:31
 msgid "Better rendering for thumbnails"
-msgstr ""
+msgstr "Lepší vykreslování náhledů"
 
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:32
 msgid "Better cache management"
-msgstr ""
+msgstr "Lepší správa mezipaměti"
 
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:79
 msgid "Diego Iván"
@@ -104,7 +102,7 @@ msgstr "Sem přetáhněte PDF soubor"
 
 #: src/window.ui:149
 msgid "_New Window"
-msgstr ""
+msgstr "_Nové okno"
 
 #: src/window.ui:155 src/gtk/save-changes-dialog.ui:13
 msgid "_Save"
@@ -255,17 +253,16 @@ msgid "Keyword"
 msgstr "Klíčové slovo"
 
 #: src/KeywordList.vala:82
-#, fuzzy
 msgid "Add Keyword"
-msgstr "Klíčové slovo"
+msgstr "Přidat klíčové slovo"
 
 #: src/gtk/date-row.ui:8
 msgid "Remove Date"
-msgstr ""
+msgstr "Odstranit datum"
 
 #: src/gtk/date-row.ui:20
 msgid "Show Calendar"
-msgstr ""
+msgstr "Zobrazit kalendář"
 
 #: src/gtk/date-row.ui:49
 msgid "Today"
@@ -316,7 +313,6 @@ msgid "Subject"
 msgstr "Předmět"
 
 #: src/gtk/document-view.ui:69
-#, fuzzy
 msgid "Conversion Software"
 msgstr "Software pro tvorbu"
 
@@ -341,16 +337,16 @@ msgid ""
 "Open documents contain unsaved changes. Changes which are not saved will be "
 "permanently lost."
 msgstr ""
+"Otevřené dokumenty obsahují neuložené změny. Změny, které se neuloží, budou "
+"trvale ztraceny."
 
 #: src/gtk/save-changes-dialog.ui:11
-#, fuzzy
 msgid "_Cancel"
-msgstr "Zrušit"
+msgstr "_Zrušit"
 
 #: src/gtk/save-changes-dialog.ui:12
-#, fuzzy
 msgid "_Discard"
-msgstr "Zahodit"
+msgstr "_Zahodit"
 
 #: src/gtk/shortcut-window.ui:11
 msgctxt "shortcut window"
@@ -365,15 +361,14 @@ msgstr "Ukončit"
 #: src/gtk/shortcut-window.ui:21
 msgctxt "shortcut window"
 msgid "New window"
-msgstr ""
+msgstr "Nové okno"
 
 #: src/gtk/shortcut-window.ui:28
 msgctxt "shortcut window"
 msgid "Close window"
-msgstr ""
+msgstr "Zavřít okno"
 
 #: src/gtk/shortcut-window.ui:35
-#, fuzzy
 msgctxt "shortcut window"
 msgid "Keyboard Shortcuts"
 msgstr "_Klávesové zkratky"
@@ -381,7 +376,7 @@ msgstr "_Klávesové zkratky"
 #: src/gtk/shortcut-window.ui:43
 msgctxt "shortcut window"
 msgid "Editor"
-msgstr ""
+msgstr "Editor"
 
 #: src/gtk/shortcut-window.ui:47
 msgctxt "shortcut window"
