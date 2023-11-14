@@ -46,6 +46,7 @@ public class PaperClip.DocumentView : Adw.Bin {
     private unowned Gtk.ScrolledWindow scrolled_window;
 
     private BindingGroup document_bindings = new BindingGroup ();
+    private Gtk.FileLauncher file_launcher;
 
     private Document _document;
     public Document document {
@@ -70,6 +71,9 @@ public class PaperClip.DocumentView : Adw.Bin {
     }
 
     construct {
+        file_launcher = new Gtk.FileLauncher (null) {
+            always_ask = true
+        };
         var action_group = new SimpleActionGroup ();
         insert_action_group ("editor", action_group);
 
@@ -92,6 +96,8 @@ public class PaperClip.DocumentView : Adw.Bin {
                                 SYNC_CREATE | BIDIRECTIONAL);
         document_bindings.bind ("modification-date", modification_row, "date",
                                 SYNC_CREATE | BIDIRECTIONAL);
+        document_bindings.bind ("original-file", file_launcher, "file",
+                                SYNC_CREATE);
     }
 
     private void measure_filename () {
@@ -117,12 +123,8 @@ public class PaperClip.DocumentView : Adw.Bin {
     }
 
     public async void open_on_app () {
-        var portal = new Xdp.Portal ();
-        var parent = Xdp.parent_new_gtk ((Gtk.Window) get_root ());
-
         try {
-            bool result = yield portal.open_uri (parent, document.original_file.get_uri (),
-                                                 ASK, null);
+            bool result = yield file_launcher.launch ((Gtk.Window) root, null);
             if (!result) {
                 debug ("File was not opened by the user");
             }
