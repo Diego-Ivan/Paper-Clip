@@ -34,6 +34,9 @@
         {
             "name" : "poppler",
             "buildsystem" : "cmake-ninja",
+            "cleanup": [
+                "/bin"
+            ],
             "config-opts" : [
                 "-DENABLE_LIBOPENJPEG:STRING=none",
                 "-DBUILD_GTK_TESTS=OFF",
@@ -53,6 +56,32 @@
                     "type" : "git",
                     "tag" : "poppler-23.01.0",
                     "commit" : "4259ff0c2067d302f97d87221a442eec8e88d45c"
+                }
+            ]
+        },
+        {
+            "name" : "libboost",
+            "buildsystem" : "simple",
+            "build-commands": [
+            	"./bootstrap.sh --prefix=/app",
+            	"./b2 install"
+            ],
+            "sources" : [
+                {
+                    "url" : "https://boostorg.jfrog.io/artifactory/main/release/1.83.0/source/boost_1_83_0.tar.gz",
+                    "type" : "archive",
+                    "sha256" : "c0685b68dd44cc46574cce86c4e17c0f611b15e195be9848dfd0769a0a207628"
+                }
+            ]
+        },
+        {
+            "name" : "libexempi",
+            "buildsystem" : "autotools",
+            "sources" : [
+                {
+                    "url" : "https://gitlab.freedesktop.org/libopenraw/exempi/-/archive/2.6.4/exempi-2.6.4.tar.gz",
+                    "type" : "archive",
+                    "sha256" : "7d1b0e96b848fe3fcf5f5bdb353cc82527b6629e40ed838efe9ffc9108e1b99b"
                 }
             ]
         },
