@@ -407,7 +407,7 @@ namespace Xmp {
         [CCode (cname = "xmp_files_new")]
         public File ();
         [CCode (cname = "xmp_files_open_new")]
-        public File.open (string path, OpenFileOptions options);
+        public static File? open_new (string path, OpenFileOptions options);
 
         [CCode (cname = "xmp_files_open")]
         public bool open_file (string path, OpenFileOptions options);
@@ -416,6 +416,8 @@ namespace Xmp {
 
         public bool get_xmp (Packet xmp);
         public bool can_put_xmp (Packet xmp);
+        public bool put_xmp (Packet xmp);
+
         [CCode (cname = "xmp_files_can_put_xmp_cstr")]
         public bool can_put_string (string xmp_packet);
 
