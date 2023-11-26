@@ -34,6 +34,24 @@ public class PaperClip.DocumentThumbnail : Adw.Bin {
         }
     }
 
+    ~DocumentThumbnail () {
+        thumbnail_image.clear ();
+    }
+
+    private Gdk.MemoryFormat? _default_format = null;
+    private Gdk.MemoryFormat default_format {
+        get {
+            if (_default_format == null) {
+                if (BYTE_ORDER == LITTLE_ENDIAN) {
+                    _default_format = B8G8R8A8_PREMULTIPLIED;
+                } else {
+                    _default_format = A8R8G8B8_PREMULTIPLIED;
+                }
+            }
+            return _default_format;
+        }
+    }
+
     construct {
         child = thumbnail_image;
         thumbnail_image.add_css_class ("icon-dropshadow");
@@ -42,6 +60,7 @@ public class PaperClip.DocumentThumbnail : Adw.Bin {
     private async void generate_png () {
         try {
             Gdk.Texture thumbnail_texture = yield ThreadManager.run_in_thread (create_thumbnail_in_cache);
+            thumbnail_image.clear ();
             thumbnail_image.paintable = scale_thumbnail (thumbnail_texture);
         }
         catch (Error e) {
@@ -89,13 +108,10 @@ public class PaperClip.DocumentThumbnail : Adw.Bin {
         snapshot.append_scaled_texture (thumbnail_texture, filter, thumbnail_rectangle);
         thumbnail_image.pixel_size = MAX_SIZE / 2;
 
-        return snapshot.to_paintable ({scaled_width, scaled_height});
+        return snapshot.free_to_paintable ({scaled_width, scaled_height});
     }
 
     private Gdk.Texture? create_thumbnail_in_cache () throws Error {
-        Cairo.Status status = NULL_POINTER;
-        string? cache_path = "";
-
         Poppler.Page first_page = document.get_page_for_index (0);
         double width, height;
 
@@ -103,47 +119,34 @@ public class PaperClip.DocumentThumbnail : Adw.Bin {
 
         var surface = new Cairo.ImageSurface (Cairo.Format.ARGB32, (int) width, (int) height);
         var context = new Cairo.Context (surface);
-
         first_page.render (context);
 
-        cache_path = create_cache_file ();
+        size_t size = (size_t) (width * height * 4);
 
-        if (cache_path == null) {
-            status = INVALID_PATH_DATA;
-        }
+        /*
+         * We have to use this intermediate method, because the array returned by sirface.get_data
+         * does not have an array length, and therefore automatically passes -1 to the Bytes.new
+         * method, which will then overflow the parameter and will try to allocate an insane amount
+         * of memory. A complete mess.
+         *
+         * So to go around that, we calculated the size above (pixels * number of bytes per pixel),
+         * and create a sized array using copy_bytes method. We will use Bytes.take instead
+         * of Bytes.new as we will avoid creating another copy.
+         */
+        var bytes = new Bytes.take (copy_bytes (surface.get_data (), size));
+        var memory_texture = new Gdk.MemoryTexture (surface.get_width (), surface.get_height (),
+                                                    default_format, bytes,
+                                                    surface.get_stride ());
 
-        status = surface.write_to_png (create_cache_file ());
-
-        if (status != SUCCESS || cache_path == null || cache_path == "") {
-            throw new ThumbnailError.FAILED_EXPORT (@"Failed to export PNG file: $status");
-        }
-
-        return Gdk.Texture.from_filename (cache_path);;
+        return memory_texture;
     }
 
-    private string? create_cache_file () {
-        string destination_path = Path.build_path (Path.DIR_SEPARATOR_S,
-                                                   Environment.get_tmp_dir (),
-                                                   "thumbnails");
-        int result = DirUtils.create_with_parents (destination_path, 0777);
-        return_if_fail (result > -1);
-
-        string destination_file = Path.build_filename (destination_path,
-                                                       "%s.png".printf (document.original_file.get_basename ()));
-
-        var file = File.new_for_path (destination_file);
-
-        if (!file.query_exists ()) {
-            try {
-                file.create (NONE);
-            }
-            catch (Error e) {
-                critical (e.message);
-                return null;
-            }
+    private uint8[] copy_bytes ([CCode (array_length = false)]uint8[] data, size_t size) {
+        uint8[] copy = new uint8[size];
+        for (size_t i = 0; i < size; i++) {
+            copy[i] = data[i];
         }
-
-        return destination_file;
+        return copy;
     }
 }
 
