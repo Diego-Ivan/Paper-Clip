@@ -20,6 +20,10 @@
 
 public class PaperClip.Document : Object {
     private ListStore keyword_list = new ListStore (typeof(StringObject));
+
+    private const string PDF_NS = "http://ns.adobe.com/pdf/1.3/";
+    private const string XMP_NS = "http://ns.adobe.com/xap/1.0/";
+
     private Poppler.Document _document;
     private Poppler.Document document {
         get {
@@ -33,6 +37,9 @@ public class PaperClip.Document : Object {
 
     public File original_file { get; construct; }
     public File cached_file { get; private set; }
+
+    [CCode (notify = false)]
+    public bool has_xmp { get; private set; default = false; }
 
     public string author {
         owned get {
@@ -151,10 +158,34 @@ public class PaperClip.Document : Object {
     public async Document (File original_file) {
         Object (original_file: original_file);
         yield load_document ();
+
+        try {
+            has_xmp = yield ThreadManager.run_in_thread<bool> (load_xmp);
+        } catch (Error e) {
+            critical (e.message);
+        }
     }
 
-    public void save (string path)
-    {
+    // This function is intended to be run from a background thread
+    private bool load_xmp () throws Error {
+        bool success = false;
+        var xmp_file = new Xmp.File ();
+        bool opened_file = xmp_file.open_file (original_file.get_path (),
+                                               FORUPDATE | INBACKGROUND);
+        if (!opened_file) {
+            debug ("Failed to open file with XMP");
+            return false;
+        }
+        var xmp_meta = new Xmp.Packet.empty ();
+        success = xmp_file.get_xmp (xmp_meta);
+        if (!success) {
+            debug ("File does not have XMP metadata");
+        }
+        xmp_file?.close (NOOPTION);
+        return success;
+    }
+
+    public void save (string path) {
         document.keywords = serialize_keywords ();
         try {
             document.save (path);
@@ -162,6 +193,32 @@ public class PaperClip.Document : Object {
         catch (Error e) {
             critical ("%s : %s", e.domain.to_string (), e.message);
         }
+        if (has_xmp) {
+            save_xmp ();
+        }
+    }
+
+    private void save_xmp () {
+        var xmp_file = new Xmp.File ();
+        xmp_file.open_file (original_file.get_path (), FORUPDATE);
+
+        var xmp_meta = new Xmp.Packet.empty ();
+        xmp_file.get_xmp (xmp_meta);
+
+        if (xmp_meta.has_property (PDF_NS, "Producer")) {
+            xmp_meta.set_property (PDF_NS, "Producer", producer, 0x0);
+        }
+        if (xmp_meta.has_property (XMP_NS, "CreatorTool")) {
+            xmp_meta.set_property (XMP_NS, "CreatorTool", creator, 0x0);
+        }
+        if (xmp_meta.has_property (XMP_NS, "CreateDate")) {
+            xmp_meta.set_property (XMP_NS, "CreateDate", creation_date.format_iso8601 (), 0x0);
+        }
+        if (xmp_file.can_put_xmp (xmp_meta)) {
+            debug ("Writing XMP Metadata");
+            xmp_file.put_xmp (xmp_meta);
+        }
+        xmp_file.close (SAFEUPDATE);
     }
 
     public void add_keyword (string keyword) {
