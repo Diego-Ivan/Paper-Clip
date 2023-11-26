@@ -31,7 +31,7 @@ public class PaperClip.Document : Object {
         }
     }
 
-    public File original_file { get; private set; }
+    public File original_file { get; construct; }
     public File cached_file { get; private set; }
 
     public string author {
@@ -148,8 +148,9 @@ public class PaperClip.Document : Object {
 
     public signal void keyword_changed ();
 
-    public async Document (string uri) {
-        yield load_document (uri);
+    public async Document (File original_file) {
+        Object (original_file: original_file);
+        yield load_document ();
     }
 
     public void save (string path)
@@ -353,8 +354,8 @@ public class PaperClip.Document : Object {
         }
     }
 
-    private async void load_document (string uri) {
-        cached_file = yield create_copy (uri);
+    private async void load_document () {
+        cached_file = yield create_copy_from_original ();
         try {
             document = new Poppler.Document.from_gfile (cached_file, null);
         }
@@ -363,10 +364,10 @@ public class PaperClip.Document : Object {
         }
     }
 
-    private async File create_copy (string uri) {
-        original_file = File.new_for_uri (uri);
+    private async File create_copy_from_original () {
+        unowned string tmp_dir = Environment.get_tmp_dir ();
         string destination_path = Path.build_path (Path.DIR_SEPARATOR_S,
-                                                   Environment.get_tmp_dir (),
+                                                   tmp_dir,
                                                    "copies");
 
         int res = DirUtils.create_with_parents (destination_path, 0777);
