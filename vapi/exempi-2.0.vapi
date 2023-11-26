@@ -195,6 +195,30 @@ namespace Xmp {
         COMPOSITE_MASK
     }
 
+    [Flags]
+    [CCode (cprefix = "XMP_SERIAL_", cname = "uint32_t")]
+    public enum SerializeOptions {
+        OMITPACKETWRAPPER,
+        READONLYPACKET,
+        USECOMPACTFORMAT,
+        INCLUDETHUMBNAILPAD,
+        EXACTPACKETLENGTH,
+        WRITEALIASCOMMENTS,
+        OMITALLFORMATTING,
+        [CCode (cname = "_XMP_LITTLEENDIAN_BIT")]
+        LITTLE_ENDIAN_BIT,
+        [CCode (cname = "_XMP_UTF16_BIT")]
+        UTF16_BIT,
+        [CCode (cname = "_XMP_UTF32_BIT")]
+        UTF32_BIT,
+        ENCODINGMASK,
+        ENCODEUTF8,
+        ENCODEUTF16BIG,
+        ENCODEUTF16LITTLE,
+        ENCODEUTF32BIG,
+        ENCODEUTF32LITTLE
+    }
+
     [CCode (has_type_id = false, free_function = "g_free")]
     internal struct DateTime {
         int32 year;
@@ -263,6 +287,30 @@ namespace Xmp {
         public Packet (string buffer);
 
         public Packet copy ();
+
+        [CCode (cname = "__vala_xmp_serialize")]
+        public bool serialize (out string buffer, SerializeOptions options, uint32 padding) {
+            String xmp_str = new String ();
+            bool retval = serialize_xmp (xmp_str, (uint32) options, padding);
+            buffer = xmp_str.to_string ();
+            return retval;
+        }
+
+        [CCode (cname = "xmp_serialize")]
+        private bool serialize_xmp (String buffer, uint32 options, uint32 padding);
+
+        [CCode (cname = "__vala_xmp_serialize_and_format")]
+        public bool serialize_and_format (out string buffer, SerializeOptions options,
+                                          uint32 padding, string new_line, string tab, int32 indent) {
+            String xmp_str = new String ();
+            bool retval = serialize_and_format_xmp (xmp_str, (uint32) options, padding, new_line,
+                                                    tab, indent);
+            buffer = xmp_str.to_string ();
+            return retval;
+        }
+
+        [CCode (cname = "xmp_serialize_and_format")]
+        private bool serialize_and_format_xmp (String buffer, uint32 options, uint32 padding, string new_line, string tab, int32 indent);
 
         [CCode (cname = "__vala_xmp_get_property")]
         public bool get_property (string schema, string name, out string property, ref PropsBits? props_bits) {
@@ -438,6 +486,38 @@ namespace Xmp {
         private bool get_file_info_xmp_str (String? file_path, out OpenFileOptions options, out FileType format, out FileFormatOptions handler_flags);
     }
 
+    [CCode (cname = "struct _XmpIterator", lower_case_cprefix = "xmp_iterator_", free_function = "xmp_iterator_free")]
+    public class Iterator {
+        [CCode (cname = "xmp_iterator_new")]
+        public Iterator (Packet xmp, string schema, string prop_name, IterOptions options);
+
+        [CCode (cname = "__vala_xmp_iter_next")]
+        public bool next (ref string? schema, ref string? prop_name, ref string? prop_value,
+                          ref PropsBits? options) {
+            String schema_str = new String (), name_str = new String (), value_str = new String ();
+            uint32 bits = 0x0;
+            bool retval = next_xmp (schema_str, name_str, value_str, out bits);
+            if (schema != null) {
+                schema = schema_str.to_string ();
+            }
+            if (prop_name != null) {
+                prop_name = name_str.to_string ();
+            }
+            if (prop_value != null) {
+                prop_value = value_str.to_string ();
+            }
+            if (options != null) {
+                options = (PropsBits) bits;
+            }
+            return retval;
+        }
+
+        [CCode (cname = "xmp_iter_next")]
+        private bool next_xmp (String? schema, String? prop_name, String? prop_value, out uint32? options);
+
+        public bool skip (IterSkipOptions options);
+    }
+
     namespace Namespace {
         [CCode (cname = "__vala_xmp_register_namespace")]
         public bool register_namespace (string namespace_uri, string suggested_prefix, out string registered_prefix) {
@@ -451,13 +531,10 @@ namespace Xmp {
 
         [CCode (cname = "__vala_xmp_namespace_is_registered")]
         public bool namespace_is_registered (string ns, ref string? prefix) {
-            bool retval;
+            var xmp_str = new String ();
+            bool retval = namespace_is_registered_xmp_str (ns, xmp_str);
             if (prefix != null) {
-                var xmp_str = new String ();
-                retval = namespace_is_registered_xmp_str (ns, xmp_str);
                 prefix = xmp_str.to_string ();
-            } else {
-                retval = namespace_is_registered_xmp_str (ns, null);
             }
             return retval;
         }
