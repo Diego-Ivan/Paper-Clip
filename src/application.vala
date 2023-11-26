@@ -51,6 +51,16 @@ public class PaperClip.Application : Adw.Application {
         main_window.present ();
     }
 
+    public override void startup () {
+        base.startup ();
+        Xmp.init ();
+    }
+
+    public override void shutdown () {
+        base.shutdown ();
+        Xmp.terminate ();
+    }
+
     public override void open (File[] files, string hint) {
         activate ();
         if (files.length < 1) {
