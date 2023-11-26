@@ -166,7 +166,7 @@ namespace PaperClip {
         }
 
         private async void load_document_to_view (File file) {
-            document_manager.document = doc_view.document = yield new Document (file.get_uri ());
+            document_manager.document = doc_view.document = yield new Document (file);
 
             action_set_enabled ("win.save", true);
             action_set_enabled ("win.save-as", true);
