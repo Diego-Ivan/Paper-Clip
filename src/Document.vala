@@ -205,15 +205,11 @@ public class PaperClip.Document : Object {
         var xmp_meta = new Xmp.Packet.empty ();
         xmp_file.get_xmp (xmp_meta);
 
-        if (xmp_meta.has_property (PDF_NS, "Producer")) {
-            xmp_meta.set_property (PDF_NS, "Producer", producer, 0x0);
-        }
-        if (xmp_meta.has_property (XMP_NS, "CreatorTool")) {
-            xmp_meta.set_property (XMP_NS, "CreatorTool", creator, 0x0);
-        }
-        if (xmp_meta.has_property (XMP_NS, "CreateDate")) {
-            xmp_meta.set_property (XMP_NS, "CreateDate", creation_date.format_iso8601 (), 0x0);
-        }
+        xmp_meta.set_property (PDF_NS, "Producer", producer, 0x0);
+        xmp_meta.set_property (XMP_NS, "CreatorTool", creator, 0x0);
+        xmp_meta.set_property (XMP_NS, "CreateDate", creation_date.format_iso8601 (), 0x0);
+        xmp_meta.set_property (PDF_NS, "Keywords", document.keywords, 0x0);
+
         if (xmp_file.can_put_xmp (xmp_meta)) {
             debug ("Writing XMP Metadata");
             xmp_file.put_xmp (xmp_meta);
