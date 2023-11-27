@@ -32,11 +32,10 @@ public class PaperClip.DateRow : Adw.ActionRow {
             _date = value;
             if (date == null) {
                 subtitle = _("No date set");
-                return;
+            } else {
+                subtitle = date.format ("%x");
+                datetime_to_calendar (date);
             }
-
-            subtitle = date.format ("%x");
-            datetime_to_calendar (date);
         }
     }
 
