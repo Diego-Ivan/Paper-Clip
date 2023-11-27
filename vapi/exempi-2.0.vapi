@@ -162,13 +162,6 @@ namespace Xmp {
         FOLDER_BASED_FORMAT
     }
 
-    [CCode (cname = "int32_t", has_type_id = false, cprefix = "XMP_TZ_")]
-    public enum TimeZone {
-        WEST,
-        UTC,
-        EAST
-    }
-
     [Flags]
     [CCode (cprefix = "XMP_PROP_")]
     public enum PropsBits {
@@ -217,36 +210,6 @@ namespace Xmp {
         ENCODEUTF16LITTLE,
         ENCODEUTF32BIG,
         ENCODEUTF32LITTLE
-    }
-
-    [CCode (has_type_id = false, free_function = "g_free")]
-    internal struct DateTime {
-        int32 year;
-        int32 month;
-        int32 day;
-        int32 hour;
-        int32 minute;
-        int32 second;
-        [CCode (cname = "tzSign")]
-        TimeZone tz_sign;
-        [CCode (cname = "tzHour")]
-        int32 tz_hour;
-        [CCode (cname = "tzMinute")]
-        int32 tz_minute;
-        [CCode (cname = "nanoSecond")]
-        int32 nano_second;
-
-        [CCode (cname = "xmp_date_time_compare")]
-        public int compare (DateTime right);
-
-        [CCode (cname = "__vala_xmp_date_time_to_g_date_time")]
-        public GLib.DateTime to_g_date_time () {
-            var timezone = new GLib.TimeZone.offset (
-                ((this.tz_hour * 3600) + (this.tz_minute * 60)) * this.tz_sign
-            );
-            return new GLib.DateTime (timezone, this.year, this.month, this.day,
-                                      this.hour, this.minute, this.second);
-        }
     }
 
     [CCode (has_type_id = false)]
@@ -313,39 +276,29 @@ namespace Xmp {
         private bool serialize_and_format_xmp (String buffer, uint32 options, uint32 padding, string new_line, string tab, int32 indent);
 
         [CCode (cname = "__vala_xmp_get_property")]
-        public bool get_property (string schema, string name, out string property, ref PropsBits? props_bits) {
+        public bool get_property (string schema, string name, out string property, out PropsBits props_bits) {
             bool retval;
             var xmp_str = new String ();
-            if (props_bits == null) {
-                retval = get_property_xmp_str (schema, name, xmp_str, null);
-            } else {
-                uint32 bits = 0x0;
-                retval = get_property_xmp_str (schema, name, xmp_str, out bits);
-                props_bits = (PropsBits) bits;
-            }
+            uint32 bits;
+            retval = get_property_xmp_str (schema, name, xmp_str, out bits);
+            props_bits = (PropsBits) bits;
             property = xmp_str.to_string ();
             return retval;
         }
         [CCode (cname = "xmp_get_property")]
-        private bool get_property_xmp_str (string scheme, string name, String property, out uint32? propsbits);
+        private bool get_property_xmp_str (string scheme, string name, String property, out uint32 propsbits);
 
         [CCode (cname = "__vala_xmp_get_property_date_time")]
-        public bool get_property_date_time (string schema, string name, out GLib.DateTime property, ref PropsBits? props_bits) {
-            Xmp.DateTime? date;
-            bool retval;
-            if (props_bits == null) {
-                retval = get_property_date (schema, name, out date, null);
+        public bool get_property_date_time (string schema, string name, out GLib.DateTime property, out PropsBits props_bits) {
+            string property_str;
+            bool property_exists = get_property (schema, name, out property_str, out props_bits);
+            if (property_exists) {
+                property = new GLib.DateTime.from_iso8601 (property_str, null);
             } else {
-                uint32 bits = 0x0;
-                retval = get_property_date (schema, name, out date, out bits);
-                props_bits = (PropsBits) bits;
+                property = null;
             }
-            property = date.to_g_date_time ();
-            return retval;
+            return property_exists;
         }
-
-        [CCode (cname = "xmp_get_property_date")]
-        private bool get_property_date (string schema, string name, out Xmp.DateTime date, out uint32? propsbits);
 
         [CCode (cname = "__vala_xmp_get_property_float")]
         public bool get_property_float (string schema, string name, out double property, ref PropsBits? props_bits) {
@@ -416,6 +369,12 @@ namespace Xmp {
         public bool set_property_int32 (string schema, string name, int32 @value, uint32 option_bits);
         public bool set_property_int64 (string schema, string name, int64 @value, uint32 option_bits);
         public bool set_array_item (string schema, string name, int32 index, string @value, uint32 option_bits);
+
+        [CCode (cname = "__vala_xmp_set_property_date")]
+        public bool set_property_date (string schema, string name, GLib.DateTime @value, uint32 option_bits) {
+            return set_property (schema, name, @value.format_iso8601 (), option_bits);
+        }
+
         public bool append_array_item (string schema, string name, uint32 array_options, string @value, uint32 option_bits);
 
         public bool delete_property (string schema, string name);
@@ -519,6 +478,45 @@ namespace Xmp {
     }
 
     namespace Namespace {
+        [CCode (cheader_filename = "exempi/xmpconsts.h", cname = "NS_XMP_META")]
+        public const string XMP_META;
+        [CCode (cheader_filename = "exempi/xmpconsts.h", cname = "NS_RDF")]
+        public const string RDF;
+        [CCode (cheader_filename = "exempi/xmpconsts.h", cname = "NS_EXIF")]
+        public const string EXIF;
+        [CCode (cheader_filename = "exempi/xmpconsts.h", cname = "NS_TIFF")]
+        public const string TIFF;
+        [CCode (cheader_filename = "exempi/xmpconsts.h", cname = "NS_XAP")]
+        public const string XAP;
+        [CCode (cheader_filename = "exempi/xmpconsts.h", cname = "NS_XAP_RIGHTS")]
+        public const string XAP_RIGHTS;
+        [CCode (cheader_filename = "exempi/xmpconsts.h", cname = "NS_DC")]
+        public const string DC;
+        [CCode (cheader_filename = "exempi/xmpconsts.h", cname = "NS_EXIF_AUX")]
+        public const string EXIF_AUX;
+        [CCode (cheader_filename = "exempi/xmpconsts.h", cname = "NS_CRS")]
+        public const string CRS;
+        [CCode (cheader_filename = "exempi/xmpconsts.h", cname = "NS_LIGHTROOM")]
+        public const string LIGHTROOM;
+        [CCode (cheader_filename = "exempi/xmpconsts.h", cname = "NS_PHOTOSHOP")]
+        public const string PHOTOSHOP;
+        [CCode (cheader_filename = "exempi/xmpconsts.h", cname = "NS_CAMERA_RAW_SETTINGS")]
+        public const string CAMERA_RAW_SETTINGS;
+        [CCode (cheader_filename = "exempi/xmpconsts.h", cname = "NS_CAMERA_RAW_SAVED_SETTINGS")]
+        public const string CAMERA_RAW_SAVED_SETTINGS;
+        [CCode (cheader_filename = "exempi/xmpconsts.h", cname = "NS_IPTC4XMP")]
+        public const string IPTC4XMP;
+        [CCode (cheader_filename = "exempi/xmpconsts.h", cname = "NS_TPG")]
+        public const string TPG;
+        [CCode (cheader_filename = "exempi/xmpconsts.h", cname = "NS_DIMENSIONS_TYPE")]
+        public const string DIMENSIONS_TYPE;
+        [CCode (cheader_filename = "exempi/xmpconsts.h", cname = "NS_CC")]
+        public const string CC;
+        [CCode (cheader_filename = "exempi/xmpconsts.h", cname = "NS_PDF")]
+        public const string PDF;
+        [CCode (cheader_filename = "exempi/xmpconsts.h", cname = "NS_XML")]
+        public const string XML;
+
         [CCode (cname = "__vala_xmp_register_namespace")]
         public bool register_namespace (string namespace_uri, string suggested_prefix, out string registered_prefix) {
             var xmp_str = new String ();
