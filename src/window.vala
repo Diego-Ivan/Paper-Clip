@@ -53,7 +53,7 @@ namespace PaperClip {
             ActionEntry[] entries = {
                 { "open", on_open_action },
                 { "open-with", on_open_with_action },
-                { "save", save_file },
+                { "save", save_file_action },
                 { "save-as", save_file_as_action },
                 { "main-menu", on_main_menu_action }
             };
@@ -176,13 +176,17 @@ namespace PaperClip {
             view_stack.visible_child_name = "editor";
         }
 
-        private void save_file () {
+        private void save_file_action () {
+            save_file.begin ();
+        }
+
+        private async void save_file () {
             if (document_manager.document == null || !document_manager.changed) {
                 return;
             }
 
-            document_manager.save (document_manager.document.original_file.get_uri ());
             file_save_animation ();
+            yield document_manager.save (document_manager.document.original_file.get_uri ());
             proceed_with_state ();
             state = NONE;
         }
@@ -212,8 +216,8 @@ namespace PaperClip {
 
             try {
                 File file = yield file_dialog.save (this, null);
-                document_manager.save (file.get_uri ());
                 file_save_animation ();
+                yield document_manager.save (file.get_uri ());
                 proceed_with_state ();
             }
             catch (Error e) {
@@ -294,7 +298,7 @@ namespace PaperClip {
             }
 
             if (response == SAVE) {
-                save_file ();
+                yield save_file ();
                 return;
             }
 

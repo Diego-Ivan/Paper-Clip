@@ -171,7 +171,7 @@ public class PaperClip.Document : Object {
         bool success = false;
         var xmp_file = new Xmp.File ();
         bool opened_file = xmp_file.open_file (original_file.get_path (),
-                                               FORUPDATE | INBACKGROUND);
+                                               READ | INBACKGROUND | ONLYXMP);
         if (!opened_file) {
             debug ("Failed to open file with XMP");
             return false;
@@ -185,25 +185,41 @@ public class PaperClip.Document : Object {
         return success;
     }
 
-    public void save (string path) {
-        document.keywords = serialize_keywords ();
+    public async void save (string uri) {
         try {
-            document.save (path);
-        }
-        catch (Error e) {
-            critical ("%s : %s", e.domain.to_string (), e.message);
-        }
-        if (has_xmp) {
-            save_xmp ();
+            yield ThreadManager.run_in_thread<void> (() => save_thread (uri));
+        } catch (Error e) {
+            critical (e.message);
         }
     }
 
-    private void save_xmp () {
+    private void save_thread (string uri) throws Error {
+        lock (document) {
+            document.keywords = serialize_keywords ();
+            document.save (uri);
+        }
+        if (has_xmp) {
+            save_xmp (uri);
+        }
+    }
+
+    private void save_xmp (string uri) throws XmpError {
         var xmp_file = new Xmp.File ();
-        xmp_file.open_file (original_file.get_path (), FORUPDATE);
+        Xmp.OpenFileOptions options = FORUPDATE | INBACKGROUND;
+        var file = File.new_for_uri (uri);
+        string path = file.get_path ();
+        bool success = xmp_file.open_file (path, options);
+
+        if (!success) {
+            int error = Xmp.get_error ();
+            throw new XmpError.FAILED_TO_OPEN (@"Failed to open $path XMP metadata. Error: $error");
+        }
 
         var xmp_meta = new Xmp.Packet.empty ();
-        xmp_file.get_xmp (xmp_meta);
+        bool has_meta = xmp_file.get_xmp (xmp_meta);
+        if (!has_meta) {
+            throw new XmpError.NO_XMP (@"$path has no XMP Metadata");
+        }
 
         xmp_meta.set_property (Xmp.Namespace.PDF, "Producer", producer, 0x0);
         xmp_meta.set_property (Xmp.Namespace.XAP, "CreatorTool", creator, 0x0);
@@ -463,4 +479,9 @@ public class PaperClip.StringObject : Object {
     public StringObject (string str) {
         Object (str: str);
     }
+}
+
+public errordomain PaperClip.XmpError {
+    NO_XMP,
+    FAILED_TO_OPEN;
 }
