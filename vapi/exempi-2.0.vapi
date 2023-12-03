@@ -48,7 +48,7 @@ namespace Xmp {
         READ,
         FORUPDATE,
         ONLYXMP,
-        CACHENAIL,
+        CACHETNAIL,
         STRICTLY,
         USESMARTHANDLER,
         USEPACKETSCANNING,
