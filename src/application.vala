@@ -125,7 +125,7 @@ public class PaperClip.Application : Adw.Application {
         SaveChangesResponse response = yield changes_dialog.ask (managers, null);
         switch (response) {
             case SAVE:
-                save_unsaved_managers (changes_dialog);
+                yield save_unsaved_managers (changes_dialog);
                 break;
             case DISCARD:
                 quit ();
@@ -136,11 +136,11 @@ public class PaperClip.Application : Adw.Application {
         }
     }
 
-    private void save_unsaved_managers (SaveChangesDialog changes_dialog) {
+    private async void save_unsaved_managers (SaveChangesDialog changes_dialog) {
         ListModel unsaved_documents = changes_dialog.selected_documents;
         for (int i = 0; i < unsaved_documents.get_n_items (); i++) {
             var unsaved_manager = (Services.DocumentManager) unsaved_documents.get_item (i);
-            unsaved_manager.save ();
+            yield unsaved_manager.save ();
         }
         quit ();
     }
