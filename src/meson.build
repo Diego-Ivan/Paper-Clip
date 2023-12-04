@@ -16,6 +16,7 @@ hidden_scribe_sources = [
 
   # Services
   'Services/DocumentManager.vala',
+  'Services/Thumbnailer.vala',
 ]
 
 hidden_scribe_deps = [
