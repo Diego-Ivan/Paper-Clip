@@ -38,20 +38,6 @@ public class PaperClip.DocumentThumbnail : Adw.Bin {
         thumbnail_image.clear ();
     }
 
-    private Gdk.MemoryFormat? _default_format = null;
-    private Gdk.MemoryFormat default_format {
-        get {
-            if (_default_format == null) {
-                if (BYTE_ORDER == LITTLE_ENDIAN) {
-                    _default_format = B8G8R8A8_PREMULTIPLIED;
-                } else {
-                    _default_format = A8R8G8B8_PREMULTIPLIED;
-                }
-            }
-            return _default_format;
-        }
-    }
-
     construct {
         child = thumbnail_image;
         thumbnail_image.add_css_class ("icon-dropshadow");
@@ -60,7 +46,6 @@ public class PaperClip.DocumentThumbnail : Adw.Bin {
     private async void generate_png () {
         try {
             Gdk.Texture thumbnail_texture = yield ThreadManager.run_in_thread (create_thumbnail_in_cache);
-            thumbnail_image.clear ();
             thumbnail_image.paintable = scale_thumbnail (thumbnail_texture);
         }
         catch (Error e) {
@@ -69,15 +54,76 @@ public class PaperClip.DocumentThumbnail : Adw.Bin {
     }
 
     private Gdk.Paintable scale_thumbnail (Gdk.Texture thumbnail_texture) {
-        int image_width = thumbnail_texture.width;
-        int image_height = thumbnail_texture.height;
+        float scaled_height, scaled_width;
+        compute_scaled_size (thumbnail_texture.height, thumbnail_texture.width,
+                             out scaled_height, out scaled_width);
 
-        if (image_width == image_height) {
-            return thumbnail_texture;
+        var snapshot = new Gtk.Snapshot ();
+        // Append White Background in case the image is transparent
+        var thumbnail_rectangle = Graphene.Rect () {
+            origin = { 0, 0 },
+            size = { scaled_width, scaled_height }
+        };
+
+        Gsk.ScalingFilter filter = LINEAR;
+        if (scaled_width > thumbnail_texture.width || scaled_height > thumbnail_texture.height) {
+            filter = NEAREST;
+        } else {
+            filter = TRILINEAR;
+        }
+        debug (@"Current filter for thumbnail: $filter");
+
+        snapshot.append_color ({1, 1, 1, 1}, thumbnail_rectangle);
+        snapshot.append_scaled_texture (thumbnail_texture, filter, thumbnail_rectangle);
+        thumbnail_image.pixel_size = MAX_SIZE / 2;
+
+        return snapshot.free_to_paintable (null);
+    }
+
+    private Gdk.Texture? create_thumbnail_in_cache () throws Error {
+        Poppler.Page first_page = document.get_page_for_index (0);
+        double h, w;
+        first_page.get_size (out w, out h);
+        int height = (int) h, width = (int) w;
+
+        var surface = new Cairo.ImageSurface (Cairo.Format.ARGB32, width, height);
+        var context = new Cairo.Context (surface);
+        first_page.render (context);
+
+        string save_path = create_cache_file ();
+        Cairo.Status status = surface.write_to_png (save_path);
+
+        if (status != SUCCESS) {
+            throw new ThumbnailError.FAILED_EXPORT (@"Failed to export $save_path: $status");
         }
 
+        int scaled_height = height / 3, scaled_width = width / 3;
+
+        var pixbuf = new Gdk.Pixbuf.from_file_at_size (save_path, scaled_width, scaled_height);
+        var texture = Gdk.Texture.for_pixbuf (pixbuf);
+        return texture;
+    }
+
+    private string? create_cache_file () throws Error {
+        string destination_path = Path.build_path (Path.DIR_SEPARATOR_S,
+                                                   Environment.get_tmp_dir (),
+                                                   "thumbnails");
+        int result = DirUtils.create_with_parents (destination_path, 0777);
+        return_if_fail (result > -1);
+
+        string destination_file = Path.build_filename (destination_path,
+                                                       "%s.png".printf (document.original_file.get_basename ()));
+
+        var file = File.new_for_path (destination_file);
+        if (!file.query_exists ()) {
+            file.create (NONE);
+        }
+        return destination_file;
+    }
+
+    private void compute_scaled_size (int image_height, int image_width, out float scaled_height,
+                                      out float scaled_width) {
         float size = MAX_SIZE * scale_factor;
-        float scaled_height, scaled_width;
 
         // Translated this from AdwAvatar source code. Works nicely :)
         if (image_width > image_height) {
@@ -89,64 +135,6 @@ public class PaperClip.DocumentThumbnail : Adw.Bin {
         } else {
             scaled_width = scaled_height = size;
         }
-
-        Gsk.ScalingFilter filter = LINEAR;
-        if (scaled_width > image_width || scaled_height > image_height) {
-            filter = NEAREST;
-        } else {
-            filter = TRILINEAR;
-        }
-
-        debug (@"Current filter for thumbnail: $filter");
-
-        var thumbnail_rectangle = Graphene.Rect ();
-        thumbnail_rectangle = thumbnail_rectangle.init (0, 0, scaled_width, scaled_height);
-
-        var snapshot = new Gtk.Snapshot ();
-        // Append White Background in case the image is transparent
-        snapshot.append_color ({1, 1, 1, 1}, thumbnail_rectangle);
-        snapshot.append_scaled_texture (thumbnail_texture, filter, thumbnail_rectangle);
-        thumbnail_image.pixel_size = MAX_SIZE / 2;
-
-        return snapshot.free_to_paintable ({scaled_width, scaled_height});
-    }
-
-    private Gdk.Texture? create_thumbnail_in_cache () throws Error {
-        Poppler.Page first_page = document.get_page_for_index (0);
-        double width, height;
-
-        first_page.get_size (out width, out height);
-
-        var surface = new Cairo.ImageSurface (Cairo.Format.ARGB32, (int) width, (int) height);
-        var context = new Cairo.Context (surface);
-        first_page.render (context);
-
-        size_t size = (size_t) (width * height * 4);
-
-        /*
-         * We have to use this intermediate method, because the array returned by sirface.get_data
-         * does not have an array length, and therefore automatically passes -1 to the Bytes.new
-         * method, which will then overflow the parameter and will try to allocate an insane amount
-         * of memory. A complete mess.
-         *
-         * So to go around that, we calculated the size above (pixels * number of bytes per pixel),
-         * and create a sized array using copy_bytes method. We will use Bytes.take instead
-         * of Bytes.new as we will avoid creating another copy.
-         */
-        var bytes = new Bytes.take (copy_bytes (surface.get_data (), size));
-        var memory_texture = new Gdk.MemoryTexture (surface.get_width (), surface.get_height (),
-                                                    default_format, bytes,
-                                                    surface.get_stride ());
-
-        return memory_texture;
-    }
-
-    private uint8[] copy_bytes ([CCode (array_length = false)]uint8[] data, size_t size) {
-        uint8[] copy = new uint8[size];
-        for (size_t i = 0; i < size; i++) {
-            copy[i] = data[i];
-        }
-        return copy;
     }
 }
 
