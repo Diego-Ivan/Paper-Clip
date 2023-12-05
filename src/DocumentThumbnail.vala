@@ -20,7 +20,7 @@
 
 public class PaperClip.DocumentThumbnail : Adw.Bin {
     private Gtk.Image thumbnail_image = new Gtk.Image ();
-    private Services.Thumbnailer thumbnailer = new Services.Thumbnailer ();
+    private Services.Thumbnailer thumbnailer = Services.Thumbnailer.get_default ();
 
     const int MAX_SIZE = 350;
 
