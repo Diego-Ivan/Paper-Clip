@@ -6,8 +6,8 @@
  */
 
 public class PaperClip.Services.Thumbnailer {
-    private float max_area = 0.0f;
-    private float area_threshold = 2.25f;
+    private float area_threshold = 2.5f;
+    private MemoryMonitor memory_monitor = MemoryMonitor.dup_default ();
 
     private int _max_size;
     public int max_size {
@@ -15,7 +15,6 @@ public class PaperClip.Services.Thumbnailer {
             return _max_size;
         } set {
             _max_size = value;
-            max_area = value * value * area_threshold;
         }
     }
     private Gdk.MemoryFormat? _default_format = null;
@@ -32,7 +31,38 @@ public class PaperClip.Services.Thumbnailer {
         }
     }
 
+    ~Thumbnailer () {
+        memory_monitor.low_memory_warning.disconnect (handle_memory_level);
+    }
+
+    protected static Thumbnailer? instance = null;
+    public static Thumbnailer get_default () {
+        if (instance == null) {
+            instance = new Thumbnailer ();
+        }
+        return instance;
+    }
+
+    protected Thumbnailer () {
+        memory_monitor.low_memory_warning.connect (handle_memory_level);
+    }
+
+    private void handle_memory_level (MemoryMonitorWarningLevel memory_level) {
+        if (memory_level >= MemoryMonitorWarningLevel.LOW) {
+            area_threshold = 2.0f;
+        }
+        if (memory_level >= MemoryMonitorWarningLevel.MEDIUM) {
+            area_threshold = 1.5f;
+        }
+        if (memory_level >= MemoryMonitorWarningLevel.CRITICAL) {
+            critical ("Memory Level is CRITICAL. Paper Clip will stop generating thumbnails");
+            area_threshold = 0.1f;
+        }
+        warning (@"Received $memory_level. Reducing area threshold to $area_threshold");
+    }
+
     public async Gdk.Texture create_thumbnail (Poppler.Page page, string basename) throws Error {
+        float max_area = max_size * max_size * area_threshold;
         double height, width, image_area;
         page.get_size (out width, out height);
         image_area = width * height;
@@ -56,6 +86,7 @@ public class PaperClip.Services.Thumbnailer {
     }
 
     private Gdk.Texture load_scaled (Cairo.ImageSurface surface, string basename) throws Error {
+        float max_area = max_size * max_size * area_threshold;
         int width = surface.get_width (), height = surface.get_height ();
         string save_path = create_cache_file (basename);
         Cairo.Status status = surface.write_to_png (save_path);
