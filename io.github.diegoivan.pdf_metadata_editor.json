@@ -60,23 +60,12 @@
             ]
         },
         {
-            "name" : "libboost",
-            "buildsystem" : "simple",
-            "build-commands": [
-            	"./bootstrap.sh --with-libraries=test --prefix=/app",
-            	"./b2 --prefix=/app --with-test install"
-            ],
-            "sources" : [
-                {
-                    "url" : "https://boostorg.jfrog.io/artifactory/main/release/1.83.0/source/boost_1_83_0.tar.gz",
-                    "type" : "archive",
-                    "sha256" : "c0685b68dd44cc46574cce86c4e17c0f611b15e195be9848dfd0769a0a207628"
-                }
-            ]
-        },
-        {
             "name" : "libexempi",
             "buildsystem" : "autotools",
+            "config-opts" : [
+                "--enable-samples=no",
+                "--enable-unittest=no"
+            ],
             "sources" : [
                 {
                     "url" : "https://gitlab.freedesktop.org/libopenraw/exempi/-/archive/2.6.4/exempi-2.6.4.tar.gz",
