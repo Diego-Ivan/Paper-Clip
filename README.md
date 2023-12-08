@@ -42,8 +42,7 @@ The following are required to build Paper Clip
 
 ```
 libpoppler
-libportal
-libportal-gtk4
+libexempi
 libadwaita-1
 gtk4
 glib-2.0
