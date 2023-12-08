@@ -7,7 +7,6 @@
 
 public class PaperClip.Services.Thumbnailer {
     private float area_threshold = 2.5f;
-    private MemoryMonitor memory_monitor = MemoryMonitor.dup_default ();
 
     private int _max_size;
     public int max_size {
@@ -31,10 +30,6 @@ public class PaperClip.Services.Thumbnailer {
         }
     }
 
-    ~Thumbnailer () {
-        memory_monitor.low_memory_warning.disconnect (handle_memory_level);
-    }
-
     protected static Thumbnailer? instance = null;
     public static Thumbnailer get_default () {
         if (instance == null) {
@@ -43,22 +38,8 @@ public class PaperClip.Services.Thumbnailer {
         return instance;
     }
 
+    [CCode (has_construct_function = false)]
     protected Thumbnailer () {
-        memory_monitor.low_memory_warning.connect (handle_memory_level);
-    }
-
-    private void handle_memory_level (MemoryMonitorWarningLevel memory_level) {
-        if (memory_level >= MemoryMonitorWarningLevel.LOW) {
-            area_threshold = 2.0f;
-        }
-        if (memory_level >= MemoryMonitorWarningLevel.MEDIUM) {
-            area_threshold = 1.5f;
-        }
-        if (memory_level >= MemoryMonitorWarningLevel.CRITICAL) {
-            critical ("Memory Level is CRITICAL. Paper Clip will stop generating thumbnails");
-            area_threshold = 0.1f;
-        }
-        warning (@"Received $memory_level. Reducing area threshold to $area_threshold");
     }
 
     public async Gdk.Texture create_thumbnail (Poppler.Page page, string basename) throws Error {

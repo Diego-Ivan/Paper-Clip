@@ -20,6 +20,10 @@
 
 public class PaperClip.Document : Object {
     private ListStore keyword_list = new ListStore (typeof(StringObject));
+
+    private const string PDF_NS = "http://ns.adobe.com/pdf/1.3/";
+    private const string XMP_NS = "http://ns.adobe.com/xap/1.0/";
+
     private Poppler.Document _document;
     private Poppler.Document document {
         get {
@@ -31,8 +35,11 @@ public class PaperClip.Document : Object {
         }
     }
 
-    public File original_file { get; private set; }
+    public File original_file { get; construct; }
     public File cached_file { get; private set; }
+
+    [CCode (notify = false)]
+    public bool has_xmp { get; private set; default = false; }
 
     public string author {
         owned get {
@@ -148,19 +155,96 @@ public class PaperClip.Document : Object {
 
     public signal void keyword_changed ();
 
-    public async Document (string uri) {
-        yield load_document (uri);
+    public async Document (File original_file) {
+        Object (original_file: original_file);
+        yield load_document ();
+
+        try {
+            has_xmp = yield ThreadManager.run_in_thread<bool> (load_xmp);
+        } catch (Error e) {
+            critical (e.message);
+        }
     }
 
-    public void save (string path)
-    {
-        document.keywords = serialize_keywords ();
+    // This function is intended to be run from a background thread
+    private bool load_xmp () throws Error {
+        bool success = false;
+        var xmp_file = new Xmp.File ();
+        bool opened_file = xmp_file.open_file (original_file.get_path (),
+                                               READ | INBACKGROUND | ONLYXMP);
+        if (!opened_file) {
+            debug ("Failed to open file with XMP");
+            return false;
+        }
+        var xmp_meta = new Xmp.Packet.empty ();
+        success = xmp_file.get_xmp (xmp_meta);
+        if (!success) {
+            debug ("File does not have XMP metadata");
+        }
+        xmp_file?.close (NOOPTION);
+        return success;
+    }
+
+    public async void save (string uri) {
         try {
-            document.save (path);
+            yield ThreadManager.run_in_thread<void> (() => save_thread (uri));
+        } catch (Error e) {
+            critical (e.message);
         }
-        catch (Error e) {
-            critical ("%s : %s", e.domain.to_string (), e.message);
+    }
+
+    private void save_thread (string uri) throws Error {
+        lock (document) {
+            document.keywords = serialize_keywords ();
+            document.save (uri);
         }
+        if (has_xmp) {
+            save_xmp (uri);
+        }
+    }
+
+    private void save_xmp (string uri) throws XmpError {
+        var xmp_file = new Xmp.File ();
+        Xmp.OpenFileOptions options = FORUPDATE | INBACKGROUND;
+        var file = File.new_for_uri (uri);
+        string path = file.get_path ();
+        bool success = xmp_file.open_file (path, options);
+
+        if (!success) {
+            int error = Xmp.get_error ();
+            throw new XmpError.FAILED_TO_OPEN (@"Failed to open $path XMP metadata. Error: $error");
+        }
+
+        var xmp_meta = new Xmp.Packet.empty ();
+        bool has_meta = xmp_file.get_xmp (xmp_meta);
+        if (!has_meta) {
+            throw new XmpError.NO_XMP (@"$path has no XMP Metadata");
+        }
+
+        xmp_meta.set_property (Xmp.Namespace.PDF, "Producer", producer, 0x0);
+        xmp_meta.set_property (Xmp.Namespace.XAP, "CreatorTool", creator, 0x0);
+        xmp_meta.set_property (Xmp.Namespace.PDF, "Keywords", document.keywords, 0x0);
+
+        if (creation_date == null) {
+            xmp_meta.delete_property (Xmp.Namespace.XAP, "CreateDate");
+        } else {
+            xmp_meta.set_property_date (Xmp.Namespace.XAP, "CreateDate", creation_date, 0x0);
+        }
+
+        if (modification_date == null) {
+            xmp_meta.delete_property (Xmp.Namespace.XAP, "ModifyDate");
+        } else {
+            xmp_meta.set_property_date (Xmp.Namespace.XAP, "ModifyDate", modification_date, 0x0);
+        }
+
+        var metadata_date = new DateTime.now_local ();
+        xmp_meta.set_property_date (Xmp.Namespace.XAP, "MetadataDate", metadata_date, 0x0);
+
+        if (xmp_file.can_put_xmp (xmp_meta)) {
+            debug ("Writing XMP Metadata");
+            xmp_file.put_xmp (xmp_meta);
+        }
+        xmp_file.close (SAFEUPDATE);
     }
 
     public void add_keyword (string keyword) {
@@ -353,8 +437,8 @@ public class PaperClip.Document : Object {
         }
     }
 
-    private async void load_document (string uri) {
-        cached_file = yield create_copy (uri);
+    private async void load_document () {
+        cached_file = yield create_copy_from_original ();
         try {
             document = new Poppler.Document.from_gfile (cached_file, null);
         }
@@ -363,10 +447,10 @@ public class PaperClip.Document : Object {
         }
     }
 
-    private async File create_copy (string uri) {
-        original_file = File.new_for_uri (uri);
+    private async File create_copy_from_original () {
+        unowned string tmp_dir = Environment.get_tmp_dir ();
         string destination_path = Path.build_path (Path.DIR_SEPARATOR_S,
-                                                   Environment.get_tmp_dir (),
+                                                   tmp_dir,
                                                    "copies");
 
         int res = DirUtils.create_with_parents (destination_path, 0777);
@@ -398,4 +482,9 @@ public class PaperClip.StringObject : Object {
     public StringObject (string str) {
         Object (str: str);
     }
+}
+
+public errordomain PaperClip.XmpError {
+    NO_XMP,
+    FAILED_TO_OPEN;
 }

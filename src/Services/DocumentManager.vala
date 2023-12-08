@@ -37,8 +37,8 @@ public sealed class PaperClip.Services.DocumentManager : Object {
         }
     }
 
-    public void save (string? uri = null) {
-        document.save (uri ?? document.original_file.get_uri ());
+    public async void save (string? uri = null) {
+        yield document.save (uri ?? document.original_file.get_uri ());
         changed = false;
     }
 
