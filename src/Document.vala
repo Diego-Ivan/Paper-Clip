@@ -237,6 +237,9 @@ public class PaperClip.Document : Object {
             xmp_meta.set_property_date (Xmp.Namespace.XAP, "ModifyDate", modification_date, 0x0);
         }
 
+        var metadata_date = new DateTime.now_local ();
+        xmp_meta.set_property_date (Xmp.Namespace.XAP, "MetadataDate", metadata_date, 0x0);
+
         if (xmp_file.can_put_xmp (xmp_meta)) {
             debug ("Writing XMP Metadata");
             xmp_file.put_xmp (xmp_meta);
