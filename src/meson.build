@@ -17,6 +17,9 @@ hidden_scribe_sources = [
   # Services
   'Services/DocumentManager.vala',
   'Services/Thumbnailer.vala',
+
+  # Models
+  'Models/AgentName.vala',
 ]
 
 hidden_scribe_deps = [

@@ -164,6 +164,9 @@ public class PaperClip.Document : Object {
         } catch (Error e) {
             critical (e.message);
         }
+
+        var agent_name = new AgentName (document.creator);
+        var agent_name2 = new AgentName (document.producer);
     }
 
     // This function is intended to be run from a background thread
