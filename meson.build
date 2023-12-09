@@ -16,6 +16,10 @@ subdir('data')
 subdir('src')
 subdir('po')
 
+if (get_option ('tests'))
+subdir('tests')
+endif
+
 gnome.post_install(
      glib_compile_schemas: true,
     gtk_update_icon_cache: true,

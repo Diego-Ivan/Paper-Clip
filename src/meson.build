@@ -1,5 +1,4 @@
-hidden_scribe_sources = [
-  'main.vala',
+paper_clip_sources = files (
   'application.vala',
   'window.vala',
   'Document.vala',
@@ -20,9 +19,9 @@ hidden_scribe_sources = [
 
   # Models
   'Models/AgentName.vala',
-]
+)
 
-hidden_scribe_deps = [
+paper_clip_deps = [
   dependency('gtk4', version:'>=4.10'),
   dependency('libadwaita-1'),
   dependency('poppler-glib'),
@@ -45,16 +44,16 @@ add_project_arguments(
     language: 'c'
 )
 
-hidden_scribe_sources += gnome.compile_resources('pdf_metadata_editor-resources',
+paper_clip_sources += gnome.compile_resources('pdf_metadata_editor-resources',
   'pdf-metadata-editor.gresource.xml',
   c_name: 'hidden_scribe'
 )
 
-executable('pdf-metadata-editor', hidden_scribe_sources,
+executable('pdf-metadata-editor', paper_clip_sources + files ('main.vala'),
   vala_args: [
     meson.project_source_root() + '/vapi/Config.vapi',
     '--vapidir', meson.project_source_root() / 'vapi',
   ],
-  dependencies: hidden_scribe_deps,
+  dependencies: paper_clip_deps,
        install: true,
 )
