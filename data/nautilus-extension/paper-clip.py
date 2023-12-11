@@ -71,8 +71,9 @@ class NautilusPaperClip(Nautilus.MenuProvider, GObject.GObject):
         # Registering entry in the Nautilus right-click
         menu_item = Nautilus.MenuItem(
                         name="NautilusPaperClip::EditMetadata",
-                        label=_("Edit pdf metadata..."))
+                        label=_("Edit pdf metadata…"))
 
         menu_item.connect('activate', self.openWithPaperClip, files)
 
         return menu_item,
+
