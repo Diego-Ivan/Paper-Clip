@@ -19,11 +19,13 @@ hidden_scribe_sources = [
   'Services/Thumbnailer.vala',
 ]
 
+exempi_dep = dependency('exempi-2.0')
+
 hidden_scribe_deps = [
   dependency('gtk4', version:'>=4.10'),
   dependency('libadwaita-1'),
   dependency('poppler-glib'),
-  dependency('exempi-2.0'),
+  exempi_dep,
 ]
 
 conf = configuration_data()
@@ -34,6 +36,7 @@ conf.set_quoted('VERSION', meson.project_version())
 conf.set_quoted('GETTEXT_PACKAGE', meson.project_name())
 conf.set_quoted('DATADIR', join_paths(get_option('prefix'), get_option('datadir')))
 conf.set_quoted('GNOMELOCALEDIR', join_paths(get_option('prefix'), get_option('localedir')))
+conf.set_quoted('EXEMPI_VERSION', exempi_dep.version () + ' (Compile Time)')
 configure_file(output: 'config.h', configuration: conf)
 
 add_project_arguments(
