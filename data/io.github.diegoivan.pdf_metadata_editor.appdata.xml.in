@@ -22,13 +22,14 @@
   </keywords>    
 
   <releases>
-    <release version="3.6" date="2023-11-03">
+    <release version="4.0" date="2023-12-14">
       <description translatable="no">
-        <p>Paper Clip Version 3.6: Keyboard Accelerated</p>
-        <p>The latest release of Paper Clip brings a couple of small improvements: </p>
+        <p>Paper Clip v4.0 is here!</p>
+        <p>This new release brings some quality of life improvements and new features:</p>
         <ul>
-          <li>Ctrl+Return now adds a new keyword in the list</li>
-          <li>Updated Translations</li>
+          <li>Paper Clip now supports long-awaited XMP metadata! You can (finally) edit XMP properties for documents that support it and keep them in sync with the ordinary metadata.</li>
+          <li>Better thumbnails (again): Thumbnails now use less memory and load faster. This is specially noticeable for large documents, which in the most extreme cases use 80-90% less memory. There is still room for improvement, so expect more changes in this lane in upcoming releases :nerd:</li>
+          <li>The About Window now shows debug information, useful for bug reports.</li>
         </ul>
       </description>
     </release>
