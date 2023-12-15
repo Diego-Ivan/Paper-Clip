@@ -20,6 +20,7 @@
 
 public class PaperClip.Application : Adw.Application {
     private Window main_window;
+    private string? debug_information = null;
 
     public Application () {
         Object (application_id: "io.github.diegoivan.pdf_metadata_editor",
@@ -153,6 +154,7 @@ public class PaperClip.Application : Adw.Application {
             application_name = "Paper Clip",
             copyright = "© 2023 Diego Iván M.E",
             developer_name = "Diego Iván M.E",
+            debug_info = generate_debug_info (),
             developers = developers,
             artists = artists,
             issue_url = "https://github.com/Diego-Ivan/Paper-Clip/issues",
@@ -165,5 +167,27 @@ public class PaperClip.Application : Adw.Application {
         };
 
         about.present ();
+    }
+
+    private string? generate_debug_info () {
+        if (debug_information != null) {
+            return debug_information;
+        }
+
+        bool under_flatpak = FileUtils.test ("/.flatpak-info", EXISTS);
+
+        debug_information =
+@"Paper Clip $(Config.VERSION)
+Libraries:
+Gtk $(Gtk.get_major_version ()).$(Gtk.get_minor_version ()).$(Gtk.get_micro_version ()) (Runtime)
+Libadwaita: $(Adw.VERSION_S) (Compile Time)
+Poppler: $(Poppler.get_version ()) (Compile Time)
+Exempi: $(Config.EXEMPI_VERSION)
+GdkPixbuf $(Gdk.PIXBUF_VERSION) (Compile Time)
+
+Running under Flatpak? $under_flatpak
+OS Information? $(Environment.get_os_info (OsInfoKey.PRETTY_NAME))";
+
+        return debug_information;
     }
 }
