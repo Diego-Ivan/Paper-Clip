@@ -2,21 +2,22 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the pdf-metadata-editor package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Irénée THIRION <irenee.thirion@e.email>, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: pdf-metadata-editor\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-02 13:04-0600\n"
-"PO-Revision-Date: 2023-10-03 13:13+0200\n"
+"POT-Creation-Date: 2023-10-29 16:39+0300\n"
+"PO-Revision-Date: 2023-12-16 14:22+0100\n"
 "Last-Translator: Irénée Thirion <irenee.thirion@e.email>\n"
-"Language-Team: \n"
+"Language-Team: French <gnomefr@traduc.org>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 3.3.2\n"
+"X-Generator: Poedit 3.4.1\n"
 
 #: data/io.github.diegoivan.pdf_metadata_editor.desktop.in:3
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:7
@@ -37,51 +38,19 @@ msgstr ""
 "Modifiez le titre, l’auteur, les mots-clés et d’autres détails de vos "
 "documents PDF"
 
-#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:16
-msgid "Paper Clip Version 3.5"
-msgstr "Trombone version 3.5"
-
-#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:17
-msgid "The latest release of Paper Clip brings the following changes:"
-msgstr "La dernière version de Trombone apporte les changements suivants :"
-
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:19
-msgid "Small cosmetic changes to follow GNOME 45 look-and-feel"
-msgstr "Petits changements cosmétiques pour suivre l’interface de GNOME 45"
+msgid "PDF"
+msgstr "PDF"
 
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:20
-msgid "The app can open now multiple files in different windows"
-msgstr ""
-"L’application peut désormais ouvrir plusieurs fichiers dans différentes "
-"fenêtres"
+msgid "Metadata"
+msgstr "Métadonnées"
 
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:21
-msgid "Russian Translation by Ser82-png"
-msgstr "Traduction en russe par Ser82-png"
-
-#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:27
-msgid "Paper Clip Version 3.2"
-msgstr "Trombone version 3.2"
-
-#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:28
-msgid "This new version of Paper Clip has the following changes"
-msgstr "Cette nouvelle version de Trombone comprend les changements suivants :"
-
-#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:30
-msgid "Czech translation"
-msgstr "Traduction en tchèque"
-
-#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:31
-msgid "Better rendering for thumbnails"
-msgstr "Rendu des vignettes amélioré"
-
-#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:32
-msgid "Better cache management"
-msgstr "Meilleure gestion des données en cache"
-
-#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:79
-msgid "Diego Iván"
-msgstr "Diego Iván"
+#: src/gtk/shortcut-window.ui:43
+msgctxt "shortcut window"
+msgid "Editor"
+msgstr "Éditeur"
 
 #. translators: Write your name<email> here :D
 #: src/application.vala:152
@@ -248,17 +217,17 @@ msgstr "Aucune préférence"
 msgid "Not compliant"
 msgstr "Incompatible"
 
-#: src/KeywordRow.vala:29
-msgid "Delete Keyword"
-msgstr "Supprimer le mot-clé"
-
-#: src/KeywordList.vala:45
+#: src/KeywordList.vala:55
 msgid "Keyword"
 msgstr "Mot-clé"
 
-#: src/KeywordList.vala:82
+#: src/KeywordList.vala:92
 msgid "Add Keyword"
 msgstr "Ajouter un mot-clé"
+
+#: src/KeywordRow.vala:29
+msgid "Delete Keyword"
+msgstr "Supprimer le mot-clé"
 
 #: src/gtk/date-row.ui:8
 msgid "Remove Date"
@@ -332,6 +301,14 @@ msgstr "Date de modification"
 msgid "Non-Editable Properties"
 msgstr "Propriétés non éditables"
 
+#: src/gtk/keyword-list.ui:6
+msgid "Keywords"
+msgstr "Mots-clés"
+
+#: src/gtk/keyword-list.ui:12
+msgid "Add a keyword"
+msgstr "Ajouter un mot-clé"
+
 #: src/gtk/save-changes-dialog.ui:6
 msgid "Save Changes?"
 msgstr "Enregistrer les modifications ?"
@@ -377,11 +354,6 @@ msgctxt "shortcut window"
 msgid "Keyboard Shortcuts"
 msgstr "Raccourcis clavier"
 
-#: src/gtk/shortcut-window.ui:43
-msgctxt "shortcut window"
-msgid "Editor"
-msgstr "Éditeur"
-
 #: src/gtk/shortcut-window.ui:47
 msgctxt "shortcut window"
 msgid "Open"
@@ -397,71 +369,7 @@ msgctxt "shortcut window"
 msgid "Save As…"
 msgstr "Enregistrer sous…"
 
-#~ msgid ""
-#~ "Version 2.0: After a three month development hiatus, Paper Clip sees its "
-#~ "second release!"
-#~ msgstr ""
-#~ "Version 2.0 : après un hiatus de 3 mois dans le développement, Trombone "
-#~ "voit sa deuxième version !"
-
-#~ msgid "This version includes a nicer UI with:"
-#~ msgstr "Cette version inclut une interface améliorée :"
-
-#~ msgid "Fix many UI papercuts to match the GNOME HIG"
-#~ msgstr ""
-#~ "Des corrections de détails pour correspondre aux directives d’interface "
-#~ "de GNOME"
-
-#~ msgid "The main view now features a thumbnail of the document"
-#~ msgstr "La vue principale comporte une vignette du document"
-
-#~ msgid ""
-#~ "The term \"Creator\" has been changed for \"Creation Software\" to avoid "
-#~ "confusion with \"Author\""
-#~ msgstr ""
-#~ "Le terme « Créateur » a été changé en « Logiciel de création » pour "
-#~ "éviter toute confusion avec « Auteur »"
-
-#~ msgid ""
-#~ "The main view now handles large document titles as special cases to avoid "
-#~ "breaking the UI"
-#~ msgstr ""
-#~ "La vue principale prend maintenant mieux en compte les titres longs pour "
-#~ "éviter de déformer l’interface"
-
-#~ msgid "The keyword list now has a nicer UI"
-#~ msgstr "La liste des mots-clés a une interface plus plaisante"
-
-#~ msgid ""
-#~ "The details window has been removed, and the non editable properties of "
-#~ "the document have been moved to the bottom of the view"
-#~ msgstr ""
-#~ "La fenêtre des détails a été supprimée, et les propriétés non modifiables "
-#~ "du document ont été déplacées en bas de la vue"
-
-#~ msgid "Changes that are not saved will be lost permanently"
-#~ msgstr "Les modifications non enregistrées seront définitivement perdues"
-
-#~ msgid "Save"
-#~ msgstr "Enregistrer"
-
-#~ msgid "Press the “+” button to add a keyword"
-#~ msgstr "Cliquez sur le bouton « + » pour ajouter un mot-clé"
-
-#~ msgid "Producer"
-#~ msgstr "Producteur"
-
-#~ msgid "Do you want to save the changes?"
-#~ msgstr "Voulez-vous enregistrer les modifications ?"
-
-#~ msgid "_About PDF Metadata Editor"
-#~ msgstr "À _propos de Éditeur de métadonnées PDF"
-
-#~ msgid "Details"
-#~ msgstr "Détails"
-
-#~ msgid "Creator"
-#~ msgstr "Créateur"
-
-#~ msgid "Keywords"
-#~ msgstr "Mots-clés"
+#: src/gtk/shortcut-window.ui:68
+msgctxt "shortcut window"
+msgid "Add a keyword"
+msgstr "Ajouter un mot-clé"
