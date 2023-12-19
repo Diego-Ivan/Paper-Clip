@@ -19,7 +19,6 @@
  */
 
 public class PaperClip.Application : Adw.Application {
-    private Window main_window;
     private string? debug_information = null;
 
     public Application () {
@@ -46,10 +45,11 @@ public class PaperClip.Application : Adw.Application {
 
     public override void activate () {
         base.activate ();
-        if (main_window == null) {
-            main_window = new PaperClip.Window (this);
+        Gtk.Window? win = active_window;
+        if (win == null) {
+            win = new PaperClip.Window (this);
         }
-        main_window.present ();
+        win.present ();
     }
 
     public override void startup () {
@@ -63,7 +63,6 @@ public class PaperClip.Application : Adw.Application {
     }
 
     public override void open (File[] files, string hint) {
-        activate ();
         if (files.length < 1) {
             return;
         }
@@ -86,6 +85,7 @@ public class PaperClip.Application : Adw.Application {
                 critical (e.message);
             }
         }
+        activate ();
     }
 
     private void shortcuts_action () {
