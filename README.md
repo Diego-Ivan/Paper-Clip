@@ -30,7 +30,7 @@ This project follows the [GNOME Code of Conduct](https://wiki.gnome.org/Foundati
 
 ## Flathub
 
-The only official distribution format for Paper Clip is Flathub. Any other distribution format is unofficial and disencouraged.
+The only official distribution format for Paper Clip is Flathub. Any other distribution format is unofficial and discouraged.
 
 ## GNOME Builder
 
