@@ -78,13 +78,14 @@
             "name" : "Paper-Clip",
             "builddir" : true,
             "buildsystem" : "meson",
+            "run-tests" : true,
             "config-opts" : [
                 "-Dprofile=devel"
             ],
             "sources" : [
                 {
-                    "type" : "git",
-                    "url" : "https://github.com/Diego-Ivan/pdf-metadata-editor"
+                    "type" : "dir",
+                    "path" : "."
                 }
             ]
         }

@@ -42,7 +42,11 @@
   <!-- Content Rating -->
   <content_rating type="oars-1.1" />
 
+  <!-- developer_name tag deprecated with Appstream 1.0 -->
   <developer_name translatable="no">Diego Iván</developer_name>
+  <developer id="github.com">
+    <name translatable="no">Diego Iván</name>
+  </developer>
   <translation type="gettext">pdf-metadata-editor</translation>
   <launchable type="desktop-id">io.github.diegoivan.pdf_metadata_editor.desktop</launchable>
   <url type="homepage">https://github.com/Diego-Ivan/Paper-Clip</url>
