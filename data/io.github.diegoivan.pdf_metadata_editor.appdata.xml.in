@@ -9,17 +9,6 @@
   <description>
     <p>Edit the title, author, keywords and more details of your PDF documents</p>
   </description>
-  
-  <categories>
-      <category>GTK</category>
-      <category>Utility</category>
-      <category>Office</category>
-  </categories>
-  <keywords>
-      <keyword>PDF</keyword>
-      <keyword>Metadata</keyword>
-      <keyword>Editor</keyword>
-  </keywords>    
 
   <releases>
     <release version="4.0" date="2023-12-14">
