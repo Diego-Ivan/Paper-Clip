@@ -9,17 +9,6 @@
   <description>
     <p>Edit the title, author, keywords and more details of your PDF documents</p>
   </description>
-  
-  <categories>
-      <category>GTK</category>
-      <category>Utility</category>
-      <category>Office</category>
-  </categories>
-  <keywords>
-      <keyword>PDF</keyword>
-      <keyword>Metadata</keyword>
-      <keyword>Editor</keyword>
-  </keywords>    
 
   <releases>
     <release version="4.0" date="2023-12-14">
@@ -51,32 +40,13 @@
   </screenshots>
 
   <!-- Content Rating -->
-  <content_rating type="oars-1.1">
-    <content_attribute id="violence-cartoon">none</content_attribute>
-    <content_attribute id="violence-fantasy">none</content_attribute>
-    <content_attribute id="violence-realistic">none</content_attribute>
-    <content_attribute id="violence-bloodshed">none</content_attribute>
-    <content_attribute id="violence-sexual">none</content_attribute>
-    <content_attribute id="violence-desecration">none</content_attribute>
-    <content_attribute id="violence-slavery">none</content_attribute>
-    <content_attribute id="violence-worship">none</content_attribute>
-    <content_attribute id="drugs-alcohol">none</content_attribute>
-    <content_attribute id="drugs-narcotics">none</content_attribute>
-    <content_attribute id="drugs-tobacco">none</content_attribute>
-    <content_attribute id="sex-nudity">none</content_attribute>
-    <content_attribute id="language-profanity">none</content_attribute>
-    <content_attribute id="language-humor">none</content_attribute>
-    <content_attribute id="language-discrimination">none</content_attribute>
-    <content_attribute id="social-chat">none</content_attribute>
-    <content_attribute id="social-info">none</content_attribute>
-    <content_attribute id="social-audio">none</content_attribute>
-    <content_attribute id="social-location">none</content_attribute>
-    <content_attribute id="social-contacts">none</content_attribute>
-    <content_attribute id="money-purchasing">none</content_attribute>
-    <content_attribute id="money-gambling">none</content_attribute>
-  </content_rating>
+  <content_rating type="oars-1.1" />
 
+  <!-- developer_name tag deprecated with Appstream 1.0 -->
   <developer_name translatable="no">Diego Iván</developer_name>
+  <developer id="github.com">
+    <name translatable="no">Diego Iván</name>
+  </developer>
   <translation type="gettext">pdf-metadata-editor</translation>
   <launchable type="desktop-id">io.github.diegoivan.pdf_metadata_editor.desktop</launchable>
   <url type="homepage">https://github.com/Diego-Ivan/Paper-Clip</url>
