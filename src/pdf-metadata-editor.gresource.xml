@@ -9,6 +9,7 @@
     <file preprocess="xml-stripblanks">gtk/keyword-list.ui</file>
     <file preprocess="xml-stripblanks">gtk/save-changes-dialog.ui</file>
     <file preprocess="xml-stripblanks">gtk/shortcut-window.ui</file>
+    <file preprocess="xml-stripblanks">gtk/password-dialog.ui</file>
   </gresource>
 
   <gresource prefix="/io/github/diegoivan/pdf_metadata_editor/icons/scalable/actions/">

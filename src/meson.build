@@ -11,8 +11,12 @@ hidden_scribe_sources = [
   'StringArrayRow.vala',
   'DocumentThumbnail.vala',
   'KeywordList.vala',
+  'PasswordDialog.vala',
 
   'ThreadManager.vala',
+
+  # Models
+  'Models/AsyncTask.vala',
 
   # Services
   'Services/DocumentManager.vala',
