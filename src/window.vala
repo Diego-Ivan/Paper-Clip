@@ -31,6 +31,8 @@ namespace PaperClip {
         private unowned Gtk.MenuButton menu_button;
         [GtkChild]
         private unowned Gtk.Box dnd_box;
+        [GtkChild]
+        private unowned Adw.ToastOverlay toast_overlay;
 
         public WindowState state { get; set; default = NONE; }
 
@@ -175,6 +177,10 @@ namespace PaperClip {
 
                 view_stack.visible_child_name = "editor";
             } catch (Error e) {
+                if (e is Poppler.Error.ENCRYPTED) {
+                    var toast = new Adw.Toast ( _("Failed to open the document. The provided password is incorrect.") );
+                    toast_overlay.add_toast (toast);
+                }
                 critical (e.message);
             }
             hide_progress_bar_animation ();
