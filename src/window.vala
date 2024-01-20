@@ -1,6 +1,6 @@
 /* window.vala
  *
- * Copyright 2023 Diego Iván
+ * Copyright 2023-2024 Diego Iván
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -31,6 +31,8 @@ namespace PaperClip {
         private unowned Gtk.MenuButton menu_button;
         [GtkChild]
         private unowned Gtk.Box dnd_box;
+        [GtkChild]
+        private unowned Adw.ToastOverlay toast_overlay;
 
         public WindowState state { get; set; default = NONE; }
 
@@ -166,14 +168,40 @@ namespace PaperClip {
         }
 
         private async void load_document_to_view (File file) {
-            document_manager.document = doc_view.document = yield new Document (file);
+            try {
+                var doc = yield create_document (file);
+                document_manager.document = doc_view.document = doc;
+                action_set_enabled ("win.save", true);
+                action_set_enabled ("win.save-as", true);
+                action_set_enabled ("win.open-with", true);
 
-            action_set_enabled ("win.save", true);
-            action_set_enabled ("win.save-as", true);
-            action_set_enabled ("win.open-with", true);
-
+                view_stack.visible_child_name = "editor";
+            } catch (Error e) {
+                if (e is Poppler.Error.ENCRYPTED) {
+                    var toast = new Adw.Toast ( _("Failed to open the document. The provided password is incorrect.") );
+                    toast_overlay.add_toast (toast);
+                }
+                critical (e.message);
+            }
             hide_progress_bar_animation ();
-            view_stack.visible_child_name = "editor";
+        }
+
+        private async Document create_document (File file) throws Error {
+            Document? doc = null;
+            try {
+                doc = yield new Document (file);
+            } catch (Error e) {
+                if (!(e is Poppler.Error.ENCRYPTED)) {
+                    throw e;
+                }
+            }
+
+            if (doc != null) {
+                return doc;
+            }
+
+            var dialog = new PasswordDialog ();
+            return yield dialog.decrypt (file, this, null);
         }
 
         private void save_file_action () {

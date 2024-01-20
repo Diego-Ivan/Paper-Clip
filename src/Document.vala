@@ -1,6 +1,6 @@
 /* Document.vala
  *
- * Copyright 2023 Diego Iván <diegoivan.mae@gmail.com>
+ * Copyright 2023-2024 Diego Iván <diegoivan.mae@gmail.com>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -155,9 +155,9 @@ public class PaperClip.Document : Object {
 
     public signal void keyword_changed ();
 
-    public async Document (File original_file) {
+    public async Document (File original_file, string? password = null) throws Error {
         Object (original_file: original_file);
-        yield load_document ();
+        yield load_document (password);
 
         try {
             has_xmp = yield ThreadManager.run_in_thread<bool> (load_xmp);
@@ -437,17 +437,12 @@ public class PaperClip.Document : Object {
         }
     }
 
-    private async void load_document () {
+    private async void load_document (string? password) throws Error {
         cached_file = yield create_copy_from_original ();
-        try {
-            document = new Poppler.Document.from_gfile (cached_file, null);
-        }
-        catch (Error e) {
-            critical ("%s : %s", e.domain.to_string (), e.message);
-        }
+        document = new Poppler.Document.from_gfile (cached_file, password);
     }
 
-    private async File create_copy_from_original () {
+    private async File create_copy_from_original () throws Error {
         unowned string tmp_dir = Environment.get_tmp_dir ();
         string destination_path = Path.build_path (Path.DIR_SEPARATOR_S,
                                                    tmp_dir,
@@ -462,14 +457,9 @@ public class PaperClip.Document : Object {
         var copy_file = File.new_for_path (destination_file);
         FileCopyFlags flags = NOFOLLOW_SYMLINKS | OVERWRITE | ALL_METADATA;
 
-        try {
-            bool success = yield original_file.copy_async (copy_file, flags);
-            if (!success) {
-                critical ("Copy Unsuccessful");
-            }
-        }
-        catch (Error e) {
-            critical (e.message);
+        bool success = yield original_file.copy_async (copy_file, flags);
+        if (!success) {
+            critical ("Copy Unsuccessful");
         }
 
         return copy_file;
