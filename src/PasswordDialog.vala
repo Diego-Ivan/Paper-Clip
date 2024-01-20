@@ -14,10 +14,23 @@ public errordomain PaperClip.PasswordDialogError {
 public class PaperClip.PasswordDialog : Adw.Window {
     [GtkChild]
     private unowned Adw.PasswordEntryRow password_entry;
+    [GtkChild]
+    private unowned Adw.StatusPage status_page;
 
     private AsyncTask? task = null;
 
+    construct {
+        ActionEntry[] action_entries = {
+            { "success", success_task },
+            { "cancel", cancel_task }
+        };
+        var action_group = new SimpleActionGroup ();
+        action_group.add_action_entries (action_entries, this);
+        this.insert_action_group ("dialog", action_group);
+    }
+
     public async Document decrypt (File file, Gtk.Window? parent, Cancellable? cancellable = null) throws Error {
+        status_page.description = file.get_basename () ?? "";
         task = new AsyncTask (decrypt.callback);
         if (cancellable != null) {
             cancellable.cancelled.connect (cancel_task);
