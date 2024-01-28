@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pdf-metadata-editor\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-01-27 21:42-0600\n"
-"PO-Revision-Date: 2023-10-30 23:33+1000\n"
+"PO-Revision-Date: 2024-01-28 18:08+1000\n"
 "Last-Translator: Ser82-png <asvmail.as@gmail.com>\n"
 "Language-Team: \n"
 "Language: ru_RU\n"
@@ -367,19 +367,19 @@ msgstr "Добавить ключевое слово"
 
 #: src/gtk/password-dialog.ui:10
 msgid "Password Dialog"
-msgstr ""
+msgstr "Диалоговое окно ввода пароля"
 
 #: src/gtk/password-dialog.ui:21
 msgid "This Document Is Encrypted"
-msgstr ""
+msgstr "Этот документ зашифрован"
 
 #: src/gtk/password-dialog.ui:37
 msgid "Password"
-msgstr ""
+msgstr "Пароль"
 
 #: src/gtk/password-dialog.ui:44
 msgid "Decrypt"
-msgstr ""
+msgstr "Расшифровать"
 
 #~ msgid "PDF"
 #~ msgstr "PDF"
