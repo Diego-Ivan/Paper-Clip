@@ -1,15 +1,15 @@
 # ITALIAN TRANSLATION FOR PDF-METADATA-EDITOR.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the pdf-metadata-editor package.
-# ALBANO BATTISTELLA <ALBANO_BATTISTELLA@HOTMAIL.COM>, 2023.
+# ALBANO BATTISTELLA <ALBANO_BATTISTELLA@HOTMAIL.COM>, 2023,2024.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: pdf-metadata-editor\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-01-27 21:42-0600\n"
-"PO-Revision-Date: 2023-10-08 08:02+0100\n"
-"Last-Translator: Albano Battistella <albano_battistella@hotmail.com>\n"
+"PO-Revision-Date: 2024-01-28 10:02+0100\n"
+"Last-Translator: Albano Battistella <albanobattistella@gmail.com>\n"
 "Language-Team: Italian\n"
 "Language: it_IT\n"
 "MIME-Version: 1.0\n"
@@ -256,7 +256,7 @@ msgstr "Permessi"
 
 #: src/gtk/document-view.ui:45
 msgid "Title"
-msgstr "TItolo"
+msgstr "Titolo"
 
 #: src/gtk/document-view.ui:51
 msgid "Author"
@@ -291,9 +291,8 @@ msgid "Keywords"
 msgstr "Parole chiave"
 
 #: src/gtk/keyword-list.ui:12
-#, fuzzy
 msgid "Add a keyword"
-msgstr "Aggiungi parola chiave"
+msgstr "Aggiungi una parola chiave"
 
 #: src/gtk/save-changes-dialog.ui:6
 msgid "Save Changes?"
@@ -361,26 +360,25 @@ msgid "Save As…"
 msgstr "Salva come…"
 
 #: src/gtk/shortcut-window.ui:68
-#, fuzzy
 msgctxt "shortcut window"
 msgid "Add a keyword"
-msgstr "Aggiungi parola chiave"
+msgstr "Aggiungi una parola chiave"
 
 #: src/gtk/password-dialog.ui:10
 msgid "Password Dialog"
-msgstr ""
+msgstr "Finestra di dialogo della password"
 
 #: src/gtk/password-dialog.ui:21
 msgid "This Document Is Encrypted"
-msgstr ""
+msgstr "Questo documento è crittografato"
 
 #: src/gtk/password-dialog.ui:37
 msgid "Password"
-msgstr ""
+msgstr "Password"
 
 #: src/gtk/password-dialog.ui:44
 msgid "Decrypt"
-msgstr ""
+msgstr "Decifra"
 
 #~ msgid "Paper Clip Version 3.5"
 #~ msgstr "Paper Clip versione 3.5"
@@ -397,9 +395,8 @@ msgstr ""
 #~ msgid "Russian Translation by Ser82-png"
 #~ msgstr "Traduzione russa di Ser82-png"
 
-#, fuzzy
 #~ msgid "Paper Clip Version 3.2"
-#~ msgstr "Paper Clip versione 3.2"
+#~ msgstr "Paper Clip Versione 3.2"
 
 #~ msgid "This new version of Paper Clip has the following changes"
 #~ msgstr "Questa nuova versione di Paper Clip presenta le seguenti modifiche"
