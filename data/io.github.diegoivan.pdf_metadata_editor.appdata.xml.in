@@ -11,14 +11,14 @@
   </description>
 
   <releases>
-    <release version="4.0" date="2023-12-14">
+    <release version="5.0" date="2024-01-27">
       <description translatable="no">
-        <p>Paper Clip v4.0 is here!</p>
-        <p>This new release brings some quality of life improvements and new features:</p>
+        <p>Paper Clip v5.0 has been released! This release brings a couple of quality-of-life improvements and new features:</p>
         <ul>
-          <li>Paper Clip now supports long-awaited XMP metadata! You can (finally) edit XMP properties for documents that support it and keep them in sync with the ordinary metadata.</li>
-          <li>Better thumbnails (again): Thumbnails now use less memory and load faster. This is specially noticeable for large documents, which in the most extreme cases use 80-90% less memory. There is still room for improvement, so expect more changes in this lane in upcoming releases :nerd:</li>
-          <li>The About Window now shows debug information, useful for bug reports.</li>
+          <li>Paper Clip now supports editing encrypted documents.</li>
+          <li>The DublinCore XMP metadata format is now synchronized with their PDF equivalents</li>
+          <li>Updated translations, including French, Basque, Occitan and Spanish. Thanks to rene-coty, Sergio Varela and Mejans for their contributions!</li>
+          <li>Appdata improvements by Sabri Ünal</li>
         </ul>
       </description>
     </release>
