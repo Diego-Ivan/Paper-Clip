@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pdf-metadata-editor\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-02 13:04-0600\n"
+"POT-Creation-Date: 2024-01-27 21:42-0600\n"
 "PO-Revision-Date: 2023-10-08 08:02+0100\n"
 "Last-Translator: Albano Battistella <albano_battistella@hotmail.com>\n"
 "Language-Team: Italian\n"
@@ -37,53 +37,8 @@ msgstr ""
 "Modifica il titolo, l'autore, le parole chiave e altri dettagli dei tuoi "
 "documenti PDF"
 
-#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:16
-msgid "Paper Clip Version 3.5"
-msgstr "Paper Clip versione 3.5"
-
-#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:17
-msgid "The latest release of Paper Clip brings the following changes:"
-msgstr "L'ultima versione di Paper Clip apporta le seguenti modifiche:"
-
-#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:19
-msgid "Small cosmetic changes to follow GNOME 45 look-and-feel"
-msgstr "Piccole modifiche estetiche per seguire l'aspetto di GNOME 45"
-
-#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:20
-msgid "The app can open now multiple files in different windows"
-msgstr "L'app ora può aprire più file in finestre diverse"
-
-#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:21
-msgid "Russian Translation by Ser82-png"
-msgstr "Traduzione russa di Ser82-png"
-
-#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:27
-#, fuzzy
-msgid "Paper Clip Version 3.2"
-msgstr "Paper Clip versione 3.2"
-
-#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:28
-msgid "This new version of Paper Clip has the following changes"
-msgstr "Questa nuova versione di Paper Clip presenta le seguenti modifiche"
-
-#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:30
-msgid "Czech translation"
-msgstr "Traduzione ceca"
-
-#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:31
-msgid "Better rendering for thumbnails"
-msgstr "Migliore rendering per le miniature"
-
-#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:32
-msgid "Better cache management"
-msgstr "Migliore gestione della cache"
-
-#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:79
-msgid "Diego Iván"
-msgstr "Diego Iván"
-
 #. translators: Write your name<email> here :D
-#: src/application.vala:152
+#: src/application.vala:164
 msgid "translator_credits"
 msgstr "Albano Battistella"
 
@@ -95,35 +50,35 @@ msgstr "Seleziona un file"
 msgid "Open"
 msgstr "Apri"
 
-#: src/window.ui:84
+#: src/window.ui:86
 msgid "Open a Document"
 msgstr "Apri un documento"
 
-#: src/window.ui:93
+#: src/window.ui:95
 msgid "Drag and drop a PDF file here"
 msgstr "Trascina e rilascia un file PDF qui"
 
-#: src/window.ui:149
+#: src/window.ui:153
 msgid "_New Window"
 msgstr "_Nuova finestra"
 
-#: src/window.ui:155 src/gtk/save-changes-dialog.ui:13
+#: src/window.ui:159 src/gtk/save-changes-dialog.ui:13
 msgid "_Save"
 msgstr "_Salva"
 
-#: src/window.ui:161
+#: src/window.ui:165
 msgid "Save _As…"
 msgstr "Salva _come…"
 
-#: src/window.ui:167
+#: src/window.ui:171
 msgid "Open _With…"
 msgstr "Apri con…"
 
-#: src/window.ui:174
+#: src/window.ui:178
 msgid "_Keyboard Shortcuts"
 msgstr "_Scorciatoie da tastiera"
 
-#: src/window.ui:178
+#: src/window.ui:182
 msgid "_About Paper Clip"
 msgstr "_Informazioni su Paper Clip"
 
@@ -131,133 +86,133 @@ msgstr "_Informazioni su Paper Clip"
 msgid "No date set"
 msgstr "Nessuna data stabilita"
 
-#: src/Document.vala:110
+#: src/Document.vala:117
 msgid "Unknown"
 msgstr "Sconosciuto"
 
-#: src/Document.vala:214
+#: src/Document.vala:298
 msgid "Pages in one column"
 msgstr "Pagine in una colonna"
 
-#: src/Document.vala:217
+#: src/Document.vala:301
 msgid "One page at a time"
 msgstr "Una pagina alla volta"
 
-#: src/Document.vala:220
+#: src/Document.vala:304
 msgid "Odd numbered pages on the left"
 msgstr "Pagine dispari a sinistra"
 
-#: src/Document.vala:223
+#: src/Document.vala:307
 msgid "Odd numbered pages on the right"
 msgstr "Pagine dispari a destra"
 
-#: src/Document.vala:226
+#: src/Document.vala:310
 msgid "Two odd numbered pages on the left"
 msgstr "Due pagine dispari a sinistra"
 
-#: src/Document.vala:229
+#: src/Document.vala:313
 msgid "Two odd numbered pages on the right"
 msgstr "Due pagine dispari a destra"
 
-#: src/Document.vala:233
+#: src/Document.vala:317
 msgid "No specific layout"
 msgstr "Nessun layout specifico"
 
-#: src/Document.vala:242
+#: src/Document.vala:326
 msgid "Center document's window"
 msgstr "Centra la finestra del documento"
 
-#: src/Document.vala:246
+#: src/Document.vala:330
 msgid "Reading order is right to left"
 msgstr "L'ordine di lettura è da destra a sinistra"
 
-#: src/Document.vala:250
+#: src/Document.vala:334
 msgid "Display document's title"
 msgstr "Visualizza il titolo del documento"
 
-#: src/Document.vala:254
+#: src/Document.vala:338
 msgid "Fit document to window"
 msgstr "Adatta il documento alla finestra"
 
-#: src/Document.vala:258
+#: src/Document.vala:342
 msgid "Hide window menubar"
 msgstr "Nascondi la barra dei menu della finestra"
 
-#: src/Document.vala:262
+#: src/Document.vala:346
 msgid "Hide window toolbars"
 msgstr "Nascondi le barre degli strumenti della finestra"
 
-#: src/Document.vala:266
+#: src/Document.vala:350
 msgid "Hide UI elements"
 msgstr "Nascondi gli elementi dell'interfaccia utente"
 
-#: src/Document.vala:270
+#: src/Document.vala:354
 msgid "No preferences"
 msgstr "Nessuna preferenza"
 
-#: src/Document.vala:281
+#: src/Document.vala:365
 msgid "Adding notes"
 msgstr "Aggiunta di note"
 
-#: src/Document.vala:285
+#: src/Document.vala:369
 msgid "Inserting elements"
 msgstr "Inserimento di elementi"
 
-#: src/Document.vala:289
+#: src/Document.vala:373
 msgid "Copying"
 msgstr "Copiare"
 
-#: src/Document.vala:293
+#: src/Document.vala:377
 msgid "Extracting contents"
 msgstr "Estrazione dei contenuti"
 
-#: src/Document.vala:297
+#: src/Document.vala:381
 msgid "Filling interactive forms"
 msgstr "Compilazione moduli interattivi"
 
-#: src/Document.vala:301
+#: src/Document.vala:385
 msgid "Modifying"
 msgstr "Modificare"
 
-#: src/Document.vala:305
+#: src/Document.vala:389
 msgid "Printing"
 msgstr "Stampare"
 
-#: src/Document.vala:309
+#: src/Document.vala:393
 msgid "Printing in high resolution"
 msgstr "Stampa in alta risoluzione"
 
-#: src/Document.vala:318
+#: src/Document.vala:402
 msgid "Flip on the long edge"
 msgstr "Capovolgere sul lato lungo"
 
-#: src/Document.vala:321
+#: src/Document.vala:405
 msgid "Flip on the short edge"
 msgstr "Capovolgi sul lato corto"
 
-#: src/Document.vala:324
+#: src/Document.vala:408
 msgid "Only single sided"
 msgstr "Solo a lato singolo"
 
-#: src/Document.vala:328
+#: src/Document.vala:412
 msgid "No preference"
 msgstr "Nessuna preferenza"
 
-#: src/Document.vala:352
+#: src/Document.vala:436
 msgid "Not compliant"
 msgstr "Non conforme"
+
+#: src/KeywordList.vala:55
+msgid "Keyword"
+msgstr "Parola chiave"
+
+#: src/KeywordList.vala:92
+msgid "Add Keyword"
+msgstr "Aggiungi parola chiave"
 
 #: src/KeywordRow.vala:29
 msgid "Delete Keyword"
 msgstr "Elimina parola chiave"
-
-#: src/KeywordList.vala:45
-msgid "Keyword"
-msgstr "Parola chiave"
-
-#: src/KeywordList.vala:82
-msgid "Add Keyword"
-msgstr "Aggiungi parola chiave"
 
 #: src/gtk/date-row.ui:8
 msgid "Remove Date"
@@ -331,6 +286,15 @@ msgstr "Data di modifica"
 msgid "Non-Editable Properties"
 msgstr "Proprietà non modificabili"
 
+#: src/gtk/keyword-list.ui:6
+msgid "Keywords"
+msgstr "Parole chiave"
+
+#: src/gtk/keyword-list.ui:12
+#, fuzzy
+msgid "Add a keyword"
+msgstr "Aggiungi parola chiave"
+
 #: src/gtk/save-changes-dialog.ui:6
 msgid "Save Changes?"
 msgstr "Salvare le modifiche?"
@@ -340,8 +304,8 @@ msgid ""
 "Open documents contain unsaved changes. Changes which are not saved will be "
 "permanently lost."
 msgstr ""
-"I documenti aperti contengono modifiche non salvate. Le modifiche che non vengono salvate verranno "
-"perdute definitivamente."
+"I documenti aperti contengono modifiche non salvate. Le modifiche che non "
+"vengono salvate verranno perdute definitivamente."
 
 #: src/gtk/save-changes-dialog.ui:11
 msgid "_Cancel"
@@ -395,6 +359,62 @@ msgstr "Salva"
 msgctxt "shortcut window"
 msgid "Save As…"
 msgstr "Salva come…"
+
+#: src/gtk/shortcut-window.ui:68
+#, fuzzy
+msgctxt "shortcut window"
+msgid "Add a keyword"
+msgstr "Aggiungi parola chiave"
+
+#: src/gtk/password-dialog.ui:10
+msgid "Password Dialog"
+msgstr ""
+
+#: src/gtk/password-dialog.ui:21
+msgid "This Document Is Encrypted"
+msgstr ""
+
+#: src/gtk/password-dialog.ui:37
+msgid "Password"
+msgstr ""
+
+#: src/gtk/password-dialog.ui:44
+msgid "Decrypt"
+msgstr ""
+
+#~ msgid "Paper Clip Version 3.5"
+#~ msgstr "Paper Clip versione 3.5"
+
+#~ msgid "The latest release of Paper Clip brings the following changes:"
+#~ msgstr "L'ultima versione di Paper Clip apporta le seguenti modifiche:"
+
+#~ msgid "Small cosmetic changes to follow GNOME 45 look-and-feel"
+#~ msgstr "Piccole modifiche estetiche per seguire l'aspetto di GNOME 45"
+
+#~ msgid "The app can open now multiple files in different windows"
+#~ msgstr "L'app ora può aprire più file in finestre diverse"
+
+#~ msgid "Russian Translation by Ser82-png"
+#~ msgstr "Traduzione russa di Ser82-png"
+
+#, fuzzy
+#~ msgid "Paper Clip Version 3.2"
+#~ msgstr "Paper Clip versione 3.2"
+
+#~ msgid "This new version of Paper Clip has the following changes"
+#~ msgstr "Questa nuova versione di Paper Clip presenta le seguenti modifiche"
+
+#~ msgid "Czech translation"
+#~ msgstr "Traduzione ceca"
+
+#~ msgid "Better rendering for thumbnails"
+#~ msgstr "Migliore rendering per le miniature"
+
+#~ msgid "Better cache management"
+#~ msgstr "Migliore gestione della cache"
+
+#~ msgid "Diego Iván"
+#~ msgstr "Diego Iván"
 
 #~ msgid ""
 #~ "Version 2.0: After a three month development hiatus, Paper Clip sees its "
@@ -463,6 +483,3 @@ msgstr "Salva come…"
 
 #~ msgid "Creator"
 #~ msgstr "Creatore"
-
-#~ msgid "Keywords"
-#~ msgstr "Parole chiave"

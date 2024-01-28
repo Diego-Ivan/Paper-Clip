@@ -14,3 +14,4 @@ src/gtk/document-view.ui
 src/gtk/keyword-list.ui
 src/gtk/save-changes-dialog.ui
 src/gtk/shortcut-window.ui
+src/gtk/password-dialog.ui
