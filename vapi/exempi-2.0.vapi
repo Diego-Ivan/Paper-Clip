@@ -7,7 +7,7 @@
  * All rights reserved.
  *
  * VAPI Authors:
- * Copyright (c) 2023 Diego Iván M.E
+ * Copyright (c) 2023-2024 Diego Iván M.E
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions
@@ -41,6 +41,9 @@
 
 [CCode (cheader_filename = "exempi/xmp.h")]
 namespace Xmp {
+    [CCode (has_typedef = false)]
+    public delegate int DumpCallback<G> (G object, string contents);
+
     [Flags]
     [CCode (cprefix = "XMP_OPEN_", has_type_id = false)]
     public enum OpenFileOptions {
@@ -48,7 +51,7 @@ namespace Xmp {
         READ,
         FORUPDATE,
         ONLYXMP,
-        CACHETNAIL,
+        CACHENAIL,
         STRICTLY,
         USESMARTHANDLER,
         USEPACKETSCANNING,
@@ -213,7 +216,7 @@ namespace Xmp {
     }
 
     [CCode (has_type_id = false)]
-    public struct PacketInfo {
+    public struct MetaInfo {
         int64 offset;
         int32 length;
         [CCode (cname = "padSize")]
@@ -243,13 +246,15 @@ namespace Xmp {
 
     [Compact (opaque = true)]
     [CCode (cname = "struct _Xmp", lower_case_cprefix = "xmp_", free_function = "xmp_free")]
-    public class Packet {
+    public class Meta {
         [CCode (cname = "xmp_new_empty")]
-        public Packet.empty ();
+        public Meta.empty ();
         [CCode (cname = "xmp_new")]
-        public Packet (string buffer);
+        public Meta (string buffer);
 
-        public Packet copy ();
+        public Meta copy ();
+
+        public bool parse (string buffer);
 
         [CCode (cname = "__vala_xmp_serialize")]
         public bool serialize (out string buffer, SerializeOptions options, uint32 padding) {
@@ -270,6 +275,18 @@ namespace Xmp {
                                                     tab, indent);
             buffer = xmp_str.to_string ();
             return retval;
+        }
+
+        [CCode (cname = "__vala_xmp_dump_object")]
+        public bool dump_object<G> (G object, DumpCallback<G> callback) {
+            string contents;
+            bool success = serialize_and_format (out contents, READONLYPACKET, 0, "\n", "  ", 0);
+            if (!success) {
+                GLib.critical ("Failed to serialize contents");
+                return false;
+            }
+            int result = callback (object, contents);
+            return result == 0;
         }
 
         [CCode (cname = "xmp_serialize_and_format")]
@@ -301,68 +318,52 @@ namespace Xmp {
         }
 
         [CCode (cname = "__vala_xmp_get_property_float")]
-        public bool get_property_float (string schema, string name, out double property, ref PropsBits? props_bits) {
+        public bool get_property_float (string schema, string name, out double property, out PropsBits props_bits) {
             bool retval;
-            if (props_bits == null) {
-                retval = get_property_float_xmp_str (schema, name, out property, null);
-            } else {
-                uint32 bits = 0x0;
-                retval = get_property_float_xmp_str (schema, name, out property, out bits);
-                props_bits = (PropsBits) bits;
-            }
+            uint32 bits = 0x0;
+            retval = get_property_float_xmp_str (schema, name, out property, out bits);
+            props_bits = (PropsBits) bits;
             return retval;
         }
         [CCode (cname = "xmp_get_property_float")]
-        private bool get_property_float_xmp_str (string schema, string name, out double property, out uint32? propsbits);
+        private bool get_property_float_xmp_str (string schema, string name, out double property, out uint32 propsbits);
 
         [CCode (cname = "__vala_xmp_get_property_bool")]
-        public bool get_property_bool (string schema, string name, out bool property, ref PropsBits? props_bits) {
+        public bool get_property_bool (string schema, string name, out bool property, out PropsBits props_bits) {
             bool retval;
-            if (props_bits == null) {
-                retval = get_property_bool_xmp (schema, name, out property, null);
-            } else {
-                uint32 bits = 0x0;
-                retval = get_property_bool_xmp (schema, name, out property, out bits);
-                props_bits = (PropsBits) bits;
-            }
+            uint32 bits = 0x0;
+            retval = get_property_bool_xmp (schema, name, out property, out bits);
+            props_bits = (PropsBits) bits;
             return retval;
         }
 
         [CCode (cname = "xmp_get_property_bool")]
-        private bool get_property_bool_xmp (string schema, string name, out bool property, out uint32? bits);
+        private bool get_property_bool_xmp (string schema, string name, out bool property, out uint32 bits);
 
         [CCode (cname = "__vala_xmp_get_property_int")]
-        public bool get_property_int (string schema, string name, out int property, ref PropsBits? props_bits) {
+        public bool get_property_int (string schema, string name, out int property, out PropsBits props_bits) {
             bool retval;
-            if (props_bits == null) {
-                retval = get_property_int32 (schema, name, out property, null);
-            } else {
-                uint32 bits = 0x0;
-                retval = get_property_int32 (schema, name, out property, out bits);
-                props_bits = (PropsBits) bits;
-            }
+            uint32 bits = 0x0;
+            retval = get_property_int32 (schema, name, out property, out bits);
+            props_bits = (PropsBits) bits;
             return retval;
         }
 
         [CCode (cname = "xmp_get_property_int32")]
-        private bool get_property_int32 (string schema, string name, out int32 property, out uint32? bits);
+        private bool get_property_int32 (string schema, string name, out int32 property, out uint32 bits);
 
         [CCode (cname = "__vala_xmp_get_array_item")]
-        public bool get_array_item (string schema, string name, int index, out string property, ref PropsBits? props_bits) {
+        public bool get_array_item (string schema, string name, int32 index, out string property, out PropsBits props_bits) {
             bool retval;
             var xmp_str = new String ();
-            if (props_bits == null) {
-                retval = get_array_item_xmp (schema, name, index, xmp_str, null);
-            } else {
-                uint32 bits = 0x0;
-                retval = get_array_item_xmp (schema, name, index, xmp_str, null);
-                props_bits = (PropsBits) bits;
-            }
+            uint32 bits;
+            retval = get_array_item_xmp (schema, name, index, xmp_str, out bits);
+            props_bits = (PropsBits) bits;
             property = xmp_str.to_string ();
             return retval;
         }
         [CCode (cname = "xmp_get_array_item")]
-        private bool get_array_item_xmp (string schema, string name, int32 index, String property, out uint32? bits);
+        private bool get_array_item_xmp (string schema, string name, int32 index, String property, out uint32 bits);
 
         public bool set_property (string schema, string name, string @value, uint32 option_bits);
         public bool set_property_float (string schema, string name, float @value, uint32 option_bits);
@@ -375,30 +376,30 @@ namespace Xmp {
             return set_property (schema, name, @value.format_iso8601 (), option_bits);
         }
 
-        public bool append_array_item (string schema, string name, uint32 array_options, string @value, uint32 option_bits);
+        [CCode (cname = "__vala_xmp_append_array_item")]
+        public bool append_array_item (string schema, string name, PropsBits array_options, string @value, uint32 option_bits) {
+            return append_array_item_xmp (schema, name, (uint32) array_options, @value, option_bits);
+        }
+
+        [CCode (cname = "xmp_append_array_item")]
+        private bool append_array_item_xmp (string schema, string name, uint32 array_options, string @value, uint32 option_bits);
 
         public bool delete_property (string schema, string name);
         public bool has_property (string schema, string name);
 
         [CCode (cname = "__vala_xmp_get_localized_text")]
         public bool get_localized_text (string schema, string name, string generic_lang,
-                                        string specific_lang, ref string? actual_lang,
-                                        ref string? item_value, ref PropsBits? props_bits)
+                                        string specific_lang, out string actual_lang,
+                                        out string item_value, out PropsBits props_bits)
                                         requires (generic_lang != "")
                                         requires (specific_lang != "") {
             uint32 bits = 0x0;
             String x_actual = new String (), x_value = new String ();
             bool retval = get_localized_text_xmp (schema, name, generic_lang, specific_lang,
                                                   x_actual, x_value, out bits);
-            if (actual_lang != null) {
-                actual_lang = x_actual.to_string ();
-            }
-            if (item_value != null) {
-                item_value = x_value.to_string ();
-            }
-            if (props_bits != null) {
-                props_bits = (PropsBits) bits;
-            }
+            actual_lang = x_actual.to_string ();
+            item_value = x_value.to_string ();
+            props_bits = (PropsBits) bits;
             return retval;
         }
         [CCode (cname = "xmp_get_localized_text")]
@@ -406,6 +407,30 @@ namespace Xmp {
 
         public bool set_localized_text (string schema, string name, string generic_lang, string specific_lang, string @value, uint32 option_bits);
         public bool delete_localized_text (string schema, string name, string generic_lang, string specific_lang);
+
+        public int count_array_items (string schema, string name) {
+            PropsBits bits;
+            int count = 0;
+            bool property = get_property (schema, name, null, out bits);
+            if (!property) {
+                return -1;
+            }
+            if (!(VALUE_IS_ARRAY in bits)) {
+                return 1;
+            }
+            var iterator = new Iterator (this, schema, name, JUSTCHILDREN);
+            string schema_ns, prop_path, prop_val;
+            while (iterator.next (out schema_ns, out prop_path, out prop_val, out bits)) {
+                if (COMPOSITE_MASK in bits) {
+                    iterator.skip (SUBTREE);
+                }
+                if (!(name in prop_path)) {
+                    break;
+                }
+                count++;
+            }
+            return count;
+        }
     }
 
     [Compact (opaque = true)]
@@ -418,12 +443,13 @@ namespace Xmp {
 
         [CCode (cname = "xmp_files_open")]
         public bool open_file (string path, OpenFileOptions options);
-        public bool close (CloseFileOptions options);
-        public Packet get_new_xmp ();
 
-        public bool get_xmp (Packet xmp);
-        public bool can_put_xmp (Packet xmp);
-        public bool put_xmp (Packet xmp);
+        public bool close (CloseFileOptions options);
+        public Meta get_new_xmp ();
+
+        public bool get_xmp (Meta xmp);
+        public bool can_put_xmp (Meta xmp);
+        public bool put_xmp (Meta xmp);
 
         [CCode (cname = "xmp_files_can_put_xmp_cstr")]
         public bool can_put_string (string xmp_packet);
@@ -445,34 +471,27 @@ namespace Xmp {
         private bool get_file_info_xmp_str (String? file_path, out OpenFileOptions options, out FileType format, out FileFormatOptions handler_flags);
     }
 
+    [Compact (opaque = true)]
     [CCode (cname = "struct _XmpIterator", lower_case_cprefix = "xmp_iterator_", free_function = "xmp_iterator_free")]
     public class Iterator {
         [CCode (cname = "xmp_iterator_new")]
-        public Iterator (Packet xmp, string schema, string prop_name, IterOptions options);
+        public Iterator (Meta xmp, string schema, string prop_name, IterOptions options);
 
         [CCode (cname = "__vala_xmp_iter_next")]
-        public bool next (ref string? schema, ref string? prop_name, ref string? prop_value,
-                          ref PropsBits? options) {
+        public bool next (out string schema, out string prop_name, out string prop_value,
+                          out PropsBits options) {
             String schema_str = new String (), name_str = new String (), value_str = new String ();
             uint32 bits = 0x0;
             bool retval = next_xmp (schema_str, name_str, value_str, out bits);
-            if (schema != null) {
-                schema = schema_str.to_string ();
-            }
-            if (prop_name != null) {
-                prop_name = name_str.to_string ();
-            }
-            if (prop_value != null) {
-                prop_value = value_str.to_string ();
-            }
-            if (options != null) {
-                options = (PropsBits) bits;
-            }
+            schema = schema_str.to_string ();
+            prop_name = name_str.to_string ();
+            prop_value = value_str.to_string ();
+            options = (PropsBits) bits;
             return retval;
         }
 
-        [CCode (cname = "xmp_iter_next")]
-        private bool next_xmp (String? schema, String? prop_name, String? prop_value, out uint32? options);
+        [CCode (cname = "xmp_iterator_next")]
+        private bool next_xmp (String? schema, String? prop_name, String? prop_value, out uint32 options);
 
         public bool skip (IterSkipOptions options);
     }
@@ -527,13 +546,11 @@ namespace Xmp {
         [CCode (cname = "xmp_register_namespace")]
         private bool register_namespace_xmp_str (string namespace_uri, string suggested_prefix, String registered_prefix);
 
-        [CCode (cname = "__vala_xmp_namespace_is_registered")]
-        public bool namespace_is_registered (string ns, ref string? prefix) {
+        [CCode (cname = "__vala_xmp_namespace_prefix")]
+        public bool namespace_prefix (string ns, out string prefix) {
             var xmp_str = new String ();
             bool retval = namespace_is_registered_xmp_str (ns, xmp_str);
-            if (prefix != null) {
-                prefix = xmp_str.to_string ();
-            }
+            prefix = xmp_str.to_string ();
             return retval;
         }
 
@@ -541,15 +558,11 @@ namespace Xmp {
         private bool namespace_is_registered_xmp_str (string ns, String? prefix);
 
         [CCode (cname = "__vala_xmp_prefix_is_registered")]
-        public bool prefix_is_registered (string uri, ref string? @namespace) {
+        public bool prefix_namespace_uri (string uri, out string @namespace) {
             bool retval;
-            if (@namespace != null) {
-                var xmp_str = new String ();
-                retval = prefix_is_registered_xmp_str (uri, xmp_str);
-                @namespace = xmp_str.to_string ();
-            } else {
-                retval = prefix_is_registered_xmp_str (uri, null);
-            }
+            var xmp_str = new String ();
+            retval = prefix_is_registered_xmp_str (uri, xmp_str);
+            @namespace = xmp_str.to_string ();
             return retval;
         }
 
