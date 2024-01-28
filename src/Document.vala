@@ -225,6 +225,8 @@ public class PaperClip.Document : Object {
         xmp_meta.set_property (Xmp.Namespace.XAP, "CreatorTool", creator, 0x0);
         xmp_meta.set_property (Xmp.Namespace.PDF, "Keywords", document.keywords, 0x0);
 
+        xmp_meta.set_localized_text (Xmp.Namespace.DC, "title", "x", "x-default", title, 0x0);
+
         if (creation_date == null) {
             xmp_meta.delete_property (Xmp.Namespace.XAP, "CreateDate");
         } else {
