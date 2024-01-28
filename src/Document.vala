@@ -176,7 +176,7 @@ public class PaperClip.Document : Object {
             debug ("Failed to open file with XMP");
             return false;
         }
-        var xmp_meta = new Xmp.Packet.empty ();
+        var xmp_meta = new Xmp.Meta.empty ();
         success = xmp_file.get_xmp (xmp_meta);
         if (!success) {
             debug ("File does not have XMP metadata");
@@ -215,7 +215,7 @@ public class PaperClip.Document : Object {
             throw new XmpError.FAILED_TO_OPEN (@"Failed to open $path XMP metadata. Error: $error");
         }
 
-        var xmp_meta = new Xmp.Packet.empty ();
+        var xmp_meta = new Xmp.Meta.empty ();
         bool has_meta = xmp_file.get_xmp (xmp_meta);
         if (!has_meta) {
             throw new XmpError.NO_XMP (@"$path has no XMP Metadata");
