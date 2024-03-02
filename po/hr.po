@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: pdf_metadata_editor\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-01-27 21:42-0600\n"
-"PO-Revision-Date: 2023-08-30 15:11+0200\n"
+"PO-Revision-Date: 2024-02-21 18:20+0100\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: \n"
 "Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
 "X-Generator: Poedit 3.0\n"
 
 #: data/io.github.diegoivan.pdf_metadata_editor.desktop.in:3
@@ -39,7 +39,7 @@ msgstr "Uredi naslov, autora, ključne riječi i druge podatke PDF dokumenata"
 #. translators: Write your name<email> here :D
 #: src/application.vala:164
 msgid "translator_credits"
-msgstr "Milo Ivir <mail@milotype.de>"
+msgstr "Milo Ivir <mail@milotype.de>, 2023, 2024"
 
 #: src/window.ui:20
 msgid "Select a File"
@@ -59,7 +59,7 @@ msgstr "Povuci i ispusti PDF dokument ovdje"
 
 #: src/window.ui:153
 msgid "_New Window"
-msgstr ""
+msgstr "_Novi prozor"
 
 #: src/window.ui:159 src/gtk/save-changes-dialog.ui:13
 msgid "_Save"
@@ -151,7 +151,7 @@ msgstr "Bez postavki"
 
 #: src/Document.vala:365
 msgid "Adding notes"
-msgstr "Dodavanje napomena"
+msgstr "Dodavanje bilježaka"
 
 #: src/Document.vala:369
 msgid "Inserting elements"
@@ -199,16 +199,15 @@ msgstr "Bez postavke"
 
 #: src/Document.vala:436
 msgid "Not compliant"
-msgstr "Ne odgovara standardima"
+msgstr "Nije u skladu"
 
 #: src/KeywordList.vala:55
 msgid "Keyword"
 msgstr "Ključna riječ"
 
 #: src/KeywordList.vala:92
-#, fuzzy
 msgid "Add Keyword"
-msgstr "Ključna riječ"
+msgstr "Dodaj ključnu riječ"
 
 #: src/KeywordRow.vala:29
 msgid "Delete Keyword"
@@ -216,11 +215,11 @@ msgstr "Izbriši ključnu riječ"
 
 #: src/gtk/date-row.ui:8
 msgid "Remove Date"
-msgstr ""
+msgstr "Ukloni datum"
 
 #: src/gtk/date-row.ui:20
 msgid "Show Calendar"
-msgstr ""
+msgstr "Pokaži kalendar"
 
 #: src/gtk/date-row.ui:49
 msgid "Today"
@@ -248,7 +247,7 @@ msgstr "Podvrsta"
 
 #: src/gtk/details-list.ui:55
 msgid "Viewer Preferences"
-msgstr "Postavke preglednika"
+msgstr "Postavke prikaza"
 
 #: src/gtk/details-list.ui:62
 msgid "Permissions"
@@ -271,9 +270,8 @@ msgid "Subject"
 msgstr "Predmet"
 
 #: src/gtk/document-view.ui:69
-#, fuzzy
 msgid "Conversion Software"
-msgstr "Softver izvornog dokumenta"
+msgstr "Softver korišten za konverziju"
 
 #: src/gtk/document-view.ui:75
 msgid "Creation Date"
@@ -288,14 +286,12 @@ msgid "Non-Editable Properties"
 msgstr "Nepromjenjiva svojstva"
 
 #: src/gtk/keyword-list.ui:6
-#, fuzzy
 msgid "Keywords"
-msgstr "Ključna riječ"
+msgstr "Ključne riječi"
 
 #: src/gtk/keyword-list.ui:12
-#, fuzzy
 msgid "Add a keyword"
-msgstr "Ključna riječ"
+msgstr "Dodaj ključnu riječ"
 
 #: src/gtk/save-changes-dialog.ui:6
 msgid "Save Changes?"
@@ -306,16 +302,16 @@ msgid ""
 "Open documents contain unsaved changes. Changes which are not saved will be "
 "permanently lost."
 msgstr ""
+"Otvoreni dokumenti sadrže nespremljene promjene. Promjene koje nisu "
+"spremljene će se zauvijek izgubiti."
 
 #: src/gtk/save-changes-dialog.ui:11
-#, fuzzy
 msgid "_Cancel"
-msgstr "Odustani"
+msgstr "_Odustani"
 
 #: src/gtk/save-changes-dialog.ui:12
-#, fuzzy
 msgid "_Discard"
-msgstr "Odbaci"
+msgstr "O_dbaci"
 
 #: src/gtk/shortcut-window.ui:11
 msgctxt "shortcut window"
@@ -330,23 +326,22 @@ msgstr "Zatvori aplikaciju"
 #: src/gtk/shortcut-window.ui:21
 msgctxt "shortcut window"
 msgid "New window"
-msgstr ""
+msgstr "Novi prozor"
 
 #: src/gtk/shortcut-window.ui:28
 msgctxt "shortcut window"
 msgid "Close window"
-msgstr ""
+msgstr "Zatvori prozor"
 
 #: src/gtk/shortcut-window.ui:35
-#, fuzzy
 msgctxt "shortcut window"
 msgid "Keyboard Shortcuts"
-msgstr "_Tipkovni prečaci"
+msgstr "Tipkovni prečaci"
 
 #: src/gtk/shortcut-window.ui:43
 msgctxt "shortcut window"
 msgid "Editor"
-msgstr ""
+msgstr "Uređivač"
 
 #: src/gtk/shortcut-window.ui:47
 msgctxt "shortcut window"
@@ -364,89 +359,22 @@ msgid "Save As…"
 msgstr "Spremi kao …"
 
 #: src/gtk/shortcut-window.ui:68
-#, fuzzy
 msgctxt "shortcut window"
 msgid "Add a keyword"
-msgstr "Ključna riječ"
+msgstr "Dodaj ključnu riječ"
 
 #: src/gtk/password-dialog.ui:10
 msgid "Password Dialog"
-msgstr ""
+msgstr "Dijalog za lozinku"
 
 #: src/gtk/password-dialog.ui:21
 msgid "This Document Is Encrypted"
-msgstr ""
+msgstr "Ovaj je dokument šifriran"
 
 #: src/gtk/password-dialog.ui:37
 msgid "Password"
-msgstr ""
+msgstr "Lozinka"
 
 #: src/gtk/password-dialog.ui:44
 msgid "Decrypt"
-msgstr ""
-
-#, fuzzy
-#~ msgid "Paper Clip Version 3.5"
-#~ msgstr "Paper Clip"
-
-#, fuzzy
-#~ msgid "Paper Clip Version 3.2"
-#~ msgstr "Paper Clip"
-
-#~ msgid "Diego Iván"
-#~ msgstr "Diego Iván"
-
-#~ msgid ""
-#~ "Version 2.0: After a three month development hiatus, Paper Clip sees its "
-#~ "second release!"
-#~ msgstr ""
-#~ "Verzija 2.0: Nakon tromjesečne pauze u razvoju, izdano je drugo Paper "
-#~ "Clip izdanje!"
-
-#~ msgid "This version includes a nicer UI with:"
-#~ msgstr "Ova verzija uključuje ljepše korisničko sučelje:"
-
-#~ msgid "Fix many UI papercuts to match the GNOME HIG"
-#~ msgstr ""
-#~ "Mnoge promjene korisničkog sučelja za usklađivanje s GNOME smjernicama za "
-#~ "sučelje"
-
-#~ msgid "The main view now features a thumbnail of the document"
-#~ msgstr "Glavni prikaz sada prikazuje minijaturu dokumenta"
-
-#~ msgid ""
-#~ "The term \"Creator\" has been changed for \"Creation Software\" to avoid "
-#~ "confusion with \"Author\""
-#~ msgstr ""
-#~ "Engleski izraz „Creator” je promijenjen u „Creation Software” kako bi se "
-#~ "izbjegla zabuna s podatkom „Author”. Hrvatski prijevod je i nadalje "
-#~ "„Softver izvornog dokumenta”"
-
-#~ msgid ""
-#~ "The main view now handles large document titles as special cases to avoid "
-#~ "breaking the UI"
-#~ msgstr ""
-#~ "Glavni prikaz sada obrađuje dugačke naslove dokumenata kao posebne "
-#~ "slučajeve kako bi se sačuvao izgled korisničkog sučelja"
-
-#~ msgid "The keyword list now has a nicer UI"
-#~ msgstr "Popis ključnih riječi sada ima ljepše korisničko sučelje"
-
-#~ msgid ""
-#~ "The details window has been removed, and the non editable properties of "
-#~ "the document have been moved to the bottom of the view"
-#~ msgstr ""
-#~ "Prozor s detaljima je uklonjen, a nepromjenjiva svojstva dokumenta su "
-#~ "premještena na dno prikaza"
-
-#~ msgid "Changes that are not saved will be lost permanently"
-#~ msgstr "Nespremljene promjene će se zauvijek izgubiti"
-
-#~ msgid "Save"
-#~ msgstr "Spremi"
-
-#~ msgid "Press the “+” button to add a keyword"
-#~ msgstr "Za dodavanje ključne riječi pritisni gumb „+”"
-
-#~ msgid "Producer"
-#~ msgstr "PDF stvoren pomoću"
+msgstr "Dešifriraj"

@@ -8,25 +8,24 @@ msgstr ""
 "Project-Id-Version: pdf_metadata_editor\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-01-27 21:42-0600\n"
-"PO-Revision-Date: 2023-02-07 00:10+0100\n"
-"Last-Translator: Jürgen Benvenuti <gastornis@posteo.org>\n"
+"PO-Revision-Date: 2024-02-21 18:20+0100\n"
+"Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.0\n"
 
 #: data/io.github.diegoivan.pdf_metadata_editor.desktop.in:3
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:7
 msgid "Paper Clip"
-msgstr ""
+msgstr "Paper Clip"
 
 #: data/io.github.diegoivan.pdf_metadata_editor.desktop.in:8
-#, fuzzy
 msgid "PDF;Metadata;Editor;"
-msgstr "PDF-Metadaten-Editor"
+msgstr "PDF;Metadaten;Editor;"
 
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:8
 msgid "Edit PDF document metadata"
@@ -41,7 +40,9 @@ msgstr ""
 #. translators: Write your name<email> here :D
 #: src/application.vala:164
 msgid "translator_credits"
-msgstr "Jürgen Benvenuti <gastornis@posteo.org>, 2023"
+msgstr ""
+"Jürgen Benvenuti <gastornis@posteo.org>, 2023\n"
+"Milo Ivir <mail@milotype.de>, 2024"
 
 #: src/window.ui:20
 msgid "Select a File"
@@ -52,18 +53,16 @@ msgid "Open"
 msgstr "Öffnen"
 
 #: src/window.ui:86
-#, fuzzy
 msgid "Open a Document"
-msgstr "In einem Dokumentenbetrachter öffnen"
+msgstr "Ein Dokument öffnen"
 
 #: src/window.ui:95
-#, fuzzy
 msgid "Drag and drop a PDF file here"
 msgstr "Ziehen Sie ein PDF-Dokument hierher"
 
 #: src/window.ui:153
 msgid "_New Window"
-msgstr ""
+msgstr "_Neues Fenster"
 
 #: src/window.ui:159 src/gtk/save-changes-dialog.ui:13
 msgid "_Save"
@@ -74,9 +73,8 @@ msgid "Save _As…"
 msgstr "Speichern _unter …"
 
 #: src/window.ui:171
-#, fuzzy
 msgid "Open _With…"
-msgstr "Öffnen …"
+msgstr "Öffnen _mit …"
 
 #: src/window.ui:178
 msgid "_Keyboard Shortcuts"
@@ -84,7 +82,7 @@ msgstr "_Tastenkürzel"
 
 #: src/window.ui:182
 msgid "_About Paper Clip"
-msgstr ""
+msgstr "Ü_ber Paper Clip"
 
 #: src/DateRow.vala:34
 msgid "No date set"
@@ -211,9 +209,8 @@ msgid "Keyword"
 msgstr "Schlüsselwort"
 
 #: src/KeywordList.vala:92
-#, fuzzy
 msgid "Add Keyword"
-msgstr "Ein Schlüsselwort hinzufügen"
+msgstr "Schlüsselwort hinzufügen"
 
 #: src/KeywordRow.vala:29
 msgid "Delete Keyword"
@@ -221,11 +218,11 @@ msgstr "Schlüsselwort löschen"
 
 #: src/gtk/date-row.ui:8
 msgid "Remove Date"
-msgstr ""
+msgstr "Datum entfernen"
 
 #: src/gtk/date-row.ui:20
 msgid "Show Calendar"
-msgstr ""
+msgstr "Kalender zeigen"
 
 #: src/gtk/date-row.ui:49
 msgid "Today"
@@ -245,7 +242,7 @@ msgstr "Layout"
 
 #: src/gtk/details-list.ui:35
 msgid "Duplex"
-msgstr "Duplex"
+msgstr "Beidseitig"
 
 #: src/gtk/details-list.ui:45
 msgid "Subtype"
@@ -268,18 +265,16 @@ msgid "Author"
 msgstr "Autor"
 
 #: src/gtk/document-view.ui:57
-#, fuzzy
 msgid "Creation Software"
-msgstr "Erstellungsdatum"
+msgstr "Erstellungssoftware"
 
 #: src/gtk/document-view.ui:63
 msgid "Subject"
 msgstr "Thema"
 
 #: src/gtk/document-view.ui:69
-#, fuzzy
 msgid "Conversion Software"
-msgstr "Erstellungsdatum"
+msgstr "Konvertierungssoftware"
 
 #: src/gtk/document-view.ui:75
 msgid "Creation Date"
@@ -290,38 +285,36 @@ msgid "Modification Date"
 msgstr "Änderungsdatum"
 
 #: src/gtk/document-view.ui:94
-#, fuzzy
 msgid "Non-Editable Properties"
-msgstr "Bearbeitbare Eigenschaften"
+msgstr "Nichtbearbeitbare Eigenschaften"
 
 #: src/gtk/keyword-list.ui:6
 msgid "Keywords"
 msgstr "Schlüsselwörter"
 
 #: src/gtk/keyword-list.ui:12
-#, fuzzy
 msgid "Add a keyword"
 msgstr "Ein Schlüsselwort hinzufügen"
 
 #: src/gtk/save-changes-dialog.ui:6
 msgid "Save Changes?"
-msgstr ""
+msgstr "Änderungen speichern?"
 
 #: src/gtk/save-changes-dialog.ui:7
 msgid ""
 "Open documents contain unsaved changes. Changes which are not saved will be "
 "permanently lost."
 msgstr ""
+"Geöffnete Dokumente enthalten nicht gespeicherte Änderungen. Nicht "
+"gespeicherte Änderungen gehen dauerhaft verloren."
 
 #: src/gtk/save-changes-dialog.ui:11
-#, fuzzy
 msgid "_Cancel"
-msgstr "Abbrechen"
+msgstr "_Abbrechen"
 
 #: src/gtk/save-changes-dialog.ui:12
-#, fuzzy
 msgid "_Discard"
-msgstr "Verwerfen"
+msgstr "_Verwerfen"
 
 #: src/gtk/shortcut-window.ui:11
 msgctxt "shortcut window"
@@ -336,23 +329,22 @@ msgstr "Beenden"
 #: src/gtk/shortcut-window.ui:21
 msgctxt "shortcut window"
 msgid "New window"
-msgstr ""
+msgstr "Neues Fenster"
 
 #: src/gtk/shortcut-window.ui:28
 msgctxt "shortcut window"
 msgid "Close window"
-msgstr ""
+msgstr "Fenster schließen"
 
 #: src/gtk/shortcut-window.ui:35
-#, fuzzy
 msgctxt "shortcut window"
 msgid "Keyboard Shortcuts"
-msgstr "_Tastenkürzel"
+msgstr "Tastenkürzel"
 
 #: src/gtk/shortcut-window.ui:43
 msgctxt "shortcut window"
 msgid "Editor"
-msgstr ""
+msgstr "Editor"
 
 #: src/gtk/shortcut-window.ui:47
 msgctxt "shortcut window"
@@ -370,47 +362,22 @@ msgid "Save As…"
 msgstr "Speichern unter …"
 
 #: src/gtk/shortcut-window.ui:68
-#, fuzzy
 msgctxt "shortcut window"
 msgid "Add a keyword"
 msgstr "Ein Schlüsselwort hinzufügen"
 
 #: src/gtk/password-dialog.ui:10
 msgid "Password Dialog"
-msgstr ""
+msgstr "Passwort-Fenster"
 
 #: src/gtk/password-dialog.ui:21
 msgid "This Document Is Encrypted"
-msgstr ""
+msgstr "Dieses Dokument ist verschlüsselt"
 
 #: src/gtk/password-dialog.ui:37
 msgid "Password"
-msgstr ""
+msgstr "Passwort"
 
 #: src/gtk/password-dialog.ui:44
 msgid "Decrypt"
-msgstr ""
-
-#~ msgid "Diego Iván"
-#~ msgstr "Diego Iván"
-
-#~ msgid "Changes that are not saved will be lost permanently"
-#~ msgstr "Ungespeicherte Änderungen gehen unwiderruflich verloren"
-
-#~ msgid "Save"
-#~ msgstr "Speichern"
-
-#~ msgid "Producer"
-#~ msgstr "Hersteller"
-
-#~ msgid "Do you want to save the changes?"
-#~ msgstr "Möchten Sie die Änderungen speichern?"
-
-#~ msgid "_About PDF Metadata Editor"
-#~ msgstr "_Info zu PDF-Metadaten-Editor"
-
-#~ msgid "Details"
-#~ msgstr "Details"
-
-#~ msgid "Creator"
-#~ msgstr "Ersteller"
+msgstr "Entschlüsseln"
