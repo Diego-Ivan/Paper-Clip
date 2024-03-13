@@ -1,21 +1,21 @@
 # Czech translation for Paper Clip.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the pdf-metadata-editor package.
-# Amerey.eu <info@amerey.eu>, 2023.
+# Amerey.eu <info@amerey.eu>, 2023, 2024.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: pdf-metadata-editor\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-01-27 21:42-0600\n"
-"PO-Revision-Date: 2023-11-11 11:36+0100\n"
-"Last-Translator: Amerey.eu <info@amerey.eu>\n"
+"PO-Revision-Date: 2024-03-13 18:22+0100\n"
+"Last-Translator: Amerey <info@amerey.eu>\n"
 "Language-Team: \n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.4.1\n"
+"X-Generator: Poedit 3.4.2\n"
 
 #: data/io.github.diegoivan.pdf_metadata_editor.desktop.in:3
 #: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:7
@@ -285,12 +285,10 @@ msgid "Non-Editable Properties"
 msgstr "Vlastnosti, které nelze upravovat"
 
 #: src/gtk/keyword-list.ui:6
-#, fuzzy
 msgid "Keywords"
-msgstr "Klíčové slovo"
+msgstr "Klíčové slova"
 
 #: src/gtk/keyword-list.ui:12
-#, fuzzy
 msgid "Add a keyword"
 msgstr "Přidat klíčové slovo"
 
@@ -360,26 +358,25 @@ msgid "Save As…"
 msgstr "Uložit jako…"
 
 #: src/gtk/shortcut-window.ui:68
-#, fuzzy
 msgctxt "shortcut window"
 msgid "Add a keyword"
 msgstr "Přidat klíčové slovo"
 
 #: src/gtk/password-dialog.ui:10
 msgid "Password Dialog"
-msgstr ""
+msgstr "Dialogové okno hesla"
 
 #: src/gtk/password-dialog.ui:21
 msgid "This Document Is Encrypted"
-msgstr ""
+msgstr "Tento dokument je zašifrován"
 
 #: src/gtk/password-dialog.ui:37
 msgid "Password"
-msgstr ""
+msgstr "Heslo"
 
 #: src/gtk/password-dialog.ui:44
 msgid "Decrypt"
-msgstr ""
+msgstr "Dešifrovat"
 
 #~ msgid "Paper Clip Version 3.5"
 #~ msgstr "Paper Clip verze 3.5"
