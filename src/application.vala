@@ -149,7 +149,7 @@ public class PaperClip.Application : Adw.Application {
     private void on_about_action () {
         string[] developers = { "Diego Iván M.E" };
         string[] artists = { "Brage Fuglseth" };
-        var about = new Adw.AboutWindow () {
+        var about = new Adw.AboutDialog () {
             application_icon = Config.APP_ID,
             application_name = "Paper Clip",
             copyright = "© 2023 Diego Iván M.E",
@@ -159,14 +159,13 @@ public class PaperClip.Application : Adw.Application {
             artists = artists,
             issue_url = "https://github.com/Diego-Ivan/Paper-Clip/issues",
             license_type = GPL_3_0,
-            transient_for = this.active_window,
             // translators: Write your name<email> here :D
             translator_credits = _("translator_credits"),
             version = Config.VERSION,
             website = "https://github.com/Diego-Ivan/Paper-Clip",
         };
 
-        about.present ();
+        about.present (this.active_window);
     }
 
     private string? generate_debug_info () {
