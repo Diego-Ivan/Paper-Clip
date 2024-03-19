@@ -11,7 +11,7 @@ public errordomain PaperClip.PasswordDialogError {
 }
 
 [GtkTemplate (ui = "/io/github/diegoivan/pdf_metadata_editor/gtk/password-dialog.ui")]
-public class PaperClip.PasswordDialog : Adw.Window {
+public class PaperClip.PasswordDialog : Adw.Dialog {
     [GtkChild]
     private unowned Adw.PasswordEntryRow password_entry;
     [GtkChild]
@@ -35,12 +35,7 @@ public class PaperClip.PasswordDialog : Adw.Window {
         if (cancellable != null) {
             cancellable.cancelled.connect (cancel_task);
         }
-        if (parent != null) {
-            transient_for = parent;
-            modal = true;
-        }
-
-        present ();
+        present (parent);
         yield;
         close ();
 
@@ -52,12 +47,10 @@ public class PaperClip.PasswordDialog : Adw.Window {
     }
 
     [GtkCallback]
-    private bool on_close_request () {
-        if (task.status != RUNNING) {
-            return false;
-        }
+    private void on_closed () 
+    requires (task != null)
+    requires (task.status == RUNNING) {
         cancel_task ();
-        return true;
     }
 
     [GtkCallback]
