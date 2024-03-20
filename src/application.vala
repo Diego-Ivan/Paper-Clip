@@ -152,7 +152,7 @@ public class PaperClip.Application : Adw.Application {
         var about = new Adw.AboutDialog () {
             application_icon = Config.APP_ID,
             application_name = "Paper Clip",
-            copyright = "© 2023 Diego Iván M.E",
+            copyright = "© 2023-2024 Diego Iván M.E",
             developer_name = "Diego Iván M.E",
             debug_info = generate_debug_info (),
             developers = developers,
