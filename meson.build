@@ -1,5 +1,5 @@
 project('pdf-metadata-editor', ['c', 'vala'],
-          version: '5.0',
+          version: '5.5',
     meson_version: '>= 0.59.0',
   default_options: [ 'warning_level=2', 'werror=false', ],
 )

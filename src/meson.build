@@ -25,11 +25,15 @@ hidden_scribe_sources = [
 
 exempi_dep = dependency('exempi-2.0')
 
+cc = meson.get_compiler('c')
+m_dep = cc.find_library('m', required : false)
+
 hidden_scribe_deps = [
   dependency('gtk4', version:'>=4.10'),
   dependency('libadwaita-1'),
   dependency('poppler-glib'),
   exempi_dep,
+  m_dep,
 ]
 
 conf = configuration_data()

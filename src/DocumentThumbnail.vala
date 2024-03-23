@@ -1,6 +1,6 @@
 /* DocumentThumbnail.vala
  *
- * Copyright 2023 Diego Iván <diegoivan.mae@gmail.com>
+ * Copyright 2023-2024 Diego Iván <diegoivan.mae@gmail.com>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -50,8 +50,8 @@ public class PaperClip.DocumentThumbnail : Adw.Bin {
         try {
             Poppler.Page page = document.get_page_for_index (0);
             string basename = document.original_file.get_basename ();
-            Gdk.Texture thumbnail_texture = yield thumbnailer.create_thumbnail (page, basename);
             thumbnail_image.clear ();
+            Gdk.Texture thumbnail_texture = yield thumbnailer.create_thumbnail (page, basename);
             thumbnail_image.paintable = scale_thumbnail (thumbnail_texture);
         }
         catch (Error e) {
@@ -67,7 +67,7 @@ public class PaperClip.DocumentThumbnail : Adw.Bin {
         var snapshot = new Gtk.Snapshot ();
         var thumbnail_rectangle = Graphene.Rect () {
             origin = { 0, 0 },
-            size = { scaled_width, scaled_height }
+            size = { Math.floorf (scaled_width), Math.floorf (scaled_height) }
         };
 
         Gsk.ScalingFilter filter = LINEAR;
@@ -81,9 +81,8 @@ public class PaperClip.DocumentThumbnail : Adw.Bin {
         // Append White Background in case the image is transparent
         snapshot.append_color ({1, 1, 1, 1}, thumbnail_rectangle);
         snapshot.append_scaled_texture (thumbnail_texture, filter, thumbnail_rectangle);
-        thumbnail_image.pixel_size = MAX_SIZE / 2;
 
-        return snapshot.free_to_paintable (null);
+        return snapshot.to_paintable (null);
     }
 
     private void compute_scaled_size (int image_height, int image_width, out float scaled_height,
