@@ -1,0 +1,380 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the pdf-metadata-editor package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Scrambled777 <weblate.scrambled777@simplelogin.com>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: pdf-metadata-editor\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-27 21:42-0600\n"
+"PO-Revision-Date: 2024-03-27 18:39+0530\n"
+"Last-Translator: Scrambled777 <weblate.scrambled777@simplelogin.com>\n"
+"Language-Team: Hindi\n"
+"Language: hi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Gtranslator 46.0\n"
+
+#: data/io.github.diegoivan.pdf_metadata_editor.desktop.in:3
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:7
+msgid "Paper Clip"
+msgstr "Paper Clip"
+
+#: data/io.github.diegoivan.pdf_metadata_editor.desktop.in:8
+msgid "PDF;Metadata;Editor;"
+msgstr "PDF;Metadata;Editor;मेटाडेटा;संपादक;"
+
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:8
+msgid "Edit PDF document metadata"
+msgstr "PDF दस्तावेज़ मेटाडेटा संपादित करें"
+
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:10
+msgid "Edit the title, author, keywords and more details of your PDF documents"
+msgstr "अपने PDF दस्तावेज़ों का शीर्षक, लेखक, कीवर्ड और अधिक विवरण संपादित करें"
+
+#. translators: Write your name<email> here :D
+#: src/application.vala:164
+msgid "translator_credits"
+msgstr "Scrambled777 <weblate.scrambled777@simplelogin.com>"
+
+#: src/window.ui:20
+msgid "Select a File"
+msgstr "एक फ़ाइल चुनें"
+
+#: src/window.ui:24
+msgid "Open"
+msgstr "खोलें"
+
+#: src/window.ui:86
+msgid "Open a Document"
+msgstr "एक दस्तावेज़ खोलें"
+
+#: src/window.ui:95
+msgid "Drag and drop a PDF file here"
+msgstr "यहां एक PDF फाइल को खींचें और छोड़ें"
+
+#: src/window.ui:153
+msgid "_New Window"
+msgstr "_नई विंडो"
+
+#: src/window.ui:159 src/gtk/save-changes-dialog.ui:13
+msgid "_Save"
+msgstr "_सहेजें"
+
+#: src/window.ui:165
+msgid "Save _As…"
+msgstr "_इस रूप में सहेजें..."
+
+#: src/window.ui:171
+msgid "Open _With…"
+msgstr "_इसके साथ खोलें..."
+
+#: src/window.ui:178
+msgid "_Keyboard Shortcuts"
+msgstr "_कीबोर्ड शॉर्टकट"
+
+#: src/window.ui:182
+msgid "_About Paper Clip"
+msgstr "_Paper Clip के बारे में"
+
+#: src/DateRow.vala:34
+msgid "No date set"
+msgstr "कोई तिथि निर्धारित नहीं"
+
+#: src/Document.vala:117
+msgid "Unknown"
+msgstr "अज्ञात"
+
+#: src/Document.vala:298
+msgid "Pages in one column"
+msgstr "एक कॉलम में पन्ने"
+
+#: src/Document.vala:301
+msgid "One page at a time"
+msgstr "एक बार में एक पृष्ठ"
+
+#: src/Document.vala:304
+msgid "Odd numbered pages on the left"
+msgstr "बायीं ओर विषम क्रमांकित पृष्ठ"
+
+#: src/Document.vala:307
+msgid "Odd numbered pages on the right"
+msgstr "दाहिनी ओर विषम क्रमांकित पृष्ठ"
+
+#: src/Document.vala:310
+msgid "Two odd numbered pages on the left"
+msgstr "बायीं ओर दो विषम क्रमांकित पृष्ठ"
+
+#: src/Document.vala:313
+msgid "Two odd numbered pages on the right"
+msgstr "दाहिनी ओर दो विषम क्रमांकित पृष्ठ"
+
+#: src/Document.vala:317
+msgid "No specific layout"
+msgstr "कोई विशिष्ट लेआउट नहीं"
+
+#: src/Document.vala:326
+msgid "Center document's window"
+msgstr "दस्तावेज़ की विंडो को केंद्र में रखें"
+
+#: src/Document.vala:330
+msgid "Reading order is right to left"
+msgstr "पढ़ने का क्रम दाएँ से बाएँ है"
+
+#: src/Document.vala:334
+msgid "Display document's title"
+msgstr "दस्तावेज़ का शीर्षक प्रदर्शित करें"
+
+#: src/Document.vala:338
+msgid "Fit document to window"
+msgstr "दस्तावेज़ को विंडो में फ़िट करें"
+
+#: src/Document.vala:342
+msgid "Hide window menubar"
+msgstr "विंडो मेनूबार छिपाएँ"
+
+#: src/Document.vala:346
+msgid "Hide window toolbars"
+msgstr "विंडो टूलबार छिपाएँ"
+
+#: src/Document.vala:350
+msgid "Hide UI elements"
+msgstr "UI तत्व छुपाएं"
+
+#: src/Document.vala:354
+msgid "No preferences"
+msgstr "कोई प्राथमिकता नहीं"
+
+#: src/Document.vala:365
+msgid "Adding notes"
+msgstr "नोट्स जोडे जा रहे हैं"
+
+#: src/Document.vala:369
+msgid "Inserting elements"
+msgstr "तत्वों को सम्मिलित किया जा रहा है"
+
+#: src/Document.vala:373
+msgid "Copying"
+msgstr "कॉपी बनाई जा रही"
+
+#: src/Document.vala:377
+msgid "Extracting contents"
+msgstr "सामग्री निकली जा रही है"
+
+#: src/Document.vala:381
+msgid "Filling interactive forms"
+msgstr "इंटरैक्टिव फॉर्म भरें जा रहे हैं"
+
+#: src/Document.vala:385
+msgid "Modifying"
+msgstr "संशोधित किया जा रहा है"
+
+#: src/Document.vala:389
+msgid "Printing"
+msgstr "मुद्रण"
+
+#: src/Document.vala:393
+msgid "Printing in high resolution"
+msgstr "उच्च रिज़ॉल्यूशन में मुद्रण"
+
+#: src/Document.vala:402
+msgid "Flip on the long edge"
+msgstr "लंबे किनारे पर पलटें"
+
+#: src/Document.vala:405
+msgid "Flip on the short edge"
+msgstr "छोटे किनारे पर पलटें"
+
+#: src/Document.vala:408
+msgid "Only single sided"
+msgstr "केवल एक तरफा"
+
+#: src/Document.vala:412
+msgid "No preference"
+msgstr "कोई वरीयता नहीं"
+
+#: src/Document.vala:436
+msgid "Not compliant"
+msgstr "सम्मत नहीं है"
+
+#: src/KeywordList.vala:55
+msgid "Keyword"
+msgstr "कीवर्ड"
+
+#: src/KeywordList.vala:92
+msgid "Add Keyword"
+msgstr "कीवर्ड जोड़ें"
+
+#: src/KeywordRow.vala:29
+msgid "Delete Keyword"
+msgstr "कीवर्ड हटाएँ"
+
+#: src/gtk/date-row.ui:8
+msgid "Remove Date"
+msgstr "दिनांक हटाएँ"
+
+#: src/gtk/date-row.ui:20
+msgid "Show Calendar"
+msgstr "कैलेंडर दिखाएँ"
+
+#: src/gtk/date-row.ui:49
+msgid "Today"
+msgstr "आज"
+
+#: src/gtk/date-row.ui:56
+msgid "Tomorrow"
+msgstr "कल"
+
+#: src/gtk/details-list.ui:15
+msgid "Format"
+msgstr "प्रारूप"
+
+#: src/gtk/details-list.ui:25
+msgid "Layout"
+msgstr "विन्यास"
+
+#: src/gtk/details-list.ui:35
+msgid "Duplex"
+msgstr "डुप्लेक्स"
+
+#: src/gtk/details-list.ui:45
+msgid "Subtype"
+msgstr "उपप्रकार"
+
+#: src/gtk/details-list.ui:55
+msgid "Viewer Preferences"
+msgstr "दर्शक प्राथमिकताएँ"
+
+#: src/gtk/details-list.ui:62
+msgid "Permissions"
+msgstr "अनुमतियां"
+
+#: src/gtk/document-view.ui:45
+msgid "Title"
+msgstr "शीर्षक"
+
+#: src/gtk/document-view.ui:51
+msgid "Author"
+msgstr "लेखक"
+
+#: src/gtk/document-view.ui:57
+msgid "Creation Software"
+msgstr "निर्माण सॉफ्टवेयर"
+
+#: src/gtk/document-view.ui:63
+msgid "Subject"
+msgstr "विषय"
+
+#: src/gtk/document-view.ui:69
+msgid "Conversion Software"
+msgstr "रूपांतरण सॉफ्टवेयर"
+
+#: src/gtk/document-view.ui:75
+msgid "Creation Date"
+msgstr "निर्माण तिथि"
+
+#: src/gtk/document-view.ui:81
+msgid "Modification Date"
+msgstr "सुधार की तारीख"
+
+#: src/gtk/document-view.ui:94
+msgid "Non-Editable Properties"
+msgstr "गैर-संपादनयोग्य गुण"
+
+#: src/gtk/keyword-list.ui:6
+msgid "Keywords"
+msgstr "कीवर्ड"
+
+#: src/gtk/keyword-list.ui:12
+msgid "Add a keyword"
+msgstr "एक कीवर्ड जोड़ें"
+
+#: src/gtk/save-changes-dialog.ui:6
+msgid "Save Changes?"
+msgstr "परिवर्तन सहेजें?"
+
+#: src/gtk/save-changes-dialog.ui:7
+msgid ""
+"Open documents contain unsaved changes. Changes which are not saved will be "
+"permanently lost."
+msgstr ""
+"खुले दस्तावेज़ों में सहेजे न गए परिवर्तन होते हैं। जो परिवर्तन सहेजे नहीं गए वे स्थायी रूप से नष्ट "
+"हो जाएंगे."
+
+#: src/gtk/save-changes-dialog.ui:11
+msgid "_Cancel"
+msgstr "_रद्द"
+
+#: src/gtk/save-changes-dialog.ui:12
+msgid "_Discard"
+msgstr "_खारिज"
+
+#: src/gtk/shortcut-window.ui:11
+msgctxt "shortcut window"
+msgid "General"
+msgstr "सामान्य"
+
+#: src/gtk/shortcut-window.ui:14
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "छोड़ें"
+
+#: src/gtk/shortcut-window.ui:21
+msgctxt "shortcut window"
+msgid "New window"
+msgstr "नई विंडो"
+
+#: src/gtk/shortcut-window.ui:28
+msgctxt "shortcut window"
+msgid "Close window"
+msgstr "विंडो बंद करें"
+
+#: src/gtk/shortcut-window.ui:35
+msgctxt "shortcut window"
+msgid "Keyboard Shortcuts"
+msgstr "कीबोर्ड शॉर्टकट"
+
+#: src/gtk/shortcut-window.ui:43
+msgctxt "shortcut window"
+msgid "Editor"
+msgstr "संपादक"
+
+#: src/gtk/shortcut-window.ui:47
+msgctxt "shortcut window"
+msgid "Open"
+msgstr "खोलें"
+
+#: src/gtk/shortcut-window.ui:54
+msgctxt "shortcut window"
+msgid "Save"
+msgstr "सहेजें"
+
+#: src/gtk/shortcut-window.ui:61
+msgctxt "shortcut window"
+msgid "Save As…"
+msgstr "इस रूप में सहेजें..."
+
+#: src/gtk/shortcut-window.ui:68
+msgctxt "shortcut window"
+msgid "Add a keyword"
+msgstr "कीवर्ड जोड़ें"
+
+#: src/gtk/password-dialog.ui:10
+msgid "Password Dialog"
+msgstr "पासवर्ड संवाद"
+
+#: src/gtk/password-dialog.ui:21
+msgid "This Document Is Encrypted"
+msgstr "यह दस्तावेज़ एन्क्रिप्टेड है"
+
+#: src/gtk/password-dialog.ui:37
+msgid "Password"
+msgstr "पासवर्ड"
+
+#: src/gtk/password-dialog.ui:44
+msgid "Decrypt"
+msgstr "डिक्रिप्ट"
