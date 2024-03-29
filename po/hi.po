@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: pdf-metadata-editor\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-01-27 21:42-0600\n"
-"PO-Revision-Date: 2024-03-27 18:39+0530\n"
+"PO-Revision-Date: 2024-03-28 00:27+0530\n"
 "Last-Translator: Scrambled777 <weblate.scrambled777@simplelogin.com>\n"
 "Language-Team: Hindi\n"
 "Language: hi\n"
@@ -43,7 +43,7 @@ msgstr "Scrambled777 <weblate.scrambled777@simplelogin.com>"
 
 #: src/window.ui:20
 msgid "Select a File"
-msgstr "एक फ़ाइल चुनें"
+msgstr "एक फाइल चुनें"
 
 #: src/window.ui:24
 msgid "Open"
@@ -59,27 +59,27 @@ msgstr "यहां एक PDF फाइल को खींचें और �
 
 #: src/window.ui:153
 msgid "_New Window"
-msgstr "_नई विंडो"
+msgstr "नई विंडो (_N)"
 
 #: src/window.ui:159 src/gtk/save-changes-dialog.ui:13
 msgid "_Save"
-msgstr "_सहेजें"
+msgstr "सहेजें (_S)"
 
 #: src/window.ui:165
 msgid "Save _As…"
-msgstr "_इस रूप में सहेजें..."
+msgstr "इस रूप में सहेजें... (_A)"
 
 #: src/window.ui:171
 msgid "Open _With…"
-msgstr "_इसके साथ खोलें..."
+msgstr "इसके साथ खोलें... (_W)"
 
 #: src/window.ui:178
 msgid "_Keyboard Shortcuts"
-msgstr "_कीबोर्ड शॉर्टकट"
+msgstr "कीबोर्ड शॉर्टकट (_K)"
 
 #: src/window.ui:182
 msgid "_About Paper Clip"
-msgstr "_Paper Clip के बारे में"
+msgstr "Paper Clip के बारे में (_P)"
 
 #: src/DateRow.vala:34
 msgid "No date set"
@@ -307,11 +307,11 @@ msgstr ""
 
 #: src/gtk/save-changes-dialog.ui:11
 msgid "_Cancel"
-msgstr "_रद्द"
+msgstr "रद्द (_C)"
 
 #: src/gtk/save-changes-dialog.ui:12
 msgid "_Discard"
-msgstr "_खारिज"
+msgstr "खारिज (_D)"
 
 #: src/gtk/shortcut-window.ui:11
 msgctxt "shortcut window"
