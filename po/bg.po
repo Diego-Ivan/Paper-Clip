@@ -1,0 +1,382 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the pdf-metadata-editor package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# twlvnn kraftwerk <kraft_werk@tutanota.com>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: pdf-metadata-editor\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-27 21:42-0600\n"
+"PO-Revision-Date: 2024-06-24 23:44+0200\n"
+"Last-Translator: twlvnn kraftwerk <kraft_werk@tutanota.com>\n"
+"Language-Team: Bulgarian <dict-notifications@fsa-bg.org>\n"
+"Language: bg\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"X-Generator: Gtranslator 46.1\n"
+
+#: data/io.github.diegoivan.pdf_metadata_editor.desktop.in:3
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:7
+msgid "Paper Clip"
+msgstr "Кламер"
+
+#: data/io.github.diegoivan.pdf_metadata_editor.desktop.in:8
+msgid "PDF;Metadata;Editor;"
+msgstr "метаданни;редактор;"
+
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:8
+msgid "Edit PDF document metadata"
+msgstr "Редактирайте метаданните на PDF документи"
+
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:10
+msgid "Edit the title, author, keywords and more details of your PDF documents"
+msgstr ""
+"Редактирайте заглавието, автора, ключовите думи и други подробности за "
+"вашите PDF документи"
+
+#. translators: Write your name<email> here :D
+#: src/application.vala:164
+msgid "translator_credits"
+msgstr "twlvnn kraftwerk <kraft_werk@tutanota.com>"
+
+#: src/window.ui:20
+msgid "Select a File"
+msgstr "Избиране на файл"
+
+#: src/window.ui:24
+msgid "Open"
+msgstr "Отваряне"
+
+#: src/window.ui:86
+msgid "Open a Document"
+msgstr "Отваряне на документ"
+
+#: src/window.ui:95
+msgid "Drag and drop a PDF file here"
+msgstr "Изтеглете и пуснете PDF файл тук"
+
+#: src/window.ui:153
+msgid "_New Window"
+msgstr "_Нов прозорец"
+
+#: src/window.ui:159 src/gtk/save-changes-dialog.ui:13
+msgid "_Save"
+msgstr "_Запазване"
+
+#: src/window.ui:165
+msgid "Save _As…"
+msgstr "Запазване _като…"
+
+#: src/window.ui:171
+msgid "Open _With…"
+msgstr "Отваряне _с…"
+
+#: src/window.ui:178
+msgid "_Keyboard Shortcuts"
+msgstr "_Клавишни комбинации"
+
+#: src/window.ui:182
+msgid "_About Paper Clip"
+msgstr "_Относно „Кламер“"
+
+#: src/DateRow.vala:34
+msgid "No date set"
+msgstr "Без зададена дата"
+
+#: src/Document.vala:117
+msgid "Unknown"
+msgstr "Неизвестно, неизвестен"
+
+#: src/Document.vala:298
+msgid "Pages in one column"
+msgstr "Страници в една колона"
+
+#: src/Document.vala:301
+msgid "One page at a time"
+msgstr "Една страница наведнъж"
+
+#: src/Document.vala:304
+msgid "Odd numbered pages on the left"
+msgstr "Страници с нечетен номер вляво"
+
+#: src/Document.vala:307
+msgid "Odd numbered pages on the right"
+msgstr "Страници с нечетен номер вдясно"
+
+#: src/Document.vala:310
+msgid "Two odd numbered pages on the left"
+msgstr "Две страници с нечетен номер вляво"
+
+#: src/Document.vala:313
+msgid "Two odd numbered pages on the right"
+msgstr "Две страници с нечетен номер вдясно"
+
+#: src/Document.vala:317
+msgid "No specific layout"
+msgstr "Без конкретно оформление"
+
+#: src/Document.vala:326
+msgid "Center document's window"
+msgstr "центриране на прозореца на документа"
+
+#: src/Document.vala:330
+msgid "Reading order is right to left"
+msgstr "Посоката на четене е отдясно наляво"
+
+#: src/Document.vala:334
+msgid "Display document's title"
+msgstr "Показване на заглавието на документа"
+
+#: src/Document.vala:338
+msgid "Fit document to window"
+msgstr "Напасване на документа към прозореца"
+
+#: src/Document.vala:342
+msgid "Hide window menubar"
+msgstr "Скриване на менюто"
+
+#: src/Document.vala:346
+msgid "Hide window toolbars"
+msgstr "Скриване на лентите с инструменти"
+
+#: src/Document.vala:350
+msgid "Hide UI elements"
+msgstr "Скриване на потребителския интерфейс"
+
+#: src/Document.vala:354
+msgid "No preferences"
+msgstr "Няма настройки"
+
+#: src/Document.vala:365
+msgid "Adding notes"
+msgstr "Добавяне на бележки"
+
+#: src/Document.vala:369
+msgid "Inserting elements"
+msgstr "Вмъкване на елементи"
+
+#: src/Document.vala:373
+msgid "Copying"
+msgstr "Копиране"
+
+#: src/Document.vala:377
+msgid "Extracting contents"
+msgstr "Извличане на съдържанието"
+
+#: src/Document.vala:381
+msgid "Filling interactive forms"
+msgstr "Попълване на интерактивни формуляри"
+
+#: src/Document.vala:385
+msgid "Modifying"
+msgstr "Променяне"
+
+#: src/Document.vala:389
+msgid "Printing"
+msgstr "Отпечатване"
+
+#: src/Document.vala:393
+msgid "Printing in high resolution"
+msgstr "Отпечатване с висока разделителна способност"
+
+#: src/Document.vala:402
+msgid "Flip on the long edge"
+msgstr "Обръщане по дългата страна"
+
+#: src/Document.vala:405
+msgid "Flip on the short edge"
+msgstr "Обръщане по късата страна"
+
+#: src/Document.vala:408
+msgid "Only single sided"
+msgstr "Само едностранно"
+
+#: src/Document.vala:412
+msgid "No preference"
+msgstr "Няма настройки"
+
+#: src/Document.vala:436
+msgid "Not compliant"
+msgstr "Не отговаря на изискванията"
+
+#: src/KeywordList.vala:55
+msgid "Keyword"
+msgstr "Ключова дума"
+
+#: src/KeywordList.vala:92
+msgid "Add Keyword"
+msgstr "Добавяне на ключова дума"
+
+#: src/KeywordRow.vala:29
+msgid "Delete Keyword"
+msgstr "Изтриване на ключовата дума"
+
+#: src/gtk/date-row.ui:8
+msgid "Remove Date"
+msgstr "Премахване на датата "
+
+#: src/gtk/date-row.ui:20
+msgid "Show Calendar"
+msgstr "Показване на календара"
+
+#: src/gtk/date-row.ui:49
+msgid "Today"
+msgstr "Днес"
+
+#: src/gtk/date-row.ui:56
+msgid "Tomorrow"
+msgstr "Утре"
+
+#: src/gtk/details-list.ui:15
+msgid "Format"
+msgstr "Формат"
+
+#: src/gtk/details-list.ui:25
+msgid "Layout"
+msgstr "Оформление"
+
+#: src/gtk/details-list.ui:35
+msgid "Duplex"
+msgstr "Двустранно"
+
+#: src/gtk/details-list.ui:45
+msgid "Subtype"
+msgstr "Подтип"
+
+#: src/gtk/details-list.ui:55
+msgid "Viewer Preferences"
+msgstr "Настройки за програма за преглед"
+
+#: src/gtk/details-list.ui:62
+msgid "Permissions"
+msgstr "Права"
+
+#: src/gtk/document-view.ui:45
+msgid "Title"
+msgstr "Заглавие"
+
+#: src/gtk/document-view.ui:51
+msgid "Author"
+msgstr "Автор"
+
+#: src/gtk/document-view.ui:57
+msgid "Creation Software"
+msgstr "Софтуер за създаване"
+
+#: src/gtk/document-view.ui:63
+msgid "Subject"
+msgstr "Тема"
+
+#: src/gtk/document-view.ui:69
+msgid "Conversion Software"
+msgstr "Софтуер за преобразуване"
+
+#: src/gtk/document-view.ui:75
+msgid "Creation Date"
+msgstr "Дата на създаване"
+
+#: src/gtk/document-view.ui:81
+msgid "Modification Date"
+msgstr "Дата на промяна"
+
+#: src/gtk/document-view.ui:94
+msgid "Non-Editable Properties"
+msgstr "Нередактируеми свойства"
+
+#: src/gtk/keyword-list.ui:6
+msgid "Keywords"
+msgstr "Ключови думи"
+
+#: src/gtk/keyword-list.ui:12
+msgid "Add a keyword"
+msgstr "Добавяне на ключова дума"
+
+#: src/gtk/save-changes-dialog.ui:6
+msgid "Save Changes?"
+msgstr "Искате ли да запазите промените?"
+
+#: src/gtk/save-changes-dialog.ui:7
+msgid ""
+"Open documents contain unsaved changes. Changes which are not saved will be "
+"permanently lost."
+msgstr ""
+"Има незапазени промени в отворените документи. Ако не ги запазите, промените "
+"ще бъдат загубени окончателно."
+
+#: src/gtk/save-changes-dialog.ui:11
+msgid "_Cancel"
+msgstr "_Отказване"
+
+#: src/gtk/save-changes-dialog.ui:12
+msgid "_Discard"
+msgstr "_Отхвърляне"
+
+#: src/gtk/shortcut-window.ui:11
+msgctxt "shortcut window"
+msgid "General"
+msgstr "Общи"
+
+#: src/gtk/shortcut-window.ui:14
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Спиране на програмата"
+
+#: src/gtk/shortcut-window.ui:21
+msgctxt "shortcut window"
+msgid "New window"
+msgstr "Нов прозорец"
+
+#: src/gtk/shortcut-window.ui:28
+msgctxt "shortcut window"
+msgid "Close window"
+msgstr "Затваряне на прозорецa"
+
+#: src/gtk/shortcut-window.ui:35
+msgctxt "shortcut window"
+msgid "Keyboard Shortcuts"
+msgstr "Клавишни комбинации"
+
+#: src/gtk/shortcut-window.ui:43
+msgctxt "shortcut window"
+msgid "Editor"
+msgstr "Редактор"
+
+#: src/gtk/shortcut-window.ui:47
+msgctxt "shortcut window"
+msgid "Open"
+msgstr "Отваряне"
+
+#: src/gtk/shortcut-window.ui:54
+msgctxt "shortcut window"
+msgid "Save"
+msgstr "Запазване"
+
+#: src/gtk/shortcut-window.ui:61
+msgctxt "shortcut window"
+msgid "Save As…"
+msgstr "Запазване като"
+
+#: src/gtk/shortcut-window.ui:68
+msgctxt "shortcut window"
+msgid "Add a keyword"
+msgstr "Добавяне на ключова дума"
+
+#: src/gtk/password-dialog.ui:10
+msgid "Password Dialog"
+msgstr "Прозорец за паролата"
+
+#: src/gtk/password-dialog.ui:21
+msgid "This Document Is Encrypted"
+msgstr "Този документ е шифриран"
+
+#: src/gtk/password-dialog.ui:37
+msgid "Password"
+msgstr "Парола"
+
+#: src/gtk/password-dialog.ui:44
+msgid "Decrypt"
+msgstr "Дешифрирам, разшифрирам, разкривам тайнопис"
