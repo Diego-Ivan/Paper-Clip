@@ -7,7 +7,7 @@
 **Edit PDF document metadata**
 
 <a href="https://flathub.org/apps/details/io.github.diegoivan.pdf_metadata_editor">
-    <img width="200" src="https://flathub.org/assets/badges/flathub-badge-en.png" alt="Download on Flathub">
+    <img width="240" src="https://flathub.org/api/badge?svg&locale=en" alt="Download on Flathub">
 </a>
 
 </div>
