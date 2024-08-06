@@ -167,6 +167,13 @@ public class PaperClip.Document : Object {
         }
     }
 
+    [CCode (notify = false)]
+    public int n_pages {
+        get {
+            return document.get_n_pages ();
+        }
+    }
+
     public signal void keyword_changed ();
 
     public async Document (File original_file, string? password = null) throws Error {
