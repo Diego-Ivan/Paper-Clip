@@ -451,7 +451,9 @@ public class PaperClip.Document : Object {
                                                    "copies");
 
         int res = DirUtils.create_with_parents (destination_path, 0777);
-        return_if_fail (res > -1);
+        if (res < 0) {
+            throw new IOError.FAILED (@"Could not create $destination_path");
+        }
 
         string destination_file = Path.build_filename (destination_path,
                                                        "%s".printf (original_file.get_basename ()));
