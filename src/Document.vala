@@ -153,6 +153,20 @@ public class PaperClip.Document : Object {
         }
     }
 
+    [CCode (notify = false)]
+    public bool contains_attachments {
+        get {
+            return document.has_attachments ();
+        }
+    }
+
+    [CCode (notify = false)]
+    public bool contains_javascript {
+        get {
+            return document.has_javascript ();
+        }
+    }
+
     public signal void keyword_changed ();
 
     public async Document (File original_file, string? password = null) throws Error {
