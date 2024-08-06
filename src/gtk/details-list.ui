@@ -71,6 +71,16 @@
         </child>
 
         <child>
+          <object class="AdwActionRow" id="pages_row">
+            <property name="title" translatable="yes">Number of Pages</property>
+            <property name="selectable">false</property>
+            <style>
+              <class name="property"/>
+            </style>
+          </object>
+        </child>
+
+        <child>
           <object class="PaperClipStringArrayRow" id="preferences_row">
             <property name="title" translatable="yes">Viewer Preferences</property>
             <property name="selectable">false</property>

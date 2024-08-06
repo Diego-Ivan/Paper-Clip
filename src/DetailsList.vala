@@ -33,6 +33,8 @@ public class PaperClip.DetailsList : Adw.Bin {
     [GtkChild]
     private unowned Adw.ActionRow attachments_row;
     [GtkChild]
+    private unowned Adw.ActionRow pages_row;
+    [GtkChild]
     private unowned StringArrayRow preferences_row;
     [GtkChild]
     private unowned StringArrayRow permissions_row;
@@ -55,6 +57,13 @@ public class PaperClip.DetailsList : Adw.Bin {
                                        _("Yes") : _("No");
             javascript_row.subtitle = document.contains_javascript ?
                                       _("Yes") : _("No");
+
+            if (document.n_pages > 0) {
+                pages_row.visible = true;
+                pages_row.subtitle = document.n_pages.to_string ();
+            } else {
+                pages_row.visible = false;
+            }
         }
     }
 }
