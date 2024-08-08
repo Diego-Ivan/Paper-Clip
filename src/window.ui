@@ -8,7 +8,7 @@
     <property name="width-request">350</property>
     <property name="height-request">320</property>
     <property name="title">Paper Clip</property>
-    <signal name="close-request" handler="on_close_request"></signal>
+    <signal name="close-request" handler="on_close_request"/>
 
     <child>
       <object class="AdwToolbarView">
@@ -38,24 +38,12 @@
         <child>
           <object class="AdwToastOverlay" id="toast_overlay">
           <child>
-            <object class="GtkOverlay" id="view_overlay">
-              <child type="overlay">
-                <object class="GtkBox" id="dnd_box">
-                  <property name="orientation">vertical</property>
-                  <property name="can-target">false</property>
-                  <child>
-                    <object class="GtkProgressBar" id="progress_bar">
-                      <property name="pulse-step">1</property>
-                      <property name="valign">start</property>
-                      <style>
-                        <class name="osd"/>
-                      </style>
-                    </object>
-                  </child>
-                </object>
-              </child>
+            <object class="PaperClipDropOverlay" id="drop_overlay">
+              <property name="overlayed">
+                <object class="AdwBin" id="overlay_bin"/>
+              </property>
 
-              <child>
+              <property name="child">
                 <object class="GtkStack" id="view_stack">
                   <property name="transition-type">crossfade</property>
                   <child>
@@ -113,7 +101,7 @@
                   </child>
 
                 </object>
-              </child>
+              </property>
             </object>
           </child>
           </object>
@@ -185,3 +173,4 @@
     </section>
   </menu>
 </interface>
+
