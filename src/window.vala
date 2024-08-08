@@ -26,13 +26,13 @@ namespace PaperClip {
         [GtkChild]
         private unowned Gtk.Stack view_stack;
         [GtkChild]
-        private unowned Gtk.ProgressBar progress_bar;
-        [GtkChild]
         private unowned Gtk.MenuButton menu_button;
         [GtkChild]
-        private unowned Gtk.Box dnd_box;
-        [GtkChild]
         private unowned Adw.ToastOverlay toast_overlay;
+        [GtkChild]
+        private unowned DropOverlay drop_overlay;
+        [GtkChild]
+        private unowned Gtk.ProgressBar progress_bar;
 
         public WindowState state { get; set; default = NONE; }
 
@@ -49,6 +49,10 @@ namespace PaperClip {
             action_set_enabled ("win.save", false);
             action_set_enabled ("win.save-as", false);
             action_set_enabled ("win.open-with", false);
+        }
+
+        static construct {
+            typeof (DropOverlay).ensure ();
         }
 
         construct {
@@ -68,18 +72,8 @@ namespace PaperClip {
             var drop_target = new Gtk.DropTarget (typeof(File), COPY);
 
             drop_target.drop.connect (on_file_dropped);
-            drop_target.enter.connect (on_enter);
-            drop_target.leave.connect (on_leave);
             view_stack.add_controller (drop_target);
-        }
-
-        private Gdk.DragAction on_enter () {
-            dnd_box.add_css_class ("overlay-drag-area");
-            return COPY;
-        }
-
-        private void on_leave () {
-            dnd_box.remove_css_class ("overlay-drag-area");
+            drop_overlay.drop_target = drop_target;
         }
 
         private bool on_file_dropped (Value value) {
