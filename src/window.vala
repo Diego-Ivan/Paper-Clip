@@ -31,6 +31,8 @@ namespace PaperClip {
         private unowned Adw.ToastOverlay toast_overlay;
         [GtkChild]
         private unowned DropOverlay drop_overlay;
+        [GtkChild]
+        private unowned Gtk.ProgressBar progress_bar;
 
         public WindowState state { get; set; default = NONE; }
 
@@ -247,16 +249,16 @@ namespace PaperClip {
         }
 
         private void file_save_animation () {
-            // var property_target = new Adw.PropertyAnimationTarget (progress_bar, "fraction");
+            var property_target = new Adw.PropertyAnimationTarget (progress_bar, "fraction");
 
-            // var animation = new Adw.TimedAnimation (progress_bar, 0, 1, 200, property_target) {
-            //     easing = EASE_IN_OUT_SINE
-            // };
-            // animation.done.connect (hide_progress_bar_animation);
+            var animation = new Adw.TimedAnimation (progress_bar, 0, 1, 200, property_target) {
+                easing = EASE_IN_OUT_SINE
+            };
+            animation.done.connect (hide_progress_bar_animation);
 
-            // progress_bar.fraction = 0;
-            // progress_bar.opacity = 1;
-            // animation.play ();
+            progress_bar.fraction = 0;
+            progress_bar.opacity = 1;
+            animation.play ();
         }
 
         public void shortcuts () {
@@ -276,17 +278,17 @@ namespace PaperClip {
         }
 
         private void hide_progress_bar_animation () {
-            // var property_target = new Adw.PropertyAnimationTarget (progress_bar, "opacity");
-            // var animation = new Adw.TimedAnimation (progress_bar, 1, 0, 200, property_target) {
-            //     easing = EASE_IN_OUT_SINE
-            // };
+            var property_target = new Adw.PropertyAnimationTarget (progress_bar, "opacity");
+            var animation = new Adw.TimedAnimation (progress_bar, 1, 0, 200, property_target) {
+                easing = EASE_IN_OUT_SINE
+            };
 
-            // animation.play ();
+            animation.play ();
         }
 
         private void pulse_progress_bar () {
-            // progress_bar.opacity = 1;
-            // progress_bar.pulse ();
+            progress_bar.opacity = 1;
+            progress_bar.pulse ();
         }
 
         [GtkCallback]

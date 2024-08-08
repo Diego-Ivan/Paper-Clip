@@ -13,24 +13,38 @@
     <child>
       <object class="AdwToolbarView">
         <child type="top">
-          <object class="AdwHeaderBar" id="header_bar">
-            <child type="start">
-              <object class="GtkButton">
-                <property name="action-name">win.open</property>
-                <property name="tooltip-text" translatable="yes">Select a File</property>
-                <child>
-                  <object class="AdwButtonContent">
-                    <property name="icon-name">document-open-symbolic</property>
-                    <property name="label" translatable="yes">Open</property>
+          <object class="GtkBox">
+            <property name="orientation">vertical</property>
+            <child>
+              <object class="AdwHeaderBar" id="header_bar">
+                <child type="start">
+                  <object class="GtkButton">
+                    <property name="action-name">win.open</property>
+                    <property name="tooltip-text" translatable="yes">Select a File</property>
+                    <child>
+                      <object class="AdwButtonContent">
+                        <property name="icon-name">document-open-symbolic</property>
+                        <property name="label" translatable="yes">Open</property>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+
+                <child type="end">
+                  <object class="GtkMenuButton" id="menu_button">
+                    <property name="icon-name">open-menu-symbolic</property>
+                    <property name="menu-model">primary_menu</property>
                   </object>
                 </child>
               </object>
             </child>
-
-            <child type="end">
-              <object class="GtkMenuButton" id="menu_button">
-                <property name="icon-name">open-menu-symbolic</property>
-                <property name="menu-model">primary_menu</property>
+            <child>
+              <object class="GtkProgressBar" id="progress_bar">
+                <property name="hexpand">true</property>
+                <property name="opacity">0.0</property>
+                <style>
+                  <class name="osd"/>
+                </style>
               </object>
             </child>
           </object>
