@@ -52,10 +52,9 @@
             ],
             "sources" : [
                 {
-                    "url" : "https://gitlab.freedesktop.org/poppler/poppler.git",
-                    "type" : "git",
-                    "tag" : "poppler-23.01.0",
-                    "commit" : "4259ff0c2067d302f97d87221a442eec8e88d45c"
+                    "url" : "https://poppler.freedesktop.org/poppler-24.08.0.tar.xz",
+                    "type" : "archive",
+                    "sha256" : "97453fbddf0c9a9eafa0ea45ac710d3d49bcf23a62e864585385d3c0b4403174"
                 }
             ]
         },

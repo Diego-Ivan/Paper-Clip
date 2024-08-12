@@ -466,11 +466,11 @@ public class PaperClip.Document : Object {
     }
 
     private async File create_copy_from_original () throws Error {
+        var launcher = new SubprocessLauncher (NONE);
         unowned string tmp_dir = Environment.get_tmp_dir ();
         string destination_path = Path.build_path (Path.DIR_SEPARATOR_S,
                                                    tmp_dir,
                                                    "copies");
-
         int res = DirUtils.create_with_parents (destination_path, 0777);
         if (res < 0) {
             throw new IOError.FAILED (@"Could not create $destination_path");
@@ -479,13 +479,14 @@ public class PaperClip.Document : Object {
         string destination_file = Path.build_filename (destination_path,
                                                        "%s".printf (original_file.get_basename ()));
 
-        var copy_file = File.new_for_path (destination_file);
-        FileCopyFlags flags = NOFOLLOW_SYMLINKS | OVERWRITE | ALL_METADATA;
-
-        bool success = yield original_file.copy_async (copy_file, flags);
+        Subprocess copy_process = launcher.spawn("cp", original_file.get_path(), destination_path);
+        bool success = yield copy_process.wait_async ();
         if (!success) {
-            critical ("Copy Unsuccessful");
+            critical ("Processed failed");
         }
+
+
+        var copy_file = File.new_for_path (destination_file);
 
         return copy_file;
     }
