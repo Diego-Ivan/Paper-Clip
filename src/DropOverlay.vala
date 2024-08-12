@@ -9,6 +9,8 @@ public class PaperClip.DropOverlay : Adw.Bin {
     private Gtk.Overlay internal_overlay = new Gtk.Overlay ();
     private Gtk.Revealer internal_revealer = new Gtk.Revealer ();
 
+    private uint hide_timeout = 0;
+
     private Gtk.DropTarget _drop_target;
     public Gtk.DropTarget drop_target {
         get {
@@ -49,14 +51,26 @@ public class PaperClip.DropOverlay : Adw.Bin {
     private void on_current_drop_notify () {
         Gdk.Drop drop = drop_target.current_drop;
 
+        clear_timeout ();
+
         if (drop != null) {
             internal_revealer.reveal_child = true;
             internal_revealer.visible = true;
             overlayed.add_css_class ("overlay-drag-area");
         } else {
             internal_revealer.reveal_child = false;
-            internal_revealer.visible = false;
-            overlayed.remove_css_class ("overlay-drag-area");
+            hide_timeout = Timeout.add_once (internal_revealer.transition_duration, () => {
+                overlayed.remove_css_class ("overlay-drag-area");
+                internal_revealer.visible = false;
+                hide_timeout = 0;
+            });
+        }
+    }
+
+    private void clear_timeout () {
+        if (hide_timeout != 0) {
+            Source.remove (hide_timeout);
+            hide_timeout = 0;
         }
     }
 }
