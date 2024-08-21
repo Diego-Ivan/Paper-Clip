@@ -1,0 +1,384 @@
+# Ukrainian translation for pdf-metadata-editor.
+# Copyright (C) 2024 THE Paper pdf-metadata-editor'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the pdf-metadata-editor package.
+# volkov <volkovissocool@gmail.com>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pdf-metadata-editor\n"
+"Report-Msgid-Bugs-To: https://github.com/Diego-Ivan/Paper-Clip/issues\n"
+"POT-Creation-Date: 2024-01-27 21:42-0600\n"
+"PO-Revision-Date: 2024-08-21 10:41+0300\n"
+"Last-Translator: volkov <volkovissocool@gmail.com>\n"
+"Language-Team: volkov <volkovissocool@gmail.com>\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.4.4\n"
+
+#: data/io.github.diegoivan.pdf_metadata_editor.desktop.in:3
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:7
+msgid "Paper Clip"
+msgstr "Скріпка"
+
+#: data/io.github.diegoivan.pdf_metadata_editor.desktop.in:8
+msgid "PDF;Metadata;Editor;"
+msgstr "PDF;Metadata;Editor;пдф;метадані;редактор;документ;"
+
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:8
+msgid "Edit PDF document metadata"
+msgstr "Редагуйте метадані PDF документів"
+
+#: data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in:10
+msgid "Edit the title, author, keywords and more details of your PDF documents"
+msgstr ""
+"Редагуйте назву, автора, ключові слова та інші деталі ваших PDF документів"
+
+#. translators: Write your name<email> here :D
+#: src/application.vala:164
+msgid "translator_credits"
+msgstr "volkov <volkovissocool@gmail.com>"
+
+#: src/window.ui:20
+msgid "Select a File"
+msgstr "Обрати файл"
+
+#: src/window.ui:24
+msgid "Open"
+msgstr "Відкрити"
+
+#: src/window.ui:86
+msgid "Open a Document"
+msgstr "Відкрити документ"
+
+#: src/window.ui:95
+msgid "Drag and drop a PDF file here"
+msgstr "Перетягніть PDF файл сюди"
+
+#: src/window.ui:153
+msgid "_New Window"
+msgstr "_Нове вікно"
+
+#: src/window.ui:159 src/gtk/save-changes-dialog.ui:13
+msgid "_Save"
+msgstr "_Зберегти"
+
+#: src/window.ui:165
+msgid "Save _As…"
+msgstr "Зберегти _як…"
+
+#: src/window.ui:171
+msgid "Open _With…"
+msgstr "Відкрити за _допомогою…"
+
+#: src/window.ui:178
+msgid "_Keyboard Shortcuts"
+msgstr "_Клавіатурні скорочення"
+
+#: src/window.ui:182
+msgid "_About Paper Clip"
+msgstr "_Про Скріпка"
+
+#: src/DateRow.vala:34
+msgid "No date set"
+msgstr "Дата не встановлена"
+
+#: src/Document.vala:117
+msgid "Unknown"
+msgstr "Невідомо"
+
+#: src/Document.vala:298
+msgid "Pages in one column"
+msgstr "Сторінки у одній колонці"
+
+#: src/Document.vala:301
+msgid "One page at a time"
+msgstr "Одна сторінка за час"
+
+#: src/Document.vala:304
+msgid "Odd numbered pages on the left"
+msgstr "Непарні сторінки зліва"
+
+#: src/Document.vala:307
+msgid "Odd numbered pages on the right"
+msgstr "Непарні сторінки справа"
+
+#: src/Document.vala:310
+msgid "Two odd numbered pages on the left"
+msgstr "Дві непарні сторінки ліворуч"
+
+#: src/Document.vala:313
+msgid "Two odd numbered pages on the right"
+msgstr "Дві непарні сторінки праворуч"
+
+#: src/Document.vala:317
+msgid "No specific layout"
+msgstr "Не вказано"
+
+#: src/Document.vala:326
+msgid "Center document's window"
+msgstr "Центрувати вікно документу"
+
+#: src/Document.vala:330
+msgid "Reading order is right to left"
+msgstr "Порядок читання справа наліво"
+
+#: src/Document.vala:334
+msgid "Display document's title"
+msgstr "Показувати заголовок документу"
+
+#: src/Document.vala:338
+msgid "Fit document to window"
+msgstr "Умістити до вікна"
+
+#: src/Document.vala:342
+msgid "Hide window menubar"
+msgstr "Сховати заголовок вікна"
+
+#: src/Document.vala:346
+msgid "Hide window toolbars"
+msgstr "Сховати панель інструментів вікна"
+
+#: src/Document.vala:350
+msgid "Hide UI elements"
+msgstr "Сховати елементи інтерфейсу"
+
+#: src/Document.vala:354
+msgid "No preferences"
+msgstr "Не вказано"
+
+#: src/Document.vala:365
+msgid "Adding notes"
+msgstr "Додавання нотаток"
+
+#: src/Document.vala:369
+msgid "Inserting elements"
+msgstr "Вставка елементів"
+
+#: src/Document.vala:373
+msgid "Copying"
+msgstr "Копіювання"
+
+#: src/Document.vala:377
+msgid "Extracting contents"
+msgstr "Видобування вмісту"
+
+#: src/Document.vala:381
+msgid "Filling interactive forms"
+msgstr "Заповнення інтерактивних полів"
+
+#: src/Document.vala:385
+msgid "Modifying"
+msgstr "Модифікування"
+
+#: src/Document.vala:389
+msgid "Printing"
+msgstr "Друкування"
+
+#: src/Document.vala:393
+msgid "Printing in high resolution"
+msgstr "Друкування у високому розширенні"
+
+# Гадки не маю шо це значить
+#: src/Document.vala:402
+msgid "Flip on the long edge"
+msgstr "Перегортати на довгому краю"
+
+# Гадки не маю шо це значить
+#: src/Document.vala:405
+msgid "Flip on the short edge"
+msgstr "Перегортати на короткому краю"
+
+#: src/Document.vala:408
+msgid "Only single sided"
+msgstr "Тільки на одній стороні"
+
+#: src/Document.vala:412
+msgid "No preference"
+msgstr "Не вказано"
+
+#: src/Document.vala:436
+msgid "Not compliant"
+msgstr "Не відповідає вимогам"
+
+#: src/KeywordList.vala:55
+msgid "Keyword"
+msgstr "Ключове слово"
+
+#: src/KeywordList.vala:92
+msgid "Add Keyword"
+msgstr "Додати ключове слово"
+
+#: src/KeywordRow.vala:29
+msgid "Delete Keyword"
+msgstr "Видалити ключове слово"
+
+#: src/gtk/date-row.ui:8
+msgid "Remove Date"
+msgstr "Видалити дату"
+
+#: src/gtk/date-row.ui:20
+msgid "Show Calendar"
+msgstr "Показати календар"
+
+#: src/gtk/date-row.ui:49
+msgid "Today"
+msgstr "Сьогодні"
+
+#: src/gtk/date-row.ui:56
+msgid "Tomorrow"
+msgstr "Завтра"
+
+#: src/gtk/details-list.ui:15
+msgid "Format"
+msgstr "Формат"
+
+#: src/gtk/details-list.ui:25
+msgid "Layout"
+msgstr "Макет"
+
+# Мабуть це якось пов'язано з цим https://en.wikipedia.org/wiki/Duplex_printing
+#: src/gtk/details-list.ui:35
+msgid "Duplex"
+msgstr "Дуплекс"
+
+#: src/gtk/details-list.ui:45
+msgid "Subtype"
+msgstr "Підтип"
+
+#: src/gtk/details-list.ui:55
+msgid "Viewer Preferences"
+msgstr "Налаштування перегляду"
+
+#: src/gtk/details-list.ui:62
+msgid "Permissions"
+msgstr "Дозволи"
+
+#: src/gtk/document-view.ui:45
+msgid "Title"
+msgstr "Назва"
+
+#: src/gtk/document-view.ui:51
+msgid "Author"
+msgstr "Автор"
+
+#: src/gtk/document-view.ui:57
+msgid "Creation Software"
+msgstr "Програма створення"
+
+#: src/gtk/document-view.ui:63
+msgid "Subject"
+msgstr "Тема"
+
+#: src/gtk/document-view.ui:69
+msgid "Conversion Software"
+msgstr "Програма перетворення"
+
+#: src/gtk/document-view.ui:75
+msgid "Creation Date"
+msgstr "Дата створення"
+
+#: src/gtk/document-view.ui:81
+msgid "Modification Date"
+msgstr "Дата останньої зміни"
+
+#: src/gtk/document-view.ui:94
+msgid "Non-Editable Properties"
+msgstr "Не змінні властивості"
+
+#: src/gtk/keyword-list.ui:6
+msgid "Keywords"
+msgstr "Ключові слова"
+
+#: src/gtk/keyword-list.ui:12
+msgid "Add a keyword"
+msgstr "Додати ключове слово"
+
+#: src/gtk/save-changes-dialog.ui:6
+msgid "Save Changes?"
+msgstr "Зберегти зміни?"
+
+# Скопіював з перекладу до Текстового редактора ГНОМовського
+#: src/gtk/save-changes-dialog.ui:7
+msgid ""
+"Open documents contain unsaved changes. Changes which are not saved will be "
+"permanently lost."
+msgstr ""
+"У відкритих документах містяться незбережені зміни. Ці незбережені зміни "
+"буде втрачено без можливості відновлення."
+
+#: src/gtk/save-changes-dialog.ui:11
+msgid "_Cancel"
+msgstr "_Скасувати"
+
+#: src/gtk/save-changes-dialog.ui:12
+msgid "_Discard"
+msgstr "_Відкинути"
+
+#: src/gtk/shortcut-window.ui:11
+msgctxt "shortcut window"
+msgid "General"
+msgstr "Загальні"
+
+#: src/gtk/shortcut-window.ui:14
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Вийти"
+
+#: src/gtk/shortcut-window.ui:21
+msgctxt "shortcut window"
+msgid "New window"
+msgstr "Нове вікно"
+
+#: src/gtk/shortcut-window.ui:28
+msgctxt "shortcut window"
+msgid "Close window"
+msgstr "Закрити вікно"
+
+#: src/gtk/shortcut-window.ui:35
+msgctxt "shortcut window"
+msgid "Keyboard Shortcuts"
+msgstr "Клавіатурні скорочення"
+
+#: src/gtk/shortcut-window.ui:43
+msgctxt "shortcut window"
+msgid "Editor"
+msgstr "Редактор"
+
+#: src/gtk/shortcut-window.ui:47
+msgctxt "shortcut window"
+msgid "Open"
+msgstr "Відкрити"
+
+#: src/gtk/shortcut-window.ui:54
+msgctxt "shortcut window"
+msgid "Save"
+msgstr "Зберегти"
+
+#: src/gtk/shortcut-window.ui:61
+msgctxt "shortcut window"
+msgid "Save As…"
+msgstr "Зберегти як…"
+
+#: src/gtk/shortcut-window.ui:68
+msgctxt "shortcut window"
+msgid "Add a keyword"
+msgstr "Додати ключове слово"
+
+#: src/gtk/password-dialog.ui:10
+msgid "Password Dialog"
+msgstr "Діалогове вікно паролю"
+
+#: src/gtk/password-dialog.ui:21
+msgid "This Document Is Encrypted"
+msgstr "Цей документ зашифровано"
+
+#: src/gtk/password-dialog.ui:37
+msgid "Password"
+msgstr "Пароль"
+
+#: src/gtk/password-dialog.ui:44
+msgid "Decrypt"
+msgstr "Дешифрувати"
