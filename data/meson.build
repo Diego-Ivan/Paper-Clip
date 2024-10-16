@@ -17,7 +17,7 @@ appstream_file = i18n.merge_file(
        output: 'io.github.diegoivan.pdf_metadata_editor.appdata.xml',
        po_dir: '../po',
       install: true,
-  install_dir: join_paths(get_option('datadir'), 'appdata')
+  install_dir: join_paths(get_option('datadir'), 'metainfo')
 )
 
 appstreamcli = find_program('appstreamcli', required: false)
