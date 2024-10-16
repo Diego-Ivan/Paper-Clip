@@ -55,6 +55,7 @@ public class PaperClip.Application : Adw.Application {
     public override void startup () {
         base.startup ();
         Xmp.init ();
+        Gtk.Window.set_default_icon_name (Config.APP_ID);
     }
 
     public override void shutdown () {
