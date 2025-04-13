@@ -2,6 +2,7 @@
 Name=Paper Clip
 Exec=pdf-metadata-editor %U
 Icon=io.github.diegoivan.pdf_metadata_editor
+DBusActivatable=true
 Terminal=false
 Type=Application
 Keywords=PDF;Metadata;Editor;

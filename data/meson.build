@@ -40,4 +40,13 @@ if compile_schemas.found()
        args: ['--strict', '--dry-run', meson.current_source_dir()])
 endif
 
+service_conf = configuration_data()
+service_conf.set('bindir', join_paths(get_option('prefix'), get_option('bindir')))
+configure_file(
+        input: 'io.github.diegoivan.pdf_metadata_editor.service.in',
+       output: 'io.github.diegoivan.pdf_metadata_editor.service',
+configuration: service_conf,
+  install_dir: join_paths(get_option('datadir'), 'dbus-1/services')
+)
+
 subdir('icons')

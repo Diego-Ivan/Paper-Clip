@@ -1,0 +1,3 @@
+[D-BUS Service]
+Name=io.github.diegoivan.pdf_metadata_editor
+Exec=@bindir@/pdf-metadata-editor --gapplication-service
