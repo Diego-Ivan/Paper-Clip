@@ -9,3 +9,8 @@ Keywords=PDF;Metadata;Editor;
 Categories=GTK;Utility;Office;
 MimeType=application/pdf;
 StartupNotify=true
+Actions=new-window;
+
+[Desktop Action new-window]
+Name=New Window
+Exec=pdf-metadata-editor --new-window

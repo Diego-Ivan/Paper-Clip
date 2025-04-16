@@ -41,6 +41,34 @@ public class PaperClip.Application : Adw.Application {
         set_accels_for_action ("app.shortcuts", { "<Ctrl>question" });
         set_accels_for_action ("app.query-quit", { "<Ctrl>q" });
         set_accels_for_action ("app.new-window", { "<Ctrl>n" });
+
+        OptionEntry[] option_entries = {
+            { "new-window", 'w', OptionFlags.NONE, OptionArg.NONE, null, N_("Open a new window"), null },
+            { "version", 'v', OptionFlags.NONE, OptionArg.NONE, null, N_("Print version information and exit"), null },
+            {}
+        };
+        this.add_main_option_entries (option_entries);
+    }
+
+    public override int handle_local_options (GLib.VariantDict options)
+    {
+        if (options.contains ("new-window")) {
+            try {
+                this.register ();
+            } catch (Error e) {
+                critical (e.message);
+            }
+
+            if (this.get_is_remote ()) {
+                this.activate_action ("new-window", null);
+                return 0;
+            }
+        }
+        if (options.contains ("version")) {
+            stderr.printf (@"Paper Clip $(Config.VERSION)\n");
+            return 0;
+        }
+        return -1;
     }
 
     public override void activate () {
