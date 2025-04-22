@@ -12,7 +12,7 @@
 
   <releases>
     <release version="5.0" date="2024-01-27">
-      <description translatable="no">
+      <description translate="no">
         <p>Paper Clip v5.0 has been released! This release brings a couple of quality-of-life improvements and new features:</p>
         <ul>
           <li>Paper Clip now supports editing encrypted documents.</li>
@@ -43,9 +43,9 @@
   <content_rating type="oars-1.1" />
 
   <!-- developer_name tag deprecated with Appstream 1.0 -->
-  <developer_name translatable="no">Diego Iván</developer_name>
+  <developer_name translate="no">Diego Iván</developer_name>
   <developer id="io.github.diegoivan">
-    <name translatable="no">Diego Iván</name>
+    <name translate="no">Diego Iván</name>
   </developer>
   <translation type="gettext">pdf-metadata-editor</translation>
   <launchable type="desktop-id">io.github.diegoivan.pdf_metadata_editor.desktop</launchable>
