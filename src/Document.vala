@@ -187,6 +187,14 @@ public class PaperClip.Document : Object {
         }
     }
 
+    ~Document () {
+        try {
+            cached_file.delete ();
+        } catch (Error e) {
+            warning (e.message);
+        }
+     }
+
     // This function is intended to be run from a background thread
     private bool load_xmp () throws Error {
         bool success = false;
@@ -466,29 +474,22 @@ public class PaperClip.Document : Object {
     }
 
     private async File create_copy_from_original () throws Error {
-        var launcher = new SubprocessLauncher (NONE);
-        unowned string tmp_dir = Environment.get_tmp_dir ();
-        string destination_path = Path.build_path (Path.DIR_SEPARATOR_S,
-                                                   tmp_dir,
-                                                   "copies");
-        int res = DirUtils.create_with_parents (destination_path, 0777);
-        if (res < 0) {
-            throw new IOError.FAILED (@"Could not create $destination_path");
+        GLib.File tmp_file;
+        GLib.FileIOStream stream;
+
+        try {
+            tmp_file = GLib.File.new_tmp ("pdf-metadata-editor-XXXXXX.pdf", out stream);
+        } catch (Error e) {
+            throw new IOError.FAILED (@"Failed to create temporary file: %s", e.message);
         }
 
-        string destination_file = Path.build_filename (destination_path,
-                                                       "%s".printf (original_file.get_basename ()));
-
-        Subprocess copy_process = launcher.spawn("cp", original_file.get_path(), destination_path);
-        bool success = yield copy_process.wait_async ();
-        if (!success) {
-            critical ("Processed failed");
+        try {
+           yield original_file.copy_async (tmp_file, FileCopyFlags.OVERWRITE);
+        } catch (Error e) {
+            throw new IOError.FAILED (@"Failed to copy file to temporary location: %s", e.message);
         }
 
-
-        var copy_file = File.new_for_path (destination_file);
-
-        return copy_file;
+        return tmp_file;
     }
 }
 
