@@ -1,5 +1,5 @@
 data/io.github.diegoivan.pdf_metadata_editor.desktop.in
-data/io.github.diegoivan.pdf_metadata_editor.appdata.xml.in
+data/io.github.diegoivan.pdf_metadata_editor.metainfo.xml.in
 data/io.github.diegoivan.pdf_metadata_editor.gschema.xml
 src/application.vala
 src/window.ui
