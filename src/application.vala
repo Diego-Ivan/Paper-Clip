@@ -33,12 +33,10 @@ public class PaperClip.Application : Adw.Application {
     construct {
         ActionEntry[] action_entries = {
             { "about", this.on_about_action },
-            { "shortcuts", shortcuts_action },
             { "query-quit", on_query_quit_action },
             { "new-window", on_new_window_action }
         };
         this.add_action_entries (action_entries, this);
-        set_accels_for_action ("app.shortcuts", { "<Ctrl>question" });
         set_accels_for_action ("app.query-quit", { "<Ctrl>q" });
         set_accels_for_action ("app.new-window", { "<Ctrl>n" });
 
@@ -114,11 +112,6 @@ public class PaperClip.Application : Adw.Application {
             }
         }
         activate ();
-    }
-
-    private void shortcuts_action () {
-        var window = (Window) active_window;
-        window.shortcuts ();
     }
 
     private void on_new_window_action () {

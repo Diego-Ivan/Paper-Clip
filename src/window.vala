@@ -261,18 +261,6 @@ namespace PaperClip {
             animation.play ();
         }
 
-        public void shortcuts () {
-            var builder = new Gtk.Builder.from_resource ("/io/github/diegoivan/pdf_metadata_editor/gtk/shortcut-window.ui");
-            var shortcuts_window = builder.get_object ("shortcut_window") as Gtk.ShortcutsWindow;
-            if (shortcuts_window == null) {
-                critical ("Failed to load shortcuts");
-                return;
-            }
-
-            shortcuts_window.transient_for = this;
-            shortcuts_window.show ();
-        }
-
         private void on_main_menu_action () {
             menu_button.popup ();
         }
